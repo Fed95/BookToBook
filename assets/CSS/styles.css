@@ -16,9 +16,6 @@
     align-items: center;
     display: flex;
 }
-.mynav{
-    margin-bottom: 10px;
-}
 .form-inline {
     flex-direction: column;
     align-items: stretch;
@@ -58,61 +55,4 @@
 .container-fluid{
     padding-right: 0px;
     padding-left: 0px;
-}
-.userimg{
-    align-self: center;
-    margin-right: 0px;
-    margin-left: 10px;
-    margin-top: -10px;
-    float: right;
-}
-.footer {
-   margin-top: 20px;
-}
-
-.context-dark, .bg-gray-dark, .bg-primary {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-classic a, .footer-classic a:focus, .footer-classic a:active {
-    color: #ffffff;
-}
-.nav-list li {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.nav-list li a:hover:before {
-    margin-left: 0;
-    opacity: 1;
-    visibility: visible;
-}
-
-ul, ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-list li a:before {
-    content: "\f14f";
-    font: 400 21px/1 "Material Design Icons";
-    color: #4d6de6;
-    display: inline-block;
-    vertical-align: baseline;
-    margin-left: -28px;
-    margin-right: 7px;
-    opacity: 0;
-    visibility: hidden;
-    transition: .22s ease;
-}
-.box{
-    border:1px solid #ccc;
-    padding:20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.myfooter{
-    margin-top: 10px;
-    background: #2d3246;
 }
