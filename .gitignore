@@ -97,3 +97,5 @@ modules.xml
 # End of https://www.gitignore.io/api/intellij+all
 .idea/workspace.xml
 pet-store-nodejs-server/.idea/workspace.xml
+pet-store-nodejs-server/.idea/workspace.xml
+.idea/workspace.xml
