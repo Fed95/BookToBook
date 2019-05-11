@@ -42,6 +42,9 @@ app.get('/', function(req, res) {
 
 app.use(express.static(__dirname+'/..'));
 
+app.listen(process.env.PORT || 4000, function(){
+  console.log('Your node js server is running');
+});
 
 // swaggerRouter configuration
 var options = {
