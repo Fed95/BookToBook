@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node server.js"
+    "start": "node ./pet-store-nodejs-server/index.js"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
