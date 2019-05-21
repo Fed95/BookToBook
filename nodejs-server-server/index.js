@@ -3,21 +3,39 @@
 //---------------------------------------------------------------
 // stuff done by us
 //---------------------------------------------------------------
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const _ = require("lodash");
+const process = require("process");
 
+require('dotenv').config()
+/*const pg = require('pg')
+pg.defaults.ssl = true
+module.exports = {
+  client: 'pg',
+  connection: process.env.DATABASE_URL
+}*/
 
 var pg = require('knex')({
   debug: true,
   client: 'pg',
-  connection: {
+  connection: process.env.DATABASE_URL,
+  /*connection: {
     host : 'ec2-54-246-92-116.eu-west-1.compute.amazonaws.com',
     user : 'uskrrpmxmxkafd',
     password : '963c19a4532e2f6d0e62ab4362c76dd687cba628464ce30bbce195c4b19c10ca',
     database : 'd8c12qkjiak7qs'
-  },
+  },*/
   ssl: true,
 });
 
 console.log(10);
+
+let myQuery = pg("new_schema.book")
+    .then(result => {
+      console.log(result);
+    })
 
 /*const pg = require('pg');
 
@@ -34,16 +52,23 @@ console.log(1)
 var promise = pg.query('SELECT t.title FROM new_schema.book t ORDER BY id DESC, title DESC LIMIT 50');
 promise.then(function (result) {console.log(result)});
 console.log(2)*/
-let myQuery = pg("book")
-    .then(result => {
-      console.log(result);
-    })
+app.use(express.static(__dirname + "/public"));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/doctors", function(req, res) {
+  console.log(10);
+
+})
+
+
 
 //---------------------------------------------------------------
 //---------------------------------------------------------------
 
 
-
+/*
 var fs = require('fs'),
     http = require('http');
 
@@ -104,4 +129,4 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
 });
 
-
+*/
