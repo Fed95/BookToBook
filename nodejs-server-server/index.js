@@ -8,8 +8,12 @@
 var pg = require('knex')({
   debug: true,
   client: 'pg',
-  connection: process.env.PG_CONNECTION_STRING,
-  searchPath: ['knex', 'public'],
+  connection: {
+    host : 'ec2-54-246-92-116.eu-west-1.compute.amazonaws.com',
+    user : 'uskrrpmxmxkafd',
+    password : '963c19a4532e2f6d0e62ab4362c76dd687cba628464ce30bbce195c4b19c10ca',
+    database : 'd8c12qkjiak7qs'
+  },
   ssl: true,
 });
 
@@ -25,11 +29,15 @@ var client = new pg.Client({
   host: "ec2-54-246-92-116.eu-west-1.compute.amazonaws.com",
   ssl: true
 });
-client.connect();*/
+client.connect();
 console.log(1)
-var promise = client.query('SELECT t.title FROM new_schema.book t ORDER BY id DESC, title DESC LIMIT 50');
+var promise = pg.query('SELECT t.title FROM new_schema.book t ORDER BY id DESC, title DESC LIMIT 50');
 promise.then(function (result) {console.log(result)});
-console.log(2)
+console.log(2)*/
+let myQuery = pg("book")
+    .then(result => {
+      console.log(result);
+    })
 
 //---------------------------------------------------------------
 //---------------------------------------------------------------
@@ -68,6 +76,11 @@ var options = {
 var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
+
+app.get("/book", function(req, res) {
+
+})
+
 // Initialize the Swagger middleware
 swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
@@ -90,3 +103,5 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   });
 
 });
+
+
