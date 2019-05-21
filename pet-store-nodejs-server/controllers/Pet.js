@@ -2,9 +2,16 @@
 
 var utils = require('../utils/writer.js');
 var Pet = require('../service/PetService');
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+const sqlDbFactory = require("knex");
+const _ = require("lodash");
+const process = require("process");
+const nodemailer = require("nodemailer");
 
 module.exports.addPet = function addPet (req, res, next) {
-  console.log(res)
+  console.log(res);
   var body = req.swagger.params['body'].value;
   Pet.addPet(body)
     .then(function (response) {
@@ -61,6 +68,10 @@ module.exports.getPetById = function getPetById (req, res, next) {
     });
 };
 
+module.exports.getPet = function getPet(req, res, next){
+
+}
+
 module.exports.updatePet = function updatePet (req, res, next) {
   var body = req.swagger.params['body'].value;
   Pet.updatePet(body)
@@ -97,3 +108,14 @@ module.exports.uploadFile = function uploadFile (req, res, next) {
       utils.writeJson(res, response);
     });
 };
+
+
+module.exports.getPet = function getPet(req, res, next) {
+  let myQuery = sqlDb("book")
+      .then(result => {
+       console.log(result);
+  })
+};
+
+
+
