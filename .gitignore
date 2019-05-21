@@ -2,7 +2,7 @@
 npm-debug.log
 .DS_Store
 /.env
-
+.idea
 
 # Created by https://www.gitignore.io/api/intellij+all
 # Edit at https://www.gitignore.io/?templates=intellij+all
@@ -97,3 +97,6 @@ modules.xml
 # End of https://www.gitignore.io/api/intellij+all
 .idea/workspace.xml
 .idea/workspace.xml
+.idea/workspace.xml
+*.xml
+pet-store-nodejs-server/.idea/workspace.xml
