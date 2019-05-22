@@ -6,16 +6,7 @@
 
 /*const bodyParser = require("body-parser");
 const _ = require("lodash");*/
-const process = require("process");
 
-require('dotenv').config();
-
-var pg = require('knex')({
-  debug: true,
-  client: 'pg',
-  connection: process.env.DATABASE_URL,
-  ssl: true,
-});
 
 
 //---------------------------------------------------------------
