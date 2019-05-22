@@ -1,5 +1,7 @@
 'use strict';
 
+var pg = require("../index.js");
+
 
 /**
  * Find books by title
@@ -28,14 +30,14 @@ exports.getBookByTitle = function(title) {
     return new Promise(function (resolve, reject) {
         console.log("Pippo");
 
-        /*let myQuery = pg().select("title").from("new_schema.book")
+        let myQuery = pg().select("title").from("new_schema.book")
             .then(result => {
                 JSON.stringify(result);
                 console.log("ciaoneuao");
-            });*/
-        let myQuery = "{\"id\": \"Re\"}";
+            });
+        /*let myQuery = "{\"id\": \"Re\"}";
         console.log("ciaone");
-        console.log(myQuery);
+        console.log(myQuery);*/
         resolve(myQuery);
     })
 
