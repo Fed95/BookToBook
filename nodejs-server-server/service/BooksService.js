@@ -30,7 +30,7 @@ exports.getBookByTitle = function(title) {
 
     return new Promise(function (resolve, reject) {
         console.log("Pippo");
-        let myQuery = dB().select("title").from("new_schema.book")
+        let myQuery = dB("new_schema.book")
             .then(result => {
                 JSON.stringify(result);
                 console.log("ciaoneuao");
