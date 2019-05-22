@@ -8,6 +8,9 @@
  * title String title of book to return
  * returns Book
  **/
+
+
+
 exports.getBookByTitle = function(title) {
     // query example
     /*return new Promise(function(resolve, reject) {
@@ -21,6 +24,7 @@ exports.getBookByTitle = function(title) {
      resolve();
    }
  });*/
+
     return new Promise(function (resolve, reject) {
         console.log("Pippo")
         let myQuery = pg().select("title").from("new_schema.book")
