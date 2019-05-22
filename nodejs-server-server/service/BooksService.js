@@ -10,7 +10,10 @@
  **/
 exports.getBookByTitle = function(title) {
     // query example
+<<<<<<< HEAD
     return new Promise(function(resolve, reject) {
+=======
+>>>>>>> 00e5211634accbb708e417f727aaa1b337556bc5
     var examples = {};
     examples['application/json'] = {
   "id" : "The BFG"
