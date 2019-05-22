@@ -14,12 +14,15 @@ const process = require("process");
 require('dotenv').config();
 
 
-exports.dB = require('knex')({
+
+var dB = require('knex')({
   debug: true,
   client: 'pg',
   connection: process.env.DATABASE_URL,
   ssl: true,
 });
+
+exports.dB = dB;
 
 
 

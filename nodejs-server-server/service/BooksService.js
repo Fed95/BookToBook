@@ -2,6 +2,7 @@
 
 var pg = require("../index.js");
 
+var dB = pg.dB;
 
 /**
  * Find books by title
@@ -29,8 +30,7 @@ exports.getBookByTitle = function(title) {
 
     return new Promise(function (resolve, reject) {
         console.log("Pippo");
-
-        let myQuery = pg().select("title").from("new_schema.book")
+        let myQuery = dB().select("title").from("new_schema.book")
             .then(result => {
                 JSON.stringify(result);
                 console.log("ciaoneuao");
