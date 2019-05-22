@@ -10,7 +10,18 @@
  **/
 exports.getBookByTitle = function(title) {
     // query example
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
+   var examples = {};
+   examples['application/json'] = {
+ "id" : "The BFG"
+};
+   if (Object.keys(examples).length > 0) {
+     resolve(examples[Object.keys(examples)[0]]);
+   } else {
+     resolve();
+   }
+ });
+    /*return new Promise(function (resolve, reject) {
         console.log("Pippo")
         let myQuery = pg("new_schema.book")
             .then(result => {
@@ -19,16 +30,6 @@ exports.getBookByTitle = function(title) {
         resolve("bella zio");
     })
 
-  /*return new Promise(function(resolve, reject) {
-    var examples = {};
-    examples['application/json'] = {
-  "id" : "The BFG"
-};
-    if (Object.keys(examples).length > 0) {
-      resolve(examples[Object.keys(examples)[0]]);
-    } else {
-      resolve();
-    }
-  });*/
+ */
 };
 
