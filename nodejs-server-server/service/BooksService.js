@@ -14,11 +14,9 @@ exports.getBookByTitle = function(title) {
         console.log("Pippo")
         let myQuery = pg("new_schema.book")
             .then(result => {
-                console.log(result);
                 JSON.stringify(result);
-
             });
-        resolve(myQuery);
+        resolve("bella zio");
     })
 
   /*return new Promise(function(resolve, reject) {
