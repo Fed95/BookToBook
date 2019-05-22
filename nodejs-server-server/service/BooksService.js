@@ -26,11 +26,15 @@ exports.getBookByTitle = function(title) {
  });*/
 
     return new Promise(function (resolve, reject) {
-        console.log("Pippo")
-        let myQuery = pg().select("title").from("new_schema.book")
+        console.log("Pippo");
+
+        /*let myQuery = pg().select("title").from("new_schema.book")
             .then(result => {
                 JSON.stringify(result);
-            });
+                console.log("ciaoneuao");
+            });*/
+        let myQuery = "{\"id\": \"Re\"}";
+        console.log("ciaone");
         console.log(myQuery);
         resolve(myQuery);
     })
