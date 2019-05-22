@@ -16,20 +16,19 @@ exports.getBookByTitle = function(title) {
  "id" : "The BFG"
 };
    if (Object.keys(examples).length > 0) {
-     resolve();
+     resolve(examples[Object.keys(examples)[0]]);
    } else {
      resolve();
    }
  });*/
     return new Promise(function (resolve, reject) {
         console.log("Pippo")
-        let myQuery = pg("new_schema.book")
+        let myQuery = pg().select("title").from("new_schema.book")
             .then(result => {
-                JSON.stringify(result);
                 console.log(result);
+                JSON.stringify(result);
             });
-
-        resolve("bella zio");
+        resolve(myQuery);
     })
 
 
