@@ -32,13 +32,10 @@ exports.getBookByTitle = function(title) {
         console.log("Pippo");
         let myQuery = dB("new_schema.book")
             .then(result => {
-                JSON.stringify(result);
+                resolve(result)
                 //console.log("ciaoneuao");
             });
-        /*let myQuery = "{\"id\": \"Re\"}";
-        console.log("ciaone");
-        console.log(myQuery);*/
-        resolve(myQuery);
+        console.log(myQuery);
     })
 
 
