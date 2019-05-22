@@ -5,7 +5,7 @@ function test(){
             $('#ajax_test').html(this.responseText);
         }
     };
-    xhttp.open("GET", "https://booktobook.herokuapp.com/ajax_test.txt", true);
+    xhttp.open("GET", "https://booktobook.herokuapp.com/api/book/Re", true);
     xhttp.send();
     //$('#ajax_test').html("hello")
 }
