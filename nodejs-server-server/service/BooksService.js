@@ -26,7 +26,9 @@ exports.getBookByTitle = function(title) {
         let myQuery = pg().select("title").from("new_schema.book")
             .then(result => {
                 JSON.stringify(result);
+                console.log("ciaoneuao");
             });
+        console.log("ciaone");
         console.log(myQuery);
         resolve(myQuery);
     })
