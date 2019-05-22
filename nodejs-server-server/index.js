@@ -8,7 +8,7 @@
 const _ = require("lodash");*/
 const process = require("process");
 
-require('dotenv').config()
+require('dotenv').config();
 
 var pg = require('knex')({
   debug: true,
@@ -16,10 +16,6 @@ var pg = require('knex')({
   connection: process.env.DATABASE_URL,
   ssl: true,
 });
-
-console.log(10);
-
-
 
 
 //---------------------------------------------------------------
