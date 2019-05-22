@@ -2,10 +2,10 @@
   "name": "bookbook",
   "version": "1.0.0",
   "description": "This is our BookBook server",
-  "main": "index.js",
+  "main": "./nodejs-server-server/index.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "node index.js"
+    "start": "node ./nodejs-server-server/index.js"
   },
   "keywords": [
     "swagger"
