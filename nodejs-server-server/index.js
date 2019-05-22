@@ -4,8 +4,8 @@
 // Connection to Database
 //---------------------------------------------------------------
 
-const bodyParser = require("body-parser");
-const _ = require("lodash");
+/*const bodyParser = require("body-parser");
+const _ = require("lodash");*/
 const process = require("process");
 
 require('dotenv').config()
@@ -20,11 +20,7 @@ var pg = require('knex')({
 console.log(10);
 
 
-// query example
-let myQuery = pg("new_schema.book")
-    .then(result => {
-      console.log(result);
-    })
+
 
 //---------------------------------------------------------------
 //---------------------------------------------------------------
@@ -40,6 +36,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+// get html homepage
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
