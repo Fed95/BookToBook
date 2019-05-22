@@ -10,10 +10,16 @@
  **/
 exports.getBookByTitle = function(title) {
     // query example
-<<<<<<< HEAD
-    return new Promise(function(resolve, reject) {
-=======
->>>>>>> 00e5211634accbb708e417f727aaa1b337556bc5
+    return new Promise(function (resolve, reject) {
+        console.log("Pippo")
+        let myQuery = pg("new_schema.book")
+            .then(result => {
+                JSON.stringify(result);
+            });
+        resolve("bella zio");
+    })
+
+  /*return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "id" : "The BFG"
@@ -23,16 +29,6 @@ exports.getBookByTitle = function(title) {
     } else {
       resolve();
     }
-  });
-    /*return new Promise(function (resolve, reject) {
-        console.log("Pippo")
-        let myQuery = pg("new_schema.book")
-            .then(result => {
-                console.log(result);
-                JSON.stringify(result);
-
-            });
-        resolve(myQuery);
-    })*/
+  });*/
 };
 
