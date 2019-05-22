@@ -1,3 +1,3 @@
 // Procfile
 
-web: node /nodejs-server-server/index.js
+web: node ./nodejs-server-server/index.js

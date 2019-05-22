@@ -1,7 +1,7 @@
 'use strict';
 
 //---------------------------------------------------------------
-// Connection
+// Connection to Database
 //---------------------------------------------------------------
 
 const bodyParser = require("body-parser");
