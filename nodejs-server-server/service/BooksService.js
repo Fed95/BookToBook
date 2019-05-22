@@ -33,7 +33,7 @@ exports.getBookByTitle = function(title) {
         let myQuery = dB("new_schema.book")
             .then(result => {
                 JSON.stringify(result);
-                console.log("ciaoneuao");
+                //console.log("ciaoneuao");
             });
         /*let myQuery = "{\"id\": \"Re\"}";
         console.log("ciaone");
