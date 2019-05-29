@@ -1,7 +1,7 @@
 'use strict';
 
 var pg = require("../index.js");
-var dB = pg.dB;
+var knex = pg.knex;
 
 /**
  * Find books by title
@@ -17,7 +17,7 @@ exports.getBookByTitle = function(title) {
     return new Promise(function (resolve, reject) {
 
         console.log("Pippo");
-        let myQuery = dB('new_schema.book').where("id", 1).select().toSQL()
+        let myQuery = knex('new_schema.book').where("id", 1).select().toSQL()
             .then(result => {
                 resolve(result)
             });
