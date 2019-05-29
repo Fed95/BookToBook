@@ -109,5 +109,5 @@
 .container{
     padding-right: 0px;
 }
-#page-container {  position: relative; }
+#page-container {  position: relative; min-height: 100vh;}
 #content-wrap {  padding-bottom: 23.5rem;    /* Footer height */}
