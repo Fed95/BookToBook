@@ -8,6 +8,7 @@
 
 .footer-classic a, .footer-classic a:focus, .footer-classic a:active {
     color: #ffffff;
+    text-decoration: none;
 }
 .nav-list li {
     padding-top: 5px;
@@ -18,6 +19,7 @@
     margin-left: 0;
     opacity: 1;
     visibility: visible;
+    text-decoration: none;
 }
 
 ul, ol {
@@ -30,13 +32,13 @@ ul, ol {
     content: "\f14f";
     font: 400 21px/1 "Material Design Icons";
     color: #4d6de6;
-    display: inline-block;
     vertical-align: baseline;
     margin-left: -28px;
     margin-right: 7px;
     opacity: 0;
     visibility: hidden;
     transition: .22s ease;
+    text-decoration: none;
 }
 .box{
     border:1px solid #ccc;
@@ -50,6 +52,6 @@ ul, ol {
     position: absolute;  
     bottom: 0;  
     width: 100%;  
-    height: 22rem;
+    height: 23.5rem;
     overflow: hidden;
 }
