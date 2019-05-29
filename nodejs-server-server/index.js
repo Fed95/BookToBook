@@ -22,7 +22,7 @@ var knex = require('knex')({
   ssl: true,
 });
 
-exports.dB = dB;
+exports.knex = knex;
 
 
 
