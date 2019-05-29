@@ -16,7 +16,7 @@ exports.getBookByTitle = function(title) {
     // query example (returns all books independently by the specified title)
     return new Promise(function (resolve, reject) {
         console.log("Pippo");
-        let myQuery = knex.select().table("book").where("id", 1)
+        let myQuery = knex.select().table("new_shema.book").where("id", 1)
             .then(result => {
                 resolve(result)
             });
