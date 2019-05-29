@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <!-- Latest compiled and minified CSS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="./assets/CSS/styles.css">
         <link rel="stylesheet" href="./assets/CSS/footer.css">
@@ -19,44 +20,26 @@
             <div id="content-wrap">
                 <div class="jumbotron">
                     <div class="row" >
-                        <img src="./assets/Images/logo_transparent.png" width="200" height="200" >
-                        <div class="col-sm-11 pad" vertical-align="center">
+                        <img class="logo" src="./assets/Images/logo_transparent.png" width="200" height="200" >
+                        <div class="pad" vertical-align="center">
                             <form class="form-inline" >
-                                <input class="form-control" type="search" placeholder="Book, Author or Event" aria-label="Search">
-                                <button class="btn btn-outline-success btn-search" type="submit">Search</button>
+                                <div class="col-9">
+                                    <input class="form-control" type="search" placeholder="Book, Author or Event" aria-label="Search">
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-outline-success btn-search" type="submit">Search</button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
                 <nav class="navbar navbar-default mynav">
                     <div class="container-fluid">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="#">Books <span class="sr-only">(current)</span></a></li>
                                 <li><a href="#" id="testpip">Authors</a></li>
                                 <li><a href="#">Events</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">One more separated link</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a href="./pages/loginPage.html">Login/Create Account <img src="./assets/Images/user-image-with-black-background.png" width="35" height="35" class="userimg"></a></li>
@@ -67,28 +50,14 @@
                 </nav>
                 <div class="container">
                     <div class="row row-30">
-                        <div class="col-sm-3">
+                        <div class="col-6">
                             <div class="box">
                                 <h3>Column 3</h3> 
                                 <p>Lorem ipsum dolor..</p>
                                 <p>Ut enim ad..</p>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="box">
-                                <h3>Column 3</h3> 
-                                <p>Lorem ipsum dolor..</p>
-                                <p>Ut enim ad..</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="box">
-                                <h3>Column 3</h3> 
-                                <p>Lorem ipsum dolor..</p>
-                                <p>Ut enim ad..</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
+                        <div class="col-6">
                             <div class="box">
                                 <h3>Column 3</h3> 
                                 <p>Lorem ipsum dolor..</p>
@@ -96,31 +65,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container">
                     <div class="row">
-                        <div class="col-sm-3">
+                        <div class="col-6">
                             <div class="box">
                                 <h3>Column 3</h3> 
                                 <p>Lorem ipsum dolor..</p>
                                 <p>Ut enim ad..</p>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="box">
-                                <h3>Column 3</h3> 
-                                <p>Lorem ipsum dolor..</p>
-                                <p>Ut enim ad..</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="box">
-                                <h3>Column 3</h3> 
-                                <p>Lorem ipsum dolor..</p>
-                                <p>Ut enim ad..</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
+                        <div class="col-6">
                             <div class="box">
                                 <h3>Column 3</h3> 
                                 <p>Lorem ipsum dolor..</p>
@@ -129,6 +82,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="container">
                     <div class="row">
                         <div id="ajax_test">ciao
@@ -139,14 +93,14 @@
             <footer class="section footer-classic context-dark bg-image myfooter">
                 <div class="container">
                     <div class="row row-30">
-                        <div class="col-sm-4">
-                            
-                                <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and curiosity among all human beings.</p>
-                                <!-- Rights-->
-                                <p class="rights"> &copy; 2019 BookBook. All Rights Reserved.</p>
-                            
+                        <div class="col-4">
+
+                            <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and curiosity among all human beings.</p>
+                            <!-- Rights-->
+                            <p class="rights"> &copy; 2019 BookBook. All Rights Reserved.</p>
+
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-4">
                             <h5>Contacts</h5>
                             <dl class="contact-list">
                                 <dt>Address:</dt>
@@ -162,7 +116,7 @@
                                 </dd>
                             </dl>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-4">
                             <h5>Links</h5>
                             <ul class="nav-list">
                                 <li><a href="#" class="blacklink">About</a></li>

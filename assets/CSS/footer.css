@@ -40,12 +40,6 @@ ul, ol {
     transition: .22s ease;
     text-decoration: none;
 }
-.box{
-    border:1px solid #ccc;
-    padding:20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
 .myfooter{
     margin-top: 10px;
     background: #2d3246;
