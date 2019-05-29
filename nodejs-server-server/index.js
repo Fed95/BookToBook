@@ -15,7 +15,7 @@ require('dotenv').config();
 
 
 
-var knex = require('knex')({
+var dB = require('knex')({
   debug: true,
   client: 'pg',
   connection: process.env.DATABASE_URL,
