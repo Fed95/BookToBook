@@ -1,7 +1,7 @@
 'use strict';
 
 var pg = require("../index.js");
-var dB = pg.dB;
+var knex = pg.dB;
 
 /**
  * Find books by title
@@ -12,11 +12,12 @@ var dB = pg.dB;
  **/
 
 
-
 exports.getBookByTitle = function(title) {
-    // query example (only get not by title)
+    // query example (returns all books independently by the specified title)
     return new Promise(function (resolve, reject) {
-        let myQuery = dB("new_schema.book")
+
+        console.log("Pippo");
+        let myQuery = knex('new_schema.book').where("id", 1).select().toSQL()
             .then(result => {
                 resolve(result)
             });

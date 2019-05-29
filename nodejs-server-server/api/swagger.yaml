@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: "This is our BookBook server"
+  description: "This is our BookToBook server"
   version: "1.0.0"
   title: "BookBook"
 host: "booktobook.herokuapp.com"

@@ -15,7 +15,7 @@ require('dotenv').config();
 
 
 
-var dB = require('knex')({
+var knex = require('knex')({
   debug: true,
   client: 'pg',
   connection: process.env.DATABASE_URL,
@@ -32,9 +32,8 @@ exports.dB = dB;
 //---------------------------------------------------------------
 //---------------------------------------------------------------
 
-var fs = require('fs'),
-    http = require('http');
-
+var fs = require('fs')
+var http = require('http');
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var serverPort = 8080;
@@ -66,7 +65,7 @@ var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
 
-// Initialize the Swagger middleware
+//  Initialize the Swagger middleware
 swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
