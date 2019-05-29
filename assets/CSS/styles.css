@@ -56,3 +56,5 @@
     padding-right: 0px;
     padding-left: 0px;
 }
+#page-container {  position: relative;  min-height: 120vh;}
+#content-wrap {  padding-bottom: 22rem;    /* Footer height */}
