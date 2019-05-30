@@ -13,7 +13,7 @@ const process = require("process");
 
 require('dotenv').config();
 
-
+console.log(process.env.DATABASE_URL)
 
 var knex = require('knex')({
   debug: true,
