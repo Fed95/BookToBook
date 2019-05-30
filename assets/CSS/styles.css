@@ -16,7 +16,6 @@
 [class*="col-"] {
   float: left;
   padding: 15px;
-  border: 1px solid red;
 }
 .jumbotron{
     background-color: #2DC7C2;
