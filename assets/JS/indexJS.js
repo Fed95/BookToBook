@@ -1,6 +1,8 @@
 function test(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
+        console.log(this)
+        console.log("AAA", this.responseText)
         if (this.readyState == 4 && this.status == 200) {
             $('#ajax_test').html(this.responseText);
         }

@@ -41,6 +41,9 @@ var serverPort = 8080;
 const express = require('express');
 const app = express();
 const path = require('path');
+var cors = require('cors');
+
+app.use(cors());
 
 // get html homepage
 app.get('/', function(req, res) {
