@@ -1,4 +1,6 @@
-/*
+/*var x = require("../../ip")
+console.log(x.ip)
+
 $(document).ready(function () {
     var formContainer = $("#searchbar-container");
     var form = $("#searchbar");
@@ -14,9 +16,9 @@ $(document).ready(function () {
 })
 
 */
-$(document).ready(function () {
-    $("#test").hide();
-});
+var ip = "https://booktobook.herokuapp.com/api"
+//var ip = "http://localhost:8080/api"
+
 
 
 function test(){
@@ -36,10 +38,9 @@ function test(){
     $(document).ready(function () {
         $("#test").show();
     });
-
-    xhttp.open("GET", "http://localhost:8080/api/book/" + input.val(), true);
+    console.log("url= ", ip + input.val());
+    xhttp.open("GET", ip+ "/book/" + input.val(), true);
     xhttp.send();
-    //$('#ajax_test').html("hello")
 }
 
 $(()=>{

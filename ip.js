@@ -1,3 +1,2 @@
 //export var ip = "https://booktobook.herokuapp.com"
-export var ip = "http://localhost:8080"
-
+export const ip = "http://localhost:8080"
