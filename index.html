@@ -13,6 +13,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="./assets/JS/indexJS.js"></script>
+
         <title>BookToBook</title>
     </head>
     <body>
@@ -21,13 +22,13 @@
                 <div class="jumbotron">
                     <div class="row" >
                         <img class="logo" src="./assets/Images/logo_transparent.png" width="200" height="200" >
-                        <div class="pad" vertical-align="center">
-                            <form class="form-inline" >
+                        <div id="searchbar-container" class="pad" vertical-align="center">
+                            <form id="searchbar" class="form-inline">
                                 <div class="col-9">
-                                    <input class="form-control" type="search" placeholder="Book, Author or Event" aria-label="Search">
+                                    <input id="searchbar-input" class="form-control" type="text" placeholder="Book, Author or Event" aria-label="Search">
                                 </div>
                                 <div class="col-3">
-                                    <button class="btn btn-outline-success btn-search" type="submit">Search</button>
+                                    <button id="main-search-btn" class="btn btn-outline-success btn-search" type="button">Search</button>
                                 </div>
                             </form>
                         </div>
@@ -48,7 +49,8 @@
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
-                <div class="container">
+
+                <div id="homepage-container" class="container">
                     <div class="row row-30">
                         <div class="col-6">
                             <div class="box">
@@ -162,13 +164,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="container">
-                    <div class="row">
-                        <div id="ajax_test">ciao
-                        </div>
-                    </div>
+                <div id="test" class="container">
+                    <p id="test-text">Waiting for response...</p>
+                    <a href="index.html">Go Back</a>
                 </div>
+
             </div>
             <footer class="section footer-classic context-dark bg-image myfooter">
                 <div class="container">
@@ -209,4 +209,12 @@
                 </div>
             </footer>
         </div>
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script scr="assets/JS/indexJS/js"></script>
     </body>
+</html>

@@ -32,7 +32,7 @@ exports.knex = knex;
 //---------------------------------------------------------------
 //---------------------------------------------------------------
 
-var fs = require('fs')
+var fs = require('fs');
 var http = require('http');
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');

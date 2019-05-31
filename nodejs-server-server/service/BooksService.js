@@ -15,9 +15,8 @@ var knex = pg.knex;
 exports.getBookByTitle = function(title) {
     // query example (returns all books independently by the specified title)
     return new Promise(function (resolve, reject) {
-
         console.log("---------------executing getBookByTitle---------------------");
-        let myQuery = knex('new_schema.book').select().where("id", "1")
+        let myQuery = knex('new_schema.book').select().where( 'title', title)
             .then(result => {
                 resolve(result)
             });
