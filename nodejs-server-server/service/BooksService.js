@@ -17,10 +17,13 @@ exports.getBookByTitle = function(title) {
     return new Promise(function (resolve, reject) {
         console.log("---------------executing getBookByTitle---------------------");
         console.log("title: '" + title + "'");
-        let myQuery = knex('new_schema.books').select().where( 'title', 'like', '%'+title+'%')
+        var lowerTitle = title.toLowerCase()
+        let myQuery = knex('new_schema.books').select().where( 'title', 'like', '%'+lowerTitle+'%')
             .then(result => {
                 resolve(result)
             });
     })
 };
 
+//knex.raw('select * from "new_schema"."books" where LOWER("title") like ?', '%'+title+'%')
+//

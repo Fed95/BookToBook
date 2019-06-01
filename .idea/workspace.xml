@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="Changed query path to match database">
+      <change beforePath="$PROJECT_DIR$/assets/JS/searchJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/searchJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -43,20 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/searchJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="750">
+              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+            <state relative-caret-position="221">
+              <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -87,6 +88,7 @@
       <find>bower</find>
       <find>bootstrap.min.js</find>
       <find>indexJS</find>
+      <find>knex config</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,8 +120,8 @@
         <option value="$PROJECT_DIR$/assets/JS/indexJS.js" />
         <option value="$PROJECT_DIR$/search.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" />
         <option value="$PROJECT_DIR$/assets/JS/searchJS.js" />
+        <option value="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" />
       </list>
     </option>
   </component>
@@ -280,7 +282,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60572000" />
+    <option name="totallyTimeSpent" value="64415000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -292,16 +303,16 @@
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.90768147" weight="0.25060242" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.90768147" visible="true" weight="0.44216868" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22650602" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" weight="0.48554218" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.092318535" side_tool="true" weight="0.48554218" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -589,17 +600,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/searchJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        <state relative-caret-position="750">
+          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/searchJS.js">
+    <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="221">
+          <caret line="20" column="63" lean-forward="true" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
         </state>
       </provider>
     </entry>

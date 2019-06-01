@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/api";
-//var ip = "http://localhost:8080/api";
+//var ip = "https://booktobook.herokuapp.com/api";
+var ip = "http://localhost:8080/api";
 
 
 
@@ -31,12 +31,34 @@ const input = getUrlParameter('search-text');
 //---------------------------------------------------------------------
 //generating the query and handling the result
 //---------------------------------------------------------------------
+
+
+var displayFoundBooks = function(books_list) {
+    var serach_result_div = document.getElementById('search-result');
+    var parsed = JSON.parse(books_list);
+
+    //$('#search-result').html(JSON.stringify(parsed));
+
+    for(var book of parsed){
+        var t = document.createElement('h3');
+        var p = document.createElement('p');
+        t.textContent = book.title;
+        p.textContent = book.author;
+
+        serach_result_div.appendChild(t);
+        serach_result_div.appendChild(p);
+    }
+
+
+};
+
+
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     console.log("From searchJS.js, this.responseText = ", this.responseText);
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
-            $('#search-result').html(this.responseText);
+            displayFoundBooks(this.responseText);
         });
     }
 };
