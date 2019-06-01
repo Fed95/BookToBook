@@ -17,7 +17,7 @@ exports.getBookByTitle = function(title) {
     return new Promise(function (resolve, reject) {
         console.log("---------------executing getBookByTitle---------------------");
         console.log("title: '" + title + "'");
-        let myQuery = knex('new_schema.book').select().where( 'title', title)
+        let myQuery = knex('new_schema.book').select().where( 'title', 'like', '%'+title+'%')
             .then(result => {
                 resolve(result)
             });
