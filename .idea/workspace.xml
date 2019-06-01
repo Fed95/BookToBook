@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="Completed searchByTitle query">
-      <change beforePath="$PROJECT_DIR$/assets/JS/searchJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/searchJS.js" afterDir="false" />
+    <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="Changed query path to match database">
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/JS/searchJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -56,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+              <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/ip.js" />
         <option value="$PROJECT_DIR$/assets/JS/indexJS.js" />
         <option value="$PROJECT_DIR$/search.html" />
-        <option value="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" />
         <option value="$PROJECT_DIR$/assets/JS/searchJS.js" />
       </list>
     </option>
@@ -280,7 +280,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60037000" />
+    <option name="totallyTimeSpent" value="60572000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -298,7 +298,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22771084" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22650602" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" weight="0.48554218" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.092318535" side_tool="true" weight="0.48554218" />
       <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" visible="true" weight="0.32891566" />
@@ -356,7 +356,8 @@
     <MESSAGE value="Fixed knex typo" />
     <MESSAGE value="Installed CORS to perform queries on localhost" />
     <MESSAGE value="Completed searchByTitle query" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed searchByTitle query" />
+    <MESSAGE value="Changed query path to match database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed query path to match database" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
@@ -577,13 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -595,10 +589,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="44" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/searchJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
