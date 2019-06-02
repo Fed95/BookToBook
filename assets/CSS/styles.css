@@ -35,6 +35,7 @@
     align-items: center;
     display: flex;
     margin-right: 0px;
+    margin-left: 0px;
 }
 .form-inline {
     flex-direction: column;
@@ -107,6 +108,7 @@
 }
 .container{
     padding-right: 0px;
+    padding-left: 0px;
 }
 #page-container {  position: relative; min-height: 100vh;}
 #content-wrap {  padding-bottom: 23.5rem;    /* Footer height */}
