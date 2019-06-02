@@ -14,8 +14,8 @@
     .col-2-bigger-xs{
         width: 25%;
     }
-    col-9-bigger-xs{
-        width:75%;
+    .col-9-bigger-xs{
+        width:91.66%;
     }
 }
 @media (max-width: 800px){
