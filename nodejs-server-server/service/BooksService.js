@@ -25,5 +25,6 @@ exports.getBookByTitle = function(title) {
     })
 };
 
-//knex.raw('select * from "new_schema"."books" where LOWER("title") like ?', '%'+title+'%')
-//
+// knex.raw('select * from "new_schema"."books" where LOWER("title") like ?', '%'+title+'%')
+// knex('new_schema.books').select().where( 'title', 'like', '%'+lowerTitle+'%')
+// knex.select('*').from('new_schema.books').fullOuterJoin('new_schema.authors')
