@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/api";
-//var ip = "http://localhost:8080/api";
+//var ip = "https://booktobook.herokuapp.com/api";
+var ip = "http://localhost:8080/api";
 
 
 
@@ -43,7 +43,7 @@ var displayFoundBooks = function(books_list) {
         var t = document.createElement('h3');
         var p = document.createElement('p');
         t.textContent = book.title;
-        p.textContent = book.author;
+        p.textContent = book.name;
 
         serach_result_div.appendChild(t);
         serach_result_div.appendChild(p);
@@ -63,7 +63,6 @@ xhttp.onreadystatechange = function() {
     }
 };
 
-console.log("url= ", ip + "/book/" + input);
 xhttp.open("GET", ip + "/book/" + input, true);
 xhttp.send();
 
