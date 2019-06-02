@@ -68,6 +68,12 @@
     background-color: #139B8D;
     color: white;
 }
+.btn-search:default{
+    color: white;
+}
+.btn-search:focus{
+    outline:0;
+}
 
 .form-inline .form-control {
     width: 100%;
@@ -115,3 +121,4 @@
 @media (max-width: 600px){
     #content-wrap {  padding-bottom: 40rem;    /* Footer height */}
 }
+button:focus { outline:0 !important; }
