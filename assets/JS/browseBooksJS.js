@@ -77,7 +77,7 @@ var generateBookDiv = function (title, author_name, n) {
                     var $div6 = $("<div class = 'book-info'/>");
                     var $div7 = $("<div class = 'info'/>");
                         var $s7 = $("<span />"); $s7.html('Author:');
-                        var $p7 = $("<p />"); $p7.html(title);
+                        var $p7 = $("<p />"); $p7.html(author_name);
                     var $div8 = $("<div class = 'info'/>");
                         var $s8 = $("<span />"); $s8.html('Price:');
                         var $p8 = $("<p />"); $p8.html('moneyyy');
