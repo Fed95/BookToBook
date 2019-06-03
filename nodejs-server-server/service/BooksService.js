@@ -20,27 +20,12 @@ exports.getBookByTitle = function(title) {
         console.log("title: '" + title + "'");
         console.log("------------------------------------------------------------");
 
-        var lowerTitle = '%'+title.toLowerCase()+'%';
-
         let myQuery = knex('new_schema.books')
             .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
             .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
-            .where( 'title', 'like', lowerTitle)
+            .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", title)
             .then(result => {
                 resolve(result)
             });
     })
 };
-
-/*
-SELECT s.StudentID, s.FirstName, s.LastName,
-    sd.DonorOrdinal,
-    d.DonorType, d.DonorID, d.FirstName, d.LastName
-FROM student s
-LEFT JOIN student_donor sd ON s.StudentID = sd.StudentID
-LEFT JOIN donor d ON sd.DonorID = d.DonorID
-ORDER BY s.StudentID, sd.DonorOrdinal, d.DonorID
-*/
-// knex.raw('select * from "new_schema"."books" where LOWER("title") like ?', '%'+title+'%')
-// knex('new_schema.books').select().where( 'title', 'like', '%'+lowerTitle+'%')
-// knex.select('*').from('new_schema.books').fullOuterJoin('new_schema.authors')
