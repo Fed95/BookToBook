@@ -20,11 +20,12 @@ exports.getBookByTitle = function(title) {
         console.log("title: '" + title + "'");
         console.log("------------------------------------------------------------");
 
-        var lowerTitle = toString(title).toLowerCase();
+        var lowerTitle = '%'+title.toLowerCase()+'%';
+
         let myQuery = knex('new_schema.books')
             .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
             .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
-            .select('title', 'name')
+            .where( 'title', 'like', lowerTitle)
             .then(result => {
                 resolve(result)
             });
