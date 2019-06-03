@@ -71,7 +71,7 @@ var generateBookDiv = function (title, author_name, n) {
         var $div2 = $("<div class = 'row'/>");
             var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
                 var $div4 = $("<div class = 'book-img'/>");
-                    var $im = $("<img />", { src : "../assets/Images/GoT_Thumbnail.jpg"});
+                    var $im = $("<img />", { src : "../assets/Images/BookCovers/Thumbnails/game of thrones.jpg"});
             var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
                 var $h = $("<h3 />", {id : 'title', class : 'book-title'}); $h.html(title);
                     var $div6 = $("<div class = 'book-info'/>");
@@ -118,7 +118,7 @@ this is the structure of the book div
 1<div id="example-book-div" class="list-group-item clearfix">
    2 <div class="row">
        3 <div class="col-2 col-2-hidden-xs">
-           4 <div class="book-img"><img src="../assets/Images/GoT_Thumbnail.jpg"/></div>
+           4 <div class="book-img"><img src="../assets/Images/game of thrones.jpg"/></div>
         </div>
 
       5  <div class="col-8 col-8-bigger-xs">
