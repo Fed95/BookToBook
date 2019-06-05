@@ -4,11 +4,6 @@
     margin-left: auto;
     margin-right: auto
 }
-.booktitle{
-    font-size: 50px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
 .margin-top{
     margin-top: 50px;
 }
@@ -76,7 +71,7 @@ hr{
 }
 
 @media (max-width: 705px){
-    .booktitle{
+    .title{
         font-size: 30px;
     }
 }
@@ -99,6 +94,10 @@ hr{
 .review-line{
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.review-row{
+    margin-bottom: 30px;
+    margin-top: 30px; 
 }
 
 
