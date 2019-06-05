@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/api/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/api/swagger.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/Authors.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Authors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/AuthorsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/AuthorsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/Books.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Books.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/BooksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/BooksService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/EventsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/EventsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/Purchases.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Purchases.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/PurchasesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/PurchasesService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/json/swagger2.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/json/swagger2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/target/serverskeletons/nodejs/net.apispark.webapi.bookToBook.2cde1ced19254f3691bc4535cda47263-1.0.0.server.nodejs.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/HISTORY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/cors/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nodejs-server-server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="62" column="39" lean-forward="true" selection-start-line="40" selection-end-line="62" selection-end-column="39" />
+            <state relative-caret-position="1054">
+              <caret line="62" column="39" selection-start-line="40" selection-end-line="62" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -41,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/ip.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -64,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="19" />
+            <state relative-caret-position="374">
+              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -95,16 +89,16 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="255">
+              <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -194,7 +188,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -235,7 +229,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server/index.js" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -277,7 +271,7 @@
       </envs>
       <method v="2" />
     </configuration>
-    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/nodejs-server-server">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="Server/index.js" working-dir="$PROJECT_DIR$">
       <envs>
         <env name="DATABASE_URL" value="postgres://dxqvcntsnoifob:6265ac257abc9b67761fb960763182bac62aafa880f965d640d0a57dd64cc3f3@ec2-54-228-207-163.eu-west-1.compute.amazonaws.com:5432/dfn69dv2qvmdlk&#10;" />
         <env name="PGSSLMODE" value="require" />
@@ -317,6 +311,7 @@
       <workItem from="1559482354216" duration="16530000" />
       <workItem from="1559647137647" duration="163000" />
       <workItem from="1559720670458" duration="321000" />
+      <workItem from="1559743501342" duration="269000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -350,7 +345,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82219000" />
+    <option name="totallyTimeSpent" value="82734000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -362,23 +357,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1536" height="864" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0760507" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07534699" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.90768147" weight="0.20120482" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9066044" visible="true" weight="0.19971672" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22650602" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" weight="0.48554218" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.092318535" side_tool="true" weight="0.083333336" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" weight="0.48441926" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.0933956" side_tool="true" weight="0.19971672" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -501,27 +497,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/service/PetService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="10" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/utils/writer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js" />
     <entry file="file://$PROJECT_DIR$/nodejs-server-server/node_modules/knex/node_modules/pg-connection-string/test/parse.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -567,13 +542,6 @@
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/controllers/Pet.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -605,13 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/modernizr.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -639,13 +600,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/indexJS.js" />
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/search.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -684,31 +638,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nodejs-server-server/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="62" column="39" lean-forward="true" selection-start-line="40" selection-end-line="62" selection-end-column="39" />
+        <state relative-caret-position="1054">
+          <caret line="62" column="39" selection-start-line="40" selection-end-line="62" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/index.js">
+    <entry file="file://$PROJECT_DIR$/ip.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/controllers/Pet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/service/PetService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="10" selection-end-line="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="19" />
+        <state relative-caret-position="374">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/utils/writer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pet-store-nodejs-server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3281">
+          <caret line="193" column="29" selection-start-line="193" selection-start-column="29" selection-end-line="193" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="2" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
         </state>
       </provider>
     </entry>

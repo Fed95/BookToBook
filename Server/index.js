@@ -12,8 +12,8 @@ var jsyaml = require('js-yaml');
 var serverPort = 8080;
 
 const express = require('express');
-//const app = express();
-var app = require('connect')();
+const app = express();
+//var app = require('connect')();
 
 const path = require('path');
 var cors = require('cors');
