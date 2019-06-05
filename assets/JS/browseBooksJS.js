@@ -27,7 +27,9 @@ var getUrlParameter = function getUrlParameter(sParam) {
 const input = getUrlParameter('search-text');
 
 
-
+//---------------------------------------------------------------------
+//generating the query
+//---------------------------------------------------------------------
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     //console.log("From searchJS.js, this.responseText = ", this.responseText);
@@ -44,7 +46,7 @@ xhttp.send();
 
 
 //---------------------------------------------------------------------
-//generating the query and handling the result
+//handling the result
 //---------------------------------------------------------------------
 
 var displayFoundBooks = function(books_list) {
@@ -111,9 +113,10 @@ var generateBookDiv = function (title, author_name, n) {
 
 
 
-
+//---------------------------------------------------------------------
+//this is the structure of the book div
+//---------------------------------------------------------------------
 /*
-this is the structure of the book div
 
 1<div id="example-book-div" class="list-group-item clearfix">
    2 <div class="row">
