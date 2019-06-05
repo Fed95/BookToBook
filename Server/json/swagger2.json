@@ -26,16 +26,35 @@
   }, {
     "name" : "Purchases"
   }, {
-    "name" : "Shopping Carts"
-  }, {
     "name" : "Reviews"
-  }, {
-    "name" : "Bridge tables"
   }, {
     "name" : "General"
   } ],
   "schemes" : [ "https", "http" ],
   "paths" : {
+    "/author/" : {
+      "get" : {
+        "tags" : [ "Authors" ],
+        "summary" : "Get all authors",
+        "operationId" : "getAuthor",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Author"
+            }
+          },
+          "404" : {
+            "description" : "Author not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/author/findByBook" : {
       "get" : {
         "tags" : [ "Authors" ],
@@ -141,6 +160,83 @@
         }
       }
     },
+    "/book/" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books by general Info",
+        "operationId" : "getBook",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Info",
+          "in" : "query",
+          "description" : "Information of the Book",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "Abstract Required",
+          "in" : "query",
+          "description" : "Flag to return the Abstract",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Image Required",
+          "in" : "query",
+          "description" : "Flag to return the Image",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Genres Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Themes Required",
+          "in" : "query",
+          "description" : "Flag to return the Thems",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Authors Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Authors' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Events Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Events' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "Info format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
     "/book/bestOfTheMonth" : {
       "get" : {
         "tags" : [ "Books" ],
@@ -214,6 +310,47 @@
           "required" : true,
           "type" : "string",
           "x-example" : "Alessandro Manzoni"
+        }, {
+          "name" : "Abstract Required",
+          "in" : "query",
+          "description" : "Flag to return the Abstract",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Image Required",
+          "in" : "query",
+          "description" : "Flag to return the Image",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Genres Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Themes Required",
+          "in" : "query",
+          "description" : "Flag to return the Themes",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Authors Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Authors' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Events Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Events' Information",
+          "required" : true,
+          "type" : "boolean"
         } ],
         "responses" : {
           "200" : {
@@ -250,6 +387,48 @@
           "required" : true,
           "type" : "string",
           "x-example" : "Licia Troisi new book presentation"
+        }, {
+          "name" : "Abstract Required",
+          "in" : "query",
+          "description" : "Flag to return the Abstract",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Image Required",
+          "in" : "query",
+          "description" : "Flag to return the Image",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Genres Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Themes Required",
+          "in" : "query",
+          "description" : "Flag to return the Themes",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Authors Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Authors' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Events Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Events' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
         } ],
         "responses" : {
           "200" : {
@@ -286,6 +465,48 @@
           "required" : false,
           "type" : "string",
           "x-example" : "fantasy"
+        }, {
+          "name" : "Abstract Required",
+          "in" : "query",
+          "description" : "Flag to return the Abstract",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Image Required",
+          "in" : "query",
+          "description" : "Flag to return the Image",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Genres Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Themes Required",
+          "in" : "query",
+          "description" : "Flag to return the Themes",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Authors' Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Authors' Infromation",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Events Infromation Required",
+          "in" : "query",
+          "description" : "Flag to return the Events' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
         } ],
         "responses" : {
           "200" : {
@@ -322,6 +543,47 @@
           "required" : false,
           "type" : "string",
           "x-example" : "family"
+        }, {
+          "name" : "Abstract Required",
+          "in" : "query",
+          "description" : "Flag to return the Abstract",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Image Required",
+          "in" : "query",
+          "description" : "Flag to return the Image",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Genres Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Themes Infromation",
+          "in" : "query",
+          "description" : "Flag to return the Themes",
+          "required" : true,
+          "type" : "boolean"
+        }, {
+          "name" : "Authors'Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Authors' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Events Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Events' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
         } ],
         "responses" : {
           "200" : {
@@ -358,6 +620,48 @@
           "required" : true,
           "type" : "string",
           "x-example" : "Re"
+        }, {
+          "name" : "Abstract Required",
+          "in" : "query",
+          "description" : "Flag to return the Abstract",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Image Required",
+          "in" : "query",
+          "description" : "Flag to return the Image",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Genres Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Themes Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Authors information Required",
+          "in" : "query",
+          "description" : "Flag to return the Authors' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Events Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Events' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
         } ],
         "responses" : {
           "200" : {
@@ -395,6 +699,48 @@
           "type" : "integer",
           "format" : "int64",
           "x-example" : 9781402894626
+        }, {
+          "name" : "Abstract Required",
+          "in" : "query",
+          "description" : "Flag to return the Abstract",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Image Required",
+          "in" : "query",
+          "description" : "Flag to return the Image",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Genres Required",
+          "in" : "query",
+          "description" : "Flag to return the Genres",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Themes Required",
+          "in" : "query",
+          "description" : "Flag to return the Themes",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Authors Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Authors' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
+        }, {
+          "name" : "Events Information Required",
+          "in" : "query",
+          "description" : "Flag to return the Events' Information",
+          "required" : true,
+          "type" : "boolean",
+          "default" : false
         } ],
         "responses" : {
           "200" : {
@@ -411,6 +757,29 @@
           },
           "404" : {
             "description" : "Book not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/event/" : {
+      "get" : {
+        "tags" : [ "Events" ],
+        "summary" : "Get all events",
+        "operationId" : "getEvent",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Event"
+            }
+          },
+          "404" : {
+            "description" : "Event not found",
             "schema" : {
               "$ref" : "#/definitions/Error"
             }
@@ -570,7 +939,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/Book"
+              "$ref" : "#/definitions/Genre"
             }
           },
           "404" : {
@@ -679,7 +1048,7 @@
     "/purchase/completed" : {
       "post" : {
         "tags" : [ "Purchases" ],
-        "summary" : "Set purchase as completed",
+        "summary" : "Set Purchase as completed",
         "operationId" : "postPurchaseCompleted",
         "parameters" : [ {
           "name" : "Date",
@@ -702,7 +1071,7 @@
     "/purchase/findByUser" : {
       "get" : {
         "tags" : [ "Purchases" ],
-        "summary" : "Get authors by user",
+        "summary" : "Get Purchases by user",
         "operationId" : "getPurchaseFindByUser",
         "produces" : [ "applications/json" ],
         "parameters" : [ {
@@ -770,8 +1139,34 @@
       },
       "post" : {
         "tags" : [ "Purchases" ],
-        "summary" : "Update Purchase",
+        "summary" : "Add book in Purchase",
         "operationId" : "postPurchasePurchaseID",
+        "parameters" : [ {
+          "name" : "PurchaseID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ISBN",
+          "in" : "query",
+          "description" : "ISBN of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Format error"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Purchases" ],
+        "summary" : "Delete book in Purchase",
+        "operationId" : "deletePurchasePurchaseID",
         "parameters" : [ {
           "name" : "PurchaseID",
           "in" : "path",
@@ -864,7 +1259,7 @@
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/Book"
+              "$ref" : "#/definitions/Theme"
             }
           },
           "404" : {
@@ -1012,43 +1407,34 @@
       "properties" : {
         "ISBN" : {
           "type" : "integer",
-          "format" : "int64",
-          "description" : "Book ID"
+          "format" : "int64"
         },
         "Title" : {
-          "type" : "string",
-          "description" : "Title of the Book"
+          "type" : "string"
         },
         "Abstract" : {
-          "type" : "string",
-          "description" : "Summary of the Book"
+          "type" : "string"
         },
         "Publication Date" : {
           "type" : "string",
-          "format" : "date-time",
-          "description" : "Date of Publication of the Book"
+          "format" : "date-time"
         },
         "Edition" : {
           "type" : "integer",
-          "format" : "int64",
-          "description" : "Edition of the Book"
+          "format" : "int64"
         },
         "Cover Image" : {
-          "type" : "string",
-          "description" : "Image of the Book"
+          "type" : "string"
         },
         "Publisher" : {
-          "type" : "string",
-          "description" : "Publisher of the Book"
+          "type" : "string"
         },
         "Number of Pages" : {
           "type" : "integer",
-          "format" : "int64",
-          "description" : "Pages of the Book"
+          "format" : "int64"
         },
         "Language" : {
-          "type" : "string",
-          "description" : "Language of the Book"
+          "type" : "string"
         }
       }
     },
@@ -1197,69 +1583,6 @@
         "Rating" : {
           "type" : "integer",
           "format" : "int64"
-        }
-      }
-    },
-    "WrittenBy" : {
-      "type" : "object",
-      "required" : [ "AuthorID", "ISBN" ],
-      "properties" : {
-        "AuthorID" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "ISBN" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "Author Interview" : {
-          "type" : "string"
-        }
-      }
-    },
-    "BoughtIn" : {
-      "type" : "object",
-      "required" : [ "ISBN", "PurchaseID", "Quantity" ],
-      "properties" : {
-        "PurchaseID" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "ISBN" : {
-          "type" : "integer",
-          "format" : "int64"
-        },
-        "Quantity" : {
-          "type" : "integer",
-          "format" : "int64"
-        }
-      }
-    },
-    "BookTheme" : {
-      "type" : "object",
-      "required" : [ "ISBN", "Theme Name" ],
-      "properties" : {
-        "Theme Name" : {
-          "type" : "string",
-          "description" : "Name of the Book Theme"
-        },
-        "ISBN" : {
-          "type" : "string",
-          "description" : "ISBN of the Book"
-        }
-      }
-    },
-    "BookGenre" : {
-      "type" : "object",
-      "required" : [ "Genre Name", "ISBN" ],
-      "properties" : {
-        "Genre Name" : {
-          "type" : "string",
-          "description" : "Name of the book genre"
-        },
-        "ISBN" : {
-          "type" : "string",
-          "description" : "ISBN of the book"
         }
       }
     },

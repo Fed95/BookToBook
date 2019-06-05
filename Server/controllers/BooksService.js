@@ -1,5 +1,27 @@
 'use strict';
 
+exports.getBook = function(args, res, next) {
+  /**
+   * parameters expected in the args:
+  * info (String)
+  * abstract Required (Boolean)
+  * image Required (Boolean)
+  * genres Required (Boolean)
+  * themes Required (Boolean)
+  * authors Information Required (Boolean)
+  * events Information Required (Boolean)
+  **/
+    var examples = {};
+    if(Object.keys(examples).length > 0) {
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+  }
+  else {
+    res.end();
+  }
+  
+}
+
 exports.getBookBestOfTheMonth = function(args, res, next) {
   /**
    * parameters expected in the args:
@@ -20,6 +42,12 @@ exports.getBookByTitle = function(args, res, next) {
   /**
    * parameters expected in the args:
   * title (String)
+  * abstract Required (Boolean)
+  * image Required (Boolean)
+  * genres Required (Boolean)
+  * themes Required (Boolean)
+  * authors information Required (Boolean)
+  * events Information Required (Boolean)
   **/
     var examples = {};
   examples['application/json'] = {
@@ -62,6 +90,12 @@ exports.getBookFindByAuthor = function(args, res, next) {
   /**
    * parameters expected in the args:
   * firstName (String)
+  * abstract Required (Boolean)
+  * image Required (Boolean)
+  * genres Required (Boolean)
+  * themes Required (Boolean)
+  * authors Information Required (Boolean)
+  * events Information Required (Boolean)
   **/
     var examples = {};
     if(Object.keys(examples).length > 0) {
@@ -78,6 +112,12 @@ exports.getBookFindByEvent = function(args, res, next) {
   /**
    * parameters expected in the args:
   * name (String)
+  * abstract Required (Boolean)
+  * image Required (Boolean)
+  * genres Required (Boolean)
+  * themes Required (Boolean)
+  * authors Information Required (Boolean)
+  * events Information Required (Boolean)
   **/
     var examples = {};
     if(Object.keys(examples).length > 0) {
@@ -93,6 +133,12 @@ exports.getBookFindByEvent = function(args, res, next) {
 exports.getBookFindByGenre = function(args, res, next) {
   /**
    * parameters expected in the args:
+  * abstract Required (Boolean)
+  * image Required (Boolean)
+  * genres Required (Boolean)
+  * themes Required (Boolean)
+  * authors&#39; Information Required (Boolean)
+  * events Infromation Required (Boolean)
   * genre (String)
   **/
     var examples = {};
@@ -109,6 +155,12 @@ exports.getBookFindByGenre = function(args, res, next) {
 exports.getBookFindByTheme = function(args, res, next) {
   /**
    * parameters expected in the args:
+  * abstract Required (Boolean)
+  * image Required (Boolean)
+  * genres Required (Boolean)
+  * themes Infromation (Boolean)
+  * authors&#39;Information Required (Boolean)
+  * events Information Required (Boolean)
   * theme (String)
   **/
     var examples = {};
@@ -126,6 +178,12 @@ exports.getBookISBN = function(args, res, next) {
   /**
    * parameters expected in the args:
   * iSBN (Long)
+  * abstract Required (Boolean)
+  * image Required (Boolean)
+  * genres Required (Boolean)
+  * themes Required (Boolean)
+  * authors Information Required (Boolean)
+  * events Information Required (Boolean)
   **/
     var examples = {};
     if(Object.keys(examples).length > 0) {

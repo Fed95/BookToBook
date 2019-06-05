@@ -6,6 +6,10 @@ var url = require('url');
 var Events = require('./EventsService');
 
 
+module.exports.getEvent = function getEvent (req, res, next) {
+  Events.getEvent(req.swagger.params, res, next);
+};
+
 module.exports.getEventEventID = function getEventEventID (req, res, next) {
   Events.getEventEventID(req.swagger.params, res, next);
 };
