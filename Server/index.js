@@ -1,22 +1,75 @@
 'use strict';
 
-var app = require('connect')();
+
+'use strict';
+
+var exports = module.exports = {};
+
+var fs = require('fs');
 var http = require('http');
 var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
-var fs = require('fs');
 var serverPort = 8080;
+
+const express = require('express');
+const app = express();
+//var app = require('connect')();
+
+const path = require('path');
+var cors = require('cors');
+
+
+
+
+//---------------------------------------------------------------
+// Connection to Database
+//---------------------------------------------------------------
+
+/*const bodyParser = require("body-parser");
+const _ = require("lodash");*/
+
+const process = require("process");
+
+require('dotenv').config();
+
+
+var knex = require('knex')({
+  debug: true,
+  client: 'pg',
+  connection: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+exports.knex = knex;
+
+//---------------------------------------------------------------
+//---------------------------------------------------------------
+
+
+app.use(cors());
+
+// get html homepage
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../index.html'));
+});
+
+app.use(express.static(__dirname+'/..'));
+
+app.listen(process.env.PORT || 4000, function(){
+  console.log('Your node js server is running');
+});
 
 // swaggerRouter configuration
 var options = {
-  swaggerUi: '/swagger.json',
-  controllers: './controllers',
-  useStubs: process.env.NODE_ENV === 'development' ? true : false // Conditionally turn on stubs (mock mode)
+  swaggerUi: path.join(__dirname, '/swagger.json'),
+  controllers: path.join(__dirname, './controllers'),
+  useStubs: process.env.NODE_ENV === 'development' // Conditionally turn on stubs (mock mode)
 };
 
 // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
-var spec = fs.readFileSync('./api/swagger.yaml', 'utf8');
+var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
+
 
 // Initialize the Swagger middleware
 swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {

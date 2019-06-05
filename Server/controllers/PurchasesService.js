@@ -1,5 +1,15 @@
 'use strict';
 
+exports.deletePurchasePurchaseID = function(args, res, next) {
+  /**
+   * parameters expected in the args:
+  * purchaseID (String)
+  * iSBN (Long)
+  **/
+  // no response value expected for this operation
+  res.end();
+}
+
 exports.getPurchaseFindByUser = function(args, res, next) {
   /**
    * parameters expected in the args:

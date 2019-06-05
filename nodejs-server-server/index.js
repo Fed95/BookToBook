@@ -2,6 +2,17 @@
 
 var exports = module.exports = {};
 
+var fs = require('fs');
+var http = require('http');
+var swaggerTools = require('swagger-tools');
+var jsyaml = require('js-yaml');
+var serverPort = 8080;
+
+const express = require('express');
+const app = express();
+const path = require('path');
+var cors = require('cors');
+
 //---------------------------------------------------------------
 // Connection to Database
 //---------------------------------------------------------------
@@ -13,7 +24,6 @@ const process = require("process");
 
 require('dotenv').config();
 
-console.log(process.env.DATABASE_URL)
 
 var knex = require('knex')({
   debug: true,
@@ -24,24 +34,9 @@ var knex = require('knex')({
 
 exports.knex = knex;
 
-
-
-
-
-
 //---------------------------------------------------------------
 //---------------------------------------------------------------
 
-var fs = require('fs');
-var http = require('http');
-var swaggerTools = require('swagger-tools');
-var jsyaml = require('js-yaml');
-var serverPort = 8080;
-
-const express = require('express');
-const app = express();
-const path = require('path');
-var cors = require('cors');
 
 app.use(cors());
 

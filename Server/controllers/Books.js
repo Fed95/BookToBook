@@ -6,6 +6,10 @@ var url = require('url');
 var Books = require('./BooksService');
 
 
+module.exports.getBook = function getBook (req, res, next) {
+  Books.getBook(req.swagger.params, res, next);
+};
+
 module.exports.getBookBestOfTheMonth = function getBookBestOfTheMonth (req, res, next) {
   Books.getBookBestOfTheMonth(req.swagger.params, res, next);
 };

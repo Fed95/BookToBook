@@ -6,6 +6,10 @@ var url = require('url');
 var Purchases = require('./PurchasesService');
 
 
+module.exports.deletePurchasePurchaseID = function deletePurchasePurchaseID (req, res, next) {
+  Purchases.deletePurchasePurchaseID(req.swagger.params, res, next);
+};
+
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
   Purchases.getPurchaseFindByUser(req.swagger.params, res, next);
 };
