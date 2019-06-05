@@ -7,9 +7,10 @@
 .booktitle{
     font-size: 50px;
     margin-top: 0px;
+    margin-bottom: 5px;
 }
 .margin-top{
-   margin-top: 50px;
+    margin-top: 50px;
 }
 .margin-bottom{
     margin-bottom: 70px;
@@ -24,6 +25,7 @@ p{
     margin: 0px;
 }
 .authorrow{
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 .authorcontainer{
@@ -56,6 +58,23 @@ hr{
     }
     .bookcontainer{
         width: 91.66%;
+    }
+    .hid{
+        display: none;
+    } 
+    .small-screen-image{
+        display:block;
+    }
+}
+@media(min-width: 440px){
+   .small-screen-image{
+        display: none;
+    } 
+}
+
+@media (max-width: 705px){
+    .booktitle{
+        font-size: 30px;
     }
 }
 
