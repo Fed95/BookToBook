@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
@@ -14,8 +14,8 @@
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 [class*="col-"] {
-    float: left;
-    padding: 15px;
+  float: left;
+  padding: 15px;
 }
 .jumbotron{
     background-color: #2DC7C2;
@@ -25,27 +25,12 @@
     margin-bottom:0px;
     padding-bottom: 0px;
     padding-top: 0px;
-    text-align: center;
 }
 
-.title-container{
-    text-align: center;
-}
-.title-img{
-    font-size: 100px;
-    font-weight: 900;
-    display: inline;
-}
-.title-txt{
-    font-size: 80px;
-    font-weight: 500;
-    display: inline;
-}
 .card{
     background-color: #2DC7C2; 
     border: none;
 }
-ˆ
 .row{
     align-items: center;
     display: flex;
@@ -55,14 +40,14 @@
 .form-inline {
     flex-direction: column;
     align-items: stretch;
-}
+  }
 .form-inline input {
-    vertical-align: middle;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    width: inherit;
-    height: 100%;
+  vertical-align: middle;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: inherit;
+  height: 100%;
 }
 .btn-search {
     height: 100%;
@@ -92,7 +77,7 @@
 
 .form-inline .form-control {
     width: 100%;
-
+    
 }
 .pad{
     padding-left: 60px;
@@ -101,6 +86,9 @@
     width: 83.33%;
 }
 @media (max-width: 768px){
+    .logo{
+        display: none;
+    }
     .pad{
         padding-left: 10px;
         width: 100%;
@@ -108,16 +96,6 @@
     .navbar-collapse{
         margin-left: 0px;
         margin-right: 0px;
-    }
-    .title-img{
-        font-size: 50px;
-        font-weight: 900;
-        display: inline;
-    }
-    .title-txt{
-        font-size: 40px;
-        font-weight: 500;
-        display: inline;
     }
 }
 .form-inline>.col-9{
@@ -145,3 +123,13 @@
 }
 button:focus { outline:0 !important; }
 
+.title-img{
+    font-size: 100px;
+    font-weight: 900;
+    display: inline;
+}
+.title-txt{
+    font-size: 80px;
+    font-weight: 500;
+    display: inline;
+}
