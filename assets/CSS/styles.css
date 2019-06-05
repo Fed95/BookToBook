@@ -25,6 +25,18 @@
     margin-bottom:0px;
     padding-bottom: 0px;
     padding-top: 0px;
+    text-align: center;
+}
+
+.title-img{
+    font-size: 100px;
+    font-weight: 900;
+    display: inline;
+}
+.title-txt{
+    font-size: 80px;
+    font-weight: 500;
+    display: inline;
 }
 
 .card{
@@ -123,13 +135,3 @@
 }
 button:focus { outline:0 !important; }
 
-.title-img{
-    font-size: 100px;
-    font-weight: 900;
-    display: inline;
-}
-.title-txt{
-    font-size: 80px;
-    font-weight: 500;
-    display: inline;
-}
