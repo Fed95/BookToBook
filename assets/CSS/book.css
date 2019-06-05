@@ -1,5 +1,5 @@
 .bookcover{
-    width: 90%;
+    width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto
@@ -8,7 +8,21 @@
     font-size: 50px;
     margin-top: 0px;
 }
-.margin{
-    
+.margin-top{
+   margin-top: 50px;
 }
-
+.margin-bottom{
+    margin-bottom: 70px;
+}
+.bookcontainer{
+    padding: 0px;
+}
+.authorlink:hover{
+    text-decoration: none;
+}
+p{
+    margin: 0px;
+}
+.authorrow{
+    margin-bottom: 10px;
+}
