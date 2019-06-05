@@ -32,3 +32,6 @@
 .noleft-pad{
     padding-left: 0px;
 }
+.btn-add-book{
+    background-color:lightgray;
+}
