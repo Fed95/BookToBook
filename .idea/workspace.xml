@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/book.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/contactUs.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/contactUs.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/loginStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/loginStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ContactUs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/_testContactUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contactUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseBooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/loginPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/search.html" afterDir="false" />
-    </list>
+    <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -305,7 +292,7 @@
       <workItem from="1559647137647" duration="163000" />
       <workItem from="1559720670458" duration="321000" />
       <workItem from="1559743501342" duration="269000" />
-      <workItem from="1559770188465" duration="1308000" />
+      <workItem from="1559770188465" duration="1611000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -339,7 +326,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84871000" />
+    <option name="totallyTimeSpent" value="85174000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

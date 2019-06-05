@@ -99,5 +99,7 @@ hr{
     margin-bottom: 30px;
     margin-top: 30px; 
 }
-
+.btn-add-book{
+    background-color:lightgray;
+}
 
