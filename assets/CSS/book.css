@@ -29,3 +29,8 @@ p{
 .authorcontainer{
     margin-right: 10px;
 }
+@media (max-width: 440px){
+    .bookcover{
+        display: none;
+    }
+}
