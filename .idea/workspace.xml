@@ -18,7 +18,11 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -257,7 +261,8 @@
       <workItem from="1559230452608" duration="6848000" />
       <workItem from="1559289962231" duration="13381000" />
       <workItem from="1559482354216" duration="16530000" />
-      <workItem from="1559647137647" duration="54000" />
+      <workItem from="1559647137647" duration="163000" />
+      <workItem from="1559720670458" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -291,7 +296,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81260000" />
+    <option name="totallyTimeSpent" value="81690000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,7 +621,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js">
       <provider selected="true" editor-type-id="text-editor">
