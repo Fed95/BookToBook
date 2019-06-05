@@ -65,6 +65,9 @@ hr{
     .small-screen-image{
         display:block;
     }
+    hr{
+        width: 93%;
+    }
 }
 @media(min-width: 440px){
    .small-screen-image{
@@ -76,6 +79,26 @@ hr{
     .booktitle{
         font-size: 30px;
     }
+}
+.review{
+    margin-top: 5px;
+}
+.reviewername{
+    font-size: 20px;
+}
+.no-pad{
+    padding:0px;
+}
+.only-left-pad{
+    padding: 0px;
+    padding-left: 8px;
+}
+.review-text{
+    text-align: justify;
+}
+.review-line{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 
