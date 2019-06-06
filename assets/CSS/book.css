@@ -1,23 +1,14 @@
-.bookcover{
+.singleItemImage{
     width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto
 }
-.margin-top{
-    margin-top: 50px;
-}
-.margin-bottom{
-    margin-bottom: 70px;
-}
-.bookcontainer{
+.singleItemContainer{
     padding: 0px;
 }
 .authorlink:hover{
     text-decoration: none;
-}
-p{
-    margin: 0px;
 }
 .authorrow{
     margin-top: 5px;
@@ -26,80 +17,3 @@ p{
 .authorcontainer{
     margin-right: 10px;
 }
-.abstract{
-    text-align: justify;
-}
-hr{
-    border-top-color: darkgray;
-    border-top-width: 1px;
-}
-.technical{
-    font-size: 13px;
-    color:#878484;
-}
-.buybook{
-    margin-top: 50px;
-}
-.buybook>.col-8{
-    padding: 0px;
-    padding-top: 18.6px;
-    font-size: 18px; 
-}
-
-
-@media (max-width: 440px){
-    .bookcover{
-        display: none;
-    }
-    .bookcontainer{
-        width: 91.66%;
-    }
-    .hid{
-        display: none;
-    } 
-    .small-screen-image{
-        display:block;
-    }
-    hr{
-        width: 93%;
-    }
-}
-@media(min-width: 440px){
-   .small-screen-image{
-        display: none;
-    } 
-}
-
-@media (max-width: 705px){
-    .title{
-        font-size: 30px;
-    }
-}
-.review{
-    margin-top: 5px;
-}
-.reviewername{
-    font-size: 20px;
-}
-.no-pad{
-    padding:0px;
-}
-.only-left-pad{
-    padding: 0px;
-    padding-left: 8px;
-}
-.review-text{
-    text-align: justify;
-}
-.review-line{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.review-row{
-    margin-bottom: 30px;
-    margin-top: 30px; 
-}
-.btn-add-book{
-    background-color:lightgray;
-}
-
