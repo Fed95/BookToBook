@@ -1,8 +1,5 @@
 'use strict';
 
-
-'use strict';
-
 var exports = module.exports = {};
 
 var fs = require('fs');
@@ -13,13 +10,8 @@ var serverPort = 8080;
 
 const express = require('express');
 const app = express();
-//var app = require('connect')();
-
 const path = require('path');
 var cors = require('cors');
-
-
-
 
 //---------------------------------------------------------------
 // Connection to Database

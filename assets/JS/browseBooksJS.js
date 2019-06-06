@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/api";
-//var ip = "http://localhost:8080/api";
+//var ip = "https://booktobook.herokuapp.com/api";
+var ip = "http://localhost:8080/api";
 
 
 
@@ -39,8 +39,9 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-
-xhttp.open("GET", ip + "/book/" + input, true);
+console.log(ip + "/book/findByTitle?title=Re");
+//https://booktobook.herokuapp.com/api/book/findByTitle?Title=Re&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false
+xhttp.open("GET", ip + "/book/findByTitle?Title=Waldo&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
 xhttp.send();
 
 

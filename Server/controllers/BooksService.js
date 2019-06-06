@@ -49,13 +49,17 @@ exports.getBookByTitle = function(args, res, next) {
   * authors information Required (Boolean)
   * events Information Required (Boolean)
   **/
+  console.log("INSIDE getBookByTitle.JS-------------------------------------");
+  console.log("args = ", args);
+  console.log("res = ", res);
+  console.log("next = ", next);
     var examples = {};
   examples['application/json'] = {
   "ISBN" : 123456789,
   "Publication Date" : "2000-01-23T04:56:07.000+00:00",
-  "Language" : "aeiou",
+  "Language" : "cacca",
   "Abstract" : "aeiou",
-  "Title" : "aeiou",
+  "Title" : "cacca",
   "Publisher" : "aeiou",
   "Edition" : 123456789,
   "Cover Image" : "aeiou",
@@ -69,7 +73,7 @@ exports.getBookByTitle = function(args, res, next) {
     res.end();
   }
   
-}
+};
 
 exports.getBookFavoriteReading = function(args, res, next) {
   /**
