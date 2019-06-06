@@ -110,10 +110,10 @@
         margin-right: 0px;
     }
 }
-.form-inline>.col-9{
+.form-inline>.col-8{
     padding-right: 0px;
 }
-.form-inline>.col-3{
+.form-inline>.col-4{
     padding-left: 0px;
 }
 .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
