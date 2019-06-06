@@ -38,3 +38,13 @@
 .btn-add-book{
     background-color:lightgray;
 }
+.list-group:empty:before{
+    font-size: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content:center;
+    color: #D2E0E6;
+    content: "Enter a search term to view some results :)";
+    display: flex;
+    margin-top: 50px;
+}
