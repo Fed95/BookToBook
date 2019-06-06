@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/api";
-//var ip = "http://localhost:8080/api";
+//var ip = "https://booktobook.herokuapp.com/api";
+var ip = "http://localhost:8080/api";
 
 
 
@@ -32,16 +32,13 @@ const input = getUrlParameter('search-text');
 //---------------------------------------------------------------------
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
-    //console.log("From searchJS.js, this.responseText = ", this.responseText);
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
             displayFoundBooks(this.responseText);
         });
     }
 };
-console.log(ip + "/book/findByTitle?title=Re");
-//https://booktobook.herokuapp.com/api/book/findByTitle?Title=Re&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false
-xhttp.open("GET", ip + "/book/findByTitle?Title=Waldo&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
+xhttp.open("GET", ip + "/book/findByTitle?Title="+input+"&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
 xhttp.send();
 
 

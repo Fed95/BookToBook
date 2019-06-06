@@ -1,8 +1,7 @@
 'use strict';
 
 var url = require('url');
-
-
+var utils = require('../utils/writer.js');
 var Books = require('./BooksService');
 
 
@@ -15,7 +14,18 @@ module.exports.getBookBestOfTheMonth = function getBookBestOfTheMonth (req, res,
 };
 
 module.exports.getBookByTitle = function getBookByTitle (req, res, next) {
-  Books.getBookByTitle(req.swagger.params, res, next);
+
+  var title = req.swagger.params['Title']['value'];
+  console.log("inside Books.js; title = ", title);
+
+  Books.getBookByTitle(title)
+      .then(function (response) {
+        utils.writeJson(res, response);
+      })
+      .catch(function (response) {
+        utils.writeJson(res, response);
+      });
+
 };
 
 module.exports.getBookFavoriteReading = function getBookFavoriteReading (req, res, next) {

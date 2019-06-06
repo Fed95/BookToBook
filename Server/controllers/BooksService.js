@@ -42,7 +42,7 @@ exports.getBookBestOfTheMonth = function(args, res, next) {
   
 }
 
-exports.getBookByTitle = function(args, res, next) {
+exports.getBookByTitle = function(title) {
   /**
    * parameters expected in the args:
   * title (String)
@@ -56,19 +56,20 @@ exports.getBookByTitle = function(args, res, next) {
 
   return new Promise(function (resolve, reject) {
 
-    var test_title = "Re"
 
     console.log("---------------executing getBookByTitle---------------------");
-    console.log("title: '" + test_title + "'");
+    console.log("title: '" + title + "'");
     console.log("------------------------------------------------------------");
 
     let myQuery = knex('new_schema.books')
         .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
         .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
-        .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", test_title)
+        .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", title)
         .then(result => {
+          console.log(result);
           resolve(result)
         });
+
   });
 
 /*

@@ -4,6 +4,7 @@ var utils = require('../utils/writer.js');
 var BooksService = require('../service/BooksService');
 
 module.exports.getBookByTitle = function getBookByTitle (req, res, next) {
+
   var title = req.swagger.params['title'].value;
   console.log("inside Books.js; title = ", title)
 
