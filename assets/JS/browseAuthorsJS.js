@@ -38,7 +38,7 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-xhttp.open("GET", ip + "/author/findByName?Name="+input, true);
+xhttp.open("GET", ip + "/author/findByName?Name=" + input, true);
 xhttp.send();
 
 
@@ -57,12 +57,14 @@ var displayFoundAuthors = function(authors_list) {
         var name = author.name;
         var bio = author.bio;
 
-        generateAuthorDiv(name, bio)
+        console.log(name);
+
+        generateAuthorDiv(name)
     }
 };
 
 
-var generateAuthorDiv = function (name, bio) {
+var generateAuthorDiv = function (name) {
 
     var $div1 = $("<div />", {class : "list-group-item clearfix"});
     var $div2 = $("<div class = 'row'/>");
@@ -73,11 +75,8 @@ var generateAuthorDiv = function (name, bio) {
     var $h = $("<h3 />", {id : 'title', class : 'book-title'}); $h.html(name);
     var $div6 = $("<div class = 'book-info'/>");
     var $div7 = $("<div class = 'info'/>");
-    var $s7 = $("<span />"); $s7.html('Bio:');
-    var $p7 = $("<p />"); $p7.html(bio);
-    var $div9 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
-    var $b9 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
-    $b9.html('Add to Cart')
+    var $s7 = $("<span />"); $s7.html('Info:');
+    var $p7 = $("<p class='bio'/>"); $p7.html("Probably Dead");
 
 
     $("#search-results-container").append($div1);
@@ -91,8 +90,6 @@ var generateAuthorDiv = function (name, bio) {
     $div6.append($div7);
     $div7.append($s7);
     $div7.append($p7);
-    $div2.append($div9);
-    $div9.append($b9);
 
 };
 

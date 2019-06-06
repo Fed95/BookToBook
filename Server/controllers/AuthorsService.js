@@ -1,4 +1,6 @@
 'use strict';
+var pg = require("../index.js");
+var knex = pg.knex;
 
 exports.getAuthor = function(args, res, next) {
   /**
@@ -56,13 +58,14 @@ exports.getAuthorFindByName = function(name) {
 
   return new Promise(function (resolve, reject) {
 
-
     console.log("---------------executing getAuthorFindByName---------------------");
     console.log("name: '" + name + "'");
-    console.log("------------------------------------------------------------");
+    console.log("-----------------------------------------------------------------");
+
 
     let myQuery = knex('new_schema.authors').whereRaw("LOWER(name) LIKE '%' || LOWER(?) || '%' ", name)
         .then(result => {
+          console.log("hello");
           console.log(result);
           resolve(result)
         });

@@ -1,8 +1,6 @@
 'use strict';
 
-var url = require('url');
-
-
+var utils = require('../utils/writer.js');
 var Authors = require('./AuthorsService');
 
 
@@ -20,8 +18,8 @@ module.exports.getAuthorFindByBook = function getAuthorFindByBook (req, res, nex
 
 module.exports.getAuthorFindByName = function getAuthorFindByName (req, res, next) {
 
-  var title = req.swagger.params['Name']['value'];
-  console.log("inside Authors.js; title = ", title);
+  var name = req.swagger.params['Name']['value'];
+  console.log("inside Authors.js; title = ", name);
 
   Authors.getAuthorFindByName(name)
       .then(function (response) {
@@ -31,5 +29,4 @@ module.exports.getAuthorFindByName = function getAuthorFindByName (req, res, nex
         utils.writeJson(res, response);
       });
 
-  Authors.getAuthorFindByName(req.swagger.params, res, next);
 };
