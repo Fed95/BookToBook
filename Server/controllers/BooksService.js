@@ -1,4 +1,6 @@
 'use strict';
+var pg = require("../index.js");
+var knex = pg.knex;
 
 exports.getBook = function(args, res, next) {
   /**
@@ -11,16 +13,18 @@ exports.getBook = function(args, res, next) {
   * authors Information Required (Boolean)
   * events Information Required (Boolean)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
+
+
+  var examples = {};
+  if(Object.keys(examples).length > 0) {
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
   }
   else {
     res.end();
   }
-  
-}
+
+};
 
 exports.getBookBestOfTheMonth = function(args, res, next) {
   /**
@@ -49,11 +53,26 @@ exports.getBookByTitle = function(args, res, next) {
   * authors information Required (Boolean)
   * events Information Required (Boolean)
   **/
-  console.log("INSIDE getBookByTitle.JS-------------------------------------");
-  console.log("args = ", args);
-  console.log("res = ", res);
-  console.log("next = ", next);
-    var examples = {};
+
+  return new Promise(function (resolve, reject) {
+
+    var test_title = "Re"
+
+    console.log("---------------executing getBookByTitle---------------------");
+    console.log("title: '" + test_title + "'");
+    console.log("------------------------------------------------------------");
+
+    let myQuery = knex('new_schema.books')
+        .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
+        .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+        .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", test_title)
+        .then(result => {
+          resolve(result)
+        });
+  });
+
+/*
+  var examples = {};
   examples['application/json'] = {
   "ISBN" : 123456789,
   "Publication Date" : "2000-01-23T04:56:07.000+00:00",
@@ -72,6 +91,8 @@ exports.getBookByTitle = function(args, res, next) {
   else {
     res.end();
   }
+
+ */
   
 };
 
@@ -88,7 +109,7 @@ exports.getBookFavoriteReading = function(args, res, next) {
     res.end();
   }
   
-}
+};
 
 exports.getBookFindByAuthor = function(args, res, next) {
   /**
@@ -110,7 +131,7 @@ exports.getBookFindByAuthor = function(args, res, next) {
     res.end();
   }
   
-}
+};
 
 exports.getBookFindByEvent = function(args, res, next) {
   /**
