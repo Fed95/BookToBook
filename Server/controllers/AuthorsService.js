@@ -47,19 +47,28 @@ exports.getAuthorFindByBook = function(args, res, next) {
   
 }
 
-exports.getAuthorFindByName = function(args, res, next) {
+exports.getAuthorFindByName = function(name) {
   /**
    * parameters expected in the args:
   * name (String)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+
+
+  return new Promise(function (resolve, reject) {
+
+
+    console.log("---------------executing getAuthorFindByName---------------------");
+    console.log("name: '" + name + "'");
+    console.log("------------------------------------------------------------");
+
+    let myQuery = knex('new_schema.authors').whereRaw("LOWER(name) LIKE '%' || LOWER(?) || '%' ", name)
+        .then(result => {
+          console.log(result);
+          resolve(result)
+        });
+
+  });
+
   
-}
+};
 
