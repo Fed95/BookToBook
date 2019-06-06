@@ -4,3 +4,10 @@
 .moremargbtn{
     margin-bottom: 20px;
 }
+.centered-row{
+    display: block;
+}
+#contact-us-container{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
