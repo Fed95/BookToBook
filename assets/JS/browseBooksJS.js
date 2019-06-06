@@ -52,22 +52,31 @@ var displayFoundBooks = function(books_list) {
     var parsed = JSON.parse(books_list);
     console.log("parsed: ", parsed);
 
-    //$('#search-result').html(JSON.stringify(parsed));
-    var counter = 0;
-    for(var book of parsed){
+    var grouped = _.groupBy(parsed, 'isbn');
 
-        var title = book.title;
-        var author = book.name;
+    for(var isbn in grouped){
 
-        generateBookDiv(title, author, counter)
-        counter += 1;
+        var books = grouped[isbn]; // NOTE: this is a list of tuples of the same book for the different authors
+
+        var title = books[0].title;
+        var authors = [];
+
+        for(var count in books){
+            authors.push(books[count].name);
+        }
+        var authors_string = authors.join(', ');
+
+        generateBookDiv(title, authors_string)
     }
 };
 
 
-var generateBookDiv = function (title, author_name, n) {
 
-    var $div1 = $("<div />", { id: "book-div-" + n, class : "list-group-item clearfix"});
+
+
+var generateBookDiv = function (title, authors) {
+
+    var $div1 = $("<div />", {class : "list-group-item clearfix"});
         var $div2 = $("<div class = 'row'/>");
             var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
                 var $div4 = $("<div class = 'book-img'/>");
@@ -77,7 +86,7 @@ var generateBookDiv = function (title, author_name, n) {
                     var $div6 = $("<div class = 'book-info'/>");
                     var $div7 = $("<div class = 'info'/>");
                         var $s7 = $("<span />"); $s7.html('Author:');
-                        var $p7 = $("<p />"); $p7.html(author_name);
+                        var $p7 = $("<p />"); $p7.html(authors);
                     var $div8 = $("<div class = 'info'/>");
                         var $s8 = $("<span />"); $s8.html('Price:');
                         var $p8 = $("<p />"); $p8.html('moneyyy');
