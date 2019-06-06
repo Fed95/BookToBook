@@ -1,0 +1,58 @@
+.singleItemImage{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+.margin-top{
+    margin-top: 50px;
+}
+.margin-bottom{
+    margin-bottom: 70px;
+}
+.singleItemContainer{
+    padding: 0px;
+}
+.textcontent{
+    text-align: justify;
+}
+hr{
+    border-top-color: darkgray;
+    border-top-width: 1px;
+}
+.technical{
+    font-size: 13px;
+    color:#878484;
+}
+
+
+@media (max-width: 440px){
+    .singleItemImage{
+        display: none;
+    }
+    .singleItemContainer{
+        width: 91.66%;
+    }
+    .hid{
+        display: none;
+    } 
+    .small-screen-image{
+        display:block;
+    }
+    hr{
+        width: 93%;
+    }
+}
+@media(min-width: 440px){
+   .small-screen-image{
+        display: none;
+    } 
+}
+
+@media (max-width: 705px){
+    .singleItemName{
+        font-size: 30px;
+    }
+}
+
+
