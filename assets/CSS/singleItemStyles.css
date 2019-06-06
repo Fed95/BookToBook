@@ -13,20 +13,7 @@
 .singleItemContainer{
     padding: 0px;
 }
-.authorlink:hover{
-    text-decoration: none;
-}
-p{
-    margin: 0px;
-}
-.authorrow{
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-.authorcontainer{
-    margin-right: 10px;
-}
-.abstract{
+.textcontent{
     text-align: justify;
 }
 hr{
@@ -36,14 +23,6 @@ hr{
 .technical{
     font-size: 13px;
     color:#878484;
-}
-.buybook{
-    margin-top: 50px;
-}
-.buybook>.col-8{
-    padding: 0px;
-    padding-top: 18.6px;
-    font-size: 18px; 
 }
 
 
@@ -71,35 +50,9 @@ hr{
 }
 
 @media (max-width: 705px){
-    .title{
+    .singleItemName{
         font-size: 30px;
     }
 }
-.review{
-    margin-top: 5px;
-}
-.reviewername{
-    font-size: 20px;
-}
-.no-pad{
-    padding:0px;
-}
-.only-left-pad{
-    padding: 0px;
-    padding-left: 8px;
-}
-.review-text{
-    text-align: justify;
-}
-.review-line{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.review-row{
-    margin-bottom: 30px;
-    margin-top: 30px; 
-}
-.btn-add-book{
-    background-color:lightgray;
-}
+
 

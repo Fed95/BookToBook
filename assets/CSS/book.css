@@ -1,14 +1,43 @@
-.singleItemImage{
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+.buybook{
+    margin-top: 50px;
 }
-.singleItemContainer{
+.buybook>.col-8{
     padding: 0px;
+    padding-top: 18.6px;
+    font-size: 18px;
+}
+.review-text{
+    text-align: justify;
+}
+.review-line{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.review-row{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.btn-add-book{
+    background-color:lightgray;
+}
+.review{
+    margin-top: 5px;
+}
+.reviewername{
+    font-size: 20px;
+}
+.no-pad{
+    padding:0px;
+}
+.only-left-pad{
+    padding: 0px;
+    padding-left: 8px;
 }
 .authorlink:hover{
     text-decoration: none;
+}
+p{
+    margin: 0px;
 }
 .authorrow{
     margin-top: 5px;
