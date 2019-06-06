@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../assets/CSS/styles.css">
         <link rel="stylesheet" href="../assets/CSS/footer.css">
         <link rel="stylesheet" href="../assets/CSS/navbar.css">
-        <link rel="stylesheet" href="../assets/CSS/author.css">
+        <link rel="stylesheet" href="../assets/CSS/browse.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
@@ -44,6 +44,27 @@
                 </nav>
 
                 <div id="homepage-container" class="container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2 col-2-hidden-xs"></div>
+                            <div class="col-9 col-9-bigger-xs">
+                                <div id="searchbar-container" class="pad" vertical-align="center">
+                                    <form id="searchbar" class="form-inline" action="" method="get">
+                                        <div class="col-9 no-pad-left-xs">
+                                            <input name="search-text" id="searchbar-input" class="form-control" type="text"
+                                                   placeholder="Author Name" aria-label="Search">
+                                        </div>
+                                        <div class="col-3">
+                                            <button id="main-search-btn" class="btn btn-outline-success btn-search" type="input">
+                                                Search Author
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer class="section footer-classic context-dark bg-image myfooter">
@@ -86,7 +107,7 @@
             </footer>
         </div>
         <!-- Bootstrap core JavaScript
-        ================================================== -->
+================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery.min.js"><\/script>')</script>

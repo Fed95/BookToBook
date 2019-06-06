@@ -17,6 +17,9 @@
     .col-9-bigger-xs{
         width:91.66%;
     }
+    .no-pad-left-xs{
+        padding-left: 0px;
+    }
 }
 @media (max-width: 800px){
     .hidden-s{
