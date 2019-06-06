@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Server/controllers/Authors.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Authors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/AuthorsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/AuthorsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/browse.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/browse.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/AuthorPictures/Quentin Blake.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/AuthorPictures/Quentin Blake.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/AuthorPictures/Thumbnails/Quentin Blake.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/AuthorPictures/Thumbnails/Quentin Blake.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseAuthors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseAuthors.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,6 +25,11 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/controllers/AuthorsService.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -42,7 +42,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="1215">
               <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
               <folding>
                 <element signature="e#4341#4347#0" expanded="true" />
@@ -60,13 +60,9 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="60" selection-start-line="60" selection-end-line="60" />
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -157,12 +153,12 @@
         <option value="$PROJECT_DIR$/nodejs-server-server/controllers/Books.js" />
         <option value="$PROJECT_DIR$/Server/controllers/Books.js" />
         <option value="$PROJECT_DIR$/Server/controllers/BooksService.js" />
-        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
         <option value="$PROJECT_DIR$/Server/controllers/Authors.js" />
         <option value="$PROJECT_DIR$/Server/controllers/AuthorsService.js" />
         <option value="$PROJECT_DIR$/pages/browseAuthors.html" />
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
         <option value="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
       </list>
     </option>
   </component>
@@ -374,7 +370,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90362000" />
+    <option name="totallyTimeSpent" value="90503000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -389,13 +385,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18675123" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18675123" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9066044" visible="true" weight="0.3626506" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.9066044" visible="true" weight="0.3626506" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -678,23 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="39" column="2" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
-          <folding>
-            <element signature="e#4341#4347#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/controllers/AuthorsService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="603">
@@ -717,11 +696,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        <state relative-caret-position="1215">
+          <caret line="81" column="14" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
+          <folding>
+            <element signature="e#4341#4347#0" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
