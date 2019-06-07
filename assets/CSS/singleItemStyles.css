@@ -27,7 +27,7 @@ hr{
 
 
 @media (max-width: 440px){
-    .singleItemImage{
+    .big-screen-image{
         display: none;
     }
     .singleItemContainer{
