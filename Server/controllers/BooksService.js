@@ -56,7 +56,6 @@ exports.getBookByTitle = function(title) {
 
   return new Promise(function (resolve, reject) {
 
-
     console.log("---------------executing getBookByTitle---------------------");
     console.log("title: '" + title + "'");
     console.log("------------------------------------------------------------");
@@ -66,35 +65,12 @@ exports.getBookByTitle = function(title) {
         .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
         .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", title)
         .then(result => {
+          console.log('//////////////////////////////////////////////////////');
           console.log(result);
           resolve(result)
         });
 
   });
-
-/*
-  var examples = {};
-  examples['application/json'] = {
-  "ISBN" : 123456789,
-  "Publication Date" : "2000-01-23T04:56:07.000+00:00",
-  "Language" : "cacca",
-  "Abstract" : "aeiou",
-  "Title" : "cacca",
-  "Publisher" : "aeiou",
-  "Edition" : 123456789,
-  "Cover Image" : "aeiou",
-  "Number of Pages" : 123456789
-};
-  if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-
- */
-  
 };
 
 exports.getBookFavoriteReading = function(args, res, next) {
@@ -200,7 +176,7 @@ exports.getBookFindByTheme = function(args, res, next) {
   
 }
 
-exports.getBookISBN = function(args, res, next) {
+exports.getBookISBN = function(isbn) {
   /**
    * parameters expected in the args:
   * iSBN (Long)
@@ -211,14 +187,25 @@ exports.getBookISBN = function(args, res, next) {
   * authors Information Required (Boolean)
   * events Information Required (Boolean)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    console.log("---------------executing getBookISBN------------------------");
+    console.log("isbn: '" + isbn + "'");
+    console.log("------------------------------------------------------------");
+
+    //todo: extend query to get reviews and events
+
+    let myQuery = knex('new_schema.books')
+        .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
+        .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+        .where('wb.isbn', isbn)
+        .then(result => {
+          console.log("////////////////////////////////////////////////////////");
+          console.log(result);
+          resolve(result)
+        });
+
+  });
   
-}
+};
 

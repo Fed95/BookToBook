@@ -49,5 +49,15 @@ module.exports.getBookFindByTheme = function getBookFindByTheme (req, res, next)
 };
 
 module.exports.getBookISBN = function getBookISBN (req, res, next) {
-  Books.getBookISBN(req.swagger.params, res, next);
+
+    var isbn = req.swagger.params['ISBN']['value'];
+    console.log("inside Books.js; isbn = ", isbn);
+
+    Books.getBookISBN(isbn)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
 };

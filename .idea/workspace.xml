@@ -2,8 +2,75 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/controllers/Books.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/controllers/BooksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/BooksService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/esparse" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/esparse" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/esvalidate" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/esvalidate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/js-yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/js-yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/json-refs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/json-refs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/mime" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/mkdirp" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/mkdirp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/swagger-tools" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/swagger-tools" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/.bin/z-schema" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/.bin/z-schema" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/test/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/test/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/test/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/body-parser/node_modules/qs/test/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/esprima/bin/esparse.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/esprima/bin/esparse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/esprima/bin/esvalidate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/esprima/bin/esvalidate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/js-yaml/bin/js-yaml.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/js-yaml/bin/js-yaml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/json-refs/bin/json-refs" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/json-refs/bin/json-refs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/json-refs/node_modules/.bin/js-yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/json-refs/node_modules/.bin/js-yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/json-refs/node_modules/js-yaml/bin/js-yaml.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/json-refs/node_modules/js-yaml/bin/js-yaml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/mime/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/mime/cli.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/mime/src/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/mime/src/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/mkdirp/bin/cmd.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/mkdirp/bin/cmd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/native-promise-only/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/native-promise-only/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/path-loader/node_modules/superagent/changelog.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/path-loader/node_modules/superagent/changelog.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/docs/jquery.tocify.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/docs/jquery.tocify.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/.bin/mime" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/cookiejar/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/cookiejar/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/cookiejar/tests/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/cookiejar/tests/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/mime/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/mime/cli.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/test/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/test/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/test/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/superagent/node_modules/qs/test/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/bin/swagger-tools" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/bin/swagger-tools" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/fonts/DroidSans.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/fonts/DroidSans.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/images/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/images/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/images/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/images/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/images/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/lang/ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/middleware/swagger-ui/lang/ja.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/node_modules/.bin/js-yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/node_modules/.bin/js-yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/swagger-tools/node_modules/js-yaml/bin/js-yaml.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/swagger-tools/node_modules/js-yaml/bin/js-yaml.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/traverse/examples/json.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/traverse/examples/json.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/traverse/examples/leaves.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/traverse/examples/leaves.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/traverse/examples/negative.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/traverse/examples/negative.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/traverse/examples/scrub.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/traverse/examples/scrub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/traverse/examples/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/traverse/examples/stringify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/node_modules/z-schema/bin/z-schema" beforeDir="false" afterPath="$PROJECT_DIR$/Server/node_modules/z-schema/bin/z-schema" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/CSS/browse.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/browse.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/game of thrones.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/BookCovers/game of thrones.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseBooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/.bin/swagger-tools" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/.bin/swagger-tools" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/bin/swagger-tools" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/bin/swagger-tools" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/node_modules/.bin/json-refs" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/node_modules/.bin/json-refs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/node_modules/json-refs/bin/json-refs" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/node_modules/json-refs/bin/json-refs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/node_modules/superagent/changelog.sh" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs-server-server/node_modules/swagger-tools/node_modules/superagent/changelog.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/book.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,19 +84,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+        <entry file="file://$PROJECT_DIR$/Server/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/browseBooks.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+            <state relative-caret-position="150">
+              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -71,6 +129,8 @@
       <find>resolve</find>
       <find>search-re</find>
       <find>list-group</find>
+      <find>feder</find>
+      <find>fede</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -105,31 +165,32 @@
         <option value="$PROJECT_DIR$/Server/index.js" />
         <option value="$PROJECT_DIR$/pages/_testContactUs.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/pages/book.html" />
         <option value="$PROJECT_DIR$/assets/CSS/book.css" />
         <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/loginStyles.css" />
         <option value="$PROJECT_DIR$/pages/_loginPage.html" />
         <option value="$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" />
         <option value="$PROJECT_DIR$/nodejs-server-server/controllers/Books.js" />
-        <option value="$PROJECT_DIR$/Server/controllers/Books.js" />
-        <option value="$PROJECT_DIR$/Server/controllers/BooksService.js" />
         <option value="$PROJECT_DIR$/Server/controllers/Authors.js" />
         <option value="$PROJECT_DIR$/Server/controllers/AuthorsService.js" />
-        <option value="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" />
         <option value="$PROJECT_DIR$/pages/browseAuthors.html" />
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
         <option value="$PROJECT_DIR$/pages/browseBooks.html" />
+        <option value="$PROJECT_DIR$/pages/book.html" />
+        <option value="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" />
+        <option value="$PROJECT_DIR$/Server/controllers/Books.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
+        <option value="$PROJECT_DIR$/Server/controllers/BooksService.js" />
+        <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
       </list>
     </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="width" value="1920" />
-    <option name="height" value="1080" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -156,12 +217,6 @@
               <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="JS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -174,12 +229,6 @@
               <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
               <item name="Server" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -191,7 +240,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/Images/AuthorPictures/Thumbnails" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -238,23 +287,9 @@
       </envs>
       <method v="2" />
     </configuration>
-    <configuration name="index.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/nodejs-server-server">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/Server">
       <envs>
-        <env name="DATABASE_URL" value="postgres://uskrrpmxmxkafd:963c19a4532e2f6d0e62ab4362c76dd687cba628464ce30bbce195c4b19c10ca@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/d8c12qkjiak7qs" />
-        <env name="PGSSLMODE" value="require" />
-      </envs>
-      <method v="2" />
-    </configuration>
-    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="Server/index.js" working-dir="$PROJECT_DIR$">
-      <envs>
-        <env name="DATABASE_URL" value="postgres://dxqvcntsnoifob:6265ac257abc9b67761fb960763182bac62aafa880f965d640d0a57dd64cc3f3@ec2-54-228-207-163.eu-west-1.compute.amazonaws.com:5432/dfn69dv2qvmdlk&#10;" />
-        <env name="PGSSLMODE" value="require" />
-      </envs>
-      <method v="2" />
-    </configuration>
-    <configuration name="searchJS.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="searchJS.js" working-dir="$PROJECT_DIR$/assets/JS">
-      <envs>
-        <env name="DATABASE_URL" value="postgres://uskrrpmxmxkafd:963c19a4532e2f6d0e62ab4362c76dd687cba628464ce30bbce195c4b19c10ca@ec2-54-246-92-116.eu-west-1.compute.amazonaws.com:5432/d8c12qkjiak7qs" />
+        <env name="DATABASE_URL" value="postgres://dxqvcntsnoifob:6265ac257abc9b67761fb960763182bac62aafa880f965d640d0a57dd64cc3f3@ec2-54-228-207-163.eu-west-1.compute.amazonaws.com:5432/dfn69dv2qvmdlk" />
         <env name="PGSSLMODE" value="require" />
       </envs>
       <method v="2" />
@@ -262,14 +297,10 @@
     <list>
       <item itemvalue="JavaScript Debug.index.html" />
       <item itemvalue="Node.js.index.js" />
-      <item itemvalue="Node.js.searchJS.js" />
-      <item itemvalue="Node.js.index.js (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.index.js" />
-        <item itemvalue="Node.js.index.js (1)" />
-        <item itemvalue="Node.js.searchJS.js" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -299,6 +330,10 @@
       <workItem from="1559743501342" duration="269000" />
       <workItem from="1559770188465" duration="1611000" />
       <workItem from="1559813443057" duration="779000" />
+      <workItem from="1559900503240" duration="554000" />
+      <workItem from="1560077221313" duration="160000" />
+      <workItem from="1560077811085" duration="73000" />
+      <workItem from="1560081336812" duration="790000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -332,7 +367,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92975000" />
+    <option name="totallyTimeSpent" value="102300000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -345,7 +380,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18675123" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -353,7 +387,28 @@
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9066044" visible="true" weight="0.25903615" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9048626" visible="true" weight="0.3987952" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22650602" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49753347" weight="0.48433736" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.09513742" side_tool="true" visible="true" weight="0.3987952" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" weight="0.32891566" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18675123" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="npm" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9066044" visible="true" weight="0.3554217" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,27 +417,6 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22650602" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" weight="0.48433736" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.0933956" side_tool="true" weight="0.19887955" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" weight="0.32891566" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.205074" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info id="npm" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.9066044" visible="true" weight="0.16987951" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22650602" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4982382" weight="0.48441926" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.0933956" side_tool="true" weight="0.19971672" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" weight="0.32891566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -442,7 +476,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changed query path to match database" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/server.js" />
     <entry file="file://$PROJECT_DIR$/nodejs-server-server/node_modules/knex/node_modules/pg-connection-string/test/parse.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -541,13 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/book.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="57" column="45" lean-forward="true" selection-start-line="57" selection-start-column="45" selection-end-line="57" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/book.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -607,28 +633,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/controllers/Books.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/utils/writer.js" />
-    <entry file="file://$PROJECT_DIR$/Server/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/controllers/BooksService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nodejs-server-server/controllers/Books.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -643,9 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -655,22 +657,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/browse.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="46" column="54" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+        <state relative-caret-position="668">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/browseBooks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
+        <state relative-caret-position="-250">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/book.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="73" column="74" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="765">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="52" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/controllers/BooksService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="200" column="8" selection-start-line="200" selection-start-column="8" selection-end-line="200" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/controllers/Books.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
         </state>
       </provider>
     </entry>
