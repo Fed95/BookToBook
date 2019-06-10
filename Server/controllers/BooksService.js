@@ -65,7 +65,6 @@ exports.getBookByTitle = function(title) {
         .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
         .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", title)
         .then(result => {
-          console.log('//////////////////////////////////////////////////////');
           console.log(result);
           resolve(result)
         });
@@ -195,13 +194,13 @@ exports.getBookISBN = function(isbn) {
 
     //todo: extend query to get reviews and events
 
-    let myQuery = knex('new_schema.books')
-        .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
+    let myQuery = knex('new_schema.books AS b')
+        .leftJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
         .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+        .leftJoin('new_schema.reviews AS r', 'b.isbn', 'r.isbn')
+        .leftJoin('new_schema.users AS u', 'r.user_mail', 'u.user_mail')
         .where('wb.isbn', isbn)
         .then(result => {
-          console.log("////////////////////////////////////////////////////////");
-          console.log(result);
           resolve(result)
         });
 
