@@ -195,11 +195,11 @@ exports.getBookISBN = function(isbn) {
     //todo: extend query to get reviews and events
 
     let myQuery = knex('new_schema.books AS b')
-        .leftJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+        .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
         .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
         .leftJoin('new_schema.reviews AS r', 'b.isbn', 'r.isbn')
         .leftJoin('new_schema.users AS u', 'r.user_mail', 'u.user_mail')
-        .where('wb.isbn', isbn)
+        .where('b.isbn', isbn)
         .then(result => {
           resolve(result)
         });

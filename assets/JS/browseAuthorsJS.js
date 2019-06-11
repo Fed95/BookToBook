@@ -70,7 +70,7 @@ var generateAuthorDiv = function (name) {
     var $div2 = $("<div class = 'row'/>");
     var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
     var $div4 = $("<div class = 'book-img'/>");
-    var $im = $("<img />", { src : "../assets/Images/AuthorPictures/Thumbnails/Quentin Blake.jpg"});
+    var $im = $("<img />", { src : "../assets/Images/AuthorPictures/Thumbnails/"+name+".jpg"});
     var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
     var $h = $("<h3 />", {id : 'title', class : 'book-title'}); $h.html(name);
     var $div6 = $("<div class = 'book-info'/>");
