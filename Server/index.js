@@ -13,6 +13,8 @@ const app = express();
 const path = require('path');
 var cors = require('cors');
 
+var cookieSession = require('cookie-session');
+
 //---------------------------------------------------------------
 // Connection to Database
 //---------------------------------------------------------------
@@ -76,6 +78,11 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
+
+  app.use(cookieSession({
+    name: 'session',
+    keys: ['key1', 'key2']
+  }))
 
   // Start the server
   http.createServer(app).listen(serverPort, function () {
