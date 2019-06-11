@@ -1,0 +1,1406 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is our BookToBook server",
+    "version" : "1.0.0",
+    "title" : "BookToBook",
+    "contact" : {
+      "name" : "Davide Santambrogio",
+      "email" : "santadavide1995@gmail.com"
+    }
+  },
+  "host" : "booktobook.herokuapp.com",
+  "basePath" : "/api",
+  "tags" : [ {
+    "name" : "Books"
+  }, {
+    "name" : "Themes"
+  }, {
+    "name" : "Genres"
+  }, {
+    "name" : "Authors"
+  }, {
+    "name" : "Events"
+  }, {
+    "name" : "Users"
+  }, {
+    "name" : "Purchases"
+  }, {
+    "name" : "Reviews"
+  }, {
+    "name" : "General"
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/author/" : {
+      "get" : {
+        "tags" : [ "Authors" ],
+        "summary" : "Get all Authors",
+        "operationId" : "getAuthor",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Author"
+              }
+            }
+          },
+          "404" : {
+            "description" : "Author not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/author/findByBook" : {
+      "get" : {
+        "tags" : [ "Authors" ],
+        "summary" : "Get authors by book",
+        "operationId" : "getAuthorFindByBook",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "ISBN",
+          "in" : "query",
+          "description" : "ISBN of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "Invalid ISBN supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Author not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/author/findByName" : {
+      "get" : {
+        "tags" : [ "Authors" ],
+        "summary" : "Get authors by name",
+        "operationId" : "getAuthorFindByName",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Name",
+          "in" : "query",
+          "description" : "Name of the Author",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "Invalid Name supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Author not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/author/{AuthorID}" : {
+      "get" : {
+        "tags" : [ "Authors" ],
+        "summary" : "Get Author by ID",
+        "operationId" : "getAuthorAuthorID",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "AuthorID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "AuthorID format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Author not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books by general Info",
+        "operationId" : "getBook",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Info",
+          "in" : "query",
+          "description" : "Book Information",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Info format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/bestOfTheMonth" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books of the Month",
+        "description" : "Best sellers this month",
+        "operationId" : "getBookBestOfTheMonth",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Month",
+          "in" : "query",
+          "description" : "This month",
+          "required" : true,
+          "type" : "string",
+          "format" : "date-time"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid month supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/favoriteReading" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get favorite Books",
+        "operationId" : "getBookFavoriteReading",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "404" : {
+            "description" : "Book not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/findByAuthor" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books by author",
+        "operationId" : "getBookFindByAuthor",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Name",
+          "in" : "query",
+          "description" : "firstname of the author",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "Alessandro Manzoni"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid name or surname supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/findByEvent" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books by event",
+        "operationId" : "getBookFindByEvent",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Eventname",
+          "in" : "query",
+          "description" : "name of the event",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "Licia Troisi new book presentation"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid name supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/findByGenre" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books by genre",
+        "operationId" : "getBookFindByGenre",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "genre",
+          "in" : "query",
+          "description" : "genre of the book",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "fantasy"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid genre supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/findByTheme" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books by theme",
+        "operationId" : "getBookFindByTheme",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "theme",
+          "in" : "query",
+          "description" : "theme of the book",
+          "required" : false,
+          "type" : "string",
+          "x-example" : "family"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid theme supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/findByTitle" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Books by title",
+        "description" : "Returns a list of books",
+        "operationId" : "getBookByTitle",
+        "produces" : [ "application/json", "applications/json" ],
+        "parameters" : [ {
+          "name" : "Title",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "x-example" : "Re"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Book"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid title supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/book/{ISBN}" : {
+      "get" : {
+        "tags" : [ "Books" ],
+        "summary" : "Get Book by ISBN",
+        "operationId" : "getBookISBN",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "ISBN",
+          "in" : "path",
+          "description" : "ID of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64",
+          "x-example" : 9781402894626
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "ISBN format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Book not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/event/" : {
+      "get" : {
+        "tags" : [ "Events" ],
+        "summary" : "Get all events",
+        "operationId" : "getEvent",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Event"
+            }
+          },
+          "404" : {
+            "description" : "Event not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/event/findByBook" : {
+      "get" : {
+        "tags" : [ "Events" ],
+        "summary" : "Get Event by Book",
+        "operationId" : "getEventFindByBook",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "ISBN",
+          "in" : "query",
+          "description" : "ISBN of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "ISBN format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Event not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/event/findByMonth" : {
+      "get" : {
+        "tags" : [ "Events" ],
+        "summary" : "Get Event by Month",
+        "operationId" : "getEventFindByMonth",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Month",
+          "in" : "query",
+          "description" : "Month of the Event",
+          "required" : true,
+          "type" : "string",
+          "format" : "date-time"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "Month format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Event not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/event/findByName" : {
+      "get" : {
+        "tags" : [ "Events" ],
+        "summary" : "Get Event by Name",
+        "operationId" : "getEventFindByName",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "Name",
+          "in" : "query",
+          "description" : "Name of the Event",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "Name format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Event not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/event/{EventID}" : {
+      "get" : {
+        "tags" : [ "Events" ],
+        "summary" : "Get Event by ID",
+        "operationId" : "getEventEventID",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "EventID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "EventID format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Event not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/genre/" : {
+      "get" : {
+        "tags" : [ "Genres" ],
+        "summary" : "Get all Genres",
+        "operationId" : "getGenre",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Genre"
+              }
+            }
+          },
+          "404" : {
+            "description" : "Genre not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/genre/findByBook" : {
+      "get" : {
+        "tags" : [ "Genres" ],
+        "summary" : "Get Genres by book",
+        "operationId" : "getGenreFindByBook",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "ISBN",
+          "in" : "query",
+          "description" : "ISBN of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Genre"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid ISBN supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Genre not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/genre/{GenreName}" : {
+      "get" : {
+        "tags" : [ "Genres" ],
+        "summary" : "Get Genre by name",
+        "operationId" : "getGenreGenreName",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "GenreName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Genre"
+            }
+          },
+          "400" : {
+            "description" : "Invalid genre supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Genre not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/login" : { },
+    "/purchase/" : {
+      "post" : {
+        "tags" : [ "Purchases" ],
+        "summary" : "Create Purchase",
+        "operationId" : "postPurchase",
+        "consumes" : [ "applications/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Purchase"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "succesfull operation"
+          },
+          "400" : {
+            "description" : "Format error"
+          }
+        }
+      }
+    },
+    "/purchase/completed" : {
+      "post" : {
+        "tags" : [ "Purchases" ],
+        "summary" : "Set Purchase as completed",
+        "operationId" : "postPurchaseCompleted",
+        "parameters" : [ {
+          "name" : "Date",
+          "in" : "query",
+          "description" : "Date of the completion",
+          "required" : true,
+          "type" : "string",
+          "format" : "date-time"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "format error"
+          }
+        }
+      }
+    },
+    "/purchase/findByUser" : {
+      "get" : {
+        "tags" : [ "Purchases" ],
+        "summary" : "Get Purchases by user",
+        "operationId" : "getPurchaseFindByUser",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "UserID",
+          "in" : "query",
+          "description" : "Email of the User",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "Invalid UserID supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "User not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/purchase/{PurchaseID}" : {
+      "get" : {
+        "tags" : [ "Purchases" ],
+        "summary" : "Get Purchase by ID",
+        "operationId" : "getPurchasePurchaseID",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "PurchaseID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "PurchaseID format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Purchase not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Purchases" ],
+        "summary" : "Add book in Purchase",
+        "operationId" : "postPurchasePurchaseID",
+        "parameters" : [ {
+          "name" : "PurchaseID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ISBN",
+          "in" : "query",
+          "description" : "ISBN of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Format error"
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Purchases" ],
+        "summary" : "Delete book in Purchase",
+        "operationId" : "deletePurchasePurchaseID",
+        "parameters" : [ {
+          "name" : "PurchaseID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ISBN",
+          "in" : "query",
+          "description" : "ISBN of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Format error"
+          }
+        }
+      }
+    },
+    "/review/" : {
+      "post" : {
+        "tags" : [ "Reviews" ],
+        "summary" : "Create Review",
+        "operationId" : "postReview",
+        "consumes" : [ "applications/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Review"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Format error"
+          }
+        }
+      }
+    },
+    "/review/{ReviewID}" : {
+      "get" : {
+        "tags" : [ "Reviews" ],
+        "summary" : "Get Review by ID",
+        "operationId" : "getReviewReviewID",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "ReviewID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "ReviewID format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Review not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/theme/" : {
+      "get" : {
+        "tags" : [ "Themes" ],
+        "summary" : "Get all Themes",
+        "operationId" : "getTheme",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Theme"
+              }
+            }
+          },
+          "404" : {
+            "description" : "Theme not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/theme/findByBook" : {
+      "get" : {
+        "tags" : [ "Themes" ],
+        "summary" : "Get Themes by book",
+        "operationId" : "getThemeFindByBook",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "ISBN",
+          "in" : "query",
+          "description" : "ISBN of the Book",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int64"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Theme"
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid ISBN supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Theme not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/theme/{ThemeName}" : {
+      "get" : {
+        "tags" : [ "Themes" ],
+        "summary" : "Get Theme by name",
+        "operationId" : "getThemeThemeName",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "ThemeName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Theme"
+            }
+          },
+          "400" : {
+            "description" : "Invalid theme supplied",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "Theme not found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/user/" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Create User",
+        "operationId" : "postUser",
+        "consumes" : [ "applications/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/User"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Format error"
+          }
+        }
+      }
+    },
+    "/user/login" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Perform User login",
+        "operationId" : "postUserLogin",
+        "consumes" : [ "applications/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Login"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "404" : {
+            "description" : "UserID or Password are wrong"
+          }
+        }
+      }
+    },
+    "/user/logout" : {
+      "post" : {
+        "tags" : [ "Users" ],
+        "summary" : "Perform User logout",
+        "operationId" : "postUserLogout",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          }
+        }
+      }
+    },
+    "/user/{UserID}" : {
+      "get" : {
+        "tags" : [ "Users" ],
+        "summary" : "Get User by ID",
+        "operationId" : "getUserUserID",
+        "produces" : [ "applications/json" ],
+        "parameters" : [ {
+          "name" : "UserID",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Book"
+            }
+          },
+          "400" : {
+            "description" : "UserID format incorrect",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          },
+          "404" : {
+            "description" : "User not Found",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Book" : {
+      "type" : "object",
+      "required" : [ "Abstract", "Cover Image", "Edition", "ISBN", "Language", "Number of Pages", "Publication Date", "Publisher", "Title" ],
+      "properties" : {
+        "ISBN" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "Title" : {
+          "type" : "string"
+        },
+        "Abstract" : {
+          "type" : "string"
+        },
+        "Publication Date" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "Edition" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "Cover Image" : {
+          "type" : "string"
+        },
+        "Publisher" : {
+          "type" : "string"
+        },
+        "Number of Pages" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "Language" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Theme" : {
+      "type" : "object",
+      "required" : [ "ISBN", "Theme" ],
+      "properties" : {
+        "Theme" : {
+          "type" : "string"
+        },
+        "ISBN" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "Genre" : {
+      "type" : "object",
+      "required" : [ "Genre", "ISBN" ],
+      "properties" : {
+        "Genre" : {
+          "type" : "string"
+        },
+        "ISBN" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "Author" : {
+      "type" : "object",
+      "required" : [ "AuthorID", "Bio", "Date of Birth", "Name", "Picture" ],
+      "properties" : {
+        "AuthorID" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "Date of Birth" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "Name" : {
+          "type" : "string"
+        },
+        "Picture" : {
+          "type" : "string"
+        },
+        "Bio" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Event" : {
+      "type" : "object",
+      "required" : [ "Details", "Event Date", "EventID", "Introduction", "Location Address", "Name", "Starting Time" ],
+      "properties" : {
+        "EventID" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "Name" : {
+          "type" : "string"
+        },
+        "Introduction" : {
+          "type" : "string"
+        },
+        "Location Address" : {
+          "type" : "string"
+        },
+        "Event Date" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "Starting Time" : {
+          "type" : "string"
+        },
+        "Details" : {
+          "type" : "string"
+        }
+      }
+    },
+    "User" : {
+      "type" : "object",
+      "required" : [ "Date of Birth", "First Name", "Last Name", "Password", "UserID (email)" ],
+      "properties" : {
+        "UserID (email)" : {
+          "type" : "string"
+        },
+        "Password" : {
+          "type" : "string"
+        },
+        "Date of Birth" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "First Name" : {
+          "type" : "string"
+        },
+        "Last Name" : {
+          "type" : "string"
+        },
+        "Picture" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Purchase" : {
+      "type" : "object",
+      "required" : [ "Completed", "PurchaseID", "UserID" ],
+      "properties" : {
+        "PurchaseID" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "UserID" : {
+          "type" : "string"
+        },
+        "Completed" : {
+          "type" : "boolean",
+          "default" : false
+        },
+        "Purchase Date" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    },
+    "Review" : {
+      "type" : "object",
+      "required" : [ "ISBN", "Rating", "ReviewID", "Text", "UserID" ],
+      "properties" : {
+        "ReviewID" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "UserID" : {
+          "type" : "string"
+        },
+        "ISBN" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "Text" : {
+          "type" : "string"
+        },
+        "Rating" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    },
+    "Error" : {
+      "type" : "object",
+      "required" : [ "code" ],
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int64",
+          "description" : "error code",
+          "minimum" : 400.0,
+          "maximum" : 599.0
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "reasonPhrase" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Login" : {
+      "type" : "object",
+      "required" : [ "Password", "UserId" ],
+      "properties" : {
+        "UserId" : {
+          "type" : "string"
+        },
+        "Password" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
