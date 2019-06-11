@@ -86,11 +86,17 @@ var addAuthors = function(author_list){
 
     var isbn_string = '#'+ parsed[0]['isbn'];
 
+
+
     var authors = [];
     for(var i in parsed){
         authors.push(parsed[i]['name'])
     }
     var authors_string = authors.join(', ');
+
+    console.log('authors for ' + isbn_string);
+    console.log(authors_string);
+
     $(isbn_string).html(authors_string)
 };
 
@@ -176,9 +182,12 @@ var generateBookDiv = function (book) {
                         var $h = $("<h3 />", {id : 'title', class : 'book-title'});
                             var $a5 = $("<a />", {href : ip + 'pages/book.html?isbn='+book.isbn}); $a5.html(book.title);
                         var $div6 = $("<div class = 'book-info'/>");
+                        /*
                             var $div7 = $("<div class = 'col-5 info'/>");
                                 var $s7 = $("<span />"); $s7.html('Authors:');
                                 var $p7 = $("<p />", {id: book.isbn});
+
+
                             var $div8 = $("<div class = 'col-5 info'/>");
                                 var $s8 = $("<span />"); $s8.html('Price:');
                                 var $p8 = $("<p />"); $p8.html(book.price + '$');
@@ -186,7 +195,7 @@ var generateBookDiv = function (book) {
                     var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
                         var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
                             $b10.html('Add to Cart')
-
+                            */
 
     $("#homepage-container").append($diva);
     $diva.append($divb);
@@ -200,17 +209,22 @@ var generateBookDiv = function (book) {
     $div5.append($h);
     $h.append($a5);
     $div5.append($div6);
+    /*
     $div6.append($div7);
     $div7.append($s7);
     $div7.append($p7);
+
+
     $div6.append($div8);
     $div8.append($s8);
     $div8.append($p8);
     $div2.append($div10);
     $div10.append($b10);
+*/
+    console.log('looking for author of ' + book.title);
 
-    xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
-    xhttpAuthors.send();
+    //xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
+    //xhttpAuthors.send();
 
 };
 
