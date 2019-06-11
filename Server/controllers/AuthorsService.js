@@ -17,19 +17,26 @@ exports.getAuthor = function(args, res, next) {
   
 }
 
-exports.getAuthorAuthorID = function(args, res, next) {
+exports.getAuthorAuthorID = function(author_id) {
   /**
    * parameters expected in the args:
   * authorID (String)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    console.log("---------------executing getAuthorFindByName---------------------");
+    console.log("author_id: '" + author_id + "'");
+    console.log("-----------------------------------------------------------------");
+
+
+    let myQuery = knex('new_schema.authors').where('author_id', author_id)
+        .then(result => {
+          console.log("hello");
+          console.log(result);
+          resolve(result)
+        });
+
+  });
   
 }
 

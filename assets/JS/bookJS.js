@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/api";
-//var ip = "http://localhost:8080/api";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 
 
@@ -38,7 +38,7 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-xhttp.open("GET", ip + "/book/"+input, true);
+xhttp.open("GET", ip + "api/book/"+input, true);
 xhttp.send();
 
 
@@ -64,12 +64,14 @@ var displayFoundBooks = function(book) {
 
     for(var text in grouped_by_review){
 
-        var review = {
-            username: grouped_by_review[text][0].username,
-            text: text,
-            positive: grouped_by_review[text][0].positive
-        };
-        reviews.push(review);
+        if(text.localeCompare('null')){
+            var review = {
+                username: grouped_by_review[text][0].username,
+                text: text,
+                positive: grouped_by_review[text][0].positive
+            };
+            reviews.push(review);
+        }
     }
 
 
@@ -124,8 +126,7 @@ var generateBookDiv = function (book, authors, reviews) {
                         $b1.html("Add to Cart");
 
         var $hr2 = $("<hr>");
-        var $div18 = $("<div class = 'col-12'/>");
-            var $h2 = $("<h1 />"); $h2.html('Reviews');
+
 
 
 
@@ -164,11 +165,10 @@ var generateBookDiv = function (book, authors, reviews) {
                     $div15.append($div17);
                         $div17.append($b1);
             $div3.append($hr2);
-            $div3.append($div18);
-                $div18.append($h2);
 
-            addReviews($div18, reviews);
-
+            if(reviews.length > 0){
+                addReviews($div3, reviews);
+            }
 };
 
 var addAuthors = function($div, authors){
@@ -185,6 +185,12 @@ var addAuthors = function($div, authors){
 };
 
 var addReviews = function(div, reviews){
+
+    var $div18 = $("<div class = 'col-12'/>");
+        var $h2 = $("<h1 />"); $h2.html('Reviews');
+
+    div.append($div18);
+    $div18.append($h2);
 
     console.log("Adding reviews!");
     console.log(reviews);
@@ -214,7 +220,7 @@ var addReviews = function(div, reviews){
                 var $d6 = $("<div class = 'col-12 review-text' />");
                     var $p = $("<p />"); $p.html(reviews[i].text);
 
-        div.append($d1);
+        $div18.append($d1);
         $d1.append($d2);
         $d2.append($d3);
         $d3.append($d4);

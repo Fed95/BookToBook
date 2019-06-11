@@ -9,11 +9,15 @@
         <link rel="stylesheet" href="../assets/CSS/navbar.css">
         <link rel="stylesheet" href="../assets/CSS/singleItemStyles.css">
         <link rel="stylesheet" href="../assets/CSS/author.css">
+        <link rel="stylesheet" href="../assets/CSS/browse.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <script src="https://underscorejs.org/underscore-min.js"></script>
+        <script src="../assets/JS/authorJS.js"></script>
 
         <title>BookToBook</title>
     </head>
@@ -45,42 +49,7 @@
                 </nav>
 
                 <div id="homepage-container" class="container">
-                    <div class="row margin-top"></div>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10 singleItemContainer">
-                            <div class="col-3 singleItemContainer">
-                                <img class="singleItemImage big-screen-image" src="../assets/Images/AuthorPictures/Michael%20Crichton.jpg">
-                            </div>
-                            <div class="col-1 hid"></div>
-                            <div class=" col-8 singleItemContainer">
-                                <h1 class="singleItemName">Michael Crichton</h1>
-                                <div class="row small-screen-image">
-                                    <div class="col-2"></div>
-                                    <div class="col-8">
-                                        <img class="singleItemImage" src="../assets/Images/AuthorPictures/Michael%20Crichton.jpg">
-                                    </div>
-                                    <div class="col-2"></div>
-                                </div>
-                                <div class="row">
-                                    <p class="datestyle">23/10/1942 - 4/11/2008</p>
-                                </div>
-                                <div class="textcontent">It is a long established fact that a reader will be distracted by the readable content
-                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal
-                                    distribution of letters, as opposed to using Content.
-                                    It is a long established fact that a reader will be distracted by the readable content
-                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal
-                                    distribution of letters, as opposed to using Content.
-                                </div>
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="col-1 hid"></div>
-                    </div>
-
-                    <div class="row margin-bottom"></div>
+                    <!-- this is where the author content will be generated -->
                 </div>
             </div>
             <footer class="section footer-classic context-dark bg-image myfooter">
