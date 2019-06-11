@@ -24,17 +24,26 @@ exports.getAuthorAuthorID = function(author_id) {
   **/
   return new Promise(function (resolve, reject) {
 
-    console.log("---------------executing getAuthorFindByName---------------------");
+    console.log("---------------executing getAuthorAuthorID---------------------");
     console.log("author_id: '" + author_id + "'");
     console.log("-----------------------------------------------------------------");
 
-
+      let myQuery = knex('new_schema.books AS b')
+          .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+          .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+          .where('a.author_id', author_id)
+          .then(result => {
+              resolve(result)
+          });
+      /*
     let myQuery = knex('new_schema.authors').where('author_id', author_id)
         .then(result => {
           console.log("hello");
           console.log(result);
           resolve(result)
         });
+
+       */
 
   });
   
