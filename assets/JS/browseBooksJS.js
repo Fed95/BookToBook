@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/api";
+//var ip = "http://localhost:8080/api";
 
 
 

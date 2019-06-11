@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/api";
+//var ip = "http://localhost:8080/api";
 
 
 
@@ -48,6 +48,7 @@ xhttp.send();
 //---------------------------------------------------------------------
 
 var displayFoundAuthors = function(authors_list) {
+
     var serach_result_div = document.getElementById('search-result');
     var parsed = JSON.parse(authors_list);
     console.log("parsed: ", parsed);
@@ -55,16 +56,17 @@ var displayFoundAuthors = function(authors_list) {
     for(var author of parsed){
 
         var name = author.name;
-        var bio = author.bio;
+        var author_id = author.author_id;
 
         console.log(name);
+        console.log(author_id);
 
-        generateAuthorDiv(name)
+        generateAuthorDiv(name, author_id)
     }
 };
 
 
-var generateAuthorDiv = function (name) {
+var generateAuthorDiv = function (name, author_id) {
 
     var $div1 = $("<div />", {class : "list-group-item clearfix"});
     var $div2 = $("<div class = 'row'/>");
@@ -72,11 +74,10 @@ var generateAuthorDiv = function (name) {
     var $div4 = $("<div class = 'book-img'/>");
     var $im = $("<img />", { src : "../assets/Images/AuthorPictures/Thumbnails/"+name+".jpg"});
     var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
-    var $h = $("<h3 />", {id : 'title', class : 'book-title'}); $h.html(name);
+    var $h = $("<h3 />", {id : 'title', class : 'book-title'});
+    var $a = $("<a />", {href : ip + 'pages/author.html?author_id='+author_id}); $a.html(name);
     var $div6 = $("<div class = 'book-info'/>");
     var $div7 = $("<div class = 'info'/>");
-    var $s7 = $("<span />"); $s7.html('Info:');
-    var $p7 = $("<p class='bio'/>"); $p7.html("Probably Dead");
 
 
     $("#search-results-container").append($div1);
@@ -86,10 +87,9 @@ var generateAuthorDiv = function (name) {
     $div4.append($im);
     $div2.append($div5);
     $div5.append($h);
+    $h.append($a);
     $div5.append($div6);
     $div6.append($div7);
-    $div7.append($s7);
-    $div7.append($p7);
 
 };
 
