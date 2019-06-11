@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/api";
-//var ip = "http://localhost:8080/api";
+//var ip = "https://booktobook.herokuapp.com/api/";
+var ip = "http://localhost:8080/api/";
 
 
 
@@ -38,7 +38,7 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-xhttp.open("GET", ip + "api/book/findByTitle?Title="+input+"&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
+xhttp.open("GET", ip + "book/findByTitle?Title="+input+"&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
 xhttp.send();
 
 

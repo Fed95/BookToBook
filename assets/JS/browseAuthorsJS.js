@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/api";
-//var ip = "http://localhost:8080/api";
+//var ip = "https://booktobook.herokuapp.com/api/";
+var ip = "http://localhost:8080/api/";
 
 
 
@@ -38,7 +38,7 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-xhttp.open("GET", ip + "api/author/findByName?Name=" + input, true);
+xhttp.open("GET", ip + "author/findByName?Name=" + input, true);
 xhttp.send();
 
 
