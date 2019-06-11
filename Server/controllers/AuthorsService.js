@@ -49,28 +49,36 @@ exports.getAuthorAuthorID = function(author_id) {
   
 }
 
-exports.getAuthorFindByBook = function(args, res, next) {
+exports.getAuthorFindByBook = function(isbn) {
   /**
    * parameters expected in the args:
   * iSBN (Long)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    console.log("---------------executing getAuthorFindByBook---------------------");
+    console.log("isbn: '" + isbn + "'");
+    console.log("-----------------------------------------------------------------");
+
+    let myQuery = knex('new_schema.authors AS a')
+        .join('new_schema.written_by AS wb', 'a.author_id', 'wb.author_id')
+        .where('wb.isbn', isbn)
+        .select('a.name', 'wb.isbn')
+        .then(result => {
+          console.log("hello");
+          console.log(result);
+          resolve(result)
+        });
+
+  });
   
-}
+};
 
 exports.getAuthorFindByName = function(name) {
   /**
    * parameters expected in the args:
   * name (String)
   **/
-
 
   return new Promise(function (resolve, reject) {
 
@@ -81,8 +89,6 @@ exports.getAuthorFindByName = function(name) {
 
     let myQuery = knex('new_schema.authors').whereRaw("LOWER(name) LIKE '%' || LOWER(?) || '%' ", name)
         .then(result => {
-          console.log("hello");
-          console.log(result);
           resolve(result)
         });
 

@@ -69,27 +69,31 @@ var displayFoundAuthor = function(book_list) {
 
     generateAuthorDiv(name, bio, books);
 };
-/*
+
 var xhttpAuthors = new XMLHttpRequest();
 xhttpAuthors.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
-            addAuthorsToBook(this.responseText);
+            addAuthors(this.responseText)
         });
     }
 };
-xhttpAuthors.open("GET", ip + "api/author/"+input, true);
-xhttpAuthors.send();
 
-var getAuthors = function(isbn){
+var addAuthors = function(author_list){
+
+    var parsed = JSON.parse(author_list);
+    console.log("parsed authors: ", parsed);
+
+    var isbn_string = '#'+ parsed[0]['isbn'];
 
     var authors = [];
-
-
-    return authors;
+    for(var i in parsed){
+        authors.push(parsed[i]['name'])
+    }
+    var authors_string = authors.join(', ');
+    $(isbn_string).html(authors_string)
 };
 
- */
 
 var generateAuthorDiv = function (name, bio, books) {
 
@@ -205,65 +209,12 @@ var generateBookDiv = function (book) {
     $div2.append($div10);
     $div10.append($b10);
 
-};
-
-/*
-var addBooks = function (books) {
-
-    for(var index in books){
-
-
-        var $div1 = $("<div />", {class : "list-group-item clearfix"});
-        var $div2 = $("<div class = 'row'/>");
-        var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
-        var $div4 = $("<div class = 'book-img'/>");
-        var $im = $("<img />", { src : "../assets/Images/BookCovers/Thumbnails/"+title+".jpg"});
-        var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
-        var $h = $("<h3 />", {id : 'title', class : 'book-title'});
-        var $a5 = $("<a />", {href : ip + 'pages/book.html?isbn='+isbn}); $a5.html(title);
-        var $div6 = $("<div class = 'book-info'/>");
-        var $div7 = $("<div class = 'col-3 info'/>");
-        var $s7 = $("<span />"); $s7.html('Authors:');
-        var $p7 = $("<p />"); $p7.html(authors);
-        var $space = $("<div class = 'col-0.5'/>");
-        var $div9 = $("<div class = 'col-3 info'/>");
-        var $s9 = $("<span />"); $s9.html('ISBN:');
-        var $p9 = $("<p />"); $p9.html(isbn);
-        var $div8 = $("<div class = 'col-3 info'/>");
-        var $s8 = $("<span />"); $s8.html('Price:');
-        var $p8 = $("<p />"); $p8.html(price + '$');
-
-        var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
-        var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
-        $b10.html('Add to Cart')
-
-
-        $("#search-results-container").append($div1);
-        $div1.append($div2);
-        $div2.append($div3);
-        $div3.append($div4);
-        $div4.append($im);
-        $div2.append($div5);
-        $div5.append($h);
-        $h.append($a5);
-        $div5.append($div6);
-        $div6.append($div7);
-        $div7.append($s7);
-        $div7.append($p7);
-        $div6.append($space);
-        $div6.append($div9);
-        $div9.append($s9);
-        $div9.append($p9);
-        $div6.append($space);
-        $div6.append($div8);
-        $div8.append($s8);
-        $div8.append($p8);
-        $div2.append($div10);
-        $div10.append($b10);
-    }
+    xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
+    xhttpAuthors.send();
 
 };
-*/
+
+
 /*<div class="row margin-top"></div>
                     <div class="row">
                         <div class="col-1"></div>

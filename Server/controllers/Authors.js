@@ -23,13 +23,23 @@ module.exports.getAuthorAuthorID = function getAuthorAuthorID(req, res, next) {
 };
 
 module.exports.getAuthorFindByBook = function getAuthorFindByBook(req, res, next) {
-    Authors.getAuthorFindByBook(req.swagger.params, res, next);
+
+    var isbn = req.swagger.params['ISBN']['value'];
+    console.log("inside Authors.js; isbn = ", isbn);
+
+    Authors.getAuthorFindByBook(isbn)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
 };
 
 module.exports.getAuthorFindByName = function getAuthorFindByName(req, res, next) {
 
     var name = req.swagger.params['Name']['value'];
-    console.log("inside Authors.js; title = ", name);
+    console.log("inside Authors.js; name = ", name);
 
     Authors.getAuthorFindByName(name)
         .then(function (response) {
