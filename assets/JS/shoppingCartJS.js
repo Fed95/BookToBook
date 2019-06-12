@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 
 //---------------------------------------------------------------------
@@ -74,6 +74,9 @@ var generatePurchaseDiv = function(purchase){
 
 
 $('.minus-btn').on('click', function(e) {
+
+    console.log('bbbbbbbbbbbb')
+
     e.preventDefault();
     var $this = $(this);
     var $input = $this.closest('div').find('input');

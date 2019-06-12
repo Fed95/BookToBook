@@ -3,6 +3,9 @@
 //---------------------------------------------------------------------
 
 $('.minus-btn').on('click', function(e) {
+
+    console.log('AAAAAAAAAAAAAAAAAAA')
+
     e.preventDefault();
     var $this = $(this);
     var $input = $this.closest('div').find('input');
