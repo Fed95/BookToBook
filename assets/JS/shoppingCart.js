@@ -1,3 +1,7 @@
+//---------------------------------------------------------------------
+//shopping cart button functions
+//---------------------------------------------------------------------
+
 $('.minus-btn').on('click', function(e) {
     e.preventDefault();
     var $this = $(this);
@@ -23,3 +27,9 @@ $('.plus-btn').on('click', function(e) {
     }
     $input.val(value);
 });
+
+$('.delete-btn').on('click', function(){
+    this.parentElement.parentElement.remove();
+});
+
+

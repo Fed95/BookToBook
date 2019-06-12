@@ -223,6 +223,7 @@ var generateBookDiv = function (book) {
 */
     console.log('looking for author of ' + book.title);
 
+    //todo: need to generate a new request each time to prevent overlap of gets
     //xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
     //xhttpAuthors.send();
 
