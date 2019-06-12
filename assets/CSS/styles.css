@@ -134,7 +134,7 @@
     margin-bottom: 5px;
 }
 #page-container {  position: relative; min-height: 100vh;}
-#content-wrap {  padding-bottom: 23.5rem;    /* Footer height */}
+#content-wrap {  padding-bottom: 30rem;    /* Footer height */}
 @media (max-width: 600px){
     #content-wrap {  padding-bottom: 40rem;    /* Footer height */}
 }
