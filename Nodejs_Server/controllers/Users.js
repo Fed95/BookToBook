@@ -15,6 +15,7 @@ module.exports.postUser = function postUser (req, res, next) {
 };
 
 module.exports.postUserLogin = function postUserLogin (req, res, next) {
+  // here we will check the credentials (and set the cookie)
   Users.postUserLogin(req.swagger.params, res, next);
 };
 

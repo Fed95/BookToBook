@@ -14,7 +14,7 @@ exports.getUserUserID = function(args, res, next) {
     res.end();
   }
   
-}
+};
 
 exports.postUser = function(args, res, next) {
   /**
@@ -23,7 +23,7 @@ exports.postUser = function(args, res, next) {
   **/
   // no response value expected for this operation
   res.end();
-}
+};
 
 exports.postUserLogin = function(args, res, next) {
   /**
@@ -32,7 +32,7 @@ exports.postUserLogin = function(args, res, next) {
   **/
   // no response value expected for this operation
   res.end();
-}
+};
 
 exports.postUserLogout = function(args, res, next) {
   /**
@@ -40,5 +40,5 @@ exports.postUserLogout = function(args, res, next) {
   **/
   // no response value expected for this operation
   res.end();
-}
+};
 

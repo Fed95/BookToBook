@@ -18,8 +18,8 @@
   padding: 15px;
 }
 .jumbotron{
-    background-color: #2DC7C2;
-    color:#fff;
+    background-color: #FFFFFF;
+    color:#2d3246;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom:0px;
@@ -67,8 +67,7 @@
     padding-bottom: 8px;
     padding-left: 14px;
     padding-right: 14px;
-    color: white;
-    background-color: #2DC7C2; 
+    background-color: #ecd9c6;
 }
 .box{
     border:1px solid #ccc;
@@ -134,7 +133,7 @@
     margin-bottom: 5px;
 }
 #page-container {  position: relative; min-height: 100vh;}
-#content-wrap {  padding-bottom: 23.5rem;    /* Footer height */}
+#content-wrap {  padding-bottom: 30rem;    /* Footer height */}
 @media (max-width: 600px){
     #content-wrap {  padding-bottom: 40rem;    /* Footer height */}
 }

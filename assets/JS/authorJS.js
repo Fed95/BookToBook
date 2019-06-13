@@ -47,22 +47,63 @@ xhttp.send();
 //handling the result
 //---------------------------------------------------------------------
 
-var displayFoundAuthor = function(author) {
+var displayFoundAuthor = function(book_list) {
 
-    var parsed = JSON.parse(author)[0];
+    var parsed = JSON.parse(book_list);
     console.log("parsed: ", parsed);
 
-    var name = parsed['name'];
-    var bio = parsed['bio'];
+    var name = parsed[0]['name'];
+    var bio = parsed[0]['bio']
 
-    generateBookDiv(name, bio);
+    var books = [];
+
+    for(var i in parsed){
+        var book = {
+            isbn: parsed[i]['isbn'],
+            title: parsed[i]['title'],
+            authors: [],
+            price: parsed[i]['price']
+        };
+        books.push(book);
+    }
+
+    generateAuthorDiv(name, bio, books);
+};
+
+var xhttpAuthors = new XMLHttpRequest();
+xhttpAuthors.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        $(document).ready(() => {
+            addAuthors(this.responseText)
+        });
+    }
+};
+
+var addAuthors = function(author_list){
+
+    var parsed = JSON.parse(author_list);
+    console.log("parsed authors: ", parsed);
+
+    var isbn_string = '#'+ parsed[0]['isbn'];
+
+
+
+    var authors = [];
+    for(var i in parsed){
+        authors.push(parsed[i]['name'])
+    }
+    var authors_string = authors.join(', ');
+
+    console.log('authors for ' + isbn_string);
+    console.log(authors_string);
+
+    $(isbn_string).html(authors_string)
 };
 
 
+var generateAuthorDiv = function (name, bio, books) {
 
-
-
-var generateBookDiv = function (name, bio) {
+    console.log('GENERATING AUTHOR DIVS')
 
     var $div1 = $("<div class = 'row margin-top'/>");
     var $div2 = $("<div class = 'row'/>");
@@ -86,8 +127,6 @@ var generateBookDiv = function (name, bio) {
         var $hr2 = $("<hr>");
 
 
-
-
     $("#homepage-container").append($div1);
         $div1.append($div2);
         $div2.append($col1);
@@ -106,6 +145,88 @@ var generateBookDiv = function (name, bio) {
                 $div5.append($div13);
                 $div5.append($hr1);
             $div3.append($hr2);
+
+    if(books.length > 0){
+
+        var $d1 = $("<div class = 'row' />");
+        var $d2 = $("<div class = 'col-1' />");
+        var $d3 = $("<div class = 'col-10' />");
+        var $d4 = $("<div class = 'col-1' />");
+        var $hbook = $("<h3 />"); $hbook.html('Books');
+
+        $("#homepage-container").append($d1);
+        $d1.append($d2);
+        $d1.append($d3);
+        $d3.append($hbook);
+        $d1.append($d4);
+
+        for(var i in books){
+            generateBookDiv(books[i]);
+        }
+    }
+};
+
+var generateBookDiv = function (book) {
+
+    console.log('GENERATING BOOK DIVS')
+
+    var $diva = $("<div class='row'/>");
+        var $divb = $("<div class='col-1 hidden-s'/>");
+        var $divc = $("<div class='col-10 col-10-bigger-s'/>");
+            var $div1 = $("<div />", {class : "list-group-item clearfix"});
+                var $div2 = $("<div class = 'row'/>");
+                    var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
+                        var $div4 = $("<div class = 'book-img'/>");
+                            var $im = $("<img />", { src : "../assets/Images/BookCovers/Thumbnails/"+book.title+".jpg"});
+                    var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
+                        var $h = $("<h3 />", {id : 'title', class : 'book-title'});
+                            var $a5 = $("<a />", {href : ip + 'pages/book.html?isbn='+book.isbn}); $a5.html(book.title);
+                        var $div6 = $("<div class = 'book-info'/>");
+                        /*
+                            var $div7 = $("<div class = 'col-5 info'/>");
+                                var $s7 = $("<span />"); $s7.html('Authors:');
+                                var $p7 = $("<p />", {id: book.isbn});
+
+
+                            var $div8 = $("<div class = 'col-5 info'/>");
+                                var $s8 = $("<span />"); $s8.html('Price:');
+                                var $p8 = $("<p />"); $p8.html(book.price + '$');
+
+                    var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
+                        var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
+                            $b10.html('Add to Cart')
+                            */
+
+    $("#homepage-container").append($diva);
+    $diva.append($divb);
+    $diva.append($divc);
+    $divc.append($div1);
+    $div1.append($div2);
+    $div2.append($div3);
+    $div3.append($div4);
+    $div4.append($im);
+    $div2.append($div5);
+    $div5.append($h);
+    $h.append($a5);
+    $div5.append($div6);
+    /*
+    $div6.append($div7);
+    $div7.append($s7);
+    $div7.append($p7);
+
+
+    $div6.append($div8);
+    $div8.append($s8);
+    $div8.append($p8);
+    $div2.append($div10);
+    $div10.append($b10);
+*/
+    console.log('looking for author of ' + book.title);
+
+    //todo: need to generate a new request each time to prevent overlap of gets
+    //xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
+    //xhttpAuthors.send();
+
 };
 
 
@@ -174,30 +295,6 @@ var generateBookDiv = function (name, bio) {
                                     <button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>
                                     </div>
                                 </div>
-                            </div><div class="list-group-item clearfix">
-                                <div class="row">
-                                    <div class="col-2 col-2-hidden-xs">
-                                        <div class="book-img"><img src="../assets/Images/BookCovers/Thumbnails/Prey.jpg"></div>
-                                    </div>
-                                    <div class="col-8 col-8-bigger-xs">
-                                        <h3 id="title" class="book-title">Prey</h3>
-                                        <div class="book-info">
-                                            <div class="col-5 info">
-                                                <span>Authors:</span>
-                                                <p>Filippo Rezzonico</p>
-                                                <p>Michael Crichton</p>
-                                            </div>
-                                            <div class="col-5 info">
-                                                <span>Price:</span>
-                                                <p>3000$</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-2 col-2-muchbigger-xs noleft-pad">
-                                    <button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <div class="col-1 hidden-s"></div>
                     </div>
