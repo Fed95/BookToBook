@@ -101,6 +101,8 @@ var generateBookDiv = function (isbn, title, authors, price) {
                 var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
                 $b10.html('Add to Cart')
 
+    var $hr = $('<hr />');
+
 
     $("#search-results-container").append($div1);
     $div1.append($div2);
@@ -124,5 +126,6 @@ var generateBookDiv = function (isbn, title, authors, price) {
     $div8.append($p8);
     $div2.append($div10);
     $div10.append($b10);
+    $("#search-results-container").append($hr);
 
 };
