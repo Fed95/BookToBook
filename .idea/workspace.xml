@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/browseEvents.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseEvents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseThemes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseThemes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/browseGenres.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseGenres.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,16 +60,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+            <state relative-caret-position="510">
+              <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="507">
@@ -204,9 +203,9 @@
         <option value="$PROJECT_DIR$/assets/CSS/shoppingCart.css" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" />
-        <option value="$PROJECT_DIR$/pages/browseGenres.html" />
         <option value="$PROJECT_DIR$/pages/browseEvents.html" />
         <option value="$PROJECT_DIR$/pages/browseThemes.html" />
+        <option value="$PROJECT_DIR$/pages/browseGenres.html" />
       </list>
     </option>
   </component>
@@ -396,7 +395,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150684000" />
+    <option name="totallyTimeSpent" value="150966000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -797,10 +796,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
+    <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+        <state relative-caret-position="507">
+          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -811,10 +810,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
+    <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="41" column="42" selection-start-line="41" selection-start-column="42" selection-end-line="41" selection-end-column="42" />
+        <state relative-caret-position="510">
+          <caret line="117" column="26" lean-forward="true" selection-start-line="117" selection-start-column="26" selection-end-line="117" selection-end-column="26" />
         </state>
       </provider>
     </entry>
