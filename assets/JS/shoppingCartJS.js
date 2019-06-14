@@ -26,14 +26,28 @@ var displayPurchases = function(purchase_list){
     var parsed = JSON.parse(purchase_list);
     console.log("parsed: ", parsed);
 
+    var tot = 0;
+
     for(var i in parsed){
         var purchase = {
             title: parsed[i].title,
             price: parsed[i].price,
             quantity: parsed[i].quantity
         }
-        generatePurchaseDiv(purchase);
+        tot += generatePurchaseDiv(purchase);
     }
+
+    var $totalprice = $('<div class="grand-total"/>');
+    var $price= $('<span class="grand-total-price"  />'); $price.html(tot);
+    var $total = $('<div class="grand-total"/>');
+    var $button = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
+    $button.html('Proceed to Checkout');
+
+
+    $("#search-results-container").append($totalprice);
+    $("#search-results-container").append($total);
+    $($totalprice).append($price);
+    $($total).append($button);
 
 }
 
@@ -71,40 +85,10 @@ var generatePurchaseDiv = function(purchase){
     $quantity.append($minus_btn);
     $minus_btn.append($img_minus);
     $item.append($total);
+
+    return purchase.price*purchase.quantity;
 };
 
 
-$('.minus-btn').on('click', function(e) {
-
-    console.log('bbbbbbbbbbbb')
-
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
-    if (value > 1) {
-        value = value - 1;
-    } else {
-        value = 0;
-    }
-    $input.val(value);
-});
-
-$('.plus-btn').on('click', function(e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var value = parseInt($input.val());
-    if (value < 100) {
-        value = value + 1;
-    } else {
-        value =100;
-    }
-    $input.val(value);
-});
-
-$('.delete-btn').on('click', function(){
-    this.parentElement.parentElement.remove();
-});
 
 
