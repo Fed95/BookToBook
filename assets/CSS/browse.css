@@ -37,9 +37,6 @@
 .noleft-pad{
     padding-left: 0px;
 }
-.btn-add-book{
-    background-color:lightgray;
-}
 .list-group:empty:before{
     font-size: 50px;
     text-align: center;

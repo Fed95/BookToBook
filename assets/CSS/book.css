@@ -18,8 +18,8 @@
     margin-top: 30px;
 }
 .btn-add-book{
-    background-color:lightgray;
-}
+     background-color:lightgray;
+ }
 .review{
     margin-top: 5px;
 }
@@ -45,4 +45,10 @@ p{
 }
 .authorcontainer{
     margin-right: 10px;
+}
+.genres span{
+    overflow: hidden;
+    margin: 5px;
+    padding: 10px;
+    background-color: #5E6977;
 }

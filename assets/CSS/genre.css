@@ -34,9 +34,6 @@
     box-shadow: 0 0 10px blue;
     text-decoration: none;
 }
-
-
-
 .square:after {
     content: "";
     display: block;
