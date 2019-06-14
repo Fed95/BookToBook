@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/genre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/genre.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/genre.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/genreTest.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/browseGenres.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/AdventureGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Adventure.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/Crime&amp;DetectiveGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Crime.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/DramaGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Drama.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/FantasyGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Fantasy.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/HistoricalGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Historical.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/HorrorGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Horror.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/MythologyGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Mythology.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/RomanceGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/romance.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/SatireGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/satire.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/Sci-FiGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/science-fiction.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/SuspanceGenre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/suspence.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/browseGenres.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseGenres.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseGenresTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseGenresSanta.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="91" column="70" selection-start-line="91" selection-start-column="70" selection-end-line="91" selection-end-column="70" />
+            <state relative-caret-position="527">
+              <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -378,7 +362,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146650000" />
+    <option name="totallyTimeSpent" value="146790000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,8 +776,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="91" column="70" selection-start-line="91" selection-start-column="70" selection-end-line="91" selection-end-column="70" />
+        <state relative-caret-position="527">
+          <caret line="88" column="55" selection-start-line="88" selection-start-column="55" selection-end-line="88" selection-end-column="55" />
         </state>
       </provider>
     </entry>
