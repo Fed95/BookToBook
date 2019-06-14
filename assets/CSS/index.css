@@ -1,0 +1,22 @@
+
+.homepage-section{
+    height: 600px;
+    width: 100%;
+    margin: 0;
+}
+.homepage-section .section-title{
+    font-size: 50px;
+    margin-left: 20px;
+}
+.best-seller{
+    background-color: #DF9881;
+}
+.latest-events{
+    background-color: #F2D7B4;
+}
+.popular-genres{
+    background-color: #ECE6D2;
+}
+.remove-all-margin{
+    margin:0 ! important;
+}

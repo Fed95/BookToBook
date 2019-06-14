@@ -57,14 +57,14 @@
     padding-bottom: 8px;
     padding-left: 14px;
     padding-right: 14px;
-    background-color: #ecd9c6;
+    background-color: #ECE6D2;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
     margin-left: 10px;
 }
 .btn-search:hover{
-    background-color: #3C589C;
+    background-color: #58949C;
     color: white;
 }
 .btn-search:default{
