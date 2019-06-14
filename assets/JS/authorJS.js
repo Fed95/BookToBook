@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
 
 
@@ -173,8 +173,8 @@ var generateBookDiv = function (book) {
     var $diva = $("<div class='row'/>");
         var $divb = $("<div class='col-1 hidden-s'/>");
         var $divc = $("<div class='col-10 col-10-bigger-s'/>");
-            var $div1 = $("<div />", {class : "list-group-item clearfix"});
-                var $div2 = $("<div class = 'row'/>");
+            var $div1 = $("<div class = 'list-group-item' />");
+                var $div2 = $("<div class = 'row list-group-item'/>");
                     var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
                         var $div4 = $("<div class = 'book-img'/>");
                             var $im = $("<img />", { src : "../assets/Images/BookCovers/Thumbnails/"+book.title+".jpg"});

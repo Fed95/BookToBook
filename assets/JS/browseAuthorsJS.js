@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
 
 
@@ -78,6 +78,7 @@ var generateAuthorDiv = function (name, author_id) {
     var $a = $("<a />", {href : ip + 'pages/author.html?author_id='+author_id}); $a.html(name);
     var $div6 = $("<div class = 'book-info'/>");
     var $div7 = $("<div class = 'info'/>");
+    var $hr = $('<hr />');
 
 
     $("#search-results-container").append($div1);
@@ -90,6 +91,7 @@ var generateAuthorDiv = function (name, author_id) {
     $h.append($a);
     $div5.append($div6);
     $div6.append($div7);
+    $("#search-results-container").append($hr);
 
 };
 
