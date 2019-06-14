@@ -6,8 +6,7 @@
 
 .shopping-cart {
   width: 750px;
-  height: 423px;
-  margin: 80px auto;
+  margin: 80px auto 80px auto;
   background: #FFFFFF;
   border-radius: 6px;
   display: flex;
