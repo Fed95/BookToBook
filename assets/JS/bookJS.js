@@ -276,9 +276,16 @@ var addGenresAndThemes = function(div, genres, themes){
     if(typeof genres[0] !== 'undefined') {
 
         for (var g in genres) {
-            var $g = $("<span />");
+            var $g = $("<span />", {id:genres[g].name});
             $g.html(genres[g].name);
             div.append($g);
+
+            window.onload = function () {
+                var el = document.getElementById(genres[g].name);
+                console.log(el);
+                el.style.backgroundColor = genres[g].color;
+                console.log("done")
+            }
         }
     }
     if(typeof themes[0] !== 'undefined') {

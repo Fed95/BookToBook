@@ -46,8 +46,14 @@ p{
 .authorcontainer{
     margin-right: 10px;
 }
+.genres{
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
 .genres span{
-    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
     margin: 5px;
     padding: 10px;
     background-color: #5E6977;
