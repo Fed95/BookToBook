@@ -44,26 +44,20 @@
 .delete-btn {
   display: inline-block;
   cursor: pointer;
-  width: 18px;
-  height: 17px;
+  width: 25px;
+  height: 25px;
   background: url("../Images/delete-icn.svg") no-repeat center;
   margin-right: 20px;
+  border-style: solid;
+  border-width: 5px;
+  border: transparent;
+}
+.buttons span:hover {
+  border-style: solid;
+  border-width: 5px;
+  border: #5E6977;
 }
 
-
-.is-active {
-  animation-name: animate;
-  animation-duration: .8s;
-  animation-iteration-count: 1;
-  animation-timing-function: steps(28);
-  animation-fill-mode: forwards;
-}
-
-@keyframes animate {
-  0%   { background-position: left;  }
-  50%  { background-position: right; }
-  100% { background-position: right; }
-}
 
 /* Product Image */
 .image {
@@ -128,12 +122,13 @@ input:focus {
 
 /* Total Price */
 .total-price {
-  width: 83px;
-  padding-top: 27px;
+  max-width: 83px;
+  padding-top: 0px;
   text-align: center;
   font-size: 16px;
   color: #43484D;
   font-weight: 300;
+  border: none;
 }
 
 /* Responsive */
@@ -159,6 +154,9 @@ input:focus {
     margin: 6px 0;
   }
   .buttons {
-    margin-right: 20px;
+    margin-right: 0px;
+  }
+  .delete-btn {
+    margin-right: 0px;
   }
 }

@@ -53,7 +53,8 @@ var generatePurchaseDiv = function(purchase){
             var $num = $("<input />", {type:"text", name:"name", value:"1"});
             var $minus_btn = $("<button />", {class:"minus-btn", type:"button", name:"button"});
                 var $img_minus = $("<img />", { src: "../assets/Images/minus.svg", alt:""});
-        var $total = $("<div class='total-price' />"); $total.html("$" + purchase.price*purchase.quantity)
+        var $total = $("<input />", {class:"total-price", type:"text", name:"name", value: purchase.price*purchase.quantity});
+        $total.html('$');
 
     $("#search-results-container").append($item);
     $item.append($buttons);
