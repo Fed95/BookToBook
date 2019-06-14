@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <!-- Latest compiled and minified CSS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="../assets/CSS/styles.css">
     <link rel="stylesheet" href="../assets/CSS/footer.css">
     <link rel="stylesheet" href="../assets/CSS/navbar.css">
-    <link rel="stylesheet" href="../assets/CSS/genreTest.css">
-
-
+    <link rel="stylesheet" href="../assets/CSS/singleItemStyles.css">
+    <link rel="stylesheet" href="../assets/CSS/author.css">
+    <link rel="stylesheet" href="../assets/CSS/browse.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <script src="http://underscorejs.org/underscore-min.js"></script>
+    <script src="https://underscorejs.org/underscore-min.js"></script>
+    <script src="../assets/JS/authorJS.js"></script>
 
     <title>BookToBook</title>
 </head>
@@ -35,9 +35,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="./browseBooks.html?search-text=">Books</a></li>
-                        <li><a href="./browseAuthors.html?search-text=">Authors</a></li>
+                        <li class="active"><a href="./browseAuthors.html?search-text=">Authors<span class="sr-only">(current)</span></a></li>
                         <li><a href="./browseEvents.html?search-text=">Events</a></li>
-                        <li class="active"><a href="./browseGenres.html?search-text=">Genres<span class="sr-only">(current)</span></a></li>
+                        <li><a href="./browseGenres.html?search-text=">Genres</a></li>
                         <li><a href="./browseThemes.html?search-text=">Themes</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -49,29 +49,7 @@
         </nav>
 
         <div id="homepage-container">
-
-            <div class="row genre-container">
-                <div class="column">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                </div>
-                <div class="column">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                </div>
-                <div class="column">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                </div>
-                <div class="column">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                    <img src="../assets/Images/GenresImages/AdventureGenre.jpg">
-                </div>
-            </div>
+            <!-- this is where the author content will be generated -->
 
         </div>
     </div>
@@ -80,8 +58,7 @@
             <div class="row row-30">
                 <div class="col-4">
 
-                    <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and
-                        curiosity among all human beings.</p>
+                    <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and curiosity among all human beings.</p>
                     <!-- Rights-->
                     <p class="rights"> &copy; 2019 BookToBook. All Rights Reserved.</p>
 
@@ -98,8 +75,7 @@
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
-                        <dd><a href="tel:#" class="blacklink">+1 312 599 4140</a> <span>or</span> <a href="tel:#"
-                                                                                                     class="blacklink">+393394233031</a>
+                        <dd><a href="tel:#" class="blacklink">+1 312 599 4140</a> <span>or</span> <a href="tel:#" class="blacklink">+39 3394233031</a>
                         </dd>
                     </dl>
                 </div>
@@ -108,7 +84,7 @@
                     <ul class="nav-list">
                         <li><a href="#" class="blacklink">About</a></li>
                         <li><a href="#" class="blacklink">Projects</a></li>
-                        <li><a href="contactUs.html" class="blacklink">Contact Us</a></li>
+                        <li><a href="./contactUs.html" class="blacklink">Contact Us</a></li>
                         <li><a href="#" class="blacklink">Pricing</a></li>
                     </ul>
                 </div>
@@ -120,7 +96,7 @@
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
 <script scr="assets/JS/indexJS/js"></script>
 </body>

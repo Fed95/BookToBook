@@ -19,6 +19,24 @@
 .genre-container{
     padding: 200px;
 }
+.image-container {
+    position: relative;
+}
+.image-container:hover img {
+    opacity: 0.3;
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    font-weight: bolder;
+    color: #FFFFFF;
+    background-color: #DF4B3B;
+    padding: 10px;
+}
 
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
