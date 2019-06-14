@@ -27,28 +27,16 @@
     padding-top: 0px;
     text-align: center;
 }
-.navbar {
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-}
-.title{
-    position: center;
-    left: 0;
-    top: 3px;
-    text-align: center;
-    margin: auto;
-}
 
-.usr-img{
-    width: 25px;
-    height: 25px;
-    margin-left: 10px;
+.title-img{
+    font-size: 50px;
+    font-weight: 900;
+    display: inline;
 }
 .title-txt{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
-    display:inline-block;
+    display: inline;
 }
 
 .card{
@@ -138,6 +126,11 @@
 .container{
     padding-right: 0px;
     padding-left: 0px;
+}
+.title{
+    font-size: 45px;
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 #page-container {  position: relative; min-height: 100vh;}
 #content-wrap {  padding-bottom: 30rem;    /* Footer height */}
