@@ -1,0 +1,33 @@
+.navbar{
+    height: 80px;
+    padding-top: 15px;
+    background-color: #DF4B3B;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 15px;
+    text-align: center;
+    margin: auto;
+    font-family: 'Sofia', serif;
+    font-size: 40px;
+    @color: #ecd9c6;
+}
+.navbar-toggle {
+    z-index:3;
+}
+.navbar-img{
+    margin-left: 10px;
+    height: 25px;
+    width: 25px;
+}
+
+a{
+    /* Applies to all unvisited links */
+    color: inherit;
+    text-decoration:  inherit;
+}
