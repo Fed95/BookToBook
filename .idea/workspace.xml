@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/browseThemes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/book.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/shoppingCart.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/shoppingCart.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseBooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shoppingCart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/browseEvents.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/browseGenres.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseGenres.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/browseThemes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseThemes.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,11 +45,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/browseEvents.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -135,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ip.js" />
         <option value="$PROJECT_DIR$/assets/JS/indexJS.js" />
         <option value="$PROJECT_DIR$/search.html" />
         <option value="$PROJECT_DIR$/assets/JS/searchJS.js" />
@@ -176,16 +198,17 @@
         <option value="$PROJECT_DIR$/assets/CSS/browseGenre.css" />
         <option value="$PROJECT_DIR$/pages/genre.html" />
         <option value="$PROJECT_DIR$/assets/CSS/index.css" />
-        <option value="$PROJECT_DIR$/pages/browseGenres.html" />
         <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/browseGenres.css" />
-        <option value="$PROJECT_DIR$/pages/browseThemes.html" />
         <option value="$PROJECT_DIR$/pages/shoppingCart.html" />
         <option value="$PROJECT_DIR$/pages/browseBooks.html" />
         <option value="$PROJECT_DIR$/assets/CSS/book.css" />
         <option value="$PROJECT_DIR$/assets/CSS/shoppingCart.css" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" />
+        <option value="$PROJECT_DIR$/pages/browseEvents.html" />
+        <option value="$PROJECT_DIR$/pages/browseThemes.html" />
+        <option value="$PROJECT_DIR$/pages/browseGenres.html" />
       </list>
     </option>
   </component>
@@ -375,7 +398,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150459000" />
+    <option name="totallyTimeSpent" value="150599000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,13 +413,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16490486" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16490486" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54756874" visible="true" weight="0.08795181" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54756874" visible="true" weight="0.08795181" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -487,7 +510,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changed query path to match database" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nodejs-server-server/index.js" />
     <entry file="file://$PROJECT_DIR$/assets/JS/searchJS.js" />
     <entry file="file://$PROJECT_DIR$/pages/search.html" />
     <entry file="file://$PROJECT_DIR$/nodejs-server-server/service/BooksService.js" />
@@ -675,13 +697,6 @@
     <entry file="file://$PROJECT_DIR$/assets/Images/GenresImages/Crime.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="57" column="51" lean-forward="true" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/browseGenres.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -718,13 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="66" column="28" lean-forward="true" selection-end-line="171" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -787,7 +795,28 @@
     <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/browseEvents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
         </state>
       </provider>
     </entry>

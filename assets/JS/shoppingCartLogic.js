@@ -12,7 +12,7 @@ $('#search-results-container').on('click', 'button.minus-btn', function (e) {
     var value = parseInt($input.val());
     var price = parseInt($price.val());
     var total = parseInt($total[0].innerHTML);
-    
+
     if (value > 1) {
         total -= price / value;
         price -= price / value;
