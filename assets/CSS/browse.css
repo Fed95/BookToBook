@@ -12,6 +12,30 @@
     .col-10-bigger-s{
         width: 100%
     }
+    .col-2-hidden-xs{
+        width:35%;
+    }
+    .col-2-muchbigger-xs{
+        width: 20%;
+    }
+    .col-2-bigger-xs{
+        width: 25%;
+    }
+    .col-8-bigger-xs{
+        width:45%;
+    }
+    .no-pad-left-xs{
+        padding-left: 0px;
+    }
+    .info{
+        font-size: 12px;
+    }
+    .book-title{
+        font-size: 15px;
+    }
+    .btn-add-book{
+        font-size: 12px;
+    }
 }
 
 .list-group-item{
@@ -59,30 +83,4 @@
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-}
-@media (max-width: 700x){
-    .col-2-hidden-xs{
-        width:35%;
-    }
-    .col-2-muchbigger-xs{
-        width: 20%;
-    }
-    .col-2-bigger-xs{
-        width: 25%;
-    }
-    .col-8-bigger-xs{
-        width:45%;
-    }
-    .no-pad-left-xs{
-        padding-left: 0px;
-    }
-    .info{
-        font-size: 12px;
-    }
-    .book-title{
-        font-size: 15px;
-    }
-    .btn-add-book{
-        font-size: 12px;
-    }
 }
