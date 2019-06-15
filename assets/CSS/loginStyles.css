@@ -4,7 +4,7 @@
     width:412px;
     margin:10vh auto;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    border-radius: 10px;
+    border-radius:0;
 }
 #logreg-forms form {
     width: 100%;
@@ -19,16 +19,15 @@
     height: auto;
     padding: 10px;
     font-size: 16px;
+    border-radius: 0;
 }
 #logreg-forms .form-control:focus { z-index: 2; }
 #logreg-forms .form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    margin-bottom: 5px;
+    border-radius: 0;
 }
 #logreg-forms .form-signin input[type="password"] {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    border-radius: 0;
 }
 
 #logreg-forms .social-login{
@@ -54,21 +53,54 @@
 }
 
 
-#logreg-forms button[type="submit"]{ margin-top:10px; }
+#logreg-forms button[type="submit"]{
+    margin-top:10px;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #789561;
+    background-color: #789561;
+    color: #FFFFFF;
+}
 
-#logreg-forms .facebook-btn{  background-color:#3C589C; }
+#logreg-forms .facebook-btn{
+    border-style: solid;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: #475F7A;
+    background-color: #475F7A;
+    color: #FFFFFF;
+}
 
-#logreg-forms .google-btn{ background-color: #DF4B3B; }
+#logreg-forms .google-btn{
+    border-style: solid;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: #8A0000;
+    background-color: #8A0000;
+    color: #FFFFFF;
+}
 
 #logreg-forms .form-reset, #logreg-forms .form-signup{ display: none; }
 
 #logreg-forms .form-signup .social-btn{ width:210px; }
 
-#logreg-forms .form-signup input { margin-bottom: 2px;}
+#logreg-forms .form-signup input {
+    margin-bottom: 5px;
+border-radius: 0;
+}
 
 .form-signup .social-login{
     width:210px !important;
     margin: 0 auto;
+}
+#btn-signup{
+    border-style: solid;
+    border-radius: 0;
+    border-width: 2px;
+    border-color: #76ADA8;
+    background-color: #76ADA8;
+    color: #FFFFFF;
 }
 
 
@@ -85,8 +117,6 @@
         margin-bottom: 10px;
     }
     #logreg-forms  .social-btn{
-        font-size: 1.3rem;
-        font-weight: 100;
         color:white;
         width:200px;
         height: 56px;
