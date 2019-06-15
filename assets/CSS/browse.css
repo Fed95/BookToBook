@@ -5,7 +5,7 @@
 .info { display: inline-block; color: #777; }
 .info span { font-weight: bold; }
 
-@media (max-width: 700px){
+@media (max-width: 800px){
     .hidden-s{
         display: none;
     }
