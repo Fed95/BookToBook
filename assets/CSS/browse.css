@@ -38,11 +38,11 @@
     }
 }
 @media (max-width: 560px){
-    .col-2-hidden-xs{
-        width:30%;
-    }
     .col-2-muchbigger-xs{
         width: 20%;
+    }
+    .col-2-hidden-xs{
+        width:30%;
     }
     .col-8-bigger-xs{
         width:50%;
@@ -55,6 +55,12 @@
     }
     .btn-add-book{
         font-size: 12px;
+    }
+    .smallers{
+        width: 10%;
+    }
+    .biggers{
+        width: 80%;
     }
 }
 
