@@ -42,10 +42,10 @@
         width: 20%;
     }
     .col-2-hidden-xs{
-        width:30%;
+        width:25%;
     }
     .col-8-bigger-xs{
-        width:50%;
+        width:55%;
     }
     .info{
         font-size: 10px;
@@ -69,10 +69,10 @@
         width: 22.5%;
     }
     .col-2-hidden-xs{
-        width:32.5%;
+        width:27.5%;
     }
     .col-8-bigger-xs{
-        width:45%;
+        width:50%;
     }
     .info{
         font-size: 10px;
@@ -91,6 +91,17 @@
     }
     .btn-search{
         font-size: 12px;
+    }
+}
+@media (max-width: 420px){
+    .col-2-muchbigger-xs{
+        width: 22.5%;
+    }
+    .col-2-hidden-xs{
+        width:32.5%;
+    }
+    .col-8-bigger-xs{
+        width:45%;
     }
 }
 
