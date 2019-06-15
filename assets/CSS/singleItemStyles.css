@@ -13,6 +13,18 @@
 .singleItemContainer{
     padding: 0px;
 }
+.bookCoverContainer{
+    position: relative;
+    padding-bottom: 66.666667%; /* ratio of image height to width */
+    height: 0;
+    overflow: hidden;
+}
+.bookCoverContainer img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
 .textcontent{
     text-align: justify;
     max-height: 300px;

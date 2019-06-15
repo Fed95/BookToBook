@@ -114,7 +114,7 @@ var generateBookDiv = function (book, authors, reviews, genres, themes) {
     var $div2 = $("<div class = 'row'/>");
         var $col1 = $("<div class = 'col-1'/>");
         var $div3 = $("<div class = 'col-10 singleItemContainer'/>");
-            var $div4 = $("<div class = 'col-3 singleItemContainer'/>");
+            var $div4 = $("<div class = 'col-3 singleItemContainer bookCoverContainer'/>");
                 var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/BookCovers/"+book.title+".jpg"});
             var $col2 = $("<div class = 'col-1'/>");
             var $div5 = $("<div class = 'col-8 singleItemContainer'/>");

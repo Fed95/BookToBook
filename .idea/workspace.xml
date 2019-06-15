@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Server/controllers/EventsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/EventsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/Genres.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Genres.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/GenresService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/GenresService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/ReviewsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/ReviewsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/ThemesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/ThemesService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/UsersService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/UsersService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/browseGenresJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseGenresJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/browseThemesJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseThemesJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseGenres.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseGenres.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/13 and a Half Lives of Captain Bluebear.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/BookCovers/13 and a Half Lives of Captain Bluebear.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/Fake Book.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/BookCovers/Fake Book.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/Prey.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/BookCovers/Prey.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/The BFG.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/BookCovers/The BFG.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/The Fifth Book.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/BookCovers/The Fifth Book.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/game of thrones.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/GenresImages/FairyTale.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/Images/GenresImages/Fairytale.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/bookJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,88 +24,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/GenresService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/PurchasesService.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/ReviewsService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/ThemesService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" selection-start-column="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/UsersService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/browseGenresJS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
+        <entry file="file://$PROJECT_DIR$/assets/CSS/singleItemStyles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+            <state relative-caret-position="311">
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/AuthorsService.js">
+        <entry file="file://$PROJECT_DIR$/pages/book.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="-462">
+              <caret line="37" column="82" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="82" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/BooksService.js">
+        <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/EventsService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="166">
+              <caret line="116" column="85" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -122,8 +64,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>resolve</find>
-      <find>search-re</find>
       <find>list-group</find>
       <find>feder</find>
       <find>fede</find>
@@ -152,6 +92,8 @@
       <find>hr</find>
       <find>img</find>
       <find>theme</find>
+      <find>text</find>
+      <find>$div4</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -180,7 +122,6 @@
         <option value="$PROJECT_DIR$/pages/browseAuthors.html" />
         <option value="$PROJECT_DIR$/assets/CSS/footer.css" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/genre.css" />
         <option value="$PROJECT_DIR$/Server/controllers/BooksService.js" />
         <option value="$PROJECT_DIR$/pages/book.html" />
@@ -201,7 +142,6 @@
         <option value="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/book.css" />
-        <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
         <option value="$PROJECT_DIR$/pages/genre.html" />
         <option value="$PROJECT_DIR$/assets/JS/themeJS.js" />
         <option value="$PROJECT_DIR$/pages/theme.html" />
@@ -219,14 +159,16 @@
         <option value="$PROJECT_DIR$/Server/controllers/UsersService.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseGenresJS.js" />
         <option value="$PROJECT_DIR$/pages/browseGenres.html" />
+        <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
+        <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
       </list>
     </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="714" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -385,7 +327,7 @@
       <workItem from="1560077811085" duration="73000" />
       <workItem from="1560081336812" duration="19523000" />
       <workItem from="1560415118659" duration="6016000" />
-      <workItem from="1560586064568" duration="5023000" />
+      <workItem from="1560586064568" duration="6342000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -419,7 +361,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156202000" />
+    <option name="totallyTimeSpent" value="157521000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -431,16 +373,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21353066" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21353066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54756874" visible="true" weight="0.38795182" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54756874" weight="0.12891567" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -531,13 +473,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changed query path to match database" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Nodejs_Server/controllers/Users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -566,20 +501,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="41" column="23" lean-forward="true" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/book.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="12" column="59" lean-forward="true" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/singleItemStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -764,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1206">
-          <caret line="317" column="28" selection-start-line="317" selection-start-column="25" selection-end-line="317" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -806,6 +720,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Server/controllers/PurchasesService.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseGenresJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/controllers/UsersService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/controllers/ThemesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/controllers/ReviewsService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Server/controllers/GenresService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Server/controllers/AuthorsService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -827,48 +786,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/controllers/GenresService.js">
+    <entry file="file://$PROJECT_DIR$/assets/Images/GenresImages/Horror.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/book.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="-462">
+          <caret line="37" column="82" selection-start-line="37" selection-start-column="78" selection-end-line="37" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/controllers/PurchasesService.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/controllers/ReviewsService.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="166">
+          <caret line="116" column="85" selection-start-line="116" selection-start-column="67" selection-end-line="116" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/controllers/ThemesService.js">
+    <entry file="file://$PROJECT_DIR$/assets/CSS/singleItemStyles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Server/controllers/UsersService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseGenresJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/browseGenres.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+        <state relative-caret-position="311">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
         </state>
       </provider>
     </entry>
