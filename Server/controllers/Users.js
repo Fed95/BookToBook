@@ -2,7 +2,7 @@
 
 var url = require('url');
 
-
+var utils = require('../utils/writer.js');
 var Users = require('./UsersService');
 
 
