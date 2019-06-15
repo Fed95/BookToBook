@@ -1,4 +1,6 @@
 'use strict';
+var pg = require("../index.js");
+var knex = pg.knex;
 
 exports.getUserUserID = function(args, res, next) {
   /**

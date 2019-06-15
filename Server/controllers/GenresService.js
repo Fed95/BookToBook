@@ -1,17 +1,24 @@
 'use strict';
+var pg = require("../index.js");
+var knex = pg.knex;
 
-exports.getGenre = function(args, res, next) {
+exports.getGenre = function() {
   /**
    * parameters expected in the args:
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    console.log("---------------executing getGenre---------------------------");
+    console.log(" no params expected ");
+    console.log("------------------------------------------------------------");
+
+    let myQuery = knex('new_schema.genres')
+        .then(result => {
+          console.log(result);
+          resolve(result)
+        });
+
+  });
   
 }
 

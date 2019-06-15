@@ -7,7 +7,13 @@ var Genres = require('./GenresService');
 
 
 module.exports.getGenre = function getGenre (req, res, next) {
-  Genres.getGenre(req.swagger.params, res, next);
+  Genres.getGenre()
+      .then(function (response) {
+        utils.writeJson(res, response);
+      })
+      .catch(function (response) {
+        utils.writeJson(res, response);
+      });
 };
 
 module.exports.getGenreFindByBook = function getGenreFindByBook (req, res, next) {

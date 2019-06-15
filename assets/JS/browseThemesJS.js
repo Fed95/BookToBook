@@ -75,7 +75,7 @@ var generateThemeDivs = function (parsed, n) {
         var $d1 = $("<div class='image-container' />");
         var $a = $("<a />", {href: 'theme.html?theme='+theme});
         var $im = $("<img />", {src: '../assets/Images/GenresImages/Adventure.jpg'});
-        var $d2 = $("<div class='centered-text' />"); $d2.html(theme)
+        var $d2 = $("<div class='centered-text' />"); $d2.html(theme);
 
         $ref_div.append($d1);
         $d1.append($a);

@@ -1,5 +1,4 @@
 'use strict';
-
 var pg = require("../index.js");
 var knex = pg.knex;
 
