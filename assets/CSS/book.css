@@ -33,8 +33,8 @@
     padding: 0px;
     padding-left: 8px;
 }
-.authorlink:hover{
-    text-decoration: none;
+.authorlink{
+    font-size: 20px;
 }
 p{
     margin: 0px;
@@ -51,10 +51,23 @@ p{
     display: flex;
     flex-wrap: wrap;
 }
-.genres span{
+.genres a{
     display: inline-block;
     white-space: nowrap;
     margin: 5px;
-    padding: 10px;
-    background-color: #dddddd;
+    padding: 5px;
+    background-color: #FFFFFF;
+    color: #43484D;
+    border-style: solid;
+    border-width: 1px;
+}
+.genres a:hover{
+
+    background-color: #ECE6D2;
+
+}
+#start{
+    background-color: #2d3246;
+    color: #ECE6D2;
+    border: none;
 }

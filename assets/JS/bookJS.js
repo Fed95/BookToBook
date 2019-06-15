@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
 
 //---------------------------------------------------------------------
@@ -275,22 +275,34 @@ var addGenresAndThemes = function(div, genres, themes){
 
     if(typeof genres[0] !== 'undefined') {
 
+        var $g = $("<a />", {id: 'start'});
+        $g.html('Genres:');
+        div.append($g);
+
         for (var g in genres) {
-            var $g = $("<span />", {id:genres[g].name});
+            $g = $("<a />", {id:genres[g].name, href: ip + 'pages/genre.html?theme='+genres[g].name});
             $g.html(genres[g].name);
             div.append($g);
 
+            /*
             window.onload = function () {
                 var el = document.getElementById(genres[g].name);
                 console.log(el);
                 el.style.backgroundColor = genres[g].color;
                 console.log("done")
             }
+
+             */
         }
     }
     if(typeof themes[0] !== 'undefined') {
+
+        var $t = $("<a />", {id: 'start'});
+        $t.html('Themes:');
+        div.append($t);
+
         for (var t in themes) {
-            var $t = $("<span />");
+            $t = $("<a />", {id: themes[t].name, href: ip + 'pages/theme.html?theme='+themes[t].name});
             $t.html(themes[t].name);
             div.append($t);
         }
