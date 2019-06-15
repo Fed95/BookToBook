@@ -13,7 +13,7 @@
         width: 100%
     }
     .col-2-hidden-xs{
-        width:35%;
+        width:20%;
     }
     .col-2-muchbigger-xs{
         width: 20%;
@@ -22,10 +22,30 @@
         width: 25%;
     }
     .col-8-bigger-xs{
-        width:45%;
+        width:60%;
     }
     .no-pad-left-xs{
         padding-left: 0px;
+    }
+    .info{
+        font-size: 12px;
+    }
+    .book-title{
+        font-size: 15px;
+    }
+    .btn-add-book{
+        font-size: 12px;
+    }
+}
+@media (max-width: 560px){
+    .col-2-hidden-xs{
+        width:30%;
+    }
+    .col-2-muchbigger-xs{
+        width: 20%;
+    }
+    .col-8-bigger-xs{
+        width:50%;
     }
     .info{
         font-size: 12px;
