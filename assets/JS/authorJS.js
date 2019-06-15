@@ -105,12 +105,12 @@ var generateAuthorDiv = function (name, bio, books) {
 
     console.log('GENERATING AUTHOR DIVS')
 
-    var $div1 = $("<div class = 'row margin-top'/>");
+    var $div1 = $("<div id='row-margin-top' class = 'row margin-top'/>");
     var $div2 = $("<div class = 'row'/>");
         var $col1 = $("<div class = 'col-1'/>");
         var $div3 = $("<div class = 'col-10 singleItemContainer'/>");
             var $div4 = $("<div class = 'col-3 singleItemContainer'/>");
-                var $imwrap = $("<div class = 'authorImageContainer'/>");
+                var $imwrap = $("<div class = 'authorImageContainer singleItemImage big-screen-image'/>");
                     var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/AuthorPictures/"+name+".jpg"});
             var $col2 = $("<div class = 'col-1'/>");
             var $div5 = $("<div class = 'col-8 singleItemContainer'/>");
@@ -125,7 +125,6 @@ var generateAuthorDiv = function (name, bio, books) {
                 var $div13 = $("<div class = 'textcontent' />"); $div13.html(bio);
                 var $hr1 = $("<hr>");
 
-        var $hr2 = $("<hr>");
 
 
     $("#homepage-container").append($div1);
@@ -146,7 +145,6 @@ var generateAuthorDiv = function (name, bio, books) {
                 $div5.append($span1);
                 $div5.append($div13);
                 $div5.append($hr1);
-            $div3.append($hr2);
 
     if(books.length > 0){
 
@@ -156,7 +154,7 @@ var generateAuthorDiv = function (name, bio, books) {
         var $d4 = $("<div class = 'col-1' />");
         var $hbook = $("<h3 />"); $hbook.html('Books');
 
-        $("#homepage-container").append($d1);
+        $("#row-margin-top").append($d1);
         $d1.append($d2);
         $d1.append($d3);
         $d3.append($hbook);
@@ -199,7 +197,7 @@ var generateBookDiv = function (book) {
                             $b10.html('Add to Cart')
                             */
 
-    $("#homepage-container").append($diva);
+    $("#row-margin-top").append($diva);
     $diva.append($divb);
     $diva.append($divc);
     $divc.append($div1);

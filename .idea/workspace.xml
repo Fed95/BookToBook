@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/CSS/browse.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/browse.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/13 and a Half Lives of Captain Bluebear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/Images/BookCovers/13 and a Half Lives of Captain Bluebear9.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/authorJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/authorJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/bookJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/CSS/singleItemStyles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="395">
+              <caret line="39" column="23" lean-forward="true" selection-start-line="39" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -47,9 +46,27 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="199" column="22" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
+            <state relative-caret-position="93">
               <caret line="118" column="85" selection-start-line="118" selection-start-column="85" selection-end-line="118" selection-end-column="85" />
             </state>
           </provider>
@@ -95,9 +112,9 @@
       <find>text</find>
       <find>$div4</find>
       <find>display</find>
-      <find>&lt;hr</find>
       <find>singleit</find>
       <find>12</find>
+      <find>&lt;hr</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -133,7 +150,6 @@
         <option value="$PROJECT_DIR$/assets/CSS/genreTest.css" />
         <option value="$PROJECT_DIR$/assets/CSS/browseGenre.css" />
         <option value="$PROJECT_DIR$/assets/CSS/index.css" />
-        <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/browseGenres.css" />
         <option value="$PROJECT_DIR$/pages/shoppingCart.html" />
         <option value="$PROJECT_DIR$/pages/browseBooks.html" />
@@ -162,9 +178,10 @@
         <option value="$PROJECT_DIR$/assets/JS/browseGenresJS.js" />
         <option value="$PROJECT_DIR$/pages/browseGenres.html" />
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
-        <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
+        <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
+        <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
       </list>
     </option>
   </component>
@@ -331,7 +348,7 @@
       <workItem from="1560077811085" duration="73000" />
       <workItem from="1560081336812" duration="19523000" />
       <workItem from="1560415118659" duration="6016000" />
-      <workItem from="1560586064568" duration="9179000" />
+      <workItem from="1560586064568" duration="9770000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -365,7 +382,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160358000" />
+    <option name="totallyTimeSpent" value="160949000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -595,13 +612,6 @@
     <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/footer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -793,24 +803,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
+    <entry file="file://$PROJECT_DIR$/assets/CSS/singleItemStyles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="136" column="20" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
+        <state relative-caret-position="395">
+          <caret line="39" column="23" lean-forward="true" selection-start-line="39" selection-end-line="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
+        <state relative-caret-position="93">
           <caret line="118" column="85" selection-start-line="118" selection-start-column="85" selection-end-line="118" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/singleItemStyles.css">
+    <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="414">
+          <caret line="199" column="22" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
         </state>
       </provider>
     </entry>
