@@ -1,71 +1,85 @@
-.singleItemImage{
+.singleItemImage {
     width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto
 }
-.margin-top{
+
+.margin-top {
     margin-top: 50px;
 }
-.margin-bottom{
+
+.margin-bottom {
     margin-bottom: 70px;
 }
-.singleItemContainer{
+
+.singleItemContainer {
     padding: 0px;
 }
-.bookCoverContainer{
+
+.bookCoverContainer {
+    padding: 150% 0 0 0;
+    width: 100%;
+    background-color: #dddddd;
     position: relative;
-    padding-bottom: 66.666667%; /* ratio of image height to width */
-    height: 0;
-    overflow: hidden;
 }
-.bookCoverContainer img{
+.bookCoverContainer img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    bottom: 0;
+    right: 0;
 }
-.textcontent{
+
+
+.textcontent {
     text-align: justify;
     max-height: 300px;
     overflow: scroll;
 }
-hr{
+
+hr {
     border-top-color: darkgray;
     border-top-width: 1px;
 }
-.technical{
+
+.technical {
     font-size: 13px;
-    color:#878484;
+    color: #878484;
     padding: 0;
 }
 
 
-@media (max-width: 440px){
-    .big-screen-image{
+@media (max-width: 440px) {
+    .big-screen-image {
         display: none;
     }
-    .singleItemContainer{
+
+    .singleItemContainer {
         width: 91.66%;
     }
-    .hid{
+
+    .hid {
         display: none;
-    } 
-    .small-screen-image{
-        display:block;
     }
-    hr{
+
+    .small-screen-image {
+        display: block;
+    }
+
+    hr {
         width: 93%;
     }
 }
-@media(min-width: 440px){
-   .small-screen-image{
+
+@media (min-width: 440px) {
+    .small-screen-image {
         display: none;
-    } 
+    }
 }
 
-@media (max-width: 705px){
-    .singleItemName{
+@media (max-width: 705px) {
+    .singleItemName {
         font-size: 30px;
     }
 }

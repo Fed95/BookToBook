@@ -43,7 +43,6 @@
     align-items: center;
     justify-content:center;
     color: #D2E0E6;
-    content: "No items to display. Search for an empty string to view all items :)";
     display: flex;
     margin-top: 50px;
 }

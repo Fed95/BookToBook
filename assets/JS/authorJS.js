@@ -110,7 +110,8 @@ var generateAuthorDiv = function (name, bio, books) {
         var $col1 = $("<div class = 'col-1'/>");
         var $div3 = $("<div class = 'col-10 singleItemContainer'/>");
             var $div4 = $("<div class = 'col-3 singleItemContainer'/>");
-                var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/AuthorPictures/"+name+".jpg"});
+                var $imwrap = $("<div class = 'authorImageContainer'/>");
+                    var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/AuthorPictures/"+name+".jpg"});
             var $col2 = $("<div class = 'col-1'/>");
             var $div5 = $("<div class = 'col-8 singleItemContainer'/>");
                 var $h1 = $("<h1 class = 'singleItemName'/>"); $h1.html(name);
@@ -132,7 +133,8 @@ var generateAuthorDiv = function (name, bio, books) {
         $div2.append($col1);
         $div2.append($div3);
             $div3.append($div4);
-                $div4.append($im1);
+                $div4.append($imwrap);
+                    $imwrap.append($im1);
             $div3.append($col2);
             $div3.append($div5);
                 $div5.append($h1);

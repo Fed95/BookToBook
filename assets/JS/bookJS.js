@@ -114,14 +114,15 @@ var generateBookDiv = function (book, authors, reviews, genres, themes) {
     var $div2 = $("<div class = 'row'/>");
         var $col1 = $("<div class = 'col-1'/>");
         var $div3 = $("<div class = 'col-10 singleItemContainer'/>");
-            var $div4 = $("<div class = 'col-3 singleItemContainer bookCoverContainer'/>");
-                var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/BookCovers/"+book.title+".jpg"});
+            var $div4 = $("<div class = 'col-3 singleItemContainer'/>");
+                var $imwrap = $("<div class = 'bookCoverContainer singleItemImage big-screen-image'/>");
+                    var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/BookCovers/"+book.title+".jpg"});
             var $col2 = $("<div class = 'col-1'/>");
             var $div5 = $("<div class = 'col-8 singleItemContainer'/>");
                 var $h1 = $("<h1 class = 'singleItemName'/>"); $h1.html(book.title);
                 var $div6 = $("<div class = 'row small-screen-image' />");
                     var $div7 = $("<div class = 'col-2' />");
-                    var $div8 = $("<div class = 'col-8' />");
+                    var $div8 = $("<div class = 'col-8 bookCoverContainer' />");
                         var $im2 = $("<img />", { class:"singleItemImage", src:"../assets/Images/BookCovers/"+book.title+".jpg"});
                     var $div9 = $("<div class = 'col-2' />");
                 var $div11 = $("<div class = 'row authorrow' />");
@@ -157,7 +158,6 @@ var generateBookDiv = function (book, authors, reviews, genres, themes) {
                         $b1.html("Add to Cart");
 
 
-        var $hr3 = $("<hr>");
 
 
 
@@ -167,7 +167,8 @@ var generateBookDiv = function (book, authors, reviews, genres, themes) {
         $div2.append($col1);
         $div2.append($div3);
             $div3.append($div4);
-                $div4.append($im1);
+                $div4.append($imwrap);
+                    $imwrap.append($im1);
             $div3.append($col2);
             $div3.append($div5);
                 $div5.append($h1);
@@ -199,7 +200,6 @@ var generateBookDiv = function (book, authors, reviews, genres, themes) {
                     $div15.append($div16);
                     $div15.append($div17);
                         $div17.append($b1);
-            $div3.append($hr3);
 
             if(reviews.length > 0){
                 addReviews($div3, reviews);
