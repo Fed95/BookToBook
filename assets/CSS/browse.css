@@ -4,32 +4,7 @@
 
 .info { display: inline-block; color: #777; }
 .info span { font-weight: bold; }
-@media (max-width: 700x){
-    .col-2-hidden-xs{
-        width:35%;
-    }
-    .col-2-muchbigger-xs{
-        width: 20%;
-    }
-    .col-2-bigger-xs{
-        width: 25%;
-    }
-    .col-8-bigger-xs{
-        width:45%;
-    }
-    .no-pad-left-xs{
-        padding-left: 0px;
-    }
-    .info{
-        font-size: 12px;
-    }
-    .book-title{
-        font-size: 15px;
-    }
-    btn-add-book{
-        font-size: 12px;
-    }
-}
+
 @media (max-width: 800px){
     .hidden-s{
         display: none;
@@ -84,4 +59,30 @@
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+}
+@media (max-width: 700x){
+    .col-2-hidden-xs{
+        width:35%;
+    }
+    .col-2-muchbigger-xs{
+        width: 20%;
+    }
+    .col-2-bigger-xs{
+        width: 25%;
+    }
+    .col-8-bigger-xs{
+        width:45%;
+    }
+    .no-pad-left-xs{
+        padding-left: 0px;
+    }
+    .info{
+        font-size: 12px;
+    }
+    .book-title{
+        font-size: 15px;
+    }
+    .btn-add-book{
+        font-size: 12px;
+    }
 }
