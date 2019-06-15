@@ -75,7 +75,7 @@ var generategenreDivs = function (parsed, n) {
         var $d1 = $("<div class='image-container' />");
         var $a = $("<a />", {href: 'genre.html?genre='+genre});
         var $im = $("<img />", {src: '../assets/Images/GenresImages/'+genre+'.jpg'});
-        var $d2 = $("<div class='centered-text' />"); $d2.html(genre)
+        var $d2 = $("<div class='centered-text genre' />"); $d2.html(genre)
 
         $ref_div.append($d1);
         $d1.append($a);

@@ -22,6 +22,7 @@
 }
 .image-container {
     position: relative;
+    opacity: 0.85;
 }
 .image-container:hover img {
     opacity: 0.3;
@@ -35,9 +36,15 @@
     font-size: 30px;
     font-weight: bolder;
     color: #FFFFFF;
-    background-color: #C33C23;
     padding: 10px;
 }
+.genre{
+    background-color: #C33C23;
+}
+.theme{
+    background-color: #C33C23;
+}
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 1200px) {
 
