@@ -52,22 +52,53 @@ var displayFoundAuthor = function(book_list) {
     var parsed = JSON.parse(book_list);
     console.log("parsed: ", parsed);
 
+    var grouped_by_genre = _.groupBy(parsed, 'genre_name');
+    var grouped_by_theme = _.groupBy(parsed, 'theme_name');
+    var grouped_by_book = _.groupBy(parsed, 'isbn');
+
+    console.log('books: ', grouped_by_book);
+    console.log('genres: ', grouped_by_genre);
+    console.log('thmes: ', grouped_by_theme);
+
     var name = parsed[0]['name'];
     var bio = parsed[0]['bio']
+    var genres = [];
+    var themes = [];
 
     var books = [];
 
-    for(var i in parsed){
+    for(var i in grouped_by_book){
         var book = {
-            isbn: parsed[i]['isbn'],
-            title: parsed[i]['title'],
+            isbn: grouped_by_book[i][0]['isbn'],
+            title: grouped_by_book[i][0]['title'],
             authors: [],
-            price: parsed[i]['price']
+            price: grouped_by_book[i][0]['price']
         };
         books.push(book);
     }
+    for(var g in grouped_by_genre){
+        if(g.localeCompare('null')) {
+            var genre = {
+                name: grouped_by_genre[g][0].genre_name,
+                color: grouped_by_genre[g][0].genre_color,
+            };
+        }
 
-    generateAuthorDiv(name, bio, books);
+        genres.push(genre);
+    }
+    for(var t in grouped_by_theme){
+
+        if(t.localeCompare('null')) {
+            var theme = {
+                name: grouped_by_theme[t][0].theme_name,
+                color: grouped_by_theme[t][0].theme_name,
+            };
+        }
+
+        themes.push(theme);
+    }
+
+    generateAuthorDiv(name, bio, books, genres, themes);
 };
 
 var xhttpAuthors = new XMLHttpRequest();
@@ -101,7 +132,7 @@ var addAuthors = function(author_list){
 };
 
 
-var generateAuthorDiv = function (name, bio, books) {
+var generateAuthorDiv = function (name, bio, books, genres, themes) {
 
     console.log('GENERATING AUTHOR DIVS')
 
@@ -125,6 +156,10 @@ var generateAuthorDiv = function (name, bio, books) {
                 var $div13 = $("<div class = 'textcontent' />"); $div13.html(bio);
                 var $hr1 = $("<hr>");
 
+                var $genres = $("<div class ='row genres'/>");
+
+                addGenresAndThemes($genres, genres, themes);
+
 
 
     $("#homepage-container").append($div1);
@@ -145,6 +180,7 @@ var generateAuthorDiv = function (name, bio, books) {
                 $div5.append($span1);
                 $div5.append($div13);
                 $div5.append($hr1);
+                $div5.append($genres);
 
     if(books.length > 0){
 
@@ -227,6 +263,46 @@ var generateBookDiv = function (book) {
     //xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
     //xhttpAuthors.send();
 
+};
+var addGenresAndThemes = function(div, genres, themes){
+
+    console.log('Adding Genres!');
+    console.log('genres: ', genres);
+
+    if(typeof genres[0] !== 'undefined') {
+
+        var $g = $("<a />", {id: 'start'});
+        $g.html('Genres:');
+        div.append($g);
+
+        for (var g in genres) {
+            $g = $("<a />", {id:genres[g].name, href: ip + 'pages/genre.html?theme='+genres[g].name});
+            $g.html(genres[g].name);
+            div.append($g);
+
+            /*
+            window.onload = function () {
+                var el = document.getElementById(genres[g].name);
+                console.log(el);
+                el.style.backgroundColor = genres[g].color;
+                console.log("done")
+            }
+
+             */
+        }
+    }
+    if(typeof themes[0] !== 'undefined') {
+
+        var $t = $("<a />", {id: 'start'});
+        $t.html('Themes:');
+        div.append($t);
+
+        for (var t in themes) {
+            $t = $("<a />", {id: themes[t].name, href: ip + 'pages/theme.html?theme='+themes[t].name});
+            $t.html(themes[t].name);
+            div.append($t);
+        }
+    }
 };
 
 
