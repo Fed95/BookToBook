@@ -1,6 +1,7 @@
 //---------------------------------------------------------------------
 //shopping cart button functions
 //---------------------------------------------------------------------
+//TODO: ADD DATABASE UPDATE
 
 $('#search-results-container').on('click', 'button.minus-btn', function (e) {
     e.preventDefault();
@@ -49,7 +50,20 @@ $('#search-results-container').on('click', 'button.plus-btn', function (e) {
     $total[0].innerHTML = total;
 });
 
+
 $('#search-results-container').on('click', 'span.delete-btn', function () {
+
+    var $this = $(this);
+    var $price = $this.closest('.item').find('.total-price');
+    var $total = $this.closest('.shopping-cart').find('.grand-total-price');
+
+    var price = parseInt($price.val());
+    var total = parseInt($total[0].innerHTML);
+
+    total -= price;
+
+    $total[0].innerHTML = total;
+
     this.parentElement.parentElement.remove();
 });
 
