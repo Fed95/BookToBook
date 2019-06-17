@@ -280,7 +280,7 @@ var addGenresAndThemes = function(div, genres, themes){
         div.append($g);
 
         for (var g in genres) {
-            $g = $("<a />", {id:genres[g].name, href: ip + 'pages/genre.html?theme='+genres[g].name});
+            $g = $("<a />", {id:genres[g].name, href: ip + 'pages/genre.html?genre='+genres[g].name});
             $g.html(genres[g].name);
             div.append($g);
 

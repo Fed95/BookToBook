@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/Themes.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/Themes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/ThemesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/ThemesService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/bookJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,10 +24,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/controllers/ThemesService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
+            <state relative-caret-position="218">
               <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
             </state>
           </provider>
@@ -72,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1185">
-              <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+            <state relative-caret-position="209">
+              <caret line="282" column="82" selection-start-line="282" selection-start-column="82" selection-end-line="282" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -185,7 +182,6 @@
         <option value="$PROJECT_DIR$/pages/genre.html" />
         <option value="$PROJECT_DIR$/Server/controllers/Genres.js" />
         <option value="$PROJECT_DIR$/pages/theme.html" />
-        <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
         <option value="$PROJECT_DIR$/Server/controllers/GenresService.js" />
         <option value="$PROJECT_DIR$/assets/JS/themeJS.js" />
@@ -193,6 +189,7 @@
         <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
         <option value="$PROJECT_DIR$/Server/controllers/Themes.js" />
         <option value="$PROJECT_DIR$/Server/controllers/ThemesService.js" />
+        <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
       </list>
     </option>
   </component>
@@ -357,7 +354,7 @@
       <workItem from="1560586064568" duration="11536000" />
       <workItem from="1560699766040" duration="7447000" />
       <workItem from="1560781882736" duration="4126000" />
-      <workItem from="1560790308340" duration="168000" />
+      <workItem from="1560790308340" duration="248000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -391,7 +388,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174456000" />
+    <option name="totallyTimeSpent" value="174536000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -412,7 +409,7 @@
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54756874" visible="true" weight="0.50963855" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54756874" visible="true" weight="0.15662651" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31084338" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -808,13 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1185">
-          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/genreJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
@@ -838,8 +828,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/controllers/ThemesService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
+        <state relative-caret-position="218">
           <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="282" column="82" selection-start-line="282" selection-start-column="82" selection-end-line="282" selection-end-column="82" />
         </state>
       </provider>
     </entry>
