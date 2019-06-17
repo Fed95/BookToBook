@@ -22,10 +22,10 @@ module.exports.getThemeFindByBook = function getThemeFindByBook (req, res, next)
 
 module.exports.getThemeThemeName = function getThemeThemeName (req, res, next) {
 
-    var theme_name = req.swagger.params['themeName']['value'];
+    var theme_name = req.swagger.params['ThemeName']['value'];
     console.log("inside theme.js; theme_name = ", theme_name);
 
-    themes.getThemeThemeName(theme_name)
+    Themes.getThemeThemeName(theme_name)
         .then(function (response) {
             utils.writeJson(res, response);
         })

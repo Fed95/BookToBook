@@ -38,7 +38,7 @@ exports.getThemeFindByBook = function(args, res, next) {
   
 }
 
-exports.getThemeThemeName = function(args, res, next) {
+exports.getThemeThemeName = function(theme_name) {
   /**
    * parameters expected in the args:
   * themeName (String)
