@@ -21,5 +21,15 @@ module.exports.getThemeFindByBook = function getThemeFindByBook (req, res, next)
 };
 
 module.exports.getThemeThemeName = function getThemeThemeName (req, res, next) {
-  Themes.getThemeThemeName(req.swagger.params, res, next);
+
+    var theme_name = req.swagger.params['themeName']['value'];
+    console.log("inside theme.js; theme_name = ", theme_name);
+
+    themes.getThemeThemeName(theme_name)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
 };
