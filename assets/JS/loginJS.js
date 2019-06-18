@@ -31,7 +31,13 @@ $(()=>{
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
+var loginForm =
+    {
+        "UserId": $('inputEmail').value,
+        "Password": $('inputPassword').value
+    };
+
 var xhttp = new XMLHttpRequest();
-xhttp.open("POST", ip + "api/user/findByTitle?Title="+input+"&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
-xhttp.send();
+xhttp.open("POST", ip + "api/user/login"+input, true);
+xhttp.send(loginForm);
 
