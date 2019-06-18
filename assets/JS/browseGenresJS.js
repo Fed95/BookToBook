@@ -33,7 +33,7 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
-            displayFoundBooks(this.responseText);
+            displayFoundGenres(this.responseText);
         });
     }
 };
@@ -46,7 +46,8 @@ xhttp.send();
 // handling the result
 //---------------------------------------------------------------------
 
-var displayFoundBooks = function (genre_list) {
+var displayFoundGenres = function (genre_list) {
+
 
     var parsed = JSON.parse(genre_list);
     console.log("parsed: ", parsed);

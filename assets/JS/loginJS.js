@@ -1,3 +1,6 @@
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
+
 function toggleResetPswd(e){
     e.preventDefault();
     $('#logreg-forms .form-signin').toggle() // display:block or none
@@ -22,15 +25,17 @@ $(()=>{
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
     $( '#btn-signIn' ).click(function() {
+        console.log("Pusce gay");
         var loginForm =
             {
-                "UserId": $('inputEmail').value,
-                "Password": $('inputPassword').value
+                UserId: $('#inputEmail').val(),
+                Password: $('#inputPassword').val()
             };
-
+        var input = JSON.stringify(loginForm);
+        //alert(JSON.stringify(loginForm));
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", ip + "api/user/login"+input, true);
-        xhttp.send(loginForm);
+        xhttp.open("POST", ip + "api/user/login", true);
+        xhttp.send(JSON.parse(input));
     });
 });
 
