@@ -22,8 +22,15 @@ $(()=>{
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
     $( '#btn-signIn' ).click(function() {
-        console.log("CLICK")
-        alert( "Handler for .click() called." );
+        var loginForm =
+            {
+                "UserId": $('inputEmail').value,
+                "Password": $('inputPassword').value
+            };
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", ip + "api/user/login"+input, true);
+        xhttp.send(loginForm);
     });
 });
 
@@ -31,13 +38,5 @@ $(()=>{
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var loginForm =
-    {
-        "UserId": $('inputEmail').value,
-        "Password": $('inputPassword').value
-    };
 
-var xhttp = new XMLHttpRequest();
-xhttp.open("POST", ip + "api/user/login"+input, true);
-xhttp.send(loginForm);
 
