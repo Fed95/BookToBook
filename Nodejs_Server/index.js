@@ -83,6 +83,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
 
+  // Use cookie Session
   app.use(cookieSession({
     name: 'session',
     keys: ['key1', 'key2']
