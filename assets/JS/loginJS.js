@@ -21,4 +21,17 @@ $(()=>{
     //$('#logreg-forms #PIPPO').click(ciao);
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
+    $( '#btn-signIn' ).click(function() {
+        console.log("CLICK")
+        alert( "Handler for .click() called." );
+    });
 });
+
+
+//---------------------------------------------------------------------
+//generating the query
+//---------------------------------------------------------------------
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", ip + "api/user/findByTitle?Title="+input+"&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
+xhttp.send();
+
