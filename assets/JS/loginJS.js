@@ -33,9 +33,11 @@ $(()=>{
             };
         var input = JSON.stringify(loginForm);
         //alert(JSON.stringify(loginForm));
-        var xhttp = new XMLHttpRequest();
+        /*var xhttp = new XMLHttpRequest();
         xhttp.open("POST", ip + "api/user/login", true);
-        xhttp.send(JSON.parse(input));
+        xhttp.send(JSON.parse(input));*/
+        $.post(ip + "api/user/login", input, json);
+        console.log("Fine");
     });
 });
 
