@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 function toggleResetPswd(e){
     e.preventDefault();
@@ -25,18 +25,23 @@ $(()=>{
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
     $( '#btn-signIn' ).click(function() {
-        console.log("Pusce gay");
+        //console.log("Pusce gay");
         var loginForm =
             {
-                UserId: $('#inputEmail').val(),
-                Password: $('#inputPassword').val()
+                "UserId": "filipporadicchio@gmail.com",
+                "Password": "trichipuzza"
             };
         var input = JSON.stringify(loginForm);
         //alert(JSON.stringify(loginForm));
-        /*var xhttp = new XMLHttpRequest();
+        var xhttp = new XMLHttpRequest();
         xhttp.open("POST", ip + "api/user/login", true);
-        xhttp.send(JSON.parse(input));*/
-        $.post(ip + "api/user/login", input, json);
+        xhttp.setRequestHeader("Content-Type", "applications/json");
+        //alert(JSON.stringify(JSON.parse(input)));
+        xhttp.send(input);
+        /*$.post(ip + "api/user/login", JSON.parse(input), json, function(){
+            alert("Ciao");
+        });*/
+
         console.log("Fine");
     });
 });
