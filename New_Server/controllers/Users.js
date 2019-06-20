@@ -15,7 +15,15 @@ module.exports.postUser = function postUser (req, res, next) {
 };
 
 module.exports.postUserLogin = function postUserLogin (req, res, next) {
-  Users.postUserLogin(req.swagger.params, res, next);
+  let insertedPassword = req.body.Password;
+  console.log(req.body.UserId);
+  console.log(req.body.Password);
+  if (insertedPassword === Users.postUserLogin(req.swagger.params, res, next)){
+    if( !req.session || !req.session.loggedin){
+      req.session.loggedin = true;
+    }
+  }
+
 };
 
 module.exports.postUserLogout = function postUserLogout (req, res, next) {
