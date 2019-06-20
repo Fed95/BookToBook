@@ -1,0 +1,117 @@
+.image-container{
+    background: url('../Images/EventImages/Prey.jpg') center center;
+    padding: 75px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-content: center;
+}
+.centered-link{
+    text-align: center;
+}
+.no-vert-padding{
+    padding-top:0px;
+    padding-bottom:0px;
+}
+.datestyle{
+    margin-left: 5px;
+    font-size: 16px;
+}
+.eventinfo{
+    font-size: 16px;
+    color: #878484;
+    padding: 0;
+}
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+}
+.google-maps > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+.event-container{
+    margin-top: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.center-align{
+    text-align: center;
+}
+p{
+    margin: 2px;
+}
+@media screen and (max-width: 991px) {
+    .image-container{
+        padding: 65px;
+    }
+}
+@media screen and (max-width: 710px) {
+    .image-container{
+        padding: 55px;
+    }
+}
+@media screen and (max-width:630px){
+    .singleItemName{
+        font-size: 25px;
+    }
+    .datestyle{
+        font-size: 14px;
+    }
+    .sideheading{
+        font-size: 20px;
+    }
+    .eventinfo{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .image-container{
+        padding: 45px;
+    }
+    .singleItemName{
+        font-size: 18px;
+    }
+    .datestyle{
+        font-size: 12px;
+    }
+    .sideheading{
+        font-size: 15px;
+    }
+    .centered-link{
+        font-size: 12px;
+    }
+    .eventinfo{
+        font-size: 12px;
+    }
+    .textcontent{
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .image-container{
+        padding: 35px;
+    }
+    .singleItemName{
+        font-size: 15px;
+    }
+    .datestyle{
+        font-size: 10px;
+    }
+    .sideheading{
+        font-size: 13px;
+    }
+    .centered-link{
+        font-size: 10px;
+    }
+    .eventinfo{
+        font-size: 10px;
+    }
+    .textcontent{
+        font-size: 10px;
+    }
+}

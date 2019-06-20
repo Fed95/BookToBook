@@ -8,6 +8,9 @@
 .margin-top {
     margin-top: 50px;
 }
+.margin-top-less {
+    margin-top: 30px;
+}
 
 .margin-bottom {
     margin-bottom: 70px;
@@ -24,6 +27,11 @@
     background-color: #dddddd;
     position: relative;
 }
+.bookCoverContainer-no-margin {
+    width: 100%;
+    background-color: #dddddd;
+    position: relative;
+}
 .bookCoverContainer img {
     position: absolute;
     top: 0;
@@ -34,6 +42,11 @@
 .authorImageContainer {
     margin-top: 20%;
     padding: 133.33333% 0 0 0;
+    width: 100%;
+    background-color: #dddddd;
+    position: relative;
+}
+.authorImageContainer-no-margin {
     width: 100%;
     background-color: #dddddd;
     position: relative;
@@ -107,7 +120,7 @@ hr {
     }
 }
 
-@media (max-width: 705px) {
+@media (max-width: 740px) {
     .singleItemName {
         font-size: 30px;
     }
