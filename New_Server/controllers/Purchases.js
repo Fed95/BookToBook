@@ -1,8 +1,6 @@
 'use strict';
 
-var url = require('url');
-
-
+var utils = require('../utils/writer.js');
 var Purchases = require('./PurchasesService');
 
 
@@ -11,7 +9,17 @@ module.exports.deletePurchasePurchaseID = function deletePurchasePurchaseID (req
 };
 
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
-  Purchases.getPurchaseFindByUser(req.swagger.params, res, next);
+
+  var user_mail = req.swagger.params['UserID']['value'];
+  console.log("inside Purchase.js; user_mail = ", user_mail);
+
+  Purchases.getPurchaseFindByUser(user_mail)
+      .then(function (response) {
+        utils.writeJson(res, response);
+      })
+      .catch(function (response) {
+        utils.writeJson(res, response);
+      });
 };
 
 module.exports.getPurchasePurchaseID = function getPurchasePurchaseID (req, res, next) {

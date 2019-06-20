@@ -24,8 +24,15 @@ $(()=>{
     //$('#logreg-forms #PIPPO').click(ciao);
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
+
+//---------------------------------------------------------------------
+//generating the query
+//---------------------------------------------------------------------
+
+
     $( '#btn-signIn' ).click(function() {
         //console.log("Pusce gay");
+
         var loginForm =
             {
                 "UserId": "filipporadicchio@gmail.com",
@@ -45,10 +52,5 @@ $(()=>{
         console.log("Fine");
     });
 });
-
-
-//---------------------------------------------------------------------
-//generating the query
-//---------------------------------------------------------------------
 
 
