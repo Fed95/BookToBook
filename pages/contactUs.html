@@ -1,147 +1,154 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <!-- Latest compiled and minified CSS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/CSS/styles.css">
-    
-    <link rel="stylesheet" href="../assets/CSS/footer.css">
-    <link rel="stylesheet" href="../assets/CSS/navbar.css">
-    <link rel="stylesheet" href="../assets/CSS/contactUs.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/CSS/styles.css">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="../assets/CSS/footer.css">
+        <link rel="stylesheet" href="../assets/CSS/navbar.css">
+        <link rel="stylesheet" href="../assets/CSS/contactUs.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-    <title>BookToBook</title>
-</head>
-<body>
-<div id="page-container">
-    <div id="content-wrap">
-        <div class="jumbotron">
-            <div class="title-container">
-                <div class="title-txt"><a href="../index.html">|| BookToBook</a></div>
-            </div>
-        </div>
-        <nav class="navbar navbar-default mynav">
-            <div class="container-fluid">
-                <div class="navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="./browseBooks.html?search-text=">Books</a></li>
-                        <li><a href="./browseAuthors.html?search-text=">Authors</a></li>
-                        <li><a href="./browseEvents.html?search-text=">Events</a></li>
-                        <li><a href="./browseGenres.html?search-text=">Genres</a></li>
-                        <li><a href="./browseThemes.html?search-text=">Themes</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./shoppingCart.html">Shopping Cart <img src="../assets/Images/shopping-cart-black-shape.png" class="userimg"></a></li>
-                        <li><a href="./loginPage.html">Login/Create Account <img src="../assets/Images/user-image-with-black-background.png" class="userimg"></a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-        <div id="contact-us-container" class="container">
-            <div class="row centered-row">
-                <h2 class="text-center nomargbtn title">Contact us</h2><br/>
-                <!--
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <p class="text-center moremargbtn">It is a long established fact that a reader will be distracted by the
-                        readable content
-                        of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                        normal
-                        distribution of letters, as opposed to using Content.</p>
+        <title>BookToBook</title>
+    </head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <div class="jumbotron">
+                    <div class="title-container">
+                        <div class="title-txt"><a href="../index.html">|| BookToBook</a></div>
+                    </div>
                 </div>
-                <div class="col-md-2"></div>
-                -->
-            </div>
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="col-md-4">
-                    <form action="/post" method="post">
-                        <input class="form-control" name="name" placeholder="Name..."/><br/>
-                        <input class="form-control" name="phone" placeholder="Phone..."/><br/>
-                        <input class="form-control" name="email" placeholder="E-mail..."/><br/>
-                        <textarea class="form-control" name="text" placeholder="How can we help you?"
-                                  style="height:150px;"></textarea><br/>
-                        <input class="btn btn-primary" type="submit" value="Send"/><br/><br/>
-                    </form>
-                </div>
-                <div class="col-md-5">
-                    <b>Customer service:</b> <br/>
-                    Phone: +1 129 209 291<br/>
-                    E-mail: <a href="mailto:support@mysite.com">support@mysite.com</a><br/>
-                    <br/><br/>
-                    <b>Headquarter:</b><br/>
-                    Company Inc, <br/>
-                    Las vegas street 201<br/>
-                    55001 Nevada, USA<br/>
-                    Phone: +1 145 000 101<br/>
-                    <a href="mailto:usa@mysite.com">usa@mysite.com</a><br/>
+                <nav class="navbar navbar-default mynav">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Home</a></li>
+                                <li><a href="./browseBooks.html?search-text=">Books</a></li>
+                                <li><a href="./browseAuthors.html?search-text=">Authors</a></li>
+                                <li><a href="./browseEvents.html?search-text=">Events</a></li>
+                                <li><a href="./browseGenres.html?search-text=">Genres</a></li>
+                                <li><a href="./browseThemes.html?search-text=">Themes</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="./shoppingCart.html">Shopping Cart <img src="../assets/Images/shopping-cart-black-shape.png" class="userimg"></a></li>
+                                <li><a href="./loginPage.html">Login/Create Account <img src="../assets/Images/user-image-with-black-background.png" class="userimg"></a></li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
 
-
-                    <br/><br/>
-                    <b>Hong kong:</b><br/>
-                    Company HK Litd, <br/>
-                    25/F.168 Queen<br/>
-                    Wan Chai District, Hong Kong<br/>
-                    Phone: +852 129 209 291<br/>
-                    <a href="mailto:hk@mysite.com">hk@mysite.com</a><br/>
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <footer class="section footer-classic context-dark bg-image myfooter">
-        <div class="container">
-            <div class="row row-30">
-                <div class="col-4">
-
-                    <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and curiosity among all human beings.</p>
-                    <!-- Rights-->
-                    <p class="rights"> &copy; 2019 BookToBook. All Rights Reserved.</p>
-
-                </div>
-                <div class="col-5">
-                    <h5>Contacts</h5>
-                    <dl class="contact-list">
-                        <dt>Address:</dt>
-                        <dd>410 South Morgan Street</dd>
-                    </dl>
-                    <dl class="contact-list">
-                        <dt>email:</dt>
-                        <dd><a href="mailto:#" class="blacklink">rabbin95@gmail.com</a></dd>
-                    </dl>
-                    <dl class="contact-list">
-                        <dt>phones:</dt>
-                        <dd><a href="tel:#" class="blacklink">+1 312 599 4140</a> <span>or</span> <a href="tel:#" class="blacklink">+39 3394233031</a>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="col-3">
-                    <h5>Links</h5>
-                    <ul class="nav-list">
-                        <li><a href="#" class="blacklink">About</a></li>
-                        <li><a href="#" class="blacklink">Projects</a></li>
-                        <li><a href="" class="blacklink">Contact Us</a></li>
-                        <li><a href="#" class="blacklink">Pricing</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+                <div id="contact-us-container" class="container">
+                    <div class="row centered-row">
+                        <h2 class="text-center nomargbtn title">Contact us</h2><br/>
+                        <!--
+<div class="col-md-2"></div>
+<div class="col-md-8">
+<p class="text-center moremargbtn">It is a long established fact that a reader will be distracted by the
+readable content
+of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+normal
+distribution of letters, as opposed to using Content.</p>
 </div>
-<!-- Bootstrap core JavaScript
+<div class="col-md-2"></div>
+-->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-4">
+                            <form action="/post" method="post">
+                                <input class="form-control" name="name" placeholder="Name..."/><br/>
+                                <input class="form-control" name="phone" placeholder="Phone..."/><br/>
+                                <input class="form-control" name="email" placeholder="E-mail..."/><br/>
+                                <textarea class="form-control" name="text" placeholder="How can we help you?"
+                                          style="height:150px;"></textarea><br/>
+                                <input class="btn btn-primary" type="submit" value="Send"/><br/><br/>
+                            </form>
+                        </div>
+                        <div class="col-md-5">
+                            <b>Customer service:</b> <br/>
+                            Phone: +1 129 209 291<br/>
+                            E-mail: <a href="mailto:support@mysite.com">support@mysite.com</a><br/>
+                            <br/><br/>
+                            <b>Headquarter:</b><br/>
+                            Company Inc, <br/>
+                            Las vegas street 201<br/>
+                            55001 Nevada, USA<br/>
+                            Phone: +1 145 000 101<br/>
+                            <a href="mailto:usa@mysite.com">usa@mysite.com</a><br/>
+
+
+                            <br/><br/>
+                            <b>Hong kong:</b><br/>
+                            Company HK Litd, <br/>
+                            25/F.168 Queen<br/>
+                            Wan Chai District, Hong Kong<br/>
+                            Phone: +852 129 209 291<br/>
+                            <a href="mailto:hk@mysite.com">hk@mysite.com</a><br/>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="section footer-classic context-dark bg-image myfooter">
+                <div class="container">
+                    <div class="row row-30">
+                        <div class="col-4">
+
+                            <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and curiosity among all human beings.</p>
+                            <!-- Rights-->
+                            <p class="rights"> &copy; 2019 BookToBook. All Rights Reserved.</p>
+
+                        </div>
+                        <div class="col-5">
+                            <h5>Contacts</h5>
+                            <dl class="contact-list">
+                                <dt>Address:</dt>
+                                <dd>410 South Morgan Street</dd>
+                            </dl>
+                            <dl class="contact-list">
+                                <dt>email:</dt>
+                                <dd><a href="mailto:#" class="blacklink">rabbin95@gmail.com</a></dd>
+                            </dl>
+                            <dl class="contact-list">
+                                <dt>phones:</dt>
+                                <dd><a href="tel:#" class="blacklink">+1 312 599 4140</a> <span>or</span> <a href="tel:#" class="blacklink">+39 3394233031</a>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-3">
+                            <h5>Links</h5>
+                            <ul class="nav-list">
+                                <li><a href="#" class="blacklink">About</a></li>
+                                <li><a href="#" class="blacklink">Projects</a></li>
+                                <li><a href="" class="blacklink">Contact Us</a></li>
+                                <li><a href="#" class="blacklink">Pricing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-<script scr="assets/JS/indexJS/js"></script>
-</body>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+        <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+        <script scr="assets/JS/indexJS/js"></script>
+    </body>
 </html>
