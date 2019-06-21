@@ -27,6 +27,10 @@
     padding-top: 0px;
     text-align: center;
 }
+#icon{
+    height: 50px;
+    padding-bottom: 5px;
+}
 .section-title{
     font-size: 50px;
     margin: 40px;

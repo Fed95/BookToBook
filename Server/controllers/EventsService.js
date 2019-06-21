@@ -17,19 +17,24 @@ exports.getEvent = function(args, res, next) {
   
 }
 
-exports.getEventEventID = function(args, res, next) {
+exports.getEventEventID = function(event_id) {
   /**
    * parameters expected in the args:
   * eventID (String)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+
+  console.log("---------------executing getEventEventID------------------------");
+  console.log("event_id: '" + event_id + "'");
+  console.log("------------------------------------------------------------");
+
+  //todo: extend query to get reviews and events
+
+  let myQuery = knex('new_schema.events AS e')
+
+      .where('e.event_id', event_id)
+      .then(result => {
+        resolve(result)
+      });
   
 }
 

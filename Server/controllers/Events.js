@@ -11,7 +11,18 @@ module.exports.getEvent = function getEvent (req, res, next) {
 };
 
 module.exports.getEventEventID = function getEventEventID (req, res, next) {
-  Events.getEventEventID(req.swagger.params, res, next);
+
+  var event_id = req.swagger.params;
+  console.log("inside Events.js; event_id = ", event_id);
+
+  Events.getEventEventID(event_id)
+      .then(function (response) {
+        utils.writeJson(res, response);
+      })
+      .catch(function (response) {
+        utils.writeJson(res, response);
+      });
+
 };
 
 module.exports.getEventFindByBook = function getEventFindByBook (req, res, next) {
