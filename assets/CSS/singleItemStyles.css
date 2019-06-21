@@ -21,9 +21,10 @@
 }
 
 .bookCoverContainer {
-    margin-top: 20%;
-    padding: 150% 0 0 0;
-    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 100% 0 0 0;
+    width: 66.66%;
     background-color: #dddddd;
     position: relative;
 }
@@ -91,7 +92,14 @@ hr {
     padding: 0;
 }
 
-
+@media (max-width: 441px) {
+    .small-screen-image {
+        display: block;
+    }
+    .hidden-col-s{
+        display: none;
+    }
+}
 @media (max-width: 440px) {
     .big-screen-image {
         display: none;
@@ -103,10 +111,6 @@ hr {
 
     .hid {
         display: none;
-    }
-
-    .small-screen-image {
-        display: block;
     }
 
     hr {
