@@ -87,7 +87,8 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(cookieSession({
     name: 'session',
     keys: ['key1', 'key2']
-  }))
+  }));
+
 
   // Start the server
   http.createServer(app).listen(serverPort, function () {

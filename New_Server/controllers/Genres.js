@@ -25,6 +25,10 @@ module.exports.getGenreGenreName = function getGenreGenreName (req, res, next) {
     var genre_name = req.swagger.params['GenreName']['value'];
     console.log("inside Genre.js; genre_name = ", genre_name);
 
+    if (!req.session || !req.session.loggedIn){
+        utils.writeJson(res, { error: "Must be logged in"}, 404);
+    }else{
+
     Genres.getGenreGenreName(genre_name)
         .then(function (response) {
             utils.writeJson(res, response);
@@ -32,4 +36,5 @@ module.exports.getGenreGenreName = function getGenreGenreName (req, res, next) {
         .catch(function (response) {
             utils.writeJson(res, response);
         });
+    }
 };
