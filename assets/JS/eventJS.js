@@ -38,6 +38,7 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
+console.log('preparing get fun')
 xhttp.open("GET", ip + "api/event/"+input, true);
 xhttp.send();
 
@@ -48,66 +49,33 @@ xhttp.send();
 //---------------------------------------------------------------------
 
 var displayFoundBooks = function(book) {
-/*
+
     var parsed = JSON.parse(book);
     console.log("parsed: ", parsed);
 
     var grouped_by_author = _.groupBy(parsed, 'name');
-    var grouped_by_review = _.groupBy(parsed, 'text');
-    var grouped_by_genre = _.groupBy(parsed, 'genre_name');
-    var grouped_by_theme = _.groupBy(parsed, 'theme_name');
 
     var authors = [];
-    var reviews = [];
-    var genres = [];
-    var themes = [];
 
-    for(var author in grouped_by_author){
+    for(var i in grouped_by_author){
+        var author = {
+            name: grouped_by_author[i][0].name,
+            id: grouped_by_author[i][0].author_id
+        };
+
         authors.push(author);
     }
 
-    for(var text in grouped_by_review){
-
-        if(text.localeCompare('null')){
-            var review = {
-                username: grouped_by_review[text][0].username,
-                text: text,
-                positive: grouped_by_review[text][0].positive
-            };
-            reviews.push(review);
-        }
-    }
-    for(var g in grouped_by_genre){
-        if(g.localeCompare('null')) {
-            var genre = {
-                name: grouped_by_genre[g][0].genre_name,
-                color: grouped_by_genre[g][0].genre_color,
-            };
-        }
-
-        genres.push(genre);
-    }
-    for(var t in grouped_by_theme){
-
-        if(t.localeCompare('null')) {
-            var theme = {
-                name: grouped_by_theme[t][0].theme_name,
-                color: grouped_by_theme[t][0].theme_name,
-            };
-        }
-
-        themes.push(theme);
-    }
-*/
-
-    generateEventDiv();
+    generateEventDiv(parsed[0], authors);
 };
 
 
 
 
 
-var generateEventDiv = function () {
+var generateEventDiv = function (event, authors) {
+
+    console.log(event)
 
 
     var $div1 = $("<div class = 'col-12'/>");
@@ -118,27 +86,24 @@ var generateEventDiv = function () {
                 var $h1 = $("<h3 class = 'sideheading'/>"); $h1.html('Book:');
                 var $div5 = $("<div class = 'bookCoverContainer-no-margin'/>");
                     var $a1 = $("<a href='./event.html'>");
-                        var $im1 = $("<img class='singleItemImage' src='../assets/Images/BookCovers/Prey.jpg' />");
+                        var $im1 = $("<img />", {class:'singleItemImage', src:'../assets/Images/BookCovers/' + event.title +'.jpg'});
                 var $h2 = $("<h3 class = 'sideheading'/>"); $h2.html('Author/s:');
-                var $div6 = $("<div class = 'bookCoverContainer-no-margin'/>");
-                    var $a2 = $("<a href='./event.html'>");
-                        var $im2 = $("<img class='singleItemImage' src='../assets/Images/BookCovers/Prey.jpg' />");
-                var $a3 = $("<a href='./event.html' class='centered-link'>"); $a3.html('Michael');
+
             var $div7 = $("<div class = col-9 no-vert-padding'/>");
-                var $h3 = $("<h1 class = 'singleItemName'/>"); $h3.html('01/09/95 - Reaching Human Intelligence');
-                var $div8 = $("<div class = textcontent'/>");
+                var $h3 = $("<h1 class = 'singleItemName'/>"); $h3.html(event.event_date.substr(0, 10) + ' - ' + event.event_name);
+                var $div8 = $("<div class = textcontent'/>"); $div8.html(event.summary);
                 var $hr1 = $("<hr />");
                 var $div9 = $("<div class = 'row'/>");
                     var $div10 = $("<div class = 'col-4 eventinfo'/>");
-                        var $p1 = $("<p />"); $p1.html('Starting time:');
-                        var $p2 = $("<p />"); $p2.html('Event duration:');
-                        var $p3 = $("<p />"); $p3.html('Address:');
+                        var $p1 = $("<p />"); $p1.html('Date:');
+                        var $p2 = $("<p />"); $p1.html('Starting time:');
+                        var $p3 = $("<p />"); $p2.html('Ending time:');
                         var $p4 = $("<p />"); $p4.html('Location:');
                     var $div11 = $("<div class = 'col-8 eventinfo'/>");
-                        var $p5 = $("<p />"); $p5.html('16:00');
-                        var $p6 = $("<p />"); $p6.html('3 hours');
-                        var $p7 = $("<p />"); $p7.html('Address:');
-                        var $p8 = $("<p />"); $p8.html('Location:');
+                        var $p5 = $("<p />"); $p5.html(event.event_date.substr(0, 10));
+                        var $p6 = $("<p />"); $p5.html(event.start_time.substr(0, 5));
+                        var $p7 = $("<p />"); $p6.html(event.end_time.substr(0, 5));
+                        var $p8 = $("<p />"); $p7.html(event.location);
                 var $hr2 = $("<hr />");
                 var $div12 = $("<div class = 'google-maps'/>");
                     var $frame = $("<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.5157899504575!2d9.227588915430724!3d45.47955717910118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6f6b5d0c583%3A0x40368fe89bcde753!2sVia+Edoardo+Bonardi%2C+23%2C+20133+Milano+MI!5e0!3m2!1sen!2sit!4v1561050495243!5m2!1sen!2sit' width='400' height='300' frameborder='0' style='border:0' allowfullscreen/>");
@@ -155,10 +120,9 @@ var generateEventDiv = function () {
     $div5.append($a1);
     $a1.append($im1);
     $div4.append($h2);
-    $div4.append($div6);
-    $div6.append($a2);
-    $a2.append($im2);
-    $div4.append($a3);
+
+    addAuthors($div4, authors);
+
     $div3.append($div7);
     $div7.append($h3);
     $div7.append($div8);
@@ -175,10 +139,28 @@ var generateEventDiv = function () {
     $div11.append($p7);
     $div11.append($p8);
     $div7.append($hr2);
-    $div7.append($div12);
+    $div1.append($div12);
     $div12.append($frame);
 
 };
+
+var addAuthors = function ($div, authors) {
+
+    console.log(authors);
+
+    var $ul = $("<ul />");
+
+    for(var i in authors){
+
+        var $li = $("<li />");
+        var $a = $("<a />", {href:ip + 'pages/author.html?author_id='+authors[i].id, class:'authorlink'});
+        $li.html(authors[i].name);
+
+        $a.append($li);
+        $ul.append($a);
+    }
+    $div.append($ul);
+}
 
 
 /* <div class="col-12">

@@ -24,10 +24,11 @@
     margin-top: 10%;
     margin-bottom: 10%;
     padding: 100% 0 0 0;
-    width: 66.66%;
     background-color: #dddddd;
     position: relative;
 }
+
+
 .bookCoverContainer-no-margin {
     width: 100%;
     background-color: #dddddd;

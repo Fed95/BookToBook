@@ -1,117 +1,151 @@
-.image-container{
+.image-container {
     background: url('../Images/EventImages/Prey.jpg') center center;
     padding: 100px;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     align-content: center;
+    margin-bottom: 5%;
 }
-.centered-link{
+
+.centered-link {
     text-align: center;
 }
-.no-vert-padding{
-    padding-top:0px;
-    padding-bottom:0px;
+
+.no-vert-padding {
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
-.datestyle{
+
+.datestyle {
     margin-left: 5px;
     font-size: 16px;
 }
-.eventinfo{
+
+.eventinfo {
     font-size: 16px;
     color: #878484;
     padding: 0;
 }
+
 .google-maps {
-  position: relative;
-  padding-bottom: 75%;
-  height: 0;
-  overflow: hidden;
+    position: relative;
+    margin-top: 7%;
+    padding-bottom: 50%;
+    height: 0;
+    overflow: hidden;
 }
+
 .google-maps > iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
 }
-.event-container{
+
+.event-container {
     margin-top: 40px;
     margin-left: 0px;
     margin-right: 0px;
 }
-.center-align{
+
+.center-align {
     text-align: center;
 }
-p{
+
+p {
     margin: 2px;
 }
+.authorlink{
+    font-size: 20px;
+}
+
 @media screen and (max-width: 991px) {
-    .image-container{
+    .image-container {
         padding: 65px;
     }
 }
+
 @media screen and (max-width: 710px) {
-    .image-container{
+    .image-container {
         padding: 55px;
     }
 }
-@media screen and (max-width:630px){
-    .singleItemName{
+
+@media screen and (max-width: 630px) {
+    .singleItemName {
         font-size: 25px;
     }
-    .datestyle{
+
+    .datestyle {
         font-size: 14px;
     }
-    .sideheading{
+
+    .sideheading {
         font-size: 20px;
     }
-    .eventinfo{
+
+    .eventinfo {
         font-size: 14px;
     }
 }
+
 @media screen and (max-width: 550px) {
-    .image-container{
+    .image-container {
         padding: 45px;
     }
-    .singleItemName{
+
+    .singleItemName {
         font-size: 18px;
     }
-    .datestyle{
+
+    .datestyle {
         font-size: 12px;
     }
-    .sideheading{
+
+    .sideheading {
         font-size: 15px;
     }
-    .centered-link{
+
+    .centered-link {
         font-size: 12px;
     }
-    .eventinfo{
+
+    .eventinfo {
         font-size: 12px;
     }
-    .textcontent{
+
+    .textcontent {
         font-size: 12px;
     }
 }
+
 @media screen and (max-width: 400px) {
-    .image-container{
+    .image-container {
         padding: 35px;
     }
-    .singleItemName{
+
+    .singleItemName {
         font-size: 15px;
     }
-    .datestyle{
+
+    .datestyle {
         font-size: 10px;
     }
-    .sideheading{
+
+    .sideheading {
         font-size: 13px;
     }
-    .centered-link{
+
+    .centered-link {
         font-size: 10px;
     }
-    .eventinfo{
+
+    .eventinfo {
         font-size: 10px;
     }
-    .textcontent{
+
+    .textcontent {
         font-size: 10px;
     }
 }
