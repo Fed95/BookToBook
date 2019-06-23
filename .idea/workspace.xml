@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Prova/api/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Prova/api/swagger.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -82,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Prova/api/swagger.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="601" column="33" selection-start-line="601" selection-start-column="33" selection-end-line="601" selection-end-column="33" />
+            <state relative-caret-position="222">
+              <caret line="603" column="27" lean-forward="true" selection-start-line="603" selection-start-column="27" selection-end-line="603" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -396,7 +395,7 @@
       <workItem from="1560790308340" duration="248000" />
       <workItem from="1561032719976" duration="3768000" />
       <workItem from="1561276457170" duration="2489000" />
-      <workItem from="1561299221521" duration="5360000" />
+      <workItem from="1561299221521" duration="5691000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -430,7 +429,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196909000" />
+    <option name="totallyTimeSpent" value="197240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -863,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Prova/api/swagger.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="601" column="33" selection-start-line="601" selection-start-column="33" selection-end-line="601" selection-end-column="33" />
+        <state relative-caret-position="222">
+          <caret line="603" column="27" lean-forward="true" selection-start-line="603" selection-start-column="27" selection-end-line="603" selection-end-column="27" />
         </state>
       </provider>
     </entry>

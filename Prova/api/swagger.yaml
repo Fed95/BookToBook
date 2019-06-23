@@ -600,6 +600,8 @@ paths:
     post:
       summary: "Create Purchase"
       operationId: "postPurchase"
+      consumes:
+      - "applications/json"
       produces:
       - "applications/json"
       parameters:
