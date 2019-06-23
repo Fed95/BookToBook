@@ -794,6 +794,7 @@
         "summary" : "Create Review",
         "operationId" : "postProva",
         "consumes" : [ "applications/json" ],
+        "produces" : [ "applications/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -804,7 +805,10 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "successful operation"
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/prova"
+            }
           },
           "400" : {
             "description" : "Format error"
