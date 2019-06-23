@@ -2,10 +2,10 @@
   "name": "bookbook",
   "version": "1.0.0",
   "description": "This is our BookBook server",
-  "main": "./Prova/index.js",
+  "main": "./New_Server/index.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "node ./Prova/index.js"
+    "start": "node ./New_Server/index.js"
   },
   "keywords": [
     "swagger"
