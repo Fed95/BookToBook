@@ -831,7 +831,7 @@
           "200" : {
             "description" : "succesfull operation",
             "schema" : {
-              "$ref" : "#/definitions/Error"
+              "$ref" : "#/definitions/Purchase"
             }
           },
           "400" : {
