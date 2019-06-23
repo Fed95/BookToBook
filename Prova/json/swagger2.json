@@ -818,6 +818,7 @@
         "summary" : "Create Purchase",
         "operationId" : "postPurchase",
         "consumes" : [ "applications/json" ],
+        "produces" : [ "applications/json" ],
         "parameters" : [ {
           "in" : "body",
           "name" : "body",
@@ -828,10 +829,16 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "succesfull operation"
+            "description" : "succesfull operation",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
           },
           "400" : {
-            "description" : "Format error"
+            "description" : "Format error",
+            "schema" : {
+              "$ref" : "#/definitions/Error"
+            }
           }
         }
       }

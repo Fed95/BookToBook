@@ -657,6 +657,8 @@ paths:
       operationId: "postPurchase"
       consumes:
       - "applications/json"
+      produces:
+      - "applications/json"
       parameters:
       - in: "body"
         name: "body"
@@ -666,8 +668,12 @@ paths:
       responses:
         200:
           description: "succesfull operation"
+          schema:
+            $ref: "#/definitions/Error"
         400:
           description: "Format error"
+          schema:
+            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Purchases"
   /purchase/completed:
     post:
