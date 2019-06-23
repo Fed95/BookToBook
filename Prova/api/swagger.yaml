@@ -9,25 +9,12 @@ info:
     email: "santadavide1995@gmail.com"
 host: "booktobook.herokuapp.com"
 basePath: "/api"
-tags:
-- name: "Books"
-- name: "Themes"
-- name: "Genres"
-- name: "Authors"
-- name: "Events"
-- name: "Users"
-- name: "Purchases"
-- name: "Reviews"
-- name: "prova"
-- name: "General"
 schemes:
 - "https"
 - "http"
 paths:
   /author/:
     get:
-      tags:
-      - "Authors"
       summary: "Get all Authors"
       operationId: "getAuthor"
       produces:
@@ -44,11 +31,9 @@ paths:
           description: "Author not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Authors"
+      x-swagger-router-controller: "Default"
   /author/findByBook:
     get:
-      tags:
-      - "Authors"
       summary: "Get authors by book"
       operationId: "getAuthorFindByBook"
       produces:
@@ -73,11 +58,9 @@ paths:
           description: "Author not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Authors"
+      x-swagger-router-controller: "Default"
   /author/findByName:
     get:
-      tags:
-      - "Authors"
       summary: "Get authors by name"
       operationId: "getAuthorFindByName"
       produces:
@@ -101,11 +84,9 @@ paths:
           description: "Author not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Authors"
+      x-swagger-router-controller: "Default"
   /author/{AuthorID}:
     get:
-      tags:
-      - "Authors"
       summary: "Get Author by ID"
       operationId: "getAuthorAuthorID"
       produces:
@@ -128,11 +109,9 @@ paths:
           description: "Author not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Authors"
+      x-swagger-router-controller: "Default"
   /book/:
     get:
-      tags:
-      - "Books"
       summary: "Get Books by general Info"
       operationId: "getBook"
       produces:
@@ -158,11 +137,9 @@ paths:
           description: "Book not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/bestOfTheMonth:
     get:
-      tags:
-      - "Books"
       summary: "Get Books of the Month"
       description: "Best sellers this month"
       operationId: "getBookBestOfTheMonth"
@@ -190,11 +167,9 @@ paths:
           description: "Book not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/favoriteReading:
     get:
-      tags:
-      - "Books"
       summary: "Get favorite Books"
       operationId: "getBookFavoriteReading"
       produces:
@@ -211,11 +186,9 @@ paths:
           description: "Book not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/findByAuthor:
     get:
-      tags:
-      - "Books"
       summary: "Get Books by author"
       operationId: "getBookFindByAuthor"
       produces:
@@ -242,11 +215,9 @@ paths:
           description: "Book not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/findByEvent:
     get:
-      tags:
-      - "Books"
       summary: "Get Books by event"
       operationId: "getBookFindByEvent"
       produces:
@@ -273,11 +244,9 @@ paths:
           description: "Book not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/findByGenre:
     get:
-      tags:
-      - "Books"
       summary: "Get Books by genre"
       operationId: "getBookFindByGenre"
       produces:
@@ -304,11 +273,9 @@ paths:
           description: "Book not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/findByTheme:
     get:
-      tags:
-      - "Books"
       summary: "Get Books by theme"
       operationId: "getBookFindByTheme"
       produces:
@@ -335,11 +302,9 @@ paths:
           description: "Book not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/findByTitle:
     get:
-      tags:
-      - "Books"
       summary: "Get Books by title"
       description: "Returns a list of books"
       operationId: "getBookByTitle"
@@ -367,11 +332,9 @@ paths:
           description: "Book not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /book/{ISBN}:
     get:
-      tags:
-      - "Books"
       summary: "Get Book by ISBN"
       operationId: "getBookISBN"
       produces:
@@ -397,11 +360,9 @@ paths:
           description: "Book not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
+      x-swagger-router-controller: "Default"
   /event/:
     get:
-      tags:
-      - "Events"
       summary: "Get all events"
       operationId: "getEvent"
       produces:
@@ -416,11 +377,9 @@ paths:
           description: "Event not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Events"
+      x-swagger-router-controller: "Default"
   /event/findByBook:
     get:
-      tags:
-      - "Events"
       summary: "Get Event by Book"
       operationId: "getEventFindByBook"
       produces:
@@ -445,11 +404,9 @@ paths:
           description: "Event not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Events"
+      x-swagger-router-controller: "Default"
   /event/findByMonth:
     get:
-      tags:
-      - "Events"
       summary: "Get Event by Month"
       operationId: "getEventFindByMonth"
       produces:
@@ -474,11 +431,9 @@ paths:
           description: "Event not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Events"
+      x-swagger-router-controller: "Default"
   /event/findByName:
     get:
-      tags:
-      - "Events"
       summary: "Get Event by Name"
       operationId: "getEventFindByName"
       produces:
@@ -502,11 +457,9 @@ paths:
           description: "Event not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Events"
+      x-swagger-router-controller: "Default"
   /event/{EventID}:
     get:
-      tags:
-      - "Events"
       summary: "Get Event by ID"
       operationId: "getEventEventID"
       produces:
@@ -529,11 +482,9 @@ paths:
           description: "Event not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Events"
+      x-swagger-router-controller: "Default"
   /genre/:
     get:
-      tags:
-      - "Genres"
       summary: "Get all Genres"
       operationId: "getGenre"
       produces:
@@ -550,11 +501,9 @@ paths:
           description: "Genre not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Genres"
+      x-swagger-router-controller: "Default"
   /genre/findByBook:
     get:
-      tags:
-      - "Genres"
       summary: "Get Genres by book"
       operationId: "getGenreFindByBook"
       produces:
@@ -581,11 +530,9 @@ paths:
           description: "Genre not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Genres"
+      x-swagger-router-controller: "Default"
   /genre/{GenreName}:
     get:
-      tags:
-      - "Genres"
       summary: "Get Genre by name"
       operationId: "getGenreGenreName"
       produces:
@@ -608,11 +555,9 @@ paths:
           description: "Genre not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Genres"
+      x-swagger-router-controller: "Default"
   /prova/:
     get:
-      tags:
-      - "prova"
       summary: "Get all Authors"
       operationId: "getProva"
       produces:
@@ -629,10 +574,8 @@ paths:
           description: "Author not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Prova"
+      x-swagger-router-controller: "Default"
     post:
-      tags:
-      - "prova"
       summary: "Create Review"
       operationId: "postProva"
       consumes:
@@ -652,11 +595,9 @@ paths:
             $ref: "#/definitions/prova"
         400:
           description: "Format error"
-      x-swagger-router-controller: "Prova"
+      x-swagger-router-controller: "Default"
   /purchase/:
     post:
-      tags:
-      - "Purchases"
       summary: "Create Purchase"
       operationId: "postPurchase"
       consumes:
@@ -676,11 +617,9 @@ paths:
             $ref: "#/definitions/Purchase"
         400:
           description: "Format error"
-      x-swagger-router-controller: "Purchases"
+      x-swagger-router-controller: "Default"
   /purchase/completed:
     post:
-      tags:
-      - "Purchases"
       summary: "Set Purchase as completed"
       operationId: "postPurchaseCompleted"
       parameters:
@@ -695,11 +634,9 @@ paths:
           description: "successful operation"
         400:
           description: "format error"
-      x-swagger-router-controller: "Purchases"
+      x-swagger-router-controller: "Default"
   /purchase/findByUser:
     get:
-      tags:
-      - "Purchases"
       summary: "Get Purchases by user"
       operationId: "getPurchaseFindByUser"
       produces:
@@ -724,11 +661,9 @@ paths:
           description: "User not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Purchases"
+      x-swagger-router-controller: "Default"
   /purchase/{PurchaseID}:
     get:
-      tags:
-      - "Purchases"
       summary: "Get Purchase by ID"
       operationId: "getPurchasePurchaseID"
       produces:
@@ -751,10 +686,8 @@ paths:
           description: "Purchase not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Purchases"
+      x-swagger-router-controller: "Default"
     post:
-      tags:
-      - "Purchases"
       summary: "Add book in Purchase"
       operationId: "postPurchasePurchaseID"
       parameters:
@@ -773,10 +706,8 @@ paths:
           description: "successful operation"
         400:
           description: "Format error"
-      x-swagger-router-controller: "Purchases"
+      x-swagger-router-controller: "Default"
     delete:
-      tags:
-      - "Purchases"
       summary: "Delete book in Purchase"
       operationId: "deletePurchasePurchaseID"
       parameters:
@@ -795,11 +726,9 @@ paths:
           description: "successful operation"
         400:
           description: "Format error"
-      x-swagger-router-controller: "Purchases"
+      x-swagger-router-controller: "Default"
   /review/:
     post:
-      tags:
-      - "Reviews"
       summary: "Create Review"
       operationId: "postReview"
       consumes:
@@ -815,11 +744,9 @@ paths:
           description: "successful operation"
         400:
           description: "Format error"
-      x-swagger-router-controller: "Reviews"
+      x-swagger-router-controller: "Default"
   /review/{ReviewID}:
     get:
-      tags:
-      - "Reviews"
       summary: "Get Review by ID"
       operationId: "getReviewReviewID"
       produces:
@@ -842,11 +769,9 @@ paths:
           description: "Review not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Reviews"
+      x-swagger-router-controller: "Default"
   /theme/:
     get:
-      tags:
-      - "Themes"
       summary: "Get all Themes"
       operationId: "getTheme"
       produces:
@@ -863,11 +788,9 @@ paths:
           description: "Theme not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Themes"
+      x-swagger-router-controller: "Default"
   /theme/findByBook:
     get:
-      tags:
-      - "Themes"
       summary: "Get Themes by book"
       operationId: "getThemeFindByBook"
       produces:
@@ -894,11 +817,9 @@ paths:
           description: "Theme not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Themes"
+      x-swagger-router-controller: "Default"
   /theme/{ThemeName}:
     get:
-      tags:
-      - "Themes"
       summary: "Get Theme by name"
       operationId: "getThemeThemeName"
       produces:
@@ -921,13 +842,13 @@ paths:
           description: "Theme not found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Themes"
+      x-swagger-router-controller: "Default"
   /user/:
     post:
-      tags:
-      - "Users"
       summary: "Create User"
       operationId: "postUser"
+      consumes:
+      - "application/json"
       produces:
       - "applications/json"
       parameters:
@@ -943,11 +864,9 @@ paths:
             $ref: "#/definitions/User"
         400:
           description: "Format error"
-      x-swagger-router-controller: "Users"
+      x-swagger-router-controller: "Default"
   /user/login:
     post:
-      tags:
-      - "Users"
       summary: "Perform User login"
       operationId: "postUserLogin"
       consumes:
@@ -967,22 +886,18 @@ paths:
           description: "successful operation"
         404:
           description: "UserID or Password are wrong"
-      x-swagger-router-controller: "Users"
+      x-swagger-router-controller: "Default"
   /user/logout:
     post:
-      tags:
-      - "Users"
       summary: "Perform User logout"
       operationId: "postUserLogout"
       parameters: []
       responses:
         200:
           description: "successful operation"
-      x-swagger-router-controller: "Users"
+      x-swagger-router-controller: "Default"
   /user/{UserID}:
     get:
-      tags:
-      - "Users"
       summary: "Get User by ID"
       operationId: "getUserUserID"
       produces:
@@ -1005,7 +920,7 @@ paths:
           description: "User not Found"
           schema:
             $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Users"
+      x-swagger-router-controller: "Default"
 definitions:
   Book:
     type: "object"

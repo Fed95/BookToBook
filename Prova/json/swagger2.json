@@ -11,32 +11,10 @@
   },
   "host" : "booktobook.herokuapp.com",
   "basePath" : "/api",
-  "tags" : [ {
-    "name" : "Books"
-  }, {
-    "name" : "Themes"
-  }, {
-    "name" : "Genres"
-  }, {
-    "name" : "Authors"
-  }, {
-    "name" : "Events"
-  }, {
-    "name" : "Users"
-  }, {
-    "name" : "Purchases"
-  }, {
-    "name" : "Reviews"
-  }, {
-    "name" : "prova"
-  }, {
-    "name" : "General"
-  } ],
   "schemes" : [ "https", "http" ],
   "paths" : {
     "/author/" : {
       "get" : {
-        "tags" : [ "Authors" ],
         "summary" : "Get all Authors",
         "operationId" : "getAuthor",
         "produces" : [ "applications/json" ],
@@ -62,7 +40,6 @@
     },
     "/author/findByBook" : {
       "get" : {
-        "tags" : [ "Authors" ],
         "summary" : "Get authors by book",
         "operationId" : "getAuthorFindByBook",
         "produces" : [ "applications/json" ],
@@ -98,7 +75,6 @@
     },
     "/author/findByName" : {
       "get" : {
-        "tags" : [ "Authors" ],
         "summary" : "Get authors by name",
         "operationId" : "getAuthorFindByName",
         "produces" : [ "applications/json" ],
@@ -133,7 +109,6 @@
     },
     "/author/{AuthorID}" : {
       "get" : {
-        "tags" : [ "Authors" ],
         "summary" : "Get Author by ID",
         "operationId" : "getAuthorAuthorID",
         "produces" : [ "applications/json" ],
@@ -167,7 +142,6 @@
     },
     "/book/" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Books by general Info",
         "operationId" : "getBook",
         "produces" : [ "applications/json" ],
@@ -205,7 +179,6 @@
     },
     "/book/bestOfTheMonth" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Books of the Month",
         "description" : "Best sellers this month",
         "operationId" : "getBookBestOfTheMonth",
@@ -245,7 +218,6 @@
     },
     "/book/favoriteReading" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get favorite Books",
         "operationId" : "getBookFavoriteReading",
         "produces" : [ "applications/json" ],
@@ -271,7 +243,6 @@
     },
     "/book/findByAuthor" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Books by author",
         "operationId" : "getBookFindByAuthor",
         "produces" : [ "applications/json" ],
@@ -310,7 +281,6 @@
     },
     "/book/findByEvent" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Books by event",
         "operationId" : "getBookFindByEvent",
         "produces" : [ "applications/json" ],
@@ -349,7 +319,6 @@
     },
     "/book/findByGenre" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Books by genre",
         "operationId" : "getBookFindByGenre",
         "produces" : [ "applications/json" ],
@@ -388,7 +357,6 @@
     },
     "/book/findByTheme" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Books by theme",
         "operationId" : "getBookFindByTheme",
         "produces" : [ "applications/json" ],
@@ -427,7 +395,6 @@
     },
     "/book/findByTitle" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Books by title",
         "description" : "Returns a list of books",
         "operationId" : "getBookByTitle",
@@ -466,7 +433,6 @@
     },
     "/book/{ISBN}" : {
       "get" : {
-        "tags" : [ "Books" ],
         "summary" : "Get Book by ISBN",
         "operationId" : "getBookISBN",
         "produces" : [ "applications/json" ],
@@ -503,7 +469,6 @@
     },
     "/event/" : {
       "get" : {
-        "tags" : [ "Events" ],
         "summary" : "Get all events",
         "operationId" : "getEvent",
         "produces" : [ "applications/json" ],
@@ -526,7 +491,6 @@
     },
     "/event/findByBook" : {
       "get" : {
-        "tags" : [ "Events" ],
         "summary" : "Get Event by Book",
         "operationId" : "getEventFindByBook",
         "produces" : [ "applications/json" ],
@@ -562,7 +526,6 @@
     },
     "/event/findByMonth" : {
       "get" : {
-        "tags" : [ "Events" ],
         "summary" : "Get Event by Month",
         "operationId" : "getEventFindByMonth",
         "produces" : [ "applications/json" ],
@@ -598,7 +561,6 @@
     },
     "/event/findByName" : {
       "get" : {
-        "tags" : [ "Events" ],
         "summary" : "Get Event by Name",
         "operationId" : "getEventFindByName",
         "produces" : [ "applications/json" ],
@@ -633,7 +595,6 @@
     },
     "/event/{EventID}" : {
       "get" : {
-        "tags" : [ "Events" ],
         "summary" : "Get Event by ID",
         "operationId" : "getEventEventID",
         "produces" : [ "applications/json" ],
@@ -667,7 +628,6 @@
     },
     "/genre/" : {
       "get" : {
-        "tags" : [ "Genres" ],
         "summary" : "Get all Genres",
         "operationId" : "getGenre",
         "produces" : [ "applications/json" ],
@@ -693,7 +653,6 @@
     },
     "/genre/findByBook" : {
       "get" : {
-        "tags" : [ "Genres" ],
         "summary" : "Get Genres by book",
         "operationId" : "getGenreFindByBook",
         "produces" : [ "applications/json" ],
@@ -732,7 +691,6 @@
     },
     "/genre/{GenreName}" : {
       "get" : {
-        "tags" : [ "Genres" ],
         "summary" : "Get Genre by name",
         "operationId" : "getGenreGenreName",
         "produces" : [ "applications/json" ],
@@ -766,7 +724,6 @@
     },
     "/prova/" : {
       "get" : {
-        "tags" : [ "prova" ],
         "summary" : "Get all Authors",
         "operationId" : "getProva",
         "produces" : [ "applications/json" ],
@@ -790,7 +747,6 @@
         }
       },
       "post" : {
-        "tags" : [ "prova" ],
         "summary" : "Create Review",
         "operationId" : "postProva",
         "consumes" : [ "applications/json" ],
@@ -818,7 +774,6 @@
     },
     "/purchase/" : {
       "post" : {
-        "tags" : [ "Purchases" ],
         "summary" : "Create Purchase",
         "operationId" : "postPurchase",
         "consumes" : [ "applications/json" ],
@@ -846,7 +801,6 @@
     },
     "/purchase/completed" : {
       "post" : {
-        "tags" : [ "Purchases" ],
         "summary" : "Set Purchase as completed",
         "operationId" : "postPurchaseCompleted",
         "parameters" : [ {
@@ -869,7 +823,6 @@
     },
     "/purchase/findByUser" : {
       "get" : {
-        "tags" : [ "Purchases" ],
         "summary" : "Get Purchases by user",
         "operationId" : "getPurchaseFindByUser",
         "produces" : [ "applications/json" ],
@@ -905,7 +858,6 @@
     },
     "/purchase/{PurchaseID}" : {
       "get" : {
-        "tags" : [ "Purchases" ],
         "summary" : "Get Purchase by ID",
         "operationId" : "getPurchasePurchaseID",
         "produces" : [ "applications/json" ],
@@ -937,7 +889,6 @@
         }
       },
       "post" : {
-        "tags" : [ "Purchases" ],
         "summary" : "Add book in Purchase",
         "operationId" : "postPurchasePurchaseID",
         "parameters" : [ {
@@ -963,7 +914,6 @@
         }
       },
       "delete" : {
-        "tags" : [ "Purchases" ],
         "summary" : "Delete book in Purchase",
         "operationId" : "deletePurchasePurchaseID",
         "parameters" : [ {
@@ -991,7 +941,6 @@
     },
     "/review/" : {
       "post" : {
-        "tags" : [ "Reviews" ],
         "summary" : "Create Review",
         "operationId" : "postReview",
         "consumes" : [ "applications/json" ],
@@ -1015,7 +964,6 @@
     },
     "/review/{ReviewID}" : {
       "get" : {
-        "tags" : [ "Reviews" ],
         "summary" : "Get Review by ID",
         "operationId" : "getReviewReviewID",
         "produces" : [ "applications/json" ],
@@ -1049,7 +997,6 @@
     },
     "/theme/" : {
       "get" : {
-        "tags" : [ "Themes" ],
         "summary" : "Get all Themes",
         "operationId" : "getTheme",
         "produces" : [ "applications/json" ],
@@ -1075,7 +1022,6 @@
     },
     "/theme/findByBook" : {
       "get" : {
-        "tags" : [ "Themes" ],
         "summary" : "Get Themes by book",
         "operationId" : "getThemeFindByBook",
         "produces" : [ "applications/json" ],
@@ -1114,7 +1060,6 @@
     },
     "/theme/{ThemeName}" : {
       "get" : {
-        "tags" : [ "Themes" ],
         "summary" : "Get Theme by name",
         "operationId" : "getThemeThemeName",
         "produces" : [ "applications/json" ],
@@ -1148,10 +1093,9 @@
     },
     "/user/" : {
       "post" : {
-        "tags" : [ "Users" ],
         "summary" : "Create User",
         "operationId" : "postUser",
-        "consumes" : [ "applications/json", "application/xml" ],
+        "consumes" : [ "application/json" ],
         "produces" : [ "applications/json" ],
         "parameters" : [ {
           "in" : "body",
@@ -1176,7 +1120,6 @@
     },
     "/user/login" : {
       "post" : {
-        "tags" : [ "Users" ],
         "summary" : "Perform User login",
         "operationId" : "postUserLogin",
         "consumes" : [ "applications/json" ],
@@ -1205,7 +1148,6 @@
     },
     "/user/logout" : {
       "post" : {
-        "tags" : [ "Users" ],
         "summary" : "Perform User logout",
         "operationId" : "postUserLogout",
         "parameters" : [ ],
@@ -1218,7 +1160,6 @@
     },
     "/user/{UserID}" : {
       "get" : {
-        "tags" : [ "Users" ],
         "summary" : "Get User by ID",
         "operationId" : "getUserUserID",
         "produces" : [ "applications/json" ],
