@@ -1178,7 +1178,7 @@ definitions:
         type: "integer"
         format: "int64"
         description: "error code"
-        minimum: 400
+        minimum: 200
         maximum: 599
       description:
         type: "string"
