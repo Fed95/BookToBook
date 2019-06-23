@@ -928,9 +928,6 @@ paths:
       - "Users"
       summary: "Create User"
       operationId: "postUser"
-      consumes:
-      - "applications/json"
-      - "application/xml"
       produces:
       - "applications/json"
       parameters:
