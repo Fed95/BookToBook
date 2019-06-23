@@ -1,4 +1,6 @@
 'use strict';
+var pg = require("../index.js");
+var knex = pg.knex;
 
 exports.getUserUserID = function(args, res, next) {
   /**
@@ -22,6 +24,7 @@ exports.postUser = function(args, res, next) {
   * contentType (String)
   * body (User)
   **/
+  console.log("hello from UsersService.js - postUser");
   // no response value expected for this operation
   res.end();
 }
@@ -32,6 +35,7 @@ exports.postUserLogin = function(args, res, next) {
   * contentType (String)
   * body (Login)
   **/
+  console.log("hello from UsersService.js - postUserLogin");
   // no response value expected for this operation
   res.end();
 }
