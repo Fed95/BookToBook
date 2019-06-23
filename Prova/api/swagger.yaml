@@ -676,8 +676,6 @@ paths:
             $ref: "#/definitions/Purchase"
         400:
           description: "Format error"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Purchases"
   /purchase/completed:
     post:
@@ -933,6 +931,8 @@ paths:
       consumes:
       - "applications/json"
       - "application/xml"
+      produces:
+      - "applications/json"
       parameters:
       - in: "body"
         name: "body"
@@ -942,6 +942,8 @@ paths:
       responses:
         200:
           description: "successful operation"
+          schema:
+            $ref: "#/definitions/User"
         400:
           description: "Format error"
       x-swagger-router-controller: "Users"
