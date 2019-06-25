@@ -904,10 +904,6 @@ paths:
       consumes:
       - "application/json"
       parameters:
-      - name: "Content-Type"
-        in: "header"
-        required: false
-        type: "string"
       - in: "body"
         name: "body"
         required: false
