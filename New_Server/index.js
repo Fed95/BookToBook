@@ -44,7 +44,7 @@ exports.knex = knex;
 //---------------------------------------------------------------
 
 
-
+app.set('trust proxy', 1) // trust first proxy
 
 // Use cookie Session
 app.use(cookieSession({
