@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
 function toggleResetPswd(e){
     e.preventDefault();
@@ -42,7 +42,7 @@ $(()=>{
         //alert(JSON.stringify(loginForm));
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", ip + "api/user/login", true);
-        xhttp.setRequestHeader("Content-Type", "applications/json");
+        xhttp.setRequestHeader("Content-Type", "application/json");
         //alert(JSON.stringify(JSON.parse(input)));
         xhttp.send(input);
         /*$.post(ip + "api/user/login", JSON.parse(input), json, function(){
