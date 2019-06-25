@@ -25,6 +25,7 @@ module.exports.getGenreGenreName = function getGenreGenreName (req, res, next) {
     var genre_name = req.swagger.params['GenreName']['value'];
     console.log("inside Genre.js; genre_name = ", genre_name);
 
+    console.log(req.session)
     if (!req.session || !req.session.loggedIn){
         utils.writeJson(res, { error: "Must be logged in"}, 404);
     }else{

@@ -20,7 +20,8 @@ module.exports.postUserLogin = function postUserLogin (req, res, next) {
   let insertedPassword = req.body.Password;
   console.log(req.body.UserId);
   console.log(req.body.Password);
-  req.session.loggedin = true;
+  req.session.loggedIn = true;
+  req.session.save();
   console.log("Logged in")
   /*if (insertedPassword === Users.postUserLogin(req.swagger.params, res, next)){
     if(!req.session.loggedIn){

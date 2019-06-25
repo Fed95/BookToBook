@@ -15,7 +15,7 @@ var serverPort = 8080;
 const express = require('express');
 const app = express();
 const path = require('path');
-var cors = require('cors');
+//var cors = require('cors');
 
 var cookieSession = require('cookie-session');
 
@@ -44,7 +44,17 @@ exports.knex = knex;
 //---------------------------------------------------------------
 
 
-app.use(cors());
+
+
+// Use cookie Session
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
+
+
+
+//app.use(cors());
 
 // get html homepage
 app.get('/', function(req, res) {
@@ -83,11 +93,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   // Serve the Swagger documents and Swagger UI
   app.use(middleware.swaggerUi());
 
-  // Use cookie Session
-  app.use(cookieSession({
-    name: 'session',
-    keys: ['key1', 'key2']
-  }));
+
 
 
   // Start the server
