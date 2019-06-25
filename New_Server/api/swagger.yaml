@@ -615,7 +615,7 @@ paths:
       summary: "Create Purchase"
       operationId: "postPurchase"
       consumes:
-      - "applications/json"
+      - "application/json"
       parameters:
       - in: "body"
         name: "body"
@@ -754,7 +754,7 @@ paths:
       summary: "Create Review"
       operationId: "postReview"
       consumes:
-      - "applications/json"
+      - "application/json"
       parameters:
       - in: "body"
         name: "body"
@@ -902,7 +902,7 @@ paths:
       summary: "Perform User login"
       operationId: "postUserLogin"
       consumes:
-      - "applications/json"
+      - "application/json"
       parameters:
       - name: "Content-Type"
         in: "header"
