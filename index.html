@@ -43,7 +43,7 @@
                                 <li><a href="./pages/browseThemes.html?search-text=">Themes</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="./pages/shoppingCart.html">Shopping Cart <img src="./assets/Images/shopping-cart-black-shape.png" class="userimg"></a></li>
+                                <li id="shopping-link"><a  href="./pages/shoppingCart.html">Shopping Cart <img src="./assets/Images/shopping-cart-black-shape.png" class="userimg"></a></li>
                                 <li><a href="./pages/loginPage.html">Login/Create Account <img src="./assets/Images/user-image-with-black-background.png" class="userimg"></a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
@@ -51,6 +51,12 @@
                 </nav>
 
                 <div id="homepage-container">
+                    <div id="warning-row" class="row">
+                        <div class="col-4 empty-col"></div>
+                        <div id="warning-col" class="col-4">
+                        </div>
+                        <div class="col-4 empty-col"></div>
+                    </div>
                     <div class="homepage-section best-seller">
                         <h1>Best Sellers</h1>
                         <div class="scrolling-wrapper">
@@ -145,6 +151,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
         <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-        <script scr="assets/JS/indexJS/js"></script>
+        <script src="assets/JS/indexJS.js"></script>
     </body>
 </html>
