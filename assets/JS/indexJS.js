@@ -8,10 +8,10 @@ var ip = "http://localhost:8080/";
 xhttp.send();*/
 $( '#shopping-link' ).click(function(e) {
     e.preventDefault();
-    if(true){
+    if(false){
         displayWarning();
     }else{
-        location.href = "https://www.w3schools.com";
+        location.href = "../pages/shoppingCart.html";
     }
 
     /*var xhttp = new XMLHttpRequest();
