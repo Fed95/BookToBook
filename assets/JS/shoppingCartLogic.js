@@ -3,66 +3,60 @@
 //---------------------------------------------------------------------
 //TODO: ADD DATABASE UPDATE
 
-$('#search-results-container').on('click', 'button.minus-btn', function (e) {
+
+/* Update quantity
+function updateQuantity(quantityInput)
+{
+    Calculate line price
+    var productRow = $(quantityInput).parent().parent();
+    var price = parseFloat(productRow.children('.product-price').text());
+    var quantity = $(quantityInput).val();
+    var linePrice = price * quantity;
+
+     Update line price display and recalc cart totals
+    productRow.children('.product-line-price').each(function () {
+        $(this).fadeOut(fadeTime, function() {
+            $(this).text(linePrice.toFixed(2));
+            recalculateCart();
+            $(this).fadeIn(fadeTime);
+        });
+    });
+}
+*/
+$('#search-results-container').on('change', 'input', function (e) {
     e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var $price = $this.closest('.item').find('.total-price');
-    var $total = $this.closest('.shopping-cart').find('.grand-total-price');
-
-    var value = parseInt($input.val());
-    var price = parseInt($price.val());
-    var total = parseInt($total[0].innerHTML);
-
-    if (value > 1) {
-        total -= price / value;
-        price -= price / value;
-        value = value - 1;
-    } else {
-        //this.parentElement.parentElement.remove();
-    }
-    $input.val(value);
-    $price.val(price);
-    $total[0].innerHTML = total;
+    updateQuantity(this);
 });
 
-
-$('#search-results-container').on('click', 'button.plus-btn', function (e) {
-    e.preventDefault();
-    var $this = $(this);
-    var $input = $this.closest('div').find('input');
-    var $price = $this.closest('.item').find('.total-price');
-    var $total = $this.closest('.shopping-cart').find('.grand-total-price');
+function updateQuantity(quantityInput) {
+    var $input = $(quantityInput);
+    var $price = $input.closest('.item').find('.product-price');
+    var $total = $input.closest('.item').find('.total-price');
+    var $grand_total = $input.closest('.shopping-cart').find('.grand-total-price');
 
     var value = parseInt($input.val());
-    var price = parseInt($price.val());
-    var total = parseInt($total[0].innerHTML);
+    var price = parseInt($price[0].innerHTML);
+    var old_total = parseInt($total[0].innerHTML);
+    var grand_total = parseInt($grand_total[0].innerHTML);
+    var new_total = price*value;
+    var diff = new_total - old_total;
 
-    if (value < 100) {
-        total += price / value;
-        price += price / value;
-        value = value + 1;
-    } else {
-        value = 100;
-    }
-    $input.val(value);
-    $price.val(price);
-    $total[0].innerHTML = total;
-});
+    $total[0].innerHTML = new_total;
+    $grand_total[0].innerHTML = grand_total + diff;
+};
+
 
 
 $('#search-results-container').on('click', 'span.delete-btn', function () {
 
-    var $this = $(this);
-    var $price = $this.closest('.item').find('.total-price');
-    var $total = $this.closest('.shopping-cart').find('.grand-total-price');
 
-    var price = parseInt($price.val());
+    var $total = $(this).closest('.item').find('.total-price');
+    var $grand_total = $(this).closest('.shopping-cart').find('.grand-total-price');
+
     var total = parseInt($total[0].innerHTML);
+    var grand_total = parseInt($grand_total[0].innerHTML);
 
-    total -= price;
-
-    $total[0].innerHTML = total;
+    $grand_total[0].innerHTML = grand_total - total;
 
     this.parentElement.parentElement.remove();
 });

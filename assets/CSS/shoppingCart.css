@@ -20,6 +20,24 @@
   font-size: 40px;
   font-weight: 400;
 }
+hr{
+  width: 100%;
+  border-top: 2px solid #58949C;
+  margin-top: 0;
+}
+.top-row{
+  font-size: 20px;
+}
+.top-row .unit-price{
+  padding-left: 495px;
+}
+.top-row .quantity{
+  padding-left: 20px;
+}
+.top-row .total{
+  padding-left: 25px;
+}
+
 
 .item {
   padding: 10px 10px;
@@ -31,7 +49,6 @@
 /* Buttons -  Delete and Like */
 .buttons {
   position: relative;
-  padding-top: 30px;
   margin-right: 60px;
 }
 
@@ -62,7 +79,7 @@
 .description {
   padding-top: 10px;
   margin-right: 60px;
-  width: 115px;
+  width: 400px;
   overflow: scroll;
 }
 
@@ -81,20 +98,16 @@
   margin-top: 8px;
   color: #86939E;
 }
-
-/* Product Quantity */
-.quantity {
-  padding-top: 20px;
-  margin-right: 60px;
-}
-.quantity input {
-  -webkit-appearance: none;
-  border: none;
+.price-info{
+  width: 100%;
   text-align: center;
+}
+.product-price:before, .total-price:before{
+  content: '$ ';
+}
+
+.product-quantity input {
   width: 32px;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 300;
 }
 
 button[class*=btn] {
@@ -112,19 +125,12 @@ input:focus {
   outline:0;
 }
 
-/* Total Price */
-.total-price {
-  max-width: 83px;
-  padding-top: 0px;
-  text-align: center;
-  font-size: 16px;
-  color: #43484D;
-  font-weight: 300;
-  border: none;
-}
 
 /* Responsive */
 @media (max-width: 800px) {
+  .top-row{
+    display: none;
+  }
   .shopping-cart {
     width: 100%;
     height: auto;
@@ -139,7 +145,6 @@ input:focus {
     width: 50%;
   }
   .image,
-  .quantity,
   .description {
     width: 100%;
     text-align: center;
@@ -151,12 +156,30 @@ input:focus {
   .delete-btn {
     margin-right: 0px;
   }
+  .product-quantity input{
+    border-style: solid;
+    border-width: 2px;
+    border-color: #eeeeee;
+  }
+  .product-quantity:before{
+    content: 'x     ';
+  }
+  .product-quantity:after{
+    content: '   =';
+  }
 }
 
 .grand-total{
   margin: 20px;
   display: flex;
   justify-content: flex-end
+}
+.grand-total-price:before{
+  content: '$ ';
+}
+.grand-total-price-text{
+  color: gray;
+  padding-right: 50px;
 }
 .grand-total span{
   font-size: 20px;

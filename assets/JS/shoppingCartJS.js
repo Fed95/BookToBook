@@ -37,8 +37,9 @@ var displayPurchases = function(purchase_list){
         tot += generatePurchaseDiv(purchase);
     }
 
-    var $totalprice = $('<div class="grand-total"/>');
-    var $price= $('<span class="grand-total-price"  />'); $price.html(tot);
+    var $totalprice = $('<div class="row grand-total"/>');
+    var $price_text= $('<span class="col grand-total-price-text"  />'); $price_text.html("Grand Total: ");
+    var $price= $('<span class="col grand-total-price"  />'); $price.html(tot);
     var $total = $('<div class="grand-total"/>');
     var $button = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
     $button.html('Proceed to Checkout');
@@ -46,6 +47,7 @@ var displayPurchases = function(purchase_list){
 
     $("#search-results-container").append($totalprice);
     $("#search-results-container").append($total);
+    $($totalprice).append($price_text);
     $($totalprice).append($price);
     $($total).append($button);
 
@@ -53,22 +55,19 @@ var displayPurchases = function(purchase_list){
 
 var generatePurchaseDiv = function(purchase){
 
-    var $item = $("<div class='item' />");
-        var $buttons = $("<div class='buttons' />");
+    var $item = $("<div class='row item' />");
+        var $buttons = $("<div class='col buttons' />");
             var $delete_btn = $("<span class='delete-btn' />");
-        var $img_div = $("<div class='image' />");
+        var $img_div = $("<div class='col image' />");
             var $img = $("<img />", { src: "../assets/Images/BookCovers/Thumbnails/"+purchase.title+".jpg"});
-        var $description = $("<div class='description' />");
+        var $description = $("<div class='col description' />");
             var $title = $("<span />"); $title.html(purchase.title);
             var $title2 = $("<span />"); $title2.html(purchase.title);
-        var $quantity = $("<div class='quantity'/>");
-            var $plus_btn = $("<button />", {class:"plus-btn", type:"button", name:"button"});
-                var $img_plus = $("<img />", { src: "../assets/Images/plus.svg", alt:""});
-            var $num = $("<input />", {type:"text", name:"name", value:"1"});
-            var $minus_btn = $("<button />", {class:"minus-btn", type:"button", name:"button"});
-                var $img_minus = $("<img />", { src: "../assets/Images/minus.svg", alt:""});
-        var $total = $("<input />", {class:"total-price", type:"text", name:"name", value: purchase.price*purchase.quantity});
-        $total.html('$');
+        var $price_info = $("<div class='row price-info'/>")
+            var $price = $("<div class='col-4 product-price'/>"); $price.html(purchase.price);
+            var $quantity = $("<div class='col-4 product-quantity'/>");
+                var $num = $("<input />", {type:"number", min:'1', value:purchase.quantity});
+            var $total = $("<div class='col-4 total-price' />"); $total.html(purchase.price*purchase.quantity);
 
     $("#search-results-container").append($item);
     $item.append($buttons);
@@ -78,13 +77,11 @@ var generatePurchaseDiv = function(purchase){
     $item.append($description);
     $description.append($title);
     $description.append($title2);
-    $item.append($quantity);
-    $quantity.append($plus_btn);
-    $plus_btn.append($img_plus);
+    $item.append($price_info);
+    $price_info.append($price);
+    $price_info.append($quantity);
     $quantity.append($num);
-    $quantity.append($minus_btn);
-    $minus_btn.append($img_minus);
-    $item.append($total);
+    $price_info.append($total);
 
     return purchase.price*purchase.quantity;
 };
