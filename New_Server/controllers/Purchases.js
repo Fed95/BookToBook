@@ -11,7 +11,7 @@ module.exports.deletePurchasePurchaseID = function deletePurchasePurchaseID (req
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
 
     if (!req.session || !req.session.loggedIn){
-      utils.writeJson(res, { error: "Must be logged in"}, 404);
+        utils.writeJson(res, { error: "Must be logged in"}, 404);
     }else{
         let user_mail = req.swagger.params['UserID']['value'];
         console.log("inside Purchase.js; user_mail = ", user_mail);

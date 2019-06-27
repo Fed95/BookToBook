@@ -29,16 +29,54 @@ exports.postUser = function(args, res, next) {
   res.end();
 }
 
-exports.postUserLogin = function(args, res, next) {
+exports.postUserLogin = function(args, session, res, next) {
   /**
    * parameters expected in the args:
   * contentType (String)
   * body (Login)
   **/
+
+  var userIdReq = args.UserId;
+  var passwordReq = args.Password;
+
   console.log("hello from UsersService.js - postUserLogin");
   // no response value expected for this operation
-  res.end();
-}
+
+  console.log(args);
+
+  return new Promise(function (resolve, reject) {
+
+
+
+    console.log(userIdReq);
+    console.log(passwordReq);
+
+    let myQuery =  knex('new_schema.users')
+        .where({ user_mail: userIdReq })
+        .select('password')
+        .then(result => {
+          console.log(result[0]);
+
+          if (!result || !result[0])  {  // not found!
+            // report invalid username
+            return;
+          }
+          var pass = result[0].password;
+          if (passwordReq === pass) {
+              // login cookie
+              session.loggedIn = true;
+              resolve(result);
+              console.log("Logged in");
+          } else {
+            // failed login
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+  })
+
+};
 
 exports.postUserLogout = function(args, res, next) {
   /**
