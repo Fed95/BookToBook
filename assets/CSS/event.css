@@ -57,7 +57,7 @@ p {
     margin: 2px;
 }
 .authorlink{
-    font-size: 20px;
+    font-size: 17px;
 }
 
 @media screen and (max-width: 991px) {
@@ -80,6 +80,10 @@ p {
     .datestyle {
         font-size: 14px;
     }
+    
+    .authorlink{
+        font-size: 14px;
+    }
 
     .sideheading {
         font-size: 20px;
@@ -100,6 +104,10 @@ p {
     }
 
     .datestyle {
+        font-size: 12px;
+    }
+    
+    .authorlink{
         font-size: 12px;
     }
 
@@ -136,7 +144,11 @@ p {
     .sideheading {
         font-size: 13px;
     }
-
+    
+    .authorlink{
+        font-size: 10px;
+    }
+    
     .centered-link {
         font-size: 10px;
     }

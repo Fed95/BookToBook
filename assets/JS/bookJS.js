@@ -61,7 +61,11 @@ var displayFoundBooks = function(book) {
     var genres = [];
     var themes = [];
 
-    for(var author in grouped_by_author){
+    for(var author_name in grouped_by_author){
+        var author = {
+            name : author_name,
+            id : grouped_by_author[author_name][0].author_id
+        }
         authors.push(author);
     }
 
@@ -211,8 +215,8 @@ var addAuthors = function($div, authors){
     for(var i in authors){
 
         var $d = $("<div class = 'authorcontainer' />");
-        var $a = $("<a href = '' class='authorlink'/>");
-        $a.html(authors[i]);
+        var $a = $("<a href = '"+ip+"pages/author.html?author_id="+authors[i].id+"' class='authorlink'/>");
+        $a.html(authors[i].name);
         $d.append($a);
         $div.append($d);
 

@@ -144,6 +144,8 @@ var generateEventDiv = function (event, authors) {
 
 };
 
+
+
 var addAuthors = function ($div, authors) {
 
     console.log(authors);
