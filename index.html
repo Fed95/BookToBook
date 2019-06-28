@@ -3,7 +3,7 @@
     <head>
         <!-- Latest compiled and minified CSS -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-                <link rel="stylesheet" href="./assets/CSS/index.css">
+
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="./assets/CSS/styles.css">
         <link rel="stylesheet" href="./assets/CSS/footer.css">
         <link rel="stylesheet" href="./assets/CSS/navbar.css">
+        <link rel="stylesheet" href="./assets/CSS/index.css">
 
         <title>BookToBook</title>
     </head>
@@ -53,46 +54,64 @@
                 <div id="homepage-container">
                     <div class="homepage-section best-seller">
                         <h1>Best Sellers</h1>
-                        <div class="scrolling-wrapper">
-                            <div class="homepage-box best-seller ">
-                                <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-                                    <img src="./assets/Images/BookCovers/Prey.jpg">
-                                    <div>
-                                        <h2>Prey</h2>
-                                        <p>Michael Chricton</p>
-                                    </div>
-                                </a>
+                        <!--<div class="scrolling-wrapper">
+<div class="homepage-box best-seller ">
+<a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
+<img src="./assets/Images/BookCovers/Prey.jpg">
+<div>
+<h2>Prey</h2>
+<p>Michael Chricton</p>
+</div>
+</a>
+</div>
+<div class="homepage-box best-seller ">
+<a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
+<img src="./assets/Images/BookCovers/Prey.jpg">
+<div>
+<h2>Prey</h2>
+<p>Michael Chricton</p>
+</div>
+</a>
+</div>
+<div class="homepage-box best-seller ">
+<a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
+<img src="./assets/Images/BookCovers/Prey.jpg">
+<div>
+<h2>Prey</h2>
+<p>Michael Chricton</p>
+</div>
+</a>
+</div>
+<div class="homepage-box best-seller ">
+<a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
+<img src="./assets/Images/BookCovers/Prey.jpg">
+<div>
+<h2>Prey</h2>
+<p>Michael Chricton</p>
+</div>
+</a>
+</div>
+</div>-->
+                    </div>
+                    <div class="homepage-section latest-events"><h1>Latest Events</h1>
+                        <div class=" row rowevents">
+                            <div class="col-1 left-arrow" id="leftArrow"
+                                 onclick="moveLeft()"><img class="leftimage" src="./assets/Images/left.png"></div>
+                            <div class="col-10 viewContainer" id="show">
+                                <img id="1" class="image" src="./assets/Images/BookCovers/The%20BFG.jpg">
+                                <img id="2" class="image" src="./assets/Images/BookCovers/Fake%20Book.jpg">
+                                <img id="3" class="image" src="./assets/Images/BookCovers/13%20and%20a%20Half%20Lives%20of%20Captain%20Bluebear.jpg">
+                                <img id="4" class="image" src="./assets/Images/BookCovers/Prey.jpg">
+                                <img id="5" class="image" src="./assets/Images/BookCovers/The%20Fifth%20Book.jpg">
+                                <img id="6" class="image" src="./assets/Images/BookCovers/The%20BFG.jpg">
+                                <img id="7" class="image" src="./assets/Images/BookCovers/Fake%20Book.jpg">
+                                <img id="8" class="image" src="./assets/Images/BookCovers/13%20and%20a%20Half%20Lives%20of%20Captain%20Bluebear.jpg">
+                                <img id="9" class="image" src="./assets/Images/BookCovers/Prey.jpg">
+                                <img id="10" class="image" src="./assets/Images/BookCovers/The%20Fifth%20Book.jpg">
                             </div>
-                            <div class="homepage-box best-seller ">
-                                <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-                                    <img src="./assets/Images/BookCovers/Prey.jpg">
-                                    <div>
-                                        <h2>Prey</h2>
-                                        <p>Michael Chricton</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="homepage-box best-seller ">
-                                <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-                                    <img src="./assets/Images/BookCovers/Prey.jpg">
-                                    <div>
-                                        <h2>Prey</h2>
-                                        <p>Michael Chricton</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="homepage-box best-seller ">
-                                <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-                                    <img src="./assets/Images/BookCovers/Prey.jpg">
-                                    <div>
-                                        <h2>Prey</h2>
-                                        <p>Michael Chricton</p>
-                                    </div>
-                                </a>
-                            </div>
+                            <div class="col-1 right-arrow" id="rightArrow" onclick="moveRight()"><img class="rightimage" src="./assets/Images/right.png"></div>
                         </div>
                     </div>
-                    <div class="homepage-section latest-events"><h1>Latest Events</h1></div>
                     <div class="homepage-section popular-genres">
                         <h1>Popular Genres</h1></div>
                 </div>
@@ -145,6 +164,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
         <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-        <script scr="assets/JS/indexJS/js"></script>
+        <script src="assets/JS/indexJS.js"></script>
     </body>
 </html>

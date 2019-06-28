@@ -1,4 +1,4 @@
-var hidWidth;
+/*var hidWidth;
 var scrollBarWidths = 40;
 
 var widthOfList = function(){
@@ -25,12 +25,12 @@ var reAdjust = function(){
         $('.scroller-right').show();
     }
     else {
-        $('.scroller-right').hide();
+        $('.scroller-right').hide();*/
         /*
      var leftPos = $('.item:first-child').position().left;
      $('.item').animate({left:"-="+leftPos+"px"},'slow');
      */
-    }
+    /*}
 
     if (getLeftPosi()<0) {
         $('.scroller-left').show();
@@ -69,4 +69,30 @@ $('.scroller-left').click(function() {
 
     });
 
-});
+});*/
+var view = $("#show");
+var move = "100px";
+var sliderLimit = -750;
+var current = 1;
+
+function moveRight() {
+    if(current == 7){
+        
+    }else{
+        current= current + 1;
+        var currentelem = $("#"+current.toString());
+        view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+        console.log(current); 
+    }
+}
+function moveLeft() {
+    if(current == 1){
+        
+    }else{
+        current= current - 1;
+        var currentelem = $("#"+current.toString());
+        view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+        console.log(current); 
+    }
+}
+
