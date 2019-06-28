@@ -60,6 +60,10 @@ p {
     font-size: 20px;
 }
 
+.authorlink:hover{
+    text-decoration: underline;
+ }
+
 @media screen and (max-width: 991px) {
     .image-container {
         padding: 65px;
@@ -142,10 +146,13 @@ p {
     }
 
     .eventinfo {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     .textcontent {
         font-size: 10px;
+    }
+    .authorlink{
+        font-size: 15px;
     }
 }
