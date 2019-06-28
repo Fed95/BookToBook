@@ -1,142 +1,92 @@
 'use strict';
 var pg = require("../index.js");
 var knex = pg.knex;
+var go = false;
 
-exports.getUserUserID = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * userID (String)
-  **/
+exports.getUserUserID = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     * userID (String)
+     **/
     var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
+    if (Object.keys(examples).length > 0) {
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+    } else {
+        res.end();
+    }
+
+}
+
+exports.postUser = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     * contentType (String)
+     * body (User)
+     **/
+    console.log("hello from UsersService.js - postUser");
+    // no response value expected for this operation
     res.end();
-  }
-  
 }
 
-exports.postUser = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * contentType (String)
-  * body (User)
-  **/
-  console.log("hello from UsersService.js - postUser");
-  // no response value expected for this operation
-  res.end();
-}
-
-exports.postUserLogin = async function (args, session, res, next) {
+exports.postUserLogin = function (args, req, res, next) {
     /**
      * parameters expected in the args:
      * contentType (String)
      * body (Login)
      **/
 
-   /* var userIdReq = args.UserId;
-    var passwordReq = args.Password;
-
-    console.log("hello from UsersService.js - postUserLogin");
-    // no response value expected for this operation
-
-    console.log(args);
-
-
-    console.log(userIdReq);
-    console.log(passwordReq);
-    try {
-        let result = await knex('new_schema.users')
-            .where({user_mail: userIdReq})
-            .select('password')
-        console.log("Result: " + result[0]);
-
-        if (!result || !result[0]) {  // not found!
-            // report invalid username
-            return;
-        }
-        var pass = result[0].password;
-        if (passwordReq === pass) {
-            // login cookie
-            session.loggedIn = true;
-            //res.send(session);
-            //res.end();
-            /*session.save(() => {
-                console.log(session);
-                return res.end();
-
-            });
-            //res.cookie('cookie', '2');
-            //session.save();
-            //res.end.bind(res);
-            //resolve(result)
-            console.log("Logged in");
-        } else {
-            // failed login
-        }
-    }catch(error) {
-            console.log(error);
-        };*/
-    //})
-
     var userIdReq = args.UserId;
     var passwordReq = args.Password;
 
-    console.log("hello from UsersService.js - postUserLogin");
-    // no response value expected for this operation
-
-    console.log(args);
-
     return new Promise(function (resolve, reject) {
 
+        console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
 
+        knex('new_schema.users')
+            .where('user_mail', '=',  userIdReq)
+            .select('password')
+            .then(result => {
+                //console.log(result[0]);
 
-      console.log(userIdReq);
-      console.log(passwordReq);
+                if (!result || !result[0]) {  // not found!
+                    // report invalid username
+                    reject(new Error('Username or password are incorrect'));
+                }
+                var pass = result[0].password;
+                if (passwordReq === pass) {
+                    // login cookie
+                    req.session.loggedIn = true;
+                    /*req.session.save(() => {
+                        console.log(req.session);
 
-      return knex('new_schema.users')
-          .where({ user_mail: userIdReq })
-          .select('password')
-          .then(result => {
-            console.log(result[0]);
+                    });*/
+                    //res.cookie('cookie', '2');
+                    //session.save();
+                    //res.end.bind(res);
+                    console.log("Logged in");
+                    console.log('Done with auth procedure: req.session = ' +  JSON.stringify(req.session))
+                    go = true;
+                    resolve(result)
+                } else {
+                    // failed login
+                    reject(new Error('Username or password are incorrect'));
 
-            if (!result || !result[0])  {  // not found!
-              // report invalid username
-              return;
-            }
-            var pass = result[0].password;
-            if (passwordReq === pass) {
-                // login cookie
-                session.loggedIn = true;
-                res.end();
-                session.save(() => {
-                    console.log(session);
-                    return res.end();
+                }            })
+            .catch(function (error) {
+                reject(error)
+            });
+        next()
+        console.log("Next")
 
-                });
-                //res.cookie('cookie', '2');
-                //session.save();
-                res.end.bind(res);
-                //resolve(result)
-                console.log("Logged in");
-            } else {
-              // failed login
-            }
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
     })
-
 };
 
-exports.postUserLogout = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  **/
-  // no response value expected for this operation
-  res.end();
+exports.postUserLogout = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     **/
+    // no response value expected for this operation
+    res.end();
 }
 

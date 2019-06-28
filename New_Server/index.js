@@ -5,6 +5,7 @@
 //postgres://dxqvcntsnoifob:6265ac257abc9b67761fb960763182bac62aafa880f965d640d0a57dd64cc3f3@ec2-54-228-207-163.eu-west-1.compute.amazonaws.com:5432/dfn69dv2qvmdlk
 
 var exports = module.exports = {};
+var writer = require('./utils/writer')
 
 var fs = require('fs');
 var http = require('http');
@@ -69,6 +70,7 @@ app.get('/', function(req, res) {
 });
 
 app.use(express.static(__dirname+'/..'));
+
 
 app.listen(process.env.PORT || 4000, function(){
   console.log('Your node js server is running');
