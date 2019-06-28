@@ -106,7 +106,7 @@ var generateEventDiv = function (event, authors) {
                         var $p8 = $("<p />"); $p7.html(event.location);
                 var $hr2 = $("<hr />");
                 var $div12 = $("<div class = 'google-maps'/>");
-                    var $frame = $("<iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.5157899504575!2d9.227588915430724!3d45.47955717910118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4786c6f6b5d0c583%3A0x40368fe89bcde753!2sVia+Edoardo+Bonardi%2C+23%2C+20133+Milano+MI!5e0!3m2!1sen!2sit!4v1561050495243!5m2!1sen!2sit' width='400' height='300' frameborder='0' style='border:0' allowfullscreen/>");
+                    var $frame = $("<iframe src='https://www.google.com/maps?&amp;q="+encodeURIComponent(event.location)+"&amp;output=embed' width='400' height='300' frameborder='0' style='border:0' allowfullscreen/>");
 
 
 
@@ -143,6 +143,8 @@ var generateEventDiv = function (event, authors) {
     $div12.append($frame);
 
 };
+
+
 
 var addAuthors = function ($div, authors) {
 
