@@ -18,6 +18,8 @@ const path = require('path');
 //var cors = require('cors');
 
 var cookieSession = require('cookie-session');
+var cookieParser = require('cookie-parser')
+
 
 //---------------------------------------------------------------
 // Connection to Database
@@ -44,12 +46,17 @@ exports.knex = knex;
 //---------------------------------------------------------------
 
 
+//app.use(cookieParser())
+
+
 app.set('trust proxy', 1) // trust first proxy
 
 // Use cookie Session
 app.use(cookieSession({
   name: 'session',
-  keys: ['key1', 'key2']
+  keys: ['key1', 'key2'],
+  resave: false,
+  saveUninitialized: true
 }));
 
 

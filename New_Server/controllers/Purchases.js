@@ -9,7 +9,8 @@ module.exports.deletePurchasePurchaseID = function deletePurchasePurchaseID (req
 };
 
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
-
+    console.log("LoggedIn Purchase: " +  req.session.loggedIn)
+    console.log(req.cookies);
     if (!req.session || !req.session.loggedIn){
         utils.writeJson(res, { error: "Must be logged in"}, 404);
     }else{
