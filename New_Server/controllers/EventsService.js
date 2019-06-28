@@ -2,18 +2,26 @@
 var pg = require("../index.js");
 var knex = pg.knex;
 
-exports.getEvent = function(args, res, next) {
+exports.getEvent = function() {
   /**
    * parameters expected in the args:
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    console.log("---------------executing getEvent--------------------");
+    console.log("event_id: no params expected");
+    console.log("------------------------------------------------------------");
+
+    let myQuery = knex('new_schema.events as e')
+        .leftJoin('new_schema.books AS b', 'e.isbn', 'b.isbn')
+        .leftJoin('new_schema.written_by AS wb', 'e.isbn', 'wb.isbn')
+        .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+        .then(result => {
+          console.log(result);
+          resolve(result)
+        });
+  });
+
   
 };
 
