@@ -36,6 +36,9 @@
 .authorlink{
     font-size: 20px;
 }
+.authorlink:hover{
+    text-decoration: underline;
+}
 p{
     margin: 0px;
 }

@@ -78,8 +78,6 @@
 
 .textcontent {
     text-align: justify;
-    max-height: 300px;
-    overflow: scroll;
 }
 
 hr {

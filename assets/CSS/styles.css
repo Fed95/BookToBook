@@ -121,6 +121,9 @@ a:hover, a:visited, a:link, a:active{
 .no-top-pad{
     padding-top: 0px;
 }
+.btn:hover{
+    background-color: #a3bfa4;
+}
 button:focus { outline:0 !important; }
 @media(max-width: 1430px){
     .empty-col{
