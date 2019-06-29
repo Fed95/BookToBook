@@ -39,6 +39,7 @@ exports.postUserLogin = function (args, req, res, next) {
 
     var userIdReq = args.UserId;
     var passwordReq = args.Password;
+    console.log(userIdReq)
 
     return new Promise(function (resolve, reject) {
 
