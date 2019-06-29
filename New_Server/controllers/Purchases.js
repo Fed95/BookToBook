@@ -19,6 +19,7 @@ module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res,
         Purchases.getPurchaseFindByUser(user_mail)
             .then(function (response) {
                 console.log("Trovato");
+                console.log(req)
                 req.session.loggedIn = true;
                 utils.writeJson(res, response);
             })

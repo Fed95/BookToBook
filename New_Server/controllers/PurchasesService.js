@@ -24,19 +24,19 @@ exports.getPurchaseFindByUser = function(user_mail) {
         var passwordReq = "davide";
         console.log(userIdReq)
 
-        return new Promise(function (resolve, reject) {
+        //return new Promise(function (resolve, reject) {
 
             //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
 
-            let myQuery = knex('new_schema.users')
+            let myQuery = knex('new_schema.users AS u')
                 .where(
                     {
                         user_mail: userIdReq,
-                        last_name: passwordReq
+                        password: passwordReq
                     })
                 .select('password')
                 .then(result => {
-                    //console.log(result[0]);
+                    console.log(result);
                     resolve(result);
                 })
 
@@ -60,7 +60,7 @@ exports.getPurchaseFindByUser = function(user_mail) {
 
       });*/
 
-    });
+    //});
 }
 
 exports.getPurchasePurchaseID = function(args, res, next) {

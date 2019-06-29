@@ -37,11 +37,37 @@ exports.postUserLogin = function (args, req, res, next) {
      * body (Login)
      **/
 
-    var userIdReq = args.UserId;
+    /*var userIdReq = args.UserId;
     var passwordReq = args.Password;
-    console.log(userIdReq)
+    console.log(userIdReq)*/
+
 
     return new Promise(function (resolve, reject) {
+
+        var userIdReq = "davide@mail.com";
+        var passwordReq = "davide";
+        console.log('userIdReq = ', userIdReq)
+        console.log('passwordReq = ', passwordReq)
+
+        //return new Promise(function (resolve, reject) {
+
+        //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
+
+        let myQuery = knex('new_schema.users AS u')
+            .where(
+                {
+                    user_mail: userIdReq,
+                    password: passwordReq
+                })
+            .select('password')
+            .then(result => {
+                console.log(result);
+                resolve(result);
+            })
+
+    });
+
+    /*return new Promise(function (resolve, reject) {
 
         console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
 
@@ -66,11 +92,11 @@ exports.postUserLogin = function (args, req, res, next) {
                     //res.cookie('cookie', '2');
                     //session.save();
                     //res.end.bind(res);
-                    console.log("Logged in");
+                    /*console.log("Logged in");
                     console.log('Done with auth procedure: req.session = ' + JSON.stringify(req.session));
                     //res.end();
-                    resolve(result)
-                } else {
+                    resolve(result)*/
+                /*} else {
                     // failed login
                     reject(new Error('Username or password are incorrect'));
 
@@ -80,7 +106,7 @@ exports.postUserLogin = function (args, req, res, next) {
                 reject(error)
             });
         console.log("Next");
-    })
+    })*/
 };
 
 
