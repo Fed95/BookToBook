@@ -910,7 +910,6 @@ paths:
         name: "body"
         required: true
         description: "body login"
-        type: "string"
         schema:
           $ref: "#/definitions/Login"
       responses:
@@ -918,6 +917,11 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/User"
+          headers:
+            Set-Cookie:
+              type: string
+              description: The session cookie
+              default: demo-session-id=123456789012345678901234567890
         404:
           description: "UserID or Password are wrong"
       x-swagger-router-controller: "Users"

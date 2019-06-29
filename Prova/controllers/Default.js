@@ -164,7 +164,8 @@ module.exports.postUserLogin = function postUserLogin (req, res, next) {
   Default.postUserLogin(req.body, req, res, next)
       .then(function (response) {
         console.log("Finito")
-        res.redirect(307, '/api/user/logout')
+        req.session.loggedIn = true;
+        //res.redirect(307, '/api/user/logout')
         //console.log(req)
         //req.session.loggedIn = true;
         //req.session.save();
