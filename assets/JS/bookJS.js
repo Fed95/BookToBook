@@ -30,23 +30,22 @@ const input = getUrlParameter('isbn');
 //generating the query
 //---------------------------------------------------------------------
 var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
+xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
             displayFoundBooks(this.responseText);
         });
     }
 };
-xhttp.open("GET", ip + "api/book/"+input, true);
+xhttp.open("GET", ip + "api/book/" + input, true);
 xhttp.send();
-
 
 
 //---------------------------------------------------------------------
 //handling the result
 //---------------------------------------------------------------------
 
-var displayFoundBooks = function(book) {
+var displayFoundBooks = function (book) {
 
     var parsed = JSON.parse(book);
     console.log("parsed: ", parsed);
@@ -56,32 +55,33 @@ var displayFoundBooks = function(book) {
     var grouped_by_genre = _.groupBy(parsed, 'genre_name');
     var grouped_by_theme = _.groupBy(parsed, 'theme_name');
 
+    console.log("grouped by author: ", grouped_by_author)
+
     var authors = [];
     var reviews = [];
     var genres = [];
     var themes = [];
 
-    for(var author_name in grouped_by_author){
-        var author = {
-            name : author_name,
-            id : grouped_by_author[author_name][0].author_id
-        }
+    var interview = parsed[0].interview_text // TODO: DECIDE WHETHER THE INTERVIEW SHOULD BE AUTHOR SPECIFIC
+
+    for (var author in grouped_by_author) {
         authors.push(author);
     }
 
-    for(var text in grouped_by_review){
+    for (var text in grouped_by_review) {
 
-        if(text.localeCompare('null')){
+        if (text.localeCompare('null')) {
             var review = {
                 username: grouped_by_review[text][0].username,
                 text: text,
                 positive: grouped_by_review[text][0].positive
             };
+            console.log()
             reviews.push(review);
         }
     }
-    for(var g in grouped_by_genre){
-        if(g.localeCompare('null')) {
+    for (var g in grouped_by_genre) {
+        if (g.localeCompare('null')) {
             var genre = {
                 name: grouped_by_genre[g][0].genre_name,
                 color: grouped_by_genre[g][0].genre_color,
@@ -90,9 +90,9 @@ var displayFoundBooks = function(book) {
 
         genres.push(genre);
     }
-    for(var t in grouped_by_theme){
+    for (var t in grouped_by_theme) {
 
-        if(t.localeCompare('null')) {
+        if (t.localeCompare('null')) {
             var theme = {
                 name: grouped_by_theme[t][0].theme_name,
                 color: grouped_by_theme[t][0].theme_name,
@@ -103,188 +103,187 @@ var displayFoundBooks = function(book) {
     }
 
 
-    generateBookDiv(parsed[0], authors, reviews, genres, themes);
+    generateBookDiv(parsed[0], authors, interview, reviews, genres, themes);
 };
 
 
-
-
-
-var generateBookDiv = function (book, authors, reviews, genres, themes) {
+var generateBookDiv = function (book, authors, interview, reviews, genres, themes) {
 
     console.log(authors);
 
     var $div1 = $("<div class = 'row margin-top'/>");
     var $div2 = $("<div class = 'row'/>");
-        var $col1 = $("<div class = 'col-1'/>");
-        var $div3 = $("<div class = 'col-10 singleItemContainer'/>");
-            var $div4 = $("<div class = 'col-3 singleItemContainer'/>");
-                var $imwrap = $("<div class = 'singleItemImage bookCoverContainer  big-screen-image'/>");
-                    var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/BookCovers/"+book.title+".jpg"});
-            var $col2 = $("<div class = 'col-1 hidden-col-s'/>");
-            var $div5 = $("<div class = 'col-8 singleItemContainer'/>");
-                var $h1 = $("<h1 class = 'singleItemName'/>"); $h1.html(book.title);
-                var $div6 = $("<div class = 'row small-screen-image' />");
-                    var $div7 = $("<div class = 'col-2' />");
-                    var $div8 = $("<div class = 'col-8 bookCoverContainer' />");
-                        var $im2 = $("<img />", { class:"singleItemImage", src:"../assets/Images/BookCovers/"+book.title+".jpg"});
-                    var $div9 = $("<div class = 'col-2' />");
-                var $div11 = $("<div class = 'row authorrow' />");
+    var $col1 = $("<div class = 'col-1'/>");
+    var $div3 = $("<div class = 'col-10 singleItemContainer'/>");
+    var $div4 = $("<div class = 'col-3 singleItemContainer'/>");
+    var $imwrap = $("<div class = 'singleItemImage bookCoverContainer  big-screen-image'/>");
+    var $im1 = $("<img />", {
+        class: "singleItemImage big-screen-image",
+        src: "../assets/Images/BookCovers/" + book.title + ".jpg"
+    });
+    var $col2 = $("<div class = 'col-1 hidden-col-s'/>");
+    var $div5 = $("<div class = 'col-8 singleItemContainer'/>");
+    var $h1 = $("<h1 class = 'singleItemName'/>");
+    $h1.html(book.title);
+    var $div6 = $("<div class = 'row small-screen-image' />");
+    var $div7 = $("<div class = 'col-2' />");
+    var $div8 = $("<div class = 'col-8 bookCoverContainer' />");
+    var $im2 = $("<img />", {class: "singleItemImage", src: "../assets/Images/BookCovers/" + book.title + ".jpg"});
+    var $div9 = $("<div class = 'col-2' />");
+    var $div11 = $("<div class = 'row authorrow' />");
 
-                addAuthors($div11, authors);
+    addAuthors($div11, authors);
 
-                var $span1 = $("<span />");
-                var $div13 = $("<div class = 'textcontent' />"); $div13.html(book.abstract);
-                var $hr1 = $("<hr>");
-                var $techrow = $("<div class='row'/>");
-                    var $div14 = $("<div class = 'col-4 technical' />");
-                        var $p1 = $("<p />"); $p1.html("Publisher:");
-                        var $p3 = $("<p />"); $p3.html("Edition:");
-                        var $p4 = $("<p />"); $p4.html("Language:");
-                        var $p5 = $("<p />"); $p5.html("Number of Pages:");
-                        var $p6 = $("<p />"); $p6.html("ISBN:");
-                    var $div14b = $("<div class = 'col-8 technical' />");
-                        var $p1b = $("<p />"); $p1b.html(book.publisher);
-                        var $p3b = $("<p />"); $p3b.html(book.edition);
-                        var $p4b = $("<p />"); $p4b.html(book.language);
-                        var $p5b = $("<p />"); $p5b.html(book.number_of_pages);
-                        var $p6b = $("<p />"); $p6b.html(book.isbn);
-                var $hr2 = $("<hr >");
-                    var $genres = $("<div class ='row genres'/>");
+    var $span1 = $("<span />");
+    var $div13 = $("<div class = 'textcontent' />");
+    $div13.html(book.abstract);
+    var $hr1 = $("<hr>");
+    var $techrow = $("<div class='row'/>");
+    var $div14 = $("<div class = 'col-4 technical' />");
+    var $p1 = $("<p />");
+    $p1.html("Publisher:");
+    var $p3 = $("<p />");
+    $p3.html("Edition:");
+    var $p4 = $("<p />");
+    $p4.html("Language:");
+    var $p5 = $("<p />");
+    $p5.html("Number of Pages:");
+    var $p6 = $("<p />");
+    $p6.html("ISBN:");
+    var $div14b = $("<div class = 'col-8 technical' />");
+    var $p1b = $("<p />");
+    $p1b.html(book.publisher);
+    var $p3b = $("<p />");
+    $p3b.html(book.edition);
+    var $p4b = $("<p />");
+    $p4b.html(book.language);
+    var $p5b = $("<p />");
+    $p5b.html(book.number_of_pages);
+    var $p6b = $("<p />");
+    $p6b.html(book.isbn);
+    var $hr2 = $("<hr >");
+    var $genres = $("<div class ='row genres'/>");
 
-                addGenresAndThemes($genres, genres, themes);
+    addGenresAndThemes($genres, genres, themes);
 
 
-                var $div15 = $("<div class = 'buybook' />");
-                    var $div16 = $("<div class = 'col-8' />");  $div16.html("Price: "+book.price+"$");
-                    var $div17 = $("<div class = 'col-4' />");
-                        var $b1 = $("<button id='add-book-btn-1' class='btn btn-outline-success btn-add-book' type='input'/>");
-                        $b1.html("Add to Cart");
+    var $div15 = $("<div class = 'buybook' />");
+    var $div16 = $("<div class = 'col-8' />");
+    $div16.html("Price: $ " + book.price);
+    var $div17 = $("<div class = 'col-4' />");
+    var $b1 = $("<button id='add-book-btn-1' class='btn btn-outline-success btn-add-book' type='input'/>");
+    $b1.html("Add to Cart");
 
 
+    $("#book-div").append($div1);
+    $div1.append($div2);
+    $div2.append($col1);
+    $div2.append($div3);
+    $div3.append($div4);
+    $div4.append($imwrap);
+    $imwrap.append($im1);
+    $div3.append($col2);
+    $div3.append($div5);
+    $div5.append($h1);
+    $div5.append($div6);
+    $div6.append($div7);
+    $div6.append($div8);
+    $div8.append($im2);
+    $div6.append($div9);
+    $div5.append($div11);
+    $div5.append($span1);
+    $div5.append($div13);
+    $div5.append($hr1);
+    $div5.append($techrow);
+    $techrow.append($div14);
+    $div14.append($p1);
+    $div14.append($p3);
+    $div14.append($p4);
+    $div14.append($p5);
+    $div14.append($p6);
+    $techrow.append($div14b);
+    $div14b.append($p1b);
+    $div14b.append($p3b);
+    $div14b.append($p4b);
+    $div14b.append($p5b);
+    $div14b.append($p6b);
+    $div5.append($hr2);
+    $div5.append($genres);
+    $div5.append($div15);
+    $div15.append($div16);
+    $div15.append($div17);
+    $div17.append($b1);
 
-
-
-
-    $("#homepage-container").append($div1);
-        $div1.append($div2);
-        $div2.append($col1);
-        $div2.append($div3);
-            $div3.append($div4);
-                $div4.append($imwrap);
-                    $imwrap.append($im1);
-            $div3.append($col2);
-            $div3.append($div5);
-                $div5.append($h1);
-                $div5.append($div6);
-                    $div6.append($div7);
-                    $div6.append($div8);
-                        $div8.append($im2);
-                    $div6.append($div9);
-                $div5.append($div11);
-                $div5.append($span1);
-                $div5.append($div13);
-                $div5.append($hr1);
-                $div5.append($techrow);
-                    $techrow.append($div14);
-                        $div14.append($p1);
-                        $div14.append($p3);
-                        $div14.append($p4);
-                        $div14.append($p5);
-                        $div14.append($p6);
-                    $techrow.append($div14b);
-                        $div14b.append($p1b);
-                        $div14b.append($p3b);
-                        $div14b.append($p4b);
-                        $div14b.append($p5b);
-                        $div14b.append($p6b);
-                $div5.append($hr2);
-                $div5.append($genres);
-                $div5.append($div15);
-                    $div15.append($div16);
-                    $div15.append($div17);
-                        $div17.append($b1);
-
-            if(reviews.length > 0){
-                addReviews($div3, reviews);
-            }
+    addReviewsAndInterview(reviews, interview);
 };
 
-var addAuthors = function($div, authors){
+var addAuthors = function ($div, authors) {
 
-    for(var i in authors){
+    for (var i in authors) {
 
         var $d = $("<div class = 'authorcontainer' />");
-        var $a = $("<a href = '"+ip+"pages/author.html?author_id="+authors[i].id+"' class='authorlink'/>");
-        $a.html(authors[i].name);
+        var $a = $("<a href = '' class='authorlink'/>");
+        $a.html(authors[i]);
         $d.append($a);
         $div.append($d);
 
     }
 };
+var addReviewsAndInterview = function (reviews, interview) {
 
-var addReviews = function(div, reviews){
+    console.log('interview: ', interview)
 
-    var $div18 = $("<div class = 'col-12'/>");
-        var $h2 = $("<h1 />"); $h2.html('Reviews');
+    $('#reviews-div').append('<div id="revs" class="content" />');
+    $('#interview-div').append('<div id="interview" class="content">'
+                                    +'<p class="col-12 review-item">'+interview+'</p>'
+                                    + '</div>')
 
-    div.append($div18);
-    $div18.append($h2);
 
-    console.log("Adding reviews!");
-    console.log(reviews);
 
-    for(var i in reviews){
-
-        console.log(i);
-        console.log(reviews[i]);
+    for (var i in reviews) {
 
         var im_path = '';
 
-        if(reviews[i].positive){
-            im_path  = '../assets/Images/like.png'
-        }
-        else{
-            im_path ='../assets/Images/dislike.png'
+        if (reviews[i].positive) {
+            im_path = '../assets/Images/like.png'
+        } else {
+            im_path = '../assets/Images/dislike.png'
         }
 
-        var $d1 = $("<div class = 'row review-row' />");
-            var $d2 = $("<div class = 'col-12 review-item' />");
-                var $d3 = $("<div class = 'row' />");
-                    var $d4 = $("<div class = 'col-11 only-left-pad' />");
-                        var $h = $("<h4 class = 'reviewername' />"); $h.html(reviews[i].username);
-                    var $d5 = $("<div class = 'col-1 no-pad' />");
-                        var $im = $("<img />", { class:"review", src: im_path, width: "25", height: "25"});
-                var $hr = $("<hr>");
-                var $d6 = $("<div class = 'col-12 review-text' />");
-                    var $p = $("<p />"); $p.html(reviews[i].text);
-
-        $div18.append($d1);
-        $d1.append($d2);
-        $d2.append($d3);
-        $d3.append($d4);
-        $d4.append($h);
-        $d3.append($d5);
-        $d5.append($im);
-        $d2.append($hr);
-        $d2.append($d6);
-        $d6.append($p);
+        $('#revs').append(
+            '<div class = "row review-row">'
+                + '<div class = "col-12 review-item">'
+                    + '<div class = "row">'
+                        + '<div class = "col-11 only-left-pad">'
+                            + '<h4 class = "reviewername">' + reviews[i].username + '</h4>'
+                        + '</div>'
+                        + '<div class = "col-1 no-pad">'
+                            + '<img class="review" src="'+ im_path +'" width="20" height="20"/>'
+                        + '</div>'
+                        + '<hr/>'
+                    + '</div>'
+                    + '<div class = "col-12 review-text" >'
+                        + '<p>' + reviews[i].text + '</p>'
+                    + '</div>'
+                + '</div>'
+            + '</div>'
+        )
     }
 };
 
-var addGenresAndThemes = function(div, genres, themes){
+var addGenresAndThemes = function (div, genres, themes) {
 
     console.log('Adding Genres!');
     console.log('genres: ', genres);
 
-    if(typeof genres[0] !== 'undefined') {
+    if (typeof genres[0] !== 'undefined') {
 
         var $g = $("<a />", {id: 'start'});
         $g.html('Genres:');
         div.append($g);
 
         for (var g in genres) {
-            $g = $("<a />", {id:genres[g].name, href: ip + 'pages/genre.html?genre='+genres[g].name});
+            $g = $("<a />", {id: genres[g].name, href: ip + 'pages/genre.html?genre=' + genres[g].name});
             $g.html(genres[g].name);
             div.append($g);
 
@@ -299,14 +298,14 @@ var addGenresAndThemes = function(div, genres, themes){
              */
         }
     }
-    if(typeof themes[0] !== 'undefined') {
+    if (typeof themes[0] !== 'undefined') {
 
         var $t = $("<a />", {id: 'start'});
         $t.html('Themes:');
         div.append($t);
 
         for (var t in themes) {
-            $t = $("<a />", {id: themes[t].name, href: ip + 'pages/theme.html?theme='+themes[t].name});
+            $t = $("<a />", {id: themes[t].name, href: ip + 'pages/theme.html?theme=' + themes[t].name});
             $t.html(themes[t].name);
             div.append($t);
         }
