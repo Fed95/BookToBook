@@ -60,6 +60,11 @@ p {
     font-size: 17px;
 }
 
+.authorlink:hover{
+    font-size: 17px;
+    text-decoration: underline;
+}
+
 @media screen and (max-width: 991px) {
     .image-container {
         padding: 65px;

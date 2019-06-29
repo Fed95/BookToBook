@@ -126,7 +126,7 @@ var generateGenreDiv = function (name, bio, books, genres, themes) {
         var $d2 = $("<div class = 'col-1' />");
         var $d3 = $("<div class = 'col-10' />");
         var $d4 = $("<div class = 'col-1' />");
-        var $hbook = $("<h3 />"); $hbook.html('Books');
+        var $hbook = $("<h3 />"); $hbook.html('Books related to this genre:');
 
         $("#row-margin-top").append($d1);
         $d1.append($d2);

@@ -43,6 +43,7 @@ ul, ol {
 
 .myfooter{
     margin-top: 10px;
+    padding-top: 20px;
     background: #58949C;
     position: absolute;  
     bottom: 0;  

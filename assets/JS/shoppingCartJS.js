@@ -41,15 +41,12 @@ var displayPurchases = function(purchase_list){
     var $price_text= $('<span class="col grand-total-price-text"  />'); $price_text.html("Grand Total: ");
     var $price= $('<span class="col grand-total-price"  />'); $price.html(tot);
     var $total = $('<div class="grand-total"/>');
-    var $button = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
-    $button.html('Proceed to Checkout');
 
 
     $("#search-results-container").append($totalprice);
     $("#search-results-container").append($total);
     $($totalprice).append($price_text);
     $($totalprice).append($price);
-    $($total).append($button);
 
 }
 

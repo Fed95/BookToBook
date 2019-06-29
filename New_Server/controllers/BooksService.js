@@ -207,6 +207,8 @@ exports.getBookISBN = function(isbn) {
         .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
         .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
 
+        .leftJoin('new_schema.interviews AS i', 'b.isbn', 'i.isbn')
+
         .where('b.isbn', isbn)
         .then(result => {
           resolve(result)

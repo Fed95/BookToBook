@@ -89,20 +89,20 @@ var generateEventDiv = function (event, authors) {
                 var $h2 = $("<h3 class = 'sideheading'/>"); $h2.html('Author/s:');
 
             var $div7 = $("<div class = col-9 no-vert-padding'/>");
-                var $h3 = $("<h1 class = 'singleItemName'/>"); $h3.html(event.event_date.substr(0, 10) + ' - ' + event.event_name);
+                var $h3 = $("<h1 class = 'singleItemName'/>"); $h3.html('['+event.event_date.substr(0, 10) + '] ' + event.event_name);
                 var $div8 = $("<div class = textcontent'/>"); $div8.html(event.summary);
                 var $hr1 = $("<hr />");
                 var $div9 = $("<div class = 'row'/>");
                     var $div10 = $("<div class = 'col-4 eventinfo'/>");
                         var $p1 = $("<p />"); $p1.html('Date:');
-                        var $p2 = $("<p />"); $p1.html('Starting time:');
-                        var $p3 = $("<p />"); $p2.html('Ending time:');
+                        var $p2 = $("<p />"); $p2.html('Starting time:');
+                        var $p3 = $("<p />"); $p3.html('Ending time:');
                         var $p4 = $("<p />"); $p4.html('Location:');
                     var $div11 = $("<div class = 'col-8 eventinfo'/>");
                         var $p5 = $("<p />"); $p5.html(event.event_date.substr(0, 10));
-                        var $p6 = $("<p />"); $p5.html(event.start_time.substr(0, 5));
-                        var $p7 = $("<p />"); $p6.html(event.end_time.substr(0, 5));
-                        var $p8 = $("<p />"); $p7.html(event.location);
+                        var $p6 = $("<p />"); $p6.html(event.start_time.substr(0, 5));
+                        var $p7 = $("<p />"); $p7.html(event.end_time.substr(0, 5));
+                        var $p8 = $("<p />"); $p8.html(event.location);
                 var $hr2 = $("<hr />");
                 var $div12 = $("<div class = 'google-maps'/>");
                     var $frame = $("<iframe src='https://www.google.com/maps?&amp;q="+encodeURIComponent(event.location)+"&amp;output=embed' width='400' height='300' frameborder='0' style='border:0' allowfullscreen/>");
