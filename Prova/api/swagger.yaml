@@ -556,54 +556,12 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Default"
-  /prova/:
-    get:
-      summary: "Get all Authors"
-      operationId: "getProva"
-      produces:
-      - "applications/json"
-      parameters: []
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/prova"
-        404:
-          description: "Author not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Default"
-    post:
-      summary: "Create Review"
-      operationId: "postProva"
-      consumes:
-      - "applications/json"
-      produces:
-      - "applications/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/prova"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/prova"
-        400:
-          description: "Format error"
-      x-swagger-router-controller: "Default"
   /purchase/:
     post:
       summary: "Create Purchase"
       operationId: "postPurchase"
       consumes:
-      - "applications/json"
-      produces:
-      - "applications/json"
+      - "application/json"
       parameters:
       - in: "body"
         name: "body"
@@ -613,8 +571,6 @@ paths:
       responses:
         200:
           description: "succesfull operation"
-          schema:
-            $ref: "#/definitions/Purchase"
         400:
           description: "Format error"
       x-swagger-router-controller: "Default"
@@ -732,7 +688,7 @@ paths:
       summary: "Create Review"
       operationId: "postReview"
       consumes:
-      - "applications/json"
+      - "application/json"
       parameters:
       - in: "body"
         name: "body"
@@ -843,14 +799,12 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Default"
-  /user/:
+  /user:
     post:
       summary: "Create User"
       operationId: "postUser"
-      consumes:
-      - "application/json"
       produces:
-      - "applications/json"
+      - "application/json"
       parameters:
       - in: "body"
         name: "body"
@@ -874,10 +828,6 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - name: "Content-Type"
-        in: "header"
-        required: true
-        type: "string"
       - in: "body"
         name: "body"
         required: false
@@ -887,11 +837,9 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Error"
+            $ref: "#/definitions/User"
         404:
           description: "UserID or Password are wrong"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Default"
   /user/logout:
     post:
@@ -1035,35 +983,27 @@ definitions:
         type: "string"
   User:
     type: "object"
-    required:
-    - "birth date"
-    - "password"
-    - "user_mail"
-    - "username"
     properties:
-      user_mail:
-        type: "string"
-      temp_id:
-        type: "number"
-        format: "double"
-      picture:
-        type: "string"
-      birth date:
-        type: "string"
-      password:
-        type: "string"
       username:
         type: "string"
   Purchase:
     type: "object"
     required:
-    - "purchase_id"
-    - "user_mail"
+    - "Completed"
+    - "PurchaseID"
+    - "UserID"
     properties:
-      purchase_id:
+      PurchaseID:
+        type: "integer"
+        format: "int64"
+      UserID:
         type: "string"
-      user_mail:
+      Completed:
+        type: "boolean"
+        default: false
+      Purchase Date:
         type: "string"
+        format: "date-time"
   Review:
     type: "object"
     required:
@@ -1086,13 +1026,6 @@ definitions:
       Rating:
         type: "integer"
         format: "int64"
-  prova:
-    type: "object"
-    required:
-    - "test"
-    properties:
-      test:
-        type: "string"
   Error:
     type: "object"
     required:
@@ -1102,7 +1035,7 @@ definitions:
         type: "integer"
         format: "int64"
         description: "error code"
-        minimum: 200
+        minimum: 400
         maximum: 599
       description:
         type: "string"

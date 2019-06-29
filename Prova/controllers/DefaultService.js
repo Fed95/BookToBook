@@ -1,6 +1,4 @@
 'use strict';
-var pg = require("../index.js");
-var knex = pg.knex;
 
 exports.deletePurchasePurchaseID = function(args, res, next) {
   /**
@@ -355,21 +353,6 @@ exports.getGenreGenreName = function(args, res, next) {
   
 }
 
-exports.getProva = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
-}
-
 exports.getPurchaseFindByUser = function(args, res, next) {
   /**
    * parameters expected in the args:
@@ -481,36 +464,13 @@ exports.getUserUserID = function(args, res, next) {
   
 }
 
-exports.postProva = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * body (Prova)
-  **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
-}
-
 exports.postPurchase = function(args, res, next) {
   /**
    * parameters expected in the args:
   * body (Purchase)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
+  // no response value expected for this operation
+  res.end();
 }
 
 exports.postPurchaseCompleted = function(args, res, next) {
@@ -547,7 +507,10 @@ exports.postUser = function(args, res, next) {
   * body (User)
   **/
     var examples = {};
-    if(Object.keys(examples).length > 0) {
+  examples['application/json'] = {
+  "username" : "aeiou"
+};
+  if(Object.keys(examples).length > 0) {
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
   }
@@ -560,14 +523,11 @@ exports.postUser = function(args, res, next) {
 exports.postUserLogin = function(args, res, next) {
   /**
    * parameters expected in the args:
-  * contentType (String)
   * body (Login)
   **/
     var examples = {};
   examples['application/json'] = {
-  "code" : 123456789,
-  "reasonPhrase" : "aeiou",
-  "description" : "aeiou"
+  "username" : "aeiou"
 };
   if(Object.keys(examples).length > 0) {
     res.setHeader('Content-Type', 'application/json');
@@ -576,46 +536,8 @@ exports.postUserLogin = function(args, res, next) {
   else {
     res.end();
   }
-
-  /*exports.postUserLogin = function (args, req, res, next) {
-    /**
-     * parameters expected in the args:
-     * contentType (String)
-     * body (Login)
-     **/
-
-    /*var userIdReq = args.UserId;
-    var passwordReq = args.Password;
-    console.log(userIdReq)*/
-
-
-    r/*eturn new Promise(function (resolve, reject) {
-
-      var userIdReq = "davide@mail.com";
-      var passwordReq = "davide";
-      console.log('userIdReq = ', userIdReq)
-      console.log('passwordReq = ', passwordReq)
-
-      //return new Promise(function (resolve, reject) {
-
-      //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
-
-      let myQuery = knex('new_schema.users AS u')
-          .where(
-              {
-                user_mail: userIdReq,
-                password: passwordReq
-              })
-          .select('password')
-          .then(result => {
-            //console.log(result);
-            resolve(result);
-          })
-
-    });*/
-
-
-  }
+  
+}
 
 exports.postUserLogout = function(args, res, next) {
   /**
