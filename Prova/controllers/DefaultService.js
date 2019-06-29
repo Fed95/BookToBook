@@ -1,4 +1,6 @@
 'use strict';
+var pg = require("../index.js");
+var knex = pg.knex;
 
 exports.deletePurchasePurchaseID = function(args, res, next) {
   /**
@@ -555,13 +557,13 @@ exports.postUser = function(args, res, next) {
   
 }
 
-exports.postUserLogin = function(args, res, next) {
+/*exports.postUserLogin = function(args, res, next) {
   /**
    * parameters expected in the args:
   * contentType (String)
   * body (Login)
   **/
-    var examples = {};
+    /*var examples = {};
   examples['application/json'] = {
   "code" : 123456789,
   "reasonPhrase" : "aeiou",
@@ -573,9 +575,47 @@ exports.postUserLogin = function(args, res, next) {
   }
   else {
     res.end();
+  }*/
+
+  exports.postUserLogin = function (args, req, res, next) {
+    /**
+     * parameters expected in the args:
+     * contentType (String)
+     * body (Login)
+     **/
+
+    /*var userIdReq = args.UserId;
+    var passwordReq = args.Password;
+    console.log(userIdReq)*/
+
+
+    return new Promise(function (resolve, reject) {
+
+      var userIdReq = "davide@mail.com";
+      var passwordReq = "davide";
+      console.log('userIdReq = ', userIdReq)
+      console.log('passwordReq = ', passwordReq)
+
+      //return new Promise(function (resolve, reject) {
+
+      //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
+
+      let myQuery = knex('new_schema.users AS u')
+          .where(
+              {
+                user_mail: userIdReq,
+                password: passwordReq
+              })
+          .select('password')
+          .then(result => {
+            //console.log(result);
+            resolve(result);
+          })
+
+    });
+
+
   }
-  
-}
 
 exports.postUserLogout = function(args, res, next) {
   /**

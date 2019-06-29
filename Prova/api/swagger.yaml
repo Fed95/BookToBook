@@ -870,7 +870,7 @@ paths:
       summary: "Perform User login"
       operationId: "postUserLogin"
       consumes:
-      - "applications/json"
+      - "application/json"
       produces:
       - "application/json"
       parameters:
