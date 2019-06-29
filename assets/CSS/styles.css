@@ -108,6 +108,7 @@ a:hover, a:visited, a:link, a:active{
 .container{
     padding-right: 0px;
     padding-left: 0px;
+    margin-bottom: 20px;
 }
 #page-container {  position: relative; min-height: 100vh;}
 #content-wrap {  padding-bottom: 30rem;    /* Footer height */}
