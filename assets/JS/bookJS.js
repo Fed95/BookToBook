@@ -234,13 +234,21 @@ var addReviewsAndInterview = function (reviews, interview) {
     console.log('interview: ', interview)
 
     $('#reviews-div').append('<div id="revs" class="content" />');
-    $('#interview-div').append('<div id="interview" class="content">'
-                                    +'<p class="col-12 review-item">'+interview+'</p>'
-                                    + '</div>')
 
+    if(interview != null){
+        $('#interview-div').append('<div id="interview" class="content">'
+            +'<p class="col-12 review-item">'+interview+'</p>'
+            + '</div>')
+    }else{
+        $('#interview-div').append('<div id="interview" class="content">'
+            +'<p class="col-12 review-item">We didn\'t get a chance to interview with the author for now. Hopefully we will soon!</p>'
+            + '</div>')
+    }
 
-
-    for (var i in reviews) {
+    if(reviews.length < 1){
+        $('#revs').append('<p class="col-12 review-item">There are no reviews for this book yet.</p>')
+    }else{
+        for (var i in reviews) {
 
         var im_path = '';
 
@@ -252,23 +260,26 @@ var addReviewsAndInterview = function (reviews, interview) {
 
         $('#revs').append(
             '<div class = "row review-row">'
-                + '<div class = "col-12 review-item">'
-                    + '<div class = "row">'
-                        + '<div class = "col-11 only-left-pad">'
-                            + '<h4 class = "reviewername">' + reviews[i].username + '</h4>'
-                        + '</div>'
-                        + '<div class = "col-1 no-pad">'
-                            + '<img class="review" src="'+ im_path +'" width="20" height="20"/>'
-                        + '</div>'
-                        + '<hr/>'
-                    + '</div>'
-                    + '<div class = "col-12 review-text" >'
-                        + '<p>' + reviews[i].text + '</p>'
-                    + '</div>'
-                + '</div>'
+            + '<div class = "col-12 review-item">'
+            + '<div class = "row">'
+            + '<div class = "col-11 only-left-pad">'
+            + '<h4 class = "reviewername">' + reviews[i].username + '</h4>'
+            + '</div>'
+            + '<div class = "col-1 no-pad">'
+            + '<img class="review" src="'+ im_path +'" width="20" height="20"/>'
+            + '</div>'
+            + '<hr/>'
+            + '</div>'
+            + '<div class = "col-12 review-text" >'
+            + '<p>' + reviews[i].text + '</p>'
+            + '</div>'
+            + '</div>'
             + '</div>'
         )
-    }
+    }}
+
+
+
 };
 
 var addGenresAndThemes = function (div, genres, themes) {
