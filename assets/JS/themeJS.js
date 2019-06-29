@@ -73,10 +73,10 @@ var displayFoundtheme = function(theme_list) {
         }
     }
 
-    generatethemeDiv(name, description, books);
+    generateThemeDiv(name, description, books);
 };
 
-var generatethemeDiv = function (name, bio, books, themes, themes) {
+var generateThemeDiv = function (name, description, books) {
 
     console.log('GENERATING AUTHOR DIVS')
 
@@ -86,18 +86,18 @@ var generatethemeDiv = function (name, bio, books, themes, themes) {
     var $div3 = $("<div class = 'col-10 singleItemContainer'/>");
     var $div4 = $("<div class = 'col-3 singleItemContainer'/>");
     var $imwrap = $("<div class = 'themeAndThemeImageContainer singleItemImage big-screen-image'/>");
-    var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/AuthorPictures/"+name+".jpg"});
+    var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/ThemesImages/"+name+".jpg"});
     var $col2 = $("<div class = 'col-1'/>");
     var $div5 = $("<div class = 'col-8 singleItemContainer'/>");
     var $h1 = $("<h1 class = 'singleItemName'/>"); $h1.html(name);
     var $div6 = $("<div class = 'row small-screen-image' />");
     var $div7 = $("<div class = 'col-2' />");
     var $div8 = $("<div class = 'col-8' />");
-    var $im2 = $("<img />", { class:"singleItemImage", src:"../assets/Images/AuthorPictures/"+name+".jpg"});
+    var $im2 = $("<img />", { class:"singleItemImage", src:"../assets/Images/ThemesImages/"+name+".jpg"});
     var $div9 = $("<div class = 'col-2' />");
 
     var $span1 = $("<span />");
-    var $div13 = $("<div class = 'textcontent' />"); $div13.html(bio);
+    var $div13 = $("<div class = 'textcontent' />"); $div13.html(description);
     var $hr1 = $("<hr>");
 
 
@@ -126,7 +126,7 @@ var generatethemeDiv = function (name, bio, books, themes, themes) {
         var $d2 = $("<div class = 'col-1' />");
         var $d3 = $("<div class = 'col-10' />");
         var $d4 = $("<div class = 'col-1' />");
-        var $hbook = $("<h3 />"); $hbook.html('Books');
+        var $hbook = $("<h3 />"); $hbook.html('Books related to this theme:');
 
         $("#row-margin-top").append($d1);
         $d1.append($d2);
@@ -135,14 +135,12 @@ var generatethemeDiv = function (name, bio, books, themes, themes) {
         $d1.append($d4);
 
         for(var i in books){
-            generateThemeDiv(books[i]);
+            generateBookDiv(books[i]);
         }
     }
 };
 
-var generateThemeDiv = function (book) {
-
-    console.log('GENERATING THEME DIV');
+var generateBookDiv = function (book) {
 
     var $diva = $("<div class='row'/>");
     var $divb = $("<div class='col-1 hidden-s'/>");

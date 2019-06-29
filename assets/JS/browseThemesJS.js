@@ -72,16 +72,12 @@ var generateThemeDivs = function (parsed, n) {
 
         var theme = parsed[i].theme_name;
 
-        var $d1 = $("<div class='image-container' />");
-        $d1.style.backgroundImage = 'url(../assets/Images/ThemesImages/'+theme+'.jpg)'
-        var $a = $("<a />", {href: 'theme.html?theme='+theme});
-        var $im = $("<img />", {src: '../assets/Images/ThemesImages/'+theme+'.jpg'});
-        var $d2 = $("<div class='centered-text theme' />"); $d2.html(theme);
+        $ref_div.append('<div class="image-container">'
+            +'<a href = "theme.html?theme='+theme+'">'
+            +'<img src = "../assets/Images/ThemesImages/'+theme+'.jpg"/>'
+            +'<div class="centered-text theme">'+theme+'</div>'
+            +'</a>'
+            +'</div>')
 
-        $ref_div.append('<div class="image-container" style="background-image: url()" />');
-        $ref_div.append($d1);
-        $d1.append($a);
-        $a.append($im);
-        $a.append($d2);
     }
 };
