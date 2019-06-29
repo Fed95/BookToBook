@@ -49,19 +49,36 @@ xhttp.send();
 
 var displayFoundAuthors = function(authors_list) {
 
-    var serach_result_div = document.getElementById('search-result');
     var parsed = JSON.parse(authors_list);
     console.log("parsed: ", parsed);
 
-    for(var author of parsed){
+    var grouped = _.groupBy(parsed, 'author_id');
+    console.log("grouped: ", grouped);
 
-        var name = author.name;
-        var author_id = author.author_id;
+    var authors = [];
 
-        console.log(name);
-        console.log(author_id);
+    for(var a in grouped){
+        var author = {
+            name: grouped[a][0].name,
+            author_id: grouped[a][0].author_id
+        };
+        authors.push(author)
+    }
 
-        generateAuthorDiv(name, author_id)
+    authors.sort(function(a,b){
+        console.log(a.name,  b.name, a.name > b.name)
+        if(a.name < b.name){
+            return -1
+        }else if(a.name > b.name){
+            return 1
+        }else{
+            return 0
+        }
+    });
+    console.log("authors: ", authors)
+
+    for(var author of authors){
+        generateAuthorDiv(author.name, author.author_id)
     }
 };
 
