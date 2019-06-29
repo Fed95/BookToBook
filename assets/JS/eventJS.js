@@ -23,8 +23,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 //---------------------------------------------------------------------
 //getting user input
 //---------------------------------------------------------------------
-//const input = getUrlParameter('isbn');
-const input = 1;
+const input = getUrlParameter('event_id');
 
 
 //---------------------------------------------------------------------

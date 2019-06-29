@@ -55,38 +55,35 @@ var displayFoundEvents = function (event_list) {
 
 var generateEventDivs = function(grouped) {
 
-    for(var event_id in grouped){
+    for(var index in grouped){
 
-        var e_date = new Date(grouped[event_id][0].event_date)
+        var e_date = new Date(grouped[index][0].event_date)
         var past = e_date < currentTime;
-        var classes = "glyphicon glyphicon-calendar";
         var classes = "timeline-badge info";
         if(past){
-            console.log(grouped[event_id][0].event_name)
             classes = "past " + classes
         }
 
 
         if($('ul.timeline li').length % 2 == 0){
-            var $a = $('<a />', {href: ip + 'pages/event.html?event_id=' + event_id});
 
             $('.timeline').prepend(
-                '<li class="timeline-inverted" href=' + ip + "pages/event.html?event_id=" + event_id +'>'
+                '<li class="timeline-inverted" >'
                 +'<div class="' + classes + '"><i class="glyphicon glyphicon-calendar"></i></div>'
                 +'<div class="timeline-panel">'
                 +'<div class="timeline-heading">'
                 +'<h4 class="timeline-title">'
-                +'<a href=' + ip + "pages/event.html?event_id=" + event_id +'>'
-                + grouped[event_id][0].event_name
+                +'<a href=' + ip + "pages/event.html?event_id=" + grouped[index][0].event_id +'>'
+                + grouped[index][0].event_name
                 +'</a>'
                 +'</h4>'
                 +'<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>'
-                +' ' + grouped[event_id][0].event_date.substr(0, 10)
+                +' ' + grouped[index][0].event_date.substr(0, 10)
                 +'</small></p>'
                 +'</div>'
                 +'<div class="timeline-body">'
                 +'<p>'
-                + grouped[event_id][0].brief_summary
+                + grouped[index][0].brief_summary
                 +'</p>'
                 +'</div>'
                 +'</div>'
@@ -103,17 +100,17 @@ var generateEventDivs = function(grouped) {
                 +'<div class="timeline-panel">'
                 +'<div class="timeline-heading">'
                 +'<h4 class="timeline-title">'
-                +'<a href=' + ip + "pages/event.html?event_id=" + event_id +'>'
-                + grouped[event_id][0].event_name
+                +'<a href=' + ip + "pages/event.html?event_id=" + grouped[index][0].event_id +'>'
+                + grouped[index][0].event_name
                 +'</a>'
                 +'</h4>'
                 +'<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>'
-                +' ' + grouped[event_id][0].event_date.substr(0, 10)
+                +' ' + grouped[index][0].event_date.substr(0, 10)
                 +'</small></p>'
                 +'</div>'
                 +'<div class="timeline-body">'
                 +'<p>'
-                + grouped[event_id][0].brief_summary
+                + grouped[index][0].brief_summary
                 +'</p>'
                 +'</div>'
                 +'</div>'
