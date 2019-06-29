@@ -908,7 +908,9 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        required: false
+        required: true
+        description: "body login"
+        type: "string"
         schema:
           $ref: "#/definitions/Login"
       responses:

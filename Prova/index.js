@@ -47,6 +47,11 @@ exports.knex = knex;
 app.set('trust proxy', 1) // trust first proxy
 
 
+// Use cookie Session
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
 
 
 
@@ -74,11 +79,6 @@ var options = {
 var spec = fs.readFileSync(path.join(__dirname,'api/swagger.yaml'), 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
-// Use cookie Session
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2']
-}));
 
 // Initialize the Swagger middleware
 swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {

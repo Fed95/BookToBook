@@ -1,5 +1,8 @@
 'use strict';
 
+var pg = require("../index.js");
+var knex = pg.knex;
+
 exports.deletePurchasePurchaseID = function(args, res, next) {
   /**
    * parameters expected in the args:
@@ -358,14 +361,30 @@ exports.getPurchaseFindByUser = function(args, res, next) {
    * parameters expected in the args:
   * userID (Long)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    var userIdReq = "davide@mail.com";
+    var passwordReq = "davide";
+    console.log('userIdReq = ', userIdReq)
+    console.log('passwordReq = ', passwordReq)
+
+    //return new Promise(function (resolve, reject) {
+
+    //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
+
+    let myQuery = knex('new_schema.users AS u')
+        .where(
+            {
+              user_mail: userIdReq,
+              password: passwordReq
+            })
+        .select('password')
+        .then(result => {
+          //console.log(result);
+          resolve(result);
+        })
+
+  });
   
 }
 
@@ -525,7 +544,8 @@ exports.postUserLogin = function(args, res, next) {
    * parameters expected in the args:
   * body (Login)
   **/
-    var examples = {};
+   /* var examples = {};
+    console.log("via")
   examples['application/json'] = {
   "username" : "aeiou"
 };
@@ -535,7 +555,32 @@ exports.postUserLogin = function(args, res, next) {
   }
   else {
     res.end();
-  }
+  }*/
+
+  return new Promise(function (resolve, reject) {
+
+    var userIdReq = "davide@mail.com";
+    var passwordReq = "davide";
+    console.log('userIdReq = ', userIdReq)
+    console.log('passwordReq = ', passwordReq)
+
+    //return new Promise(function (resolve, reject) {
+
+    //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
+
+    let myQuery = knex('new_schema.users AS u')
+        .where(
+            {
+              user_mail: userIdReq,
+              password: passwordReq
+            })
+        .select('password')
+        .then(result => {
+          //console.log(result);
+          resolve(result);
+        })
+
+  });
   
 }
 

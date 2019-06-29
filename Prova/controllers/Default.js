@@ -2,6 +2,7 @@
 
 var url = require('url');
 
+var utils = require('../utils/writer.js');
 
 var Default = require('./DefaultService');
 
@@ -95,7 +96,22 @@ module.exports.getGenreGenreName = function getGenreGenreName (req, res, next) {
 };
 
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
-  Default.getPurchaseFindByUser(req.swagger.params, res, next);
+  console.log("VEEEEEEEE")
+  Default.getPurchaseFindByUser(req.swagger.params, res, next).then(function (response) {
+    console.log("Finito")
+    //console.log(req)
+    req.session.loggedIn = true;
+    req.session.save();
+    //res.end()
+    //res.setHeader('Content-Type', 'application/json');
+
+    utils.writeJson(res, response);
+
+    //res.end();
+  }).catch(function (response) {
+    console.log("Sbagliato")
+    utils.writeJson(res, response);
+  });
 };
 
 module.exports.getPurchasePurchaseID = function getPurchasePurchaseID (req, res, next) {
@@ -143,9 +159,31 @@ module.exports.postUser = function postUser (req, res, next) {
 };
 
 module.exports.postUserLogin = function postUserLogin (req, res, next) {
-  Default.postUserLogin(req.swagger.params, res, next);
+  console.log("hello from Users.js - postUserLogin");
+
+  Default.postUserLogin(req.body, req, res, next)
+      .then(function (response) {
+        console.log("Finito")
+        res.redirect(307, '/api/user/logout')
+        //console.log(req)
+        //req.session.loggedIn = true;
+        //req.session.save();
+        //res.end()
+        //res.setHeader('Content-Type', 'application/json');
+
+        //utils.writeJson(res, response);
+
+        //res.end();
+      }).catch(function (response) {
+    console.log("Sbagliato")
+    utils.writeJson(res, response);
+  });
 };
 
 module.exports.postUserLogout = function postUserLogout (req, res, next) {
-  Default.postUserLogout(req.swagger.params, res, next);
+  console.log("Fottuto")
+  req.session.loggedIn = true;
+  req.session.save()
+  res.end()
+  //Default.postUserLogout(req.swagger.params, res, next);
 };
