@@ -58,7 +58,7 @@ exports.postUserLogin = function (args, req, res, next) {
                 var pass = result[0].password;
                 if (passwordReq === pass) {
                     // login cookie
-                    req.session.loggedIn = true;
+                    //req.session.loggedIn = true;
                     /*req.session.save(() => {
                         console.log(req.session);
 
@@ -68,7 +68,7 @@ exports.postUserLogin = function (args, req, res, next) {
                     //res.end.bind(res);
                     console.log("Logged in");
                     console.log('Done with auth procedure: req.session = ' + JSON.stringify(req.session));
-                    res.end();
+                    //res.end();
                     resolve(result)
                 } else {
                     // failed login
@@ -79,8 +79,8 @@ exports.postUserLogin = function (args, req, res, next) {
             .catch(function (error) {
                 reject(error)
             });
-        console.log("Next")
-    });
+        console.log("Next");
+    })
 };
 
 
