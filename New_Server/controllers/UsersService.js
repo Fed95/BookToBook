@@ -29,16 +29,60 @@ exports.postUser = function(args, res, next) {
   res.end();
 }
 
-exports.postUserLogin = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * contentType (String)
-  * body (Login)
-  **/
-  console.log("hello from UsersService.js - postUserLogin");
-  // no response value expected for this operation
-  res.end();
-}
+
+exports.postUserLogin = function (args, req, res, next) {
+    /**
+     * parameters expected in the args:
+     * contentType (String)
+     * body (Login)
+     **/
+
+    var userIdReq = args.UserId;
+    var passwordReq = args.Password;
+    console.log(userIdReq)
+
+    return new Promise(function (resolve, reject) {
+
+        console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
+
+        knex('new_schema.users')
+            .where('user_mail', '=', userIdReq)
+            .select('password')
+            .then(result => {
+                //console.log(result[0]);
+
+                if (!result || !result[0]) {  // not found!
+                    // report invalid username
+                    reject(new Error('Username or password are incorrect'));
+                }
+                var pass = result[0].password;
+                if (passwordReq === pass) {
+                    // login cookie
+                    req.session.loggedIn = true;
+                    /*req.session.save(() => {
+                        console.log(req.session);
+
+                    });*/
+                    //res.cookie('cookie', '2');
+                    //session.save();
+                    //res.end.bind(res);
+                    console.log("Logged in");
+                    console.log('Done with auth procedure: req.session = ' + JSON.stringify(req.session));
+                    res.end();
+                    resolve(result)
+                } else {
+                    // failed login
+                    reject(new Error('Username or password are incorrect'));
+
+                }
+            })
+            .catch(function (error) {
+                reject(error)
+            });
+        console.log("Next")
+    });
+};
+
 
 exports.postUserLogout = function(args, res, next) {
   /**
@@ -46,5 +90,5 @@ exports.postUserLogout = function(args, res, next) {
   **/
   // no response value expected for this operation
   res.end();
-}
+};
 
