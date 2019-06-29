@@ -557,13 +557,13 @@ exports.postUser = function(args, res, next) {
   
 }
 
-/*exports.postUserLogin = function(args, res, next) {
+exports.postUserLogin = function(args, res, next) {
   /**
    * parameters expected in the args:
   * contentType (String)
   * body (Login)
   **/
-    /*var examples = {};
+    var examples = {};
   examples['application/json'] = {
   "code" : 123456789,
   "reasonPhrase" : "aeiou",
@@ -575,9 +575,9 @@ exports.postUser = function(args, res, next) {
   }
   else {
     res.end();
-  }*/
+  }
 
-  exports.postUserLogin = function (args, req, res, next) {
+  /*exports.postUserLogin = function (args, req, res, next) {
     /**
      * parameters expected in the args:
      * contentType (String)
@@ -589,7 +589,7 @@ exports.postUser = function(args, res, next) {
     console.log(userIdReq)*/
 
 
-    return new Promise(function (resolve, reject) {
+    r/*eturn new Promise(function (resolve, reject) {
 
       var userIdReq = "davide@mail.com";
       var passwordReq = "davide";
@@ -612,7 +612,7 @@ exports.postUser = function(args, res, next) {
             resolve(result);
           })
 
-    });
+    });*/
 
 
   }
