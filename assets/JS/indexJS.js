@@ -71,28 +71,46 @@ $('.scroller-left').click(function() {
 
 });*/
 var view = $("#show");
-var move = "100px";
-var sliderLimit = -750;
 var current = 1;
+const mq = window.matchMedia( "(max-width: 600px)" );
+const mq2 = window.matchMedia( "(max-width: 450px)" );
 
 function moveRight() {
-    if(current == 7){
-        
+    if(mq.matches && mq2.matches){
+        if(current >= 4){
+
+        }else{
+            current= current + 1;
+            var currentelem = $("#"+current.toString());
+            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+        }
+    }
+    else if(mq.matches && !(mq2.matches)){
+        if(current >= 3){
+
+        }
+        else{
+            current= current + 1;
+            var currentelem = $("#"+current.toString());
+            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+        }
     }else{
-        current= current + 1;
-        var currentelem = $("#"+current.toString());
-        view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
-        console.log(current); 
+        if(current >= 2){
+
+        }else{
+            current= current + 1;
+            var currentelem = $("#"+current.toString());
+            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+        }
     }
 }
 function moveLeft() {
-    if(current == 1){
+    if(current <= 1){
         
     }else{
         current= current - 1;
         var currentelem = $("#"+current.toString());
         view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
-        console.log(current); 
     }
 }
 

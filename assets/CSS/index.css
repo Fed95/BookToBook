@@ -122,27 +122,58 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
 }*/
+.bookinfo h3{
+    font-size: 18px;
+    margin-bottom: 1px;
+    margin-top: 3px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
 
+.bookinfo p{
+    margin: 0;
+    font-size: 14px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.bookinfo{
+    text-align: center;
+    padding: 0px;
+    white-space: normal;
+}
+
+.imagebox{
+    width: 33.333333%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align:top;
+}
 .image{
-    width: 25%;
-    height: 300px;
-    padding: 1.25%;
+    width: 100%;
+    padding-right: 20%;
+    padding-left: 20%;
+    padding-bottom: 5%;
 }
 .leftimage{
     width: 100%;
     
 }
 .left-arrow{
-    width:10%;
+    width:8%;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .rightimage{
     width: 100%;
 }
 .right-arrow{
-    width: 10%;
+    width: 8%;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 #show{
-    width: 80%;
+    width: 84%;
     right: 0;
     padding: 0;
     overflow: hidden;
@@ -151,4 +182,60 @@
 }
 .rowevents{
     display: flex;
+}
+@media (max-width: 900px){
+    .right-arrow{
+        width: 10%;
+
+    }
+    .left-arrow{
+        width: 10%;
+    }
+    #show{
+        width: 80%;
+    }
+}
+@media (max-width: 600px){
+    .imagebox{
+        width: 50%;
+    }
+    .bookinfo h3{
+        font-size: 16px;
+    }
+    .bookinfo p{
+        font-size: 12px;
+    }
+    .right-arrow{
+        width: 13%;
+    }
+    .left-arrow{
+        width: 13%;
+    }
+    #show{
+        width: 74%;
+    }
+}
+@media (max-width: 450px){
+    .imagebox{
+        width: 100%;
+    }
+    .bookinfo h3{
+        font-size: 14px;
+    }
+    .bookinfo p{
+        font-size: 10px;
+    }
+    .right-arrow{
+        width: 15%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .left-arrow{
+        width: 15%;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    #show{
+        width: 70%;
+    }
 }
