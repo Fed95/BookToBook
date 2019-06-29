@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- Latest compiled and minified CSS -->
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -11,6 +10,7 @@
         <link rel="stylesheet" href="../assets/CSS/singleItemStyles.css">
         <link rel="stylesheet" href="../assets/CSS/book.css">
         <link rel="stylesheet" href="../assets/CSS/browse.css">
+        <link rel="stylesheet" href="../assets/CSS/collapsable.css">
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
@@ -56,11 +56,25 @@
                     </div><!-- /.container-fluid -->
                 </nav>
 
-                <div id="homepage-container" class="container">
 
+
+
+                <div id="homepage-container" class="container">
+                    <div id="book-div"></div>
+                    <div id="reviews-div">
+                        <button class="col-8 collapsible">Reviews</button>
+                    </div>
+                    <div id="interview-div">
+                        <button class="col-8 collapsible">Interview with the author</button>
+                    </div>
 
 
                 </div>
+
+
+
+
+
             </div>
             <footer class="section footer-classic context-dark bg-image myfooter">
                 <div class="container">
@@ -109,5 +123,6 @@
         <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
         <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
         <script scr="assets/JS/indexJS/js"></script>
+        <script src="../assets/JS/collapsible.js"></script>
     </body>
 </html>

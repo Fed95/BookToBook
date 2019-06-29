@@ -31,25 +31,21 @@ $(()=>{
 
 
     $( '#btn-signIn' ).click(function() {
-        //console.log("Pusce gay");
 
         var loginForm =
             {
-                "UserId": "filipporadicchio@gmail.com",
-                "Password": "trichipuzza"
+                "UserId": document.getElementById("inputEmail").value,
+                "Password": document.getElementById("inputPassword").value
             };
         var input = JSON.stringify(loginForm);
-        //alert(JSON.stringify(loginForm));
         var xhttp = new XMLHttpRequest();
         xhttp.open("POST", ip + "api/user/login", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
-        //alert(JSON.stringify(JSON.parse(input)));
         xhttp.send(input);
         /*$.post(ip + "api/user/login", JSON.parse(input), json, function(){
             alert("Ciao");
         });*/
 
-        console.log("Fine");
     });
 });
 
