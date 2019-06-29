@@ -156,8 +156,10 @@
     padding-bottom: 5%;
 }
 .leftimage{
-    width: 100%;
-    
+    width: 70%;
+}
+.leftimage:hover{
+    width: 80%;
 }
 .left-arrow{
     width:8%;
@@ -165,7 +167,10 @@
     padding-bottom: 30px;
 }
 .rightimage{
-    width: 100%;
+    width: 70%;
+}
+.rightimage:hover{
+    width: 80%;
 }
 .right-arrow{
     width: 8%;
