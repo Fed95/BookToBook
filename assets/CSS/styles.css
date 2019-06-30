@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+/*@import url('https://fonts.googleapis.com/css?family=Playfair+Display');*/
+/*@import url('https://fonts.googleapis.com/css?family=Source+Sans');*/
+
+body{
+    font-family: 'Source Sans Pro', serif;
+}
 * {
   box-sizing: border-box;
 }
@@ -210,4 +217,7 @@ button:focus { outline:0 !important; }
         font-size: 10px;
     }
     .close{font-size: 15px;}
+}
+.centered{
+    text-align: center;
 }

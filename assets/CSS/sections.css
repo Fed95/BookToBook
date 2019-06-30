@@ -1,0 +1,17 @@
+/*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+.homepage-section{
+    margin-top: 10%;
+}
+.homepage-section h1{
+    text-align: center;
+}
+#welcome{
+    margin-top: 5%;
+    text-align: center;
+}
+
+#welcome h4{
+    padding: 5%;
+    font-weight: lighter;
+}
