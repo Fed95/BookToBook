@@ -15,3 +15,21 @@
     padding: 5%;
     font-weight: lighter;
 }
+#events{
+    position: relative;
+}
+#events img{
+     max-width: 150px;
+}
+#events .event{
+    background-color: #fafafa;
+    margin: 4%;
+    padding: 1%;
+}
+#events .info div {
+    margin-top: 10%;
+    padding: 0;
+}
+#events .info .right {
+    margin-left: 10%;
+}

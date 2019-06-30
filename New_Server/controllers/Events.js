@@ -46,7 +46,17 @@ module.exports.getEventFindByBook = function getEventFindByBook(req, res, next) 
 };
 
 module.exports.getEventFindByMonth = function getEventFindByMonth(req, res, next) {
-    Events.getEventFindByMonth(req.swagger.params, res, next);
+
+    var month = req.swagger.params['Month']['originalValue'];
+    console.log("inside Events.js; Month = ", month);
+
+    Events.getEventFindByMonth(month)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
 };
 
 module.exports.getEventFindByName = function getEventFindByName(req, res, next) {

@@ -1,133 +1,50 @@
-/*var hidWidth;
-var scrollBarWidths = 40;
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
-var widthOfList = function(){
-    var itemsWidth = 0;
-    $('.item').each(function(){
-        var itemWidth = $(this).outerWidth();
-        itemsWidth+=itemWidth;
-    });
-    //alert(itemsWidth);
-    return itemsWidth;
+var xhttpEvents = new XMLHttpRequest();
+xhttpEvents.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        $(document).ready(() => {
+            addMonthEvents(JSON.parse(this.responseText));
+        });
+    }
 };
 
-var widthOfHidden = function(){
-    return (($('.wrapper').outerWidth())-widthOfList()-getLeftPosi())-scrollBarWidths;
-};
+var current_month = new Date().getMonth();
 
-var getLeftPosi = function(){
-    //return $('.item:first-child').position().left;
-    return $('.list').position().left;
-};
+xhttpEvents.open("GET", ip + "api/event/findByMonth?Month=" + current_month, true);
+xhttpEvents.send();
 
-var reAdjust = function(){
-    if (($('.wrapper').outerWidth()) < widthOfList()) {
-        $('.scroller-right').show();
-    }
-    else {
-        $('.scroller-right').hide();*/
-        /*
-     var leftPos = $('.item:first-child').position().left;
-     $('.item').animate({left:"-="+leftPos+"px"},'slow');
-     */
-    /*}
 
-    if (getLeftPosi()<0) {
-        $('.scroller-left').show();
+var addMonthEvents = function (events) {
+    console.log('events this month: ', events);
+
+    for (var e of events) {
+        $('#events').append(
+            '<div class="row event">' +
+            '<div class="container">' +
+            '<div class="col-4">' +
+            '<img src="./assets/Images/BookCovers/The%20BFG.jpg">' +
+            '</div>' +
+            '<div class="col-8">' +
+            '<h3>'+e.event_name+'</h3>' +
+            '<p>'+e.brief_summary+'</p>' +
+            '<div class="row info">' +
+            '<div class="col-">' +
+            '<p>Author/s:</p>' +
+            '<p>Date:</p>' +
+            '<p>Location:</p>' +
+            '</div>' +
+            '<div class="right col-">' +
+            '<p>Justin Timberlake</p>' +
+            '<p>Someday...</p>' +
+            '<p>Via Mazzocchi 2</p>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
+        )
     }
-    else {
-        $('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
-        $('.scroller-left').hide();
-    }
+
 }
-
-reAdjust();
-
-$(window).on('resize',function(e){
-    reAdjust();
-});
-
-$('.scroller-right').click(function() {
-
-    $('.scroller-left').fadeIn('slow');
-    $('.scroller-right').fadeOut('slow');
-
-    $('.list').animate({left:"+="+widthOfHidden()+"px"},'slow',function(){
-        //reAdjust();
-    });
-});
-
-$('.scroller-left').click(function() {
-    //var leftPos = $('.item:first-child').position().left;
-    //$('.item').animate({left:"-="+getLeftPosi()+"px"},'slow');
-    //$('.scroller-left').hide();
-
-    $('.scroller-right').fadeIn('slow');
-    $('.scroller-left').fadeOut('slow');
-
-    $('.list').animate({left:"-="+getLeftPosi()+"px"},'slow',function(){
-
-    });
-
-});
-*/
-
-
-
-var view = $("#show");
-var current = 1;
-const mq = window.matchMedia( "(max-width: 600px)" );
-const mq2 = window.matchMedia( "(max-width: 450px)" );
-
-function moveRight() {
-    if(mq.matches && mq2.matches){
-        if(current >= 4){
-
-        }else{
-            current= current + 1;
-            var currentelem = $("#"+current.toString());
-            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
-        }
-    }
-    else if(mq.matches && !(mq2.matches)){
-        if(current >= 3){
-
-        }
-        else{
-            current= current + 1;
-            var currentelem = $("#"+current.toString());
-            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
-        }
-    }else{
-        if(current >= 2){
-
-        }else{
-            current= current + 1;
-            var currentelem = $("#"+current.toString());
-            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
-        }
-    }
-}
-function moveLeft() {
-    if(current <= 1){
-        
-    }else{
-        current= current - 1;
-        var currentelem = $("#"+current.toString());
-        view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
-    }
-}
-
-var getCookie = function(name) {
-    var cookies = document.cookie.split(';');
-    for(var i=0 ; i < cookies.length ; ++i) {
-        var pair = cookies[i].trim().split('=');
-        if(pair[0] == name)
-            return pair[1];
-    }
-    return null;
-};
-
-c = getCookie('session')
-
-console.log(c)
