@@ -2,6 +2,13 @@
 .singleBook {
     width: 30%;
 }
+
+.singleBook p:hover {
+    text-decoration: underline;
+}
+.singleBook img:hover {
+    opacity: 0.8;
+}
 .description{
     text-align: center;
 }

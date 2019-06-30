@@ -388,54 +388,85 @@ var addEvents = function(events){
     }}
 };
 
-var addSuggestedBooks = function(books){
+var addSuggestedBooks = function(books_to_process){
+
+    var books = preprocessSuggestedBooks(books_to_process)
 
     if(books.length > 0) {
+
         $('#suggested-div').append('<h2>Suggested Readings</h2>')
 
-        console.log("inside addSuggestedBooks, books = ", books)
+        console.log('grouped suggested books list:', books)
 
-        var grouped_by_isbn = _.groupBy(books, 'isbn');
+        for (var i = 0; i < Math.min(6, books.length); i++) {
 
-        var grouped_list = []
-
-        for (var i in grouped_by_isbn) {
-            grouped_list.push(grouped_by_isbn[i])
-        }
-        grouped_list.sort(function (a, b) {
-            if (a.length < b.length) {
-                return -1
-            } else if (a.name > b.name) {
-                return 1
-            } else {
-                return 0
-            }
-        });
-
-        console.log('grouped suggested books list:', grouped_list)
-
-        for (var i = 0; i < Math.min(6, grouped_list.length); i++) {
-
-            var grouped_by_author = _.groupBy(grouped_list[i], 'name');
+            var grouped_by_author = _.groupBy(books[i], 'name');
 
             var authors = []
-            for(var author in grouped_by_author){
+            for(var a in grouped_by_author){
+                var author = {
+                    name: a,
+                    id: grouped_by_author[a][0].author_id
+                }
                 authors.push(author)
+            }
+
+            author_links = ""
+
+            for(var a of authors){
+                author_links += ', <a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+a.name+'</a>'
             }
 
 
             $('#suggested-div').append(
+
                 '<div class="col-sm singleBook">' +
                 '<div class="description">' +
-                '<a href="'+ip+'pages/book.html?isbn='+grouped_list[i][0].isbn+'">'+
-                '<img class="singleItemImage" src="../assets/Images/BookCovers/' + grouped_list[i][0].title + '.jpg">' +
-                '<h3>' + grouped_list[i][0].title + '</h3>' +
+                '<a href="'+ip+'pages/book.html?isbn='+books[i][0].isbn+'">'+
+                '<img class="singleItemImage" src="../assets/Images/BookCovers/' + books[i][0].title + '.jpg">' +
+                '<h3>' + books[i][0].title + '</h3>' +
                 '</a>'+
-                '<p>' + authors + '</p>' +
+                '<p>' + author_links.substring(1) + '</p>' +
                 '</div>' +
                 '</div>'
             );
         }
     }
+}
+
+var preprocessSuggestedBooks = function (books) {
+
+    var grouped_by_isbn = _.groupBy(books, 'isbn');
+    var grouped_list = generateListFronGrouped(grouped_by_isbn)
+
+    grouped_list.sort(function (a, b) {
+        if (a.length < b.length) {
+            return -1
+        } else if (a.name > b.name) {
+            return 1
+        } else {
+            return 0
+        }
+    });
+
+    console.log('before filtering', grouped_list)
+
+    var clean_list = grouped_list.filter(function (el) {
+        return el[0].isbn != input // input is the isbn of the current book displayed on the page
+    });
+
+    console.log('after filtering: ',clean_list)
+
+    return clean_list
+}
+
+var generateListFronGrouped = function(grouped){
+
+    var grouped_list = []
+
+    for (var i in grouped) {
+        grouped_list.push(grouped[i])
+    }
+    return grouped_list
 }
 
