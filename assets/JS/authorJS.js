@@ -57,8 +57,8 @@ var displayFoundAuthor = function(book_list) {
 
     var name = parsed[0]['name'];
     var bio = parsed[0]['bio']
-    var genres = [];
-    var themes = [];
+    var birth_date = parsed[0]['birth_date'];
+    var death_date = parsed[0]['death_date'];
 
     var books = [];
 
@@ -73,41 +73,12 @@ var displayFoundAuthor = function(book_list) {
     }
 
 
-    generateAuthorDiv(name, bio, books);
-};
-
-var xhttpAuthors = new XMLHttpRequest();
-xhttpAuthors.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            addAuthors(this.responseText)
-        });
-    }
-};
-
-var addAuthors = function(author_list){
-
-    var parsed = JSON.parse(author_list);
-    console.log("parsed authors: ", parsed);
-
-    var isbn_string = '#'+ parsed[0]['isbn'];
-
-
-
-    var authors = [];
-    for(var i in parsed){
-        authors.push(parsed[i]['name'])
-    }
-    var authors_string = authors.join(', ');
-
-    console.log('authors for ' + isbn_string);
-    console.log(authors_string);
-
-    $(isbn_string).html(authors_string)
+    generateAuthorDiv(name, bio, birth_date, death_date, books);
 };
 
 
-var generateAuthorDiv = function (name, bio, books) {
+
+var generateAuthorDiv = function (name, bio, birth_date, death_date, books) {
 
     console.log('GENERATING AUTHOR DIVS')
 
@@ -120,7 +91,14 @@ var generateAuthorDiv = function (name, bio, books) {
                     var $im1 = $("<img />", { class:"singleItemImage big-screen-image", src:"../assets/Images/AuthorPictures/"+name+".jpg"});
             var $col2 = $("<div class = 'col-1'/>");
             var $div5 = $("<div class = 'col-8 singleItemContainer'/>");
-                var $h1 = $("<h1 class = 'singleItemName'/>"); $h1.html(name);
+                var $h1 = $("<h1 />"); $h1.html(name);
+                var $life_dates = $("<h5 />");
+                if(death_date == null){
+                    $life_dates.html("Born in: " + birth_date.substring(0, 10));
+                }else{
+                    $life_dates.html("Lived: " + birth_date.substring(0, 10) + ' to ' + death_date.substring(0, 10));
+                }
+
                 var $div6 = $("<div class = 'row small-screen-image' />");
                     var $div7 = $("<div class = 'col-2' />");
                     var $div8 = $("<div class = 'col-8' />");
@@ -142,6 +120,7 @@ var generateAuthorDiv = function (name, bio, books) {
             $div3.append($col2);
             $div3.append($div5);
                 $div5.append($h1);
+                $div5.append($life_dates);
                 $div5.append($div6);
                     $div6.append($div7);
                     $div6.append($div8);

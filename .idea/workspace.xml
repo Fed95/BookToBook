@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/New_Server/controllers/GenresService.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/GenresService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/CSS/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/book.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/CSS/suggested.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/suggested.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/genreJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/genreJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/themeJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/themeJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/genre.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/genre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/authorJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/authorJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,90 +18,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
+        <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="390" column="50" lean-forward="true" selection-start-line="390" selection-start-column="50" selection-end-line="390" selection-end-column="50" />
+            <state relative-caret-position="226">
+              <caret line="98" column="115" selection-start-line="98" selection-start-column="115" selection-end-line="98" selection-end-column="115" />
               <folding>
-                <element signature="e#13638#14258#0" />
-                <element signature="e#14307#14435#0" />
+                <element signature="e#5183#5828#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/themeJS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="80" column="16" selection-start-line="80" selection-start-column="16" selection-end-line="80" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/genreJS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="75" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/book.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="521">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/suggested.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/genre.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/theme.html">
+        <entry file="file://$PROJECT_DIR$/assets/CSS/book.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="58" column="61" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/book.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="72" />
-              <folding>
-                <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/New_Server/controllers/GenresService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="56" column="66" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
+            <state relative-caret-position="370">
+              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -123,8 +51,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parsed</find>
-      <find>ifr</find>
       <find>prey</find>
       <find>pre</find>
       <find>sign</find>
@@ -151,8 +77,10 @@
       <find>margin</find>
       <find>genre-container</find>
       <find>books re</find>
-      <find>sugg</find>
       <find>BOOK-</find>
+      <find>sugg</find>
+      <find>xhttpAuthors</find>
+      <find>10</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -213,12 +141,10 @@
         <option value="$PROJECT_DIR$/assets/CSS/browseBooks.css" />
         <option value="$PROJECT_DIR$/Server/controllers/AuthorsService.js" />
         <option value="$PROJECT_DIR$/Server/controllers/BooksService.js" />
-        <option value="$PROJECT_DIR$/New_Server/controllers/ThemesService.js" />
         <option value="$PROJECT_DIR$/Server/controllers/ThemesService.js" />
         <option value="$PROJECT_DIR$/Server/controllers/GenresService.js" />
         <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
         <option value="$PROJECT_DIR$/pages/browseBooksTest.html" />
-        <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
         <option value="$PROJECT_DIR$/pages/author.html" />
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
         <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
@@ -226,11 +152,13 @@
         <option value="$PROJECT_DIR$/assets/CSS/browseGenresAndThemes.css" />
         <option value="$PROJECT_DIR$/New_Server/controllers/GenresService.js" />
         <option value="$PROJECT_DIR$/pages/genre.html" />
-        <option value="$PROJECT_DIR$/assets/CSS/book.css" />
-        <option value="$PROJECT_DIR$/assets/CSS/suggested.css" />
         <option value="$PROJECT_DIR$/assets/JS/genreJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/themeJS.js" />
         <option value="$PROJECT_DIR$/pages/theme.html" />
+        <option value="$PROJECT_DIR$/New_Server/controllers/ThemesService.js" />
+        <option value="$PROJECT_DIR$/assets/CSS/suggested.css" />
+        <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
+        <option value="$PROJECT_DIR$/assets/CSS/book.css" />
       </list>
     </option>
   </component>
@@ -457,7 +385,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267056000" />
+    <option name="totallyTimeSpent" value="268386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -478,7 +406,7 @@
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.29036143" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.17349398" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.33012047" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -763,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/ThemesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="53" column="75" selection-start-line="53" selection-start-column="75" selection-end-line="53" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/controllers/ThemesService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -849,56 +770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="179" column="1" lean-forward="true" selection-start-line="179" selection-start-column="1" selection-end-line="179" selection-end-column="1" />
-          <folding>
-            <element signature="e#5183#5828#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="390" column="50" lean-forward="true" selection-start-line="390" selection-start-column="50" selection-end-line="390" selection-end-column="50" />
-          <folding>
-            <element signature="e#13638#14258#0" />
-            <element signature="e#14307#14435#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/GenresService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="66" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/book.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="72" />
-          <folding>
-            <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/book.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/suggested.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="60">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -916,6 +791,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="390" column="50" lean-forward="true" selection-start-line="390" selection-start-column="50" selection-end-line="390" selection-end-column="50" />
+          <folding>
+            <element signature="e#13638#14258#0" />
+            <element signature="e#14307#14435#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/genre.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -927,6 +813,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="58" column="61" selection-start-line="58" selection-start-column="61" selection-end-line="58" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/book.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="72" />
+          <folding>
+            <element signature="n#nav#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_Server/controllers/GenresService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="54" column="63" lean-forward="true" selection-start-line="54" selection-start-column="63" selection-end-line="56" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_Server/controllers/ThemesService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="56" column="75" lean-forward="true" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="98" column="115" selection-start-line="98" selection-start-column="115" selection-end-line="98" selection-end-column="115" />
+          <folding>
+            <element signature="e#5183#5828#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/CSS/book.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
         </state>
       </provider>
     </entry>
