@@ -75,8 +75,8 @@ p{
     border: none;
 }
 #book-div{
-    padding-bottom: 90px;
-    min-height: 700px;
+    padding-bottom: 50px;
+    min-height: 500px;
 }
 .book-collapsible{
     margin: 5%;

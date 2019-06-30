@@ -111,10 +111,10 @@ var displayFoundBooks = function (book) {
                 name: grouped_by_genre[g][0].genre_name,
                 color: grouped_by_genre[g][0].genre_color,
             };
-        }
 
-        genres.push(genre);
-        similar = similar + ',' + String(genre.name)
+            genres.push(genre);
+            similar = similar + ',' + String(genre.name)
+        }
     }
     for (var t in grouped_by_theme) {
 
@@ -123,10 +123,10 @@ var displayFoundBooks = function (book) {
                 name: grouped_by_theme[t][0].theme_name,
                 color: grouped_by_theme[t][0].theme_name,
             };
-        }
 
-        themes.push(theme);
-        similar = similar + ',' + String(theme.name)
+            themes.push(theme);
+            similar = similar + ',' + String(theme.name)
+        }
     }
 
 
@@ -415,12 +415,23 @@ var addSuggestedBooks = function(books){
         console.log('grouped suggested books list:', grouped_list)
 
         for (var i = 0; i < Math.min(6, grouped_list.length); i++) {
+
+            var grouped_by_author = _.groupBy(grouped_list[i], 'name');
+
+            var authors = []
+            for(var author in grouped_by_author){
+                authors.push(author)
+            }
+
+
             $('#suggested-div').append(
                 '<div class="col-sm singleBook">' +
                 '<div class="description">' +
+                '<a href="'+ip+'pages/book.html?isbn='+grouped_list[i][0].isbn+'">'+
                 '<img class="singleItemImage" src="../assets/Images/BookCovers/' + grouped_list[i][0].title + '.jpg">' +
                 '<h3>' + grouped_list[i][0].title + '</h3>' +
-                '<p>' + grouped_list[i][0].name + '</p>' +
+                '</a>'+
+                '<p>' + authors + '</p>' +
                 '</div>' +
                 '</div>'
             );
