@@ -81,6 +81,7 @@ var generateBookDiv = function (isbn, title, authors, price) {
         var $div2 = $("<div class = 'row'/>");
             var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
                 var $div4 = $("<div class = 'book-img'/>");
+                    var $aim = $("<a />", {href : ip + 'pages/book.html?isbn='+isbn});
                     var $im = $("<img />", { src : "../assets/Images/BookCovers/Thumbnails/"+title+".jpg"});
             var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
                 var $h = $("<h3 />", {id : 'title', class : 'book-title'});
@@ -107,7 +108,8 @@ var generateBookDiv = function (isbn, title, authors, price) {
     $div1.append($div2);
     $div2.append($div3);
     $div3.append($div4);
-    $div4.append($im);
+    $div4.append($aim);
+    $aim.append($im);
     $div2.append($div5);
     $div5.append($h);
     $h.append($a5);

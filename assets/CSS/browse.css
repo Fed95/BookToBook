@@ -1,7 +1,9 @@
 .profile-teaser-left {
     float: left; width: 20%; margin-right: 1%;
 }
-
+img:hover{
+    opacity: 0.8;
+}
 .info { display: inline-block; color: #777; }
 .info span { font-weight: bold; }
 
