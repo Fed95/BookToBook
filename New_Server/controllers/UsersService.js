@@ -44,8 +44,8 @@ exports.postUserLogin = function (args, req, res, next) {
 
     return new Promise(function (resolve, reject) {
 
-        var userIdReq = "davide@mail.com";
-        var passwordReq = "davide";
+        var userIdReq = args.UserId;
+        var passwordReq = args.Password;
         console.log('userIdReq = ', userIdReq)
         console.log('passwordReq = ', passwordReq)
 
@@ -61,7 +61,7 @@ exports.postUserLogin = function (args, req, res, next) {
                 })
             .select('password')
             .then(result => {
-                console.log(result);
+                //console.log(result);
                 resolve(result);
             })
 

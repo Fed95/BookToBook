@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 function toggleResetPswd(e){
     e.preventDefault();
@@ -39,6 +39,18 @@ $(()=>{
             };
         var input = JSON.stringify(loginForm);
         var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            console.log(this.readyState)
+            console.log(this.status)
+
+            if (this.readyState == 4 && this.status == 200) {
+                var xhttp2 = new XMLHttpRequest();
+                xhttp2.open("POST", ip + "api/user/logout", true);
+                xhttp2.setRequestHeader("Content-Type", "application/json");
+                xhttp2.send();
+
+            }
+        };
         xhttp.open("POST", ip + "api/user/login", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
         xhttp.send(input);
