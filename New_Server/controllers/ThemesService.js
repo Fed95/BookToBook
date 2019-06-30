@@ -53,6 +53,8 @@ exports.getThemeThemeName = function(theme_name) {
         .where('t.theme_name', theme_name)
         .leftJoin('new_schema.book_themes AS bt', 't.theme_name', 'bt.book_theme_name')
         .leftJoin('new_schema.books AS b', 'bt.isbn', 'b.isbn')
+        .leftJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+        .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
         .then(result => {
           resolve(result)
         });

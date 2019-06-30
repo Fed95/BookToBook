@@ -1,4 +1,9 @@
-
+.suggested-books{
+    margin: 5%;
+}
+.suggested-books img{
+    max-width: 200px;
+}
 .singleBook {
     width: 30%;
 }

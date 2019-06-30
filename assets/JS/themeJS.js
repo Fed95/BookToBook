@@ -69,6 +69,15 @@ var displayFoundtheme = function(theme_list) {
                 authors: [],
                 price: grouped_by_book[i][0]['price']
             };
+            var grouped_by_author = _.groupBy(grouped_by_book[i], 'name');
+
+            for (var a in grouped_by_author) {
+                var author = {
+                    name: a,
+                    id: grouped_by_author[a][0].author_id
+                }
+                book.authors.push(author)
+            }
             books.push(book);
         }
     }
@@ -121,31 +130,39 @@ var generateThemeDiv = function (name, description, books) {
     $div5.append($hr1);
 
     if(books.length > 0){
-
-        var $d1 = $("<div class = 'row' />");
-        var $d2 = $("<div class = 'col-1' />");
-        var $d3 = $("<div class = 'col-10' />");
-        var $d4 = $("<div class = 'col-1' />");
-        var $hbook = $("<h3 />"); $hbook.html('Books related to this theme:');
-
-        $("#row-margin-top").append($d1);
-        $d1.append($d2);
-        $d1.append($d3);
-        $d3.append($hbook);
-        $d1.append($d4);
-
-        for(var i in books){
-            generateBookDiv(books[i]);
-        }
+        generateBookDiv(books);
     }
 };
 
-var generateBookDiv = function (book) {
+var generateBookDiv = function (books) {
 
 
+    $('#homepage-container').append(
+        '<div id="suggested-div" class="row suggested-books">'
+        + '<h2>Books related to this genre:</h2>'
+        + '</div>')
 
-    //todo: need to generate a new request each time to prevent overlap of gets
-    //xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
-    //xhttpAuthors.send();
+    for (var i in books) {
 
-};
+        var authors = books[i].authors
+
+        author_links = ""
+
+        for (var a of authors) {
+            author_links += ', <a href="' + ip + 'pages/author.html?author_id=' + authors[i].id + '">' + a.name + '</a>'
+        }
+
+
+        $('#suggested-div').append(
+            '<div class="col-sm singleBook">' +
+            '<div class="description">' +
+            '<a href="' + ip + 'pages/book.html?isbn=' + books[i].isbn + '">' +
+            '<img class="singleItemImage" src="../assets/Images/BookCovers/' + books[i].title + '.jpg">' +
+            '<h3>' + books[i].title + '</h3>' +
+            '</a>' +
+            '<p>' + author_links.substring(1) + '</p>' +
+            '</div>' +
+            '</div>'
+        );
+    }
+}
