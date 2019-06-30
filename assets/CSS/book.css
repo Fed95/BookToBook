@@ -78,6 +78,6 @@ p{
     padding-bottom: 90px;
     min-height: 700px;
 }
-#reviews-div, #interview-div{
+.book-collapsible{
     margin: 5%;
 }

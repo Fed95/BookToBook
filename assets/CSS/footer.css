@@ -51,9 +51,7 @@ ul, ol {
     height: 23.5rem;
     overflow: hidden;
 }
-[class*="col-"] p {
-   margin-top: 20px;
-}
+
 @media (max-width: 600px){
     .myfooter{
         height: 40rem;

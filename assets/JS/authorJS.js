@@ -51,13 +51,9 @@ var displayFoundAuthor = function(book_list) {
     var parsed = JSON.parse(book_list);
     console.log("parsed: ", parsed);
 
-    var grouped_by_genre = _.groupBy(parsed, 'genre_name');
-    var grouped_by_theme = _.groupBy(parsed, 'theme_name');
     var grouped_by_book = _.groupBy(parsed, 'isbn');
 
     console.log('books: ', grouped_by_book);
-    console.log('genres: ', grouped_by_genre);
-    console.log('thmes: ', grouped_by_theme);
 
     var name = parsed[0]['name'];
     var bio = parsed[0]['bio']
@@ -75,29 +71,9 @@ var displayFoundAuthor = function(book_list) {
         };
         books.push(book);
     }
-    for(var g in grouped_by_genre){
-        if(g.localeCompare('null')) {
-            var genre = {
-                name: grouped_by_genre[g][0].genre_name,
-                color: grouped_by_genre[g][0].genre_color,
-            };
-        }
 
-        genres.push(genre);
-    }
-    for(var t in grouped_by_theme){
 
-        if(t.localeCompare('null')) {
-            var theme = {
-                name: grouped_by_theme[t][0].theme_name,
-                color: grouped_by_theme[t][0].theme_name,
-            };
-        }
-
-        themes.push(theme);
-    }
-
-    generateAuthorDiv(name, bio, books, genres, themes);
+    generateAuthorDiv(name, bio, books);
 };
 
 var xhttpAuthors = new XMLHttpRequest();
@@ -131,7 +107,7 @@ var addAuthors = function(author_list){
 };
 
 
-var generateAuthorDiv = function (name, bio, books, genres, themes) {
+var generateAuthorDiv = function (name, bio, books) {
 
     console.log('GENERATING AUTHOR DIVS')
 
@@ -155,11 +131,6 @@ var generateAuthorDiv = function (name, bio, books, genres, themes) {
                 var $div13 = $("<div class = 'textcontent' />"); $div13.html(bio);
                 var $hr1 = $("<hr>");
 
-                var $genres = $("<div class ='row genres'/>");
-
-                addGenresAndThemes($genres, genres, themes);
-
-
 
     $("#homepage-container").append($div1);
         $div1.append($div2);
@@ -179,7 +150,6 @@ var generateAuthorDiv = function (name, bio, books, genres, themes) {
                 $div5.append($span1);
                 $div5.append($div13);
                 $div5.append($hr1);
-                $div5.append($genres);
 
     if(books.length > 0){
 
@@ -204,6 +174,7 @@ var generateAuthorDiv = function (name, bio, books, genres, themes) {
 var generateBookDiv = function (book) {
 
     console.log('GENERATING BOOK DIVS')
+    /*
 
     var $diva = $("<div class='row'/>");
         var $divb = $("<div class='col-1 hidden-s'/>");
@@ -217,20 +188,33 @@ var generateBookDiv = function (book) {
                         var $h = $("<h3 />", {id : 'title', class : 'book-title'});
                             var $a5 = $("<a />", {href : ip + 'pages/book.html?isbn='+book.isbn}); $a5.html(book.title);
                         var $div6 = $("<div class = 'book-info'/>");
-                        /*
-                            var $div7 = $("<div class = 'col-5 info'/>");
-                                var $s7 = $("<span />"); $s7.html('Authors:');
-                                var $p7 = $("<p />", {id: book.isbn});
 
 
-                            var $div8 = $("<div class = 'col-5 info'/>");
-                                var $s8 = $("<span />"); $s8.html('Price:');
-                                var $p8 = $("<p />"); $p8.html(book.price + '$');
+     */
 
-                    var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
-                        var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
-                            $b10.html('Add to Cart')
-                            */
+    $("#row-margin-top").append(
+        '<div class="row">' +
+            '<div class="col-1 hidden-s"/>' +
+            '<div class="col-10 col-10-bigger-s">' +
+                '<div class = "list-group-item" >' +
+    '                <div class = "row list-group-item">' +
+    '                    <div class = "col-2 col-2-hidden-xs">' +
+    '                        <div class = "book-img">' +
+    '                            <img src = "../assets/Images/BookCovers/Thumbnails/'+book.title+'.jpg" />' +
+                            '</div>'+
+                        '</div>'+
+    '                    <div class = "col-8 col-8-bigger-xs">' +
+    '                        <h3 id = "title" class = "book-title">' +
+    '                            <a href = "'+ip+'pages/book.html?isbn='+book.isbn+'">'+book.title+'' +
+                            '</h3>'+
+    '                        <div class = "book-info"></div>'+
+                        '</div>'+
+                    '</div>'+
+                 '</div>'+
+            '</div>'+
+        '</div>'
+    );
+/*
 
     $("#row-margin-top").append($diva);
     $diva.append($divb);
@@ -263,47 +247,6 @@ var generateBookDiv = function (book) {
     //xhttpAuthors.send();
 
 };
-var addGenresAndThemes = function(div, genres, themes){
-
-    console.log('Adding Genres!');
-    console.log('genres: ', genres);
-
-    if(typeof genres[0] !== 'undefined') {
-
-        var $g = $("<a />", {id: 'start'});
-        $g.html('Genres:');
-        div.append($g);
-
-        for (var g in genres) {
-            $g = $("<a />", {id:genres[g].name, href: ip + 'pages/genre.html?theme='+genres[g].name});
-            $g.html(genres[g].name);
-            div.append($g);
-
-            /*
-            window.onload = function () {
-                var el = document.getElementById(genres[g].name);
-                console.log(el);
-                el.style.backgroundColor = genres[g].color;
-                console.log("done")
-            }
-
-             */
-        }
-    }
-    if(typeof themes[0] !== 'undefined') {
-
-        var $t = $("<a />", {id: 'start'});
-        $t.html('Themes:');
-        div.append($t);
-
-        for (var t in themes) {
-            $t = $("<a />", {id: themes[t].name, href: ip + 'pages/theme.html?theme='+themes[t].name});
-            $t.html(themes[t].name);
-            div.append($t);
-        }
-    }
-};
-
 
 /*<div class="row margin-top"></div>
                     <div class="row">

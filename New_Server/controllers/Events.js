@@ -32,7 +32,17 @@ module.exports.getEventEventID = function getEventEventID(req, res, next) {
 };
 
 module.exports.getEventFindByBook = function getEventFindByBook(req, res, next) {
-    Events.getEventFindByBook(req.swagger.params, res, next);
+
+    var isbn = req.swagger.params['ISBN']['value'];
+    console.log("inside Events.js; isbn = ", isbn);
+
+    Events.getEventFindByBook(isbn)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
 };
 
 module.exports.getEventFindByMonth = function getEventFindByMonth(req, res, next) {

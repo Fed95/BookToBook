@@ -29,16 +29,25 @@ const input = getUrlParameter('isbn');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
+var xhttpBook = new XMLHttpRequest();
+xhttpBook.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
             displayFoundBooks(this.responseText);
         });
     }
 };
-xhttp.open("GET", ip + "api/book/" + input, true);
-xhttp.send();
+xhttpBook.open("GET", ip + "api/book/" + input, true);
+xhttpBook.send();
+
+var xhttpEvents = new XMLHttpRequest();
+xhttpEvents.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        $(document).ready(() => {
+            addEvents(JSON.parse(this.responseText));
+        });
+    }
+};
 
 
 //---------------------------------------------------------------------
@@ -108,6 +117,9 @@ var displayFoundBooks = function (book) {
 
 
     generateBookDiv(parsed[0], authors, interview, reviews, genres, themes);
+
+    xhttpEvents.open("GET", ip + "api/event/findByBook?ISBN=" + parsed[0].isbn, true);
+    xhttpEvents.send();
 };
 
 
@@ -327,101 +339,30 @@ var addGenresAndThemes = function (div, genres, themes) {
     }
 };
 
+var addEvents = function(events){
 
-/*            <div class="row margin-top"></div>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10 singleItemContainer">
-                    <div class="col-3 singleItemContainer">
-                        <img class="singleItemImage big-screen-image"
-                             src="../assets/Images/BookCovers/game%20of%20thrones.jpg">
-                    </div>
-                    <div class="col-1 hid"></div>
-                    <div class="col-8 singleItemContainer">
-                        <h1 class="singleItemName">Game of Thrones</h1>
-                        <div class="row small-screen-image">
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                                <img class="singleItemImage" src="../assets/Images/BookCovers/game%20of%20thrones.jpg">
-                            </div>
-                            <div class="col-2"></div>
-                        </div>
-                        <div class="row authorrow">
-                            <div class="authorcontainer">
-                                <a href="" class="authorlink">George R.R. Martin</a>
-                            </div>
-                            <div class="authorcontainer">
-                                <a href="" class="authorlink">Federico Sandrelli</a>
-                            </div>
-                            <div class="authorcontainer">
-                                <a href="" class="authorlink">Filippo Rezzonico</a>
-                            </div>
-                            <a href="" class="authorlink">Davide Santmabrogio</a>
-                        </div>
-                        <span></span>
-                        <div class="textcontent">It is a long established fact that a reader will be distracted by the
-                            readable content
-                            of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                            more-or-less
-                            normal
-                            distribution of letters, as opposed to using Content.
-                            It is a long established fact that a reader will be distracted by the readable content
-                            of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                            more-or-less
-                            normal
-                            distribution of letters, as opposed to using Content.
-                        </div>
-                        <hr>
-                        <div class="technical">
-                            <div><p>Publisher:</p></div>
-                            <div><p>Publication Date:</p></div>
-                            <div><p>Edition:</p></div>
-                            <div><p>Language:</p></div>
-                            <div><p>Number of Pages:</p></div>
-                            <div><p>ISBN:</p></div>
-                        </div>
-                        <div class="buybook">
-                            <div class="col-8">Price: 22$</div>
-                            <div class="col-4">
-                                <button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-1 hid"></div>
-            </div>
-            <hr>
-            <div class="col-1"></div>
-            <div class="col-10">
-                <h1>Reviews</h1>
-                <div class="row review-row">
-                    <div class="review-item">
-                        <div class="row">
-                            <div class="col-11 only-left-pad">
-                                <h4 class="reviewername">Adam Cadmon</h4>
-                            </div>
-                            <div class="col-1 no-pad">
-                                <img src="../assets/Images/dislike.png" width="25"
-                                     height="25" class="review">
-                            </div>
-                        </div>
-                        <hr class="review-line">
-                        <div class="col-12 review-text">
-                            <p>It is a long established fact that a reader will be distracted by the readable content
-                                of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less
-                                normal
-                                distribution of letters, as opposed to using Content.
-                                It is a long established fact that a reader will be distracted by the readable content
-                                of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less
-                                normal
-                                distribution of letters, as opposed to using Content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="row margin-bottom"></div>*/
+    $('#events-div').append('<div id="events" class="content" />');
+
+    for(var e of events){
+        $('#events').append(
+            '<div class = "row review-row">'
+            + '<div class = "col-12 review-item">'
+            + '<div class = "row">'
+            + '<div class = "col-11 only-left-pad">'
+            +'<a href="'+ip+'pages/event.html?event_id='+e.event_id+'">'
+            + '<h3 >' + e.event_name + '</h3>'
+            +'</a>'
+            + '</div>'
+            + '<div class = "col-11 only-left-pad">'
+            + '<h5 >' + e.event_date.substr(0, 10) + '</h5>'
+            + '</div>'
+            + '</div>'
+            + '<div class = "col-12 review-text" >'
+            + '<p>' + e.summary + '</p>'
+            + '</div>'
+            + '</div>'
+            + '</div>'
+        )
+    }
+}
+
