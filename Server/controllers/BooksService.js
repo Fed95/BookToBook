@@ -199,10 +199,10 @@ exports.getBookISBN = function(isbn) {
         .leftOuterJoin('new_schema.users AS u', 'r.user_mail', 'u.user_mail')
 
         .leftJoin('new_schema.book_genres AS bg', 'b.isbn', 'bg.isbn')
-        .leftJoin('new_schema.genres AS g', 'bg.genre_name', 'g.genre_name')
+        .leftJoin('new_schema.genres AS g', 'bg.book_genre_name', 'g.genre_name')
 
         .leftJoin('new_schema.book_themes AS bt', 'b.isbn', 'bt.isbn')
-        .leftJoin('new_schema.themes AS t', 'bt.theme_name', 't.theme_name')
+        .leftJoin('new_schema.themes AS t', 'bt.book_theme_name', 't.theme_name')
 
         .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
         .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')

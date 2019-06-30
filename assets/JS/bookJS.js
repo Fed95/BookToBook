@@ -27,7 +27,7 @@ const input = getUrlParameter('isbn');
 
 
 //---------------------------------------------------------------------
-//generating the query
+//generating the queries and starting the first one
 //---------------------------------------------------------------------
 var xhttpBook = new XMLHttpRequest();
 xhttpBook.onreadystatechange = function () {
@@ -37,9 +37,6 @@ xhttpBook.onreadystatechange = function () {
         });
     }
 };
-xhttpBook.open("GET", ip + "api/book/" + input, true);
-xhttpBook.send();
-
 var xhttpEvents = new XMLHttpRequest();
 xhttpEvents.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
@@ -48,6 +45,19 @@ xhttpEvents.onreadystatechange = function () {
         });
     }
 };
+var xhttpSimilar = new XMLHttpRequest();
+xhttpSimilar.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        $(document).ready(() => {
+            addSuggestedBooks(JSON.parse(this.responseText));
+        });
+    }
+};
+
+xhttpBook.open("GET", ip + "api/book/" + input, true);
+xhttpBook.send();
+
+
 
 
 //---------------------------------------------------------------------
@@ -70,6 +80,7 @@ var displayFoundBooks = function (book) {
     var reviews = [];
     var genres = [];
     var themes = [];
+    var similar = "";
 
     var interview = parsed[0].interview_text // TODO: DECIDE WHETHER THE INTERVIEW SHOULD BE AUTHOR SPECIFIC
 
@@ -79,6 +90,7 @@ var displayFoundBooks = function (book) {
             id : grouped_by_author[author_name][0].author_id
         }
         authors.push(author);
+        similar = similar + ',' + String(author.name)
     }
 
     for (var text in grouped_by_review) {
@@ -102,6 +114,7 @@ var displayFoundBooks = function (book) {
         }
 
         genres.push(genre);
+        similar = similar + ',' + String(genre.name)
     }
     for (var t in grouped_by_theme) {
 
@@ -113,13 +126,19 @@ var displayFoundBooks = function (book) {
         }
 
         themes.push(theme);
+        similar = similar + ',' + String(theme.name)
     }
+
+
 
 
     generateBookDiv(parsed[0], authors, interview, reviews, genres, themes);
 
-    xhttpEvents.open("GET", ip + "api/event/findByBook?ISBN=" + parsed[0].isbn, true);
+    xhttpEvents.open("GET", ip + "api/event/findByBook?ISBN=" + input, true);
     xhttpEvents.send();
+
+    xhttpSimilar.open("GET", ip + "api/book/findByGenre?genre=" + similar.substring(1), true);
+    xhttpSimilar.send();
 };
 
 
@@ -343,7 +362,10 @@ var addEvents = function(events){
 
     $('#events-div').append('<div id="events" class="content" />');
 
-    for(var e of events){
+    if(events.length < 1) {
+        $('#events').append('<p class="col-12 review-item">There are no events related to this book.</p>')
+    }else {
+        for(var e of events){
         $('#events').append(
             '<div class = "row review-row">'
             + '<div class = "col-12 review-item">'
@@ -363,6 +385,46 @@ var addEvents = function(events){
             + '</div>'
             + '</div>'
         )
+    }}
+};
+
+var addSuggestedBooks = function(books){
+
+    if(books.length > 0) {
+        $('#suggested-div').append('<h2>Suggested Readings</h2>')
+
+        console.log("inside addSuggestedBooks, books = ", books)
+
+        var grouped_by_isbn = _.groupBy(books, 'isbn');
+
+        var grouped_list = []
+
+        for (var i in grouped_by_isbn) {
+            grouped_list.push(grouped_by_isbn[i])
+        }
+        grouped_list.sort(function (a, b) {
+            if (a.length < b.length) {
+                return -1
+            } else if (a.name > b.name) {
+                return 1
+            } else {
+                return 0
+            }
+        });
+
+        console.log('grouped suggested books list:', grouped_list)
+
+        for (var i = 0; i < Math.min(6, grouped_list.length); i++) {
+            $('#suggested-div').append(
+                '<div class="col-sm singleBook">' +
+                '<div class="description">' +
+                '<img class="singleItemImage" src="../assets/Images/BookCovers/' + grouped_list[i][0].title + '.jpg">' +
+                '<h3>' + grouped_list[i][0].title + '</h3>' +
+                '<p>' + grouped_list[i][0].name + '</p>' +
+                '</div>' +
+                '</div>'
+            );
+        }
     }
 }
 

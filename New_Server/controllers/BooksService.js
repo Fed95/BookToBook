@@ -2,219 +2,234 @@
 var pg = require("../index.js");
 var knex = pg.knex;
 
-exports.getBook = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * info (String)
-  * abstract Required (Boolean)
-  * image Required (Boolean)
-  * genres Required (Boolean)
-  * themes Required (Boolean)
-  * authors Information Required (Boolean)
-  * events Information Required (Boolean)
-  **/
+exports.getBook = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     * info (String)
+     * abstract Required (Boolean)
+     * image Required (Boolean)
+     * genres Required (Boolean)
+     * themes Required (Boolean)
+     * authors Information Required (Boolean)
+     * events Information Required (Boolean)
+     **/
 
 
-  var examples = {};
-  if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+    var examples = {};
+    if (Object.keys(examples).length > 0) {
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+    } else {
+        res.end();
+    }
 
 };
 
-exports.getBookBestOfTheMonth = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * month (Date)
-  **/
+exports.getBookBestOfTheMonth = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     * month (Date)
+     **/
     var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
+    if (Object.keys(examples).length > 0) {
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+    } else {
+        res.end();
+    }
+
 }
 
-exports.getBookByTitle = function(title) {
-  /**
-   * parameters expected in the args:
-  * title (String)
-  * abstract Required (Boolean)
-  * image Required (Boolean)
-  * genres Required (Boolean)
-  * themes Required (Boolean)
-  * authors information Required (Boolean)
-  * events Information Required (Boolean)
-  **/
+exports.getBookByTitle = function (title) {
+    /**
+     * parameters expected in the args:
+     * title (String)
+     * abstract Required (Boolean)
+     * image Required (Boolean)
+     * genres Required (Boolean)
+     * themes Required (Boolean)
+     * authors information Required (Boolean)
+     * events Information Required (Boolean)
+     **/
 
-  return new Promise(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
 
-    console.log("---------------executing getBookByTitle---------------------");
-    console.log("title: '" + title + "'");
-    console.log("------------------------------------------------------------");
+        console.log("---------------executing getBookByTitle---------------------");
+        console.log("title: '" + title + "'");
+        console.log("------------------------------------------------------------");
 
-    let myQuery = knex('new_schema.books')
-        .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
-        .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
-        .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", title)
-        .then(result => {
-          console.log(result);
-          resolve(result)
-        });
+        let myQuery = knex('new_schema.books')
+            .leftJoin('new_schema.written_by AS wb', 'new_schema.books.isbn', 'wb.isbn')
+            .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+            .whereRaw("LOWER(title) LIKE '%' || LOWER(?) || '%' ", title)
+            .then(result => {
+                console.log(result);
+                resolve(result)
+            });
 
-  });
+    });
 };
 
-exports.getBookFavoriteReading = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  **/
+exports.getBookFavoriteReading = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     **/
     var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
+    if (Object.keys(examples).length > 0) {
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+    } else {
+        res.end();
+    }
+
 };
 
-exports.getBookFindByAuthor = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * firstName (String)
-  * abstract Required (Boolean)
-  * image Required (Boolean)
-  * genres Required (Boolean)
-  * themes Required (Boolean)
-  * authors Information Required (Boolean)
-  * events Information Required (Boolean)
-  **/
+exports.getBookFindByAuthor = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     * firstName (String)
+     * abstract Required (Boolean)
+     * image Required (Boolean)
+     * genres Required (Boolean)
+     * themes Required (Boolean)
+     * authors Information Required (Boolean)
+     * events Information Required (Boolean)
+     **/
     var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
+    if (Object.keys(examples).length > 0) {
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+    } else {
+        res.end();
+    }
+
 };
 
-exports.getBookFindByEvent = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * name (String)
-  * abstract Required (Boolean)
-  * image Required (Boolean)
-  * genres Required (Boolean)
-  * themes Required (Boolean)
-  * authors Information Required (Boolean)
-  * events Information Required (Boolean)
-  **/
+exports.getBookFindByEvent = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     * name (String)
+     * abstract Required (Boolean)
+     * image Required (Boolean)
+     * genres Required (Boolean)
+     * themes Required (Boolean)
+     * authors Information Required (Boolean)
+     * events Information Required (Boolean)
+     **/
     var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
+    if (Object.keys(examples).length > 0) {
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+    } else {
+        res.end();
+    }
+
 }
 
-exports.getBookFindByGenre = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * abstract Required (Boolean)
-  * image Required (Boolean)
-  * genres Required (Boolean)
-  * themes Required (Boolean)
-  * authors&#39; Information Required (Boolean)
-  * events Infromation Required (Boolean)
-  * genre (String)
-  **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
+exports.getBookFindByGenre = function (parameters_string) {
+    /**
+     * parameters expected in the args:
+     * abstract Required (Boolean)
+     * image Required (Boolean)
+     * genres Required (Boolean)
+     * themes Required (Boolean)
+     * authors&#39; Information Required (Boolean)
+     * events Infromation Required (Boolean)
+     * genre (String)
+     **/
+        //TODO: CHANGE THESE REQUIREMENTS
+
+    var parameters = parameters_string.split(",");
+
+    return new Promise(function (resolve, reject) {
+
+        console.log("---------------executing getBookFindByGenre-----------------");
+        console.log("parameters: '" + parameters + "'");
+        console.log("------------------------------------------------------------");
+
+        //todo: extend query to get reviews and events
+
+        let myQuery = knex('new_schema.books AS b')
+            .leftJoin('new_schema.book_genres AS bg', 'b.isbn', 'bg.isbn')
+            .leftJoin('new_schema.genres AS g', 'bg.book_genre_name', 'g.genre_name')
+
+            .leftJoin('new_schema.book_themes AS bt', 'b.isbn', 'bt.isbn')
+            .leftJoin('new_schema.themes AS t', 'bt.book_theme_name', 't.theme_name')
+
+            .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+            .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+
+            .whereIn('genre_name', parameters)
+            .orWhereIn('theme_name', parameters)
+            .orWhereIn('name', parameters)
+            .then(result => {
+                resolve(result)
+            });
+    });
+
 }
 
-exports.getBookFindByTheme = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * abstract Required (Boolean)
-  * image Required (Boolean)
-  * genres Required (Boolean)
-  * themes Infromation (Boolean)
-  * authors&#39;Information Required (Boolean)
-  * events Information Required (Boolean)
-  * theme (String)
-  **/
+exports.getBookFindByTheme = function (args, res, next) {
+    /**
+     * parameters expected in the args:
+     * abstract Required (Boolean)
+     * image Required (Boolean)
+     * genres Required (Boolean)
+     * themes Infromation (Boolean)
+     * authors&#39;Information Required (Boolean)
+     * events Information Required (Boolean)
+     * theme (String)
+     **/
     var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
+    if (Object.keys(examples).length > 0) {
+        res.setHeader('Content-Type', 'application/json');
+        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+    } else {
+        res.end();
+    }
+
 }
 
-exports.getBookISBN = function(isbn) {
-  /**
-   * parameters expected in the args:
-  * iSBN (Long)
-  * abstract Required (Boolean)
-  * image Required (Boolean)
-  * genres Required (Boolean)
-  * themes Required (Boolean)
-  * authors Information Required (Boolean)
-  * events Information Required (Boolean)
-  **/
-  return new Promise(function (resolve, reject) {
+exports.getBookISBN = function (isbn) {
+    /**
+     * parameters expected in the args:
+     * iSBN (Long)
+     * abstract Required (Boolean)
+     * image Required (Boolean)
+     * genres Required (Boolean)
+     * themes Required (Boolean)
+     * authors Information Required (Boolean)
+     * events Information Required (Boolean)
+     **/
+    return new Promise(function (resolve, reject) {
 
-    console.log("---------------executing getBookISBN------------------------");
-    console.log("isbn: '" + isbn + "'");
-    console.log("------------------------------------------------------------");
+        console.log("---------------executing getBookISBN------------------------");
+        console.log("isbn: '" + isbn + "'");
+        console.log("------------------------------------------------------------");
 
-    //todo: extend query to get reviews and events
+        //todo: extend query to get reviews and events
 
-    let myQuery = knex('new_schema.books AS b')
-        .leftOuterJoin('new_schema.reviews AS r', 'b.isbn', 'r.isbn')
-        .leftOuterJoin('new_schema.users AS u', 'r.user_mail', 'u.user_mail')
+        let myQuery = knex('new_schema.books AS b')
+            .leftOuterJoin('new_schema.reviews AS r', 'b.isbn', 'r.isbn')
+            .leftOuterJoin('new_schema.users AS u', 'r.user_mail', 'u.user_mail')
 
-        .leftJoin('new_schema.book_genres AS bg', 'b.isbn', 'bg.isbn')
-        .leftJoin('new_schema.genres AS g', 'bg.genre_name', 'g.genre_name')
+            .leftJoin('new_schema.book_genres AS bg', 'b.isbn', 'bg.isbn')
+            .leftJoin('new_schema.genres AS g', 'bg.book_genre_name', 'g.genre_name')
 
-        .leftJoin('new_schema.book_themes AS bt', 'b.isbn', 'bt.isbn')
-        .leftJoin('new_schema.themes AS t', 'bt.theme_name', 't.theme_name')
+            .leftJoin('new_schema.book_themes AS bt', 'b.isbn', 'bt.isbn')
+            .leftJoin('new_schema.themes AS t', 'bt.book_theme_name', 't.theme_name')
 
-        .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
-        .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+            .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+            .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
 
-        .leftJoin('new_schema.interviews AS i', 'b.isbn', 'i.isbn')
+            .leftJoin('new_schema.interviews AS i', 'b.isbn', 'i.isbn')
 
-        .where('b.isbn', isbn)
-        .then(result => {
-          resolve(result)
-        });
+            .where('b.isbn', isbn)
+            .then(result => {
+                resolve(result)
+            });
 
-  });
-  
+    });
+
 };
 

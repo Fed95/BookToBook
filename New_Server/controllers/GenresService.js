@@ -51,7 +51,7 @@ exports.getGenreGenreName = function(genre_name) {
 
     let myQuery = knex('new_schema.genres AS g')
         .where('g.genre_name', genre_name)
-        .leftJoin('new_schema.book_genres AS bg', 'g.genre_name', 'bg.genre_name')
+        .leftJoin('new_schema.book_genres AS bg', 'g.genre_name', 'bg.book_genre_name')
         .leftJoin('new_schema.books AS b', 'bg.isbn', 'b.isbn')
         .then(result => {
           console.log(result);

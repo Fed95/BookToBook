@@ -1,6 +1,15 @@
-.singleBook{
-    width: 200px;
+
+.singleBook {
+    width: 30%;
 }
 .description{
     text-align: center;
+}
+#suggested-div h2{
+    margin-bottom: 20px;
+}
+@media (max-width: 400px){
+    .singleBook {
+        width: 100%;
+    }
 }
