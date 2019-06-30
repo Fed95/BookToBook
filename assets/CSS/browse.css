@@ -4,6 +4,9 @@
 img:hover{
     opacity: 0.8;
 }
+p a:hover{
+    text-decoration: underline;
+}
 .info { display: inline-block; color: #777; }
 .info span { font-weight: bold; }
 

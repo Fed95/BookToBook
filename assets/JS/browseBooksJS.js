@@ -63,11 +63,14 @@ var displayFoundBooks = function(books_list) {
         var authors = [];
 
         for(var count in books){
-            authors.push(books[count].name);
+            var author = {
+                name: books[count].name,
+                id: books[count].author_id
+            }
+            authors.push(author);
         }
-        var authors_string = authors.join(', ');
 
-        generateBookDiv(isbn, title, authors_string, price)
+        generateBookDiv(isbn, title, authors, price)
     }
 };
 
@@ -89,7 +92,7 @@ var generateBookDiv = function (isbn, title, authors, price) {
                 var $div6 = $("<div class = 'book-info'/>");
                     var $div7 = $("<div class = 'col-4 info'/>");
                         var $s7 = $("<span />"); $s7.html('Authors:');
-                        var $p7 = $("<p />"); $p7.html(authors);
+                        var $p7 = $("<p />");
                     var $div9 = $("<div class = 'col-5 info'/>");
                         var $s9 = $("<span />"); $s9.html('ISBN:');
                         var $p9 = $("<p />"); $p9.html(isbn);
@@ -117,6 +120,16 @@ var generateBookDiv = function (isbn, title, authors, price) {
     $div6.append($div7);
     $div7.append($s7);
     $div7.append($p7);
+
+    console.log(authors)
+    for(var i in authors){
+        if(i > 0){$p7.append(', <a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+authors[i].name+'</a>')}
+        else {
+            $p7.append('<a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+authors[i].name+'</a>')
+        }
+
+    }
+
     $div6.append($div9);
     $div9.append($s9);
     $div9.append($p9);

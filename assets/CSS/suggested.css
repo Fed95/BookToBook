@@ -3,7 +3,7 @@
     width: 30%;
 }
 
-.singleBook p:hover {
+.singleBook p a:hover {
     text-decoration: underline;
 }
 .singleBook img:hover {
