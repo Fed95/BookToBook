@@ -40,12 +40,7 @@ module.exports.getBookByTitle = function getBookByTitle(req, res, next) {
 
 module.exports.getBookFavoriteReading = function getBookFavoriteReading(req, res, next) {
 
-    //TODO: DECIDE WHAT TO DO WITH THIS QUERY
-
-    var p = req.swagger.params;
-    console.log("inside Books.js; p = ", p);
-
-    Books.getBookFavoriteReading(p)
+    Books.getBookFavoriteReading()
         .then(function (response) {
             utils.writeJson(res, response);
         })

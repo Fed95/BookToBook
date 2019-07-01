@@ -80,17 +80,27 @@ exports.getBookByTitle = function (title) {
     });
 };
 
-exports.getBookFavoriteReading = function (args, res, next) {
+exports.getBookFavoriteReading = function () {
     /**
      * parameters expected in the args:
      **/
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-        res.setHeader('Content-Type', 'application/json');
-        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-    } else {
-        res.end();
-    }
+    return new Promise(function (resolve, reject) {
+
+        console.log("---------------executing getBookFavoriteReading-------------");
+        console.log("no params expected")
+        console.log("------------------------------------------------------------");
+
+        //todo: extend query to get reviews and events
+
+        let myQuery = knex('new_schema.books AS b')
+            .join('new_schema.favourites AS f', 'b.isbn', 'f.isbn')
+            .leftJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+            .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+            .then(result => {
+                resolve(result)
+            });
+
+    });
 
 };
 
@@ -147,7 +157,7 @@ exports.getBookFindByGenre = function (parameters_string) {
      * events Infromation Required (Boolean)
      * genre (String)
      **/
-        //TODO: CHANGE THESE REQUIREMENTS
+        //TODO: CHANGE THESE REQUIREMENTS. this should be called the "get similar books"
 
     var parameters = parameters_string.split(",");
 

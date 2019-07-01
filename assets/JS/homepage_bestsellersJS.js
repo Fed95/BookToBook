@@ -34,7 +34,8 @@ var addMonthBestsellers = function (parsed) {
         }
         books.push(book)
     }
-    var truncated = books.slice(0, 6)
+    var truncated = books.slice(0, 4) //todo: try and make this dynamic
+
     truncated.sort(function (a, b) {
         if (a.sales < b.sales) {
             return -1
@@ -72,7 +73,6 @@ var getAuthorLinks = function (purchases) {
         }
         authors.push(author)
     }
-    console.log('authors = ', authors)
 
     var author_links = ""
 
@@ -86,7 +86,7 @@ var getAuthorLinks = function (purchases) {
 
 var generateBestsellerDiv = function (books) {
 
-    var i = 1
+    var i = 0
     for (var b of books) {
         $('#show').append('<div class="imagebox">' +
             '<a href="http://localhost:8080/pages/book.html?isbn='+b.isbn+'">' +

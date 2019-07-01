@@ -73,7 +73,6 @@ var getAuthorLinks = function (event) {
         }
         authors.push(author)
     }
-    console.log('authors = ', authors)
 
     var author_links = ""
 

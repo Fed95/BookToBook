@@ -51,10 +51,11 @@
 .bestseller-row{
     margin-top: 5%;
 }
-
+#events, #favourites h1 {
+    margin-bottom: 5%;
+}
 #events .event {
     background-color: #fafafa;
-    margin: 4%;
     padding: 1%;
 }
 
@@ -73,6 +74,9 @@
 
 #events .info .right a:hover {
     text-decoration: underline;
+}
+#favourites .singleBook{
+    width: 33.3333333333%;
 }
 
 @media screen and (min-width: 1000px) {
@@ -95,5 +99,28 @@
     #events .info h3 {
         margin-top: 0;
     }
+    #favourites .singleBook{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+}
+@media screen and (max-width: 400px) {
+    #events .event img {
+        width: 100%;
+    }
+
+    #events .info {
+        display: none;
+    }
+
+    #events .info h3 {
+        margin-top: 0;
+    }
+    #favourites .singleBook{
+        width: 80%;
+        margin-left: 10%;
+    }
+
 
 }

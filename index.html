@@ -8,17 +8,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/CSS/styles.css">
     <link rel="stylesheet" href="./assets/CSS/footer.css">
     <link rel="stylesheet" href="./assets/CSS/navbar.css">
     <link rel="stylesheet" href="./assets/CSS/index.css">
     <link rel="stylesheet" href="./assets/CSS/sections.css">
+    <link rel="stylesheet" href="./assets/CSS/suggested.css">
 
+    <script src="assets/JS/sticky.js"></script>
     <script src="https://underscorejs.org/underscore-min.js"></script>
-    <!--<script src="assets/JS/homepage_eventsJS.js"></script>-->
+    <script src="assets/JS/homepage_eventsJS.js"></script>
     <script src="assets/JS/homepage_bestsellersJS.js"></script>
+    <script src="assets/JS/homepage_favouritesJS.js"></script>
+
 
     <title>BookToBook</title>
 </head>
@@ -70,16 +74,17 @@
                     </div>
                     <hr/>
                     <div id="events" class="homepage-section">
-                        <h1>Coming Up This Month</h1>
+                        <h1>Events Coming Up This Month</h1>
 
                     </div>
                     <hr/>
-                    <div id="best-sellers" class="homepage-section"><h1>Best Sellers</h1>
+                    <div id="best-sellers" class="homepage-section">
+                        <h1>Best Sellers</h1>
                         <div class="container">
                             <div class="row bestseller-row">
                                 <div class="col-1 left-arrow" id="leftArrow"
                                      onclick="moveLeft()"><img class="leftimage" src="./assets/Images/left.png"></div>
-                                <div  id="show" class="col-10 viewContainer">
+                                <div id="show" class="col-10 viewContainer">
 
                                 </div>
                                 <div class="col-1 right-arrow" id="rightArrow" onclick="moveRight()"><img
@@ -88,8 +93,11 @@
                         </div>
                     </div>
                     <hr/>
-                    <div class="homepage-section popular-genres">
-                        <h1>Popular Genres</h1>
+                    <div id="favourites" class="homepage-section">
+                        <h1>Our Favourites</h1>
+                        <div id="suggested-div" class="row suggested-books">
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -143,5 +151,6 @@
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
 <script src="assets/JS/arrowScroll.js"></script>
+<script src="assets/JS/navbarJS.js"></script>
 </body>
 </html>
