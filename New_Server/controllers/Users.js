@@ -21,17 +21,24 @@ module.exports.postUserLogin = function postUserLogin(req, res, next) {
 
     Users.postUserLogin(req, res, next)
         .then(function (response) {
-            if(!req.session || !req.session.loggedIn){
-                console.log("Finito")
-                //console.log(req)
-                req.session.loggedIn = true;
-            }
+            if(response > 0){
+                if(!req.session || !req.session.loggedIn){
+                    console.log("Finito");
+                    //console.log(req)
+                    req.session.loggedIn = true;
+                    utils.writeJson(res, response);
 
-            utils.writeJson(res, response);
+                }
+            }
+            else {
+                console.log("Non trovato")
+                //utils.writeJson(res, res.respondWithCode(404, "Wrong user mail or password"));
+
+            }
             //res.end();
         }).catch(function (response) {
         console.log("Sbagliato")
-        //utils.writeJson(res, response);
+        utils.writeJson(res, response);
     });
 };
 
