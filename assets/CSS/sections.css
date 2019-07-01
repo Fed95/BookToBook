@@ -1,43 +1,84 @@
 /*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');*/
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
-.homepage-section{
+
+.container {
+    width: 100%;
+}
+
+.homepage-section {
     margin-top: 5%;
     margin-bottom: 5%;
 }
-.homepage-section h1{
+
+.homepage-section h1 {
     text-align: center;
 }
-#welcome{
+
+#welcome {
     margin-top: 5%;
     text-align: center;
 }
 
-#welcome h4{
+#welcome h4 {
     padding: 5%;
     font-weight: lighter;
 }
-#events{
+
+#events {
     position: relative;
 }
-#events img{
-     max-width: 150px;
+
+#events h3 {
+    margin: 0;
 }
-#events .event{
+
+#events img {
+    max-width: 150px;
+    background: #3A6F9A;
+}
+
+#events .event {
     background-color: #fafafa;
     margin: 4%;
     padding: 1%;
 }
-#events .event:hover{
+
+#events .event:hover {
     box-shadow: 1px 1px 5px #cdcdcd;
 }
+
 #events .info div {
     margin-top: 10%;
     padding: 0;
 }
+
 #events .info .right {
     margin-left: 10%;
 }
 
 #events .info .right a:hover {
     text-decoration: underline;
+}
+
+@media screen and (min-width: 1000px) {
+    #events .event {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    #events .event img {
+        width: 100%;
+    }
+
+    #events .info {
+        display: none;
+    }
+
+    #events .info h3 {
+        margin-top: 0;
+    }
+
 }

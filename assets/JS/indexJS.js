@@ -28,9 +28,9 @@ var addMonthEvents = function (events) {
 
         $('#events').append(
             '<div class="container">' +
-            '<div class="row event">' +
             '<a href="'+ip+'pages/event.html?event_id='+e.event_id+'">' +
-            '<div class="col-4">' +
+            '<div class="row event">' +
+            '<div class="col-4 img-container">' +
             '<img src="./assets/Images/BookCovers/'+e.title+'.jpg">' +
             '</div>' +
             '<div class="col-8">' +
@@ -53,8 +53,8 @@ var addMonthEvents = function (events) {
             '</div>' +
             '</div>' +
             '</div>' +
-            '</a>' +
             '</div>' +
+            '</a>' +
             '</div>'
         )
     }
