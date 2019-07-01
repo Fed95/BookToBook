@@ -3,6 +3,7 @@
 
 #homepage-container{
     margin: 5%;
+    margin-top: 0;
 }
 .container {
     width: 100%;
@@ -24,7 +25,9 @@
     margin-top: 5%;
     text-align: center;
 }
-
+#welcome, #welcome h1 {
+    margin-top: 0;
+}
 #welcome h4 {
     padding: 5%;
     font-weight: lighter;

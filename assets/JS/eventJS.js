@@ -79,7 +79,7 @@ var generateEventDiv = function (event, authors) {
 
     var $div1 = $("<div class = 'col-12'/>");
         var $div2 = $("<div class = 'row'/>");
-            var $im = $("<div class = 'image-container'/>");
+            var $im = $("<div />", {class:'image-container', id:event.event_id});
             var $title = $("<div class = 'event-title-container'/>");
                 var $h3 = $("<h1/>"); $h3.html(event.event_name);
         var $div3 = $("<div class = 'row'/>");
@@ -141,6 +141,9 @@ var generateEventDiv = function (event, authors) {
     $div7.append($hr2);
     $div1.append($div12);
     $div12.append($frame);
+
+    var targetDiv = document.getElementById(event.event_id);
+    targetDiv.style.backgroundImage = 'url(../assets/Images/EventImages/'+event.event_id+'.jpg)';
 
 };
 

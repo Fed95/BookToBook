@@ -123,6 +123,7 @@ a:hover, a:visited, a:link, a:active{
 
 .alert{
     border-radius: 10px;
+    margin: 0;
 }
 .close{top: 0px !important;}
 
@@ -133,6 +134,10 @@ a:hover, a:visited, a:link, a:active{
     background-color: #a3bfa4;
 }
 button:focus { outline:0 !important; }
+#warning-col{
+    height: 80px;
+    padding: 15px 0 0 0;
+}
 @media(max-width: 1430px){
     .empty-col{
         width: 25%;
