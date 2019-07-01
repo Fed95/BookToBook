@@ -69,26 +69,32 @@ var generateEventDivs = function(grouped) {
 
             $('.timeline').prepend(
                 '<li class="timeline-inverted" >'
-                +'<div class="' + classes + '"><i class="glyphicon glyphicon-calendar"></i></div>'
-                +'<div class="timeline-panel">'
-                +'<div class="timeline-heading">'
-                +'<h4 class="timeline-title">'
-                +'<a href=' + ip + "pages/event.html?event_id=" + grouped[index][0].event_id +'>'
-                + grouped[index][0].event_name
-                +'</a>'
-                +'</h4>'
-                +'<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>'
-                +' ' + grouped[index][0].event_date.substr(0, 10)
-                +'</small></p>'
-                +'</div>'
-                +'<div class="timeline-body">'
-                +'<p>'
-                + grouped[index][0].brief_summary
-                +'</p>'
-                +'</div>'
-                +'</div>'
+                    +'<div class="' + classes + '" >' +
+                        '<a href=' + ip + "pages/event.html?event_id=" + grouped[index][0].event_id +'>'+
+                        '<i class="glyphicon glyphicon-calendar"></i>' +
+                        '</a>'+
+                    '</div>'
+                    +'<div class="timeline-panel">'
+                        +'<div class="timeline-heading">'
+                            +'<h4 class="timeline-title">'
+                                +'<a href=' + ip + "pages/event.html?event_id=" + grouped[index][0].event_id +'>'
+                                    + grouped[index][0].event_name
+                                 +'</a>'
+                            +'</h4>'
+                            +'<p>' +
+                                '<small class="text-muted">' +
+                                    '<i class="glyphicon glyphicon-time"></i>'+
+                                     +' ' + grouped[index][0].event_date.substr(0, 10)
+                                +'</small>' +
+                            '</p>'
+                        +'</div>'
+                        +'<div class="timeline-body">'
+                            +'<p>'
+                            + grouped[index][0].brief_summary
+                            +'</p>'
+                        +'</div>'
+                    +'</div>'
                 +'</li>'
-                + '</a>'
             );
 
         }
