@@ -4,7 +4,9 @@
     margin-left: auto;
     margin-right: auto;
 }
-
+h1{
+    margin: 0;
+}
 .margin-top {
     margin-top: 50px;
 }

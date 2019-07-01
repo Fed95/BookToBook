@@ -17,14 +17,21 @@ xhttpEvents.send();
 
 
 var addMonthEvents = function (events) {
-    console.log('events this month: ', events);
 
-    for (var e of events) {
+    var grouped_by_isbn = _.groupBy(events, 'isbn');
+    console.log('events this month: ', grouped_by_isbn);
+
+    for (var i in grouped_by_isbn) {
+
+        var author_links = getAuthorLinks(grouped_by_isbn[i])
+        var e = grouped_by_isbn[i][0];
+
         $('#events').append(
-            '<div class="row event">' +
             '<div class="container">' +
+            '<div class="row event">' +
+            '<a href="'+ip+'pages/event.html?event_id='+e.event_id+'">' +
             '<div class="col-4">' +
-            '<img src="./assets/Images/BookCovers/The%20BFG.jpg">' +
+            '<img src="./assets/Images/BookCovers/'+e.title+'.jpg">' +
             '</div>' +
             '<div class="col-8">' +
             '<h3>'+e.event_name+'</h3>' +
@@ -36,15 +43,40 @@ var addMonthEvents = function (events) {
             '<p>Location:</p>' +
             '</div>' +
             '<div class="right col-">' +
-            '<p>Justin Timberlake</p>' +
-            '<p>Someday...</p>' +
-            '<p>Via Mazzocchi 2</p>' +
+            '<p>' + author_links.substring(1) + '</p>' +
+            '<p>'+e.event_date.substring(0, 10)+'</p>' +
+            '<p>'+e.location+'</p>' +
             '</div>' +
             '</div>' +
             '</div>' +
+            '</a>' +
             '</div>' +
             '</div>'
         )
     }
+
+}
+
+var getAuthorLinks = function (event) {
+
+    var grouped_by_author = _.groupBy(event, 'name');
+
+    var authors = []
+    for(var a in grouped_by_author){
+        var author = {
+            name: a,
+            id: grouped_by_author[a][0].author_id
+        }
+        authors.push(author)
+    }
+    console.log('authors = ', authors)
+
+    var author_links = ""
+
+    for(var a of authors){
+        author_links += ', <a href="'+ip+'pages/author.html?author_id='+a.id+'">'+a.name+'</a>'
+    }
+
+    return author_links
 
 }

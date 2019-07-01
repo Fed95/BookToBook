@@ -411,7 +411,7 @@ var addSuggestedBooks = function(books_to_process){
                 authors.push(author)
             }
 
-            author_links = ""
+            var author_links = ""
 
             for(var a of authors){
                 author_links += ', <a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+a.name+'</a>'

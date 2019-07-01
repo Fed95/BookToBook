@@ -1,7 +1,8 @@
 /*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');*/
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 .homepage-section{
-    margin-top: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .homepage-section h1{
     text-align: center;
@@ -26,10 +27,17 @@
     margin: 4%;
     padding: 1%;
 }
+#events .event:hover{
+    box-shadow: 1px 1px 5px #cdcdcd;
+}
 #events .info div {
     margin-top: 10%;
     padding: 0;
 }
 #events .info .right {
     margin-left: 10%;
+}
+
+#events .info .right a:hover {
+    text-decoration: underline;
 }

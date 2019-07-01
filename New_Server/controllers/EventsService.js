@@ -86,6 +86,9 @@ exports.getEventFindByMonth = function(month) {
 
     let myQuery = knex('new_schema.events as e')
         .whereRaw(`EXTRACT(MONTH FROM event_date::date) = ?`, [month])
+        .join('new_schema.books AS b', 'e.isbn', 'b.isbn')
+        .join('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+        .join('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
         .then(result => {
           console.log(result);
           resolve(result)
