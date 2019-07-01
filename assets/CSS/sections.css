@@ -51,7 +51,10 @@
 .bestseller-row{
     margin-top: 5%;
 }
-#events, #favourites h1 {
+#favourites h1 {
+    margin-bottom: 5%;
+}
+#events h1 {
     margin-bottom: 5%;
 }
 #events .event {
@@ -84,6 +87,9 @@
         width: 60%;
         margin-left: 20%;
     }
+    #favourites .singleItemImage{
+        max-width: 250px;
+    }
 
 }
 
@@ -102,6 +108,9 @@
     #favourites .singleBook{
         width: 80%;
         margin-left: 10%;
+    }
+    #favourites .singleItemImage{
+        max-width: 150px;
     }
 
 }

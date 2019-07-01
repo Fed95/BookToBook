@@ -1,10 +1,26 @@
 .image-container {
     background: url('../Images/EventImages/default.jpg') center center;
-    padding: 100px;
     background-size: cover;
     background-repeat: no-repeat;
-    align-content: center;
-    margin-bottom: 5%;
+
+    min-height: 300px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 7%;
+}
+.event-title-container{
+    margin: 1%;
+    background: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    text-align: center;
+    display:table;
+    height: 100%;
+}
+.event-title-container h1{
+    vertical-align: middle;
+    padding: 5%;
 }
 
 .centered-link {
@@ -64,16 +80,19 @@ p {
     font-size: 17px;
     text-decoration: underline;
 }
+.bookCoverContainer-no-margin img:hover {
+    opacity: 0.8;
+}
 
 @media screen and (max-width: 991px) {
     .image-container {
-        padding: 65px;
+        padding: 0;
     }
 }
 
 @media screen and (max-width: 710px) {
     .image-container {
-        padding: 55px;
+        padding: 0;
     }
 }
 
