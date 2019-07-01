@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/New_Server/controllers/EventsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/EventsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/author.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/author.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/book.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/browse.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/browse.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/sections.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/sections.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/bookJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/indexJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/indexJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,11 +52,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/assets/JS/indexJS.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
-                  <caret line="27" selection-start-line="27" selection-end-line="27" />
+                <state relative-caret-position="374">
+                  <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -84,7 +74,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/assets/CSS/sections.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="502">
@@ -210,12 +200,12 @@
         <option value="$PROJECT_DIR$/New_Server/controllers/EventsService.js" />
         <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/assets/JS/indexJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/book.css" />
         <option value="$PROJECT_DIR$/assets/CSS/author.css" />
         <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
         <option value="$PROJECT_DIR$/assets/CSS/sections.css" />
+        <option value="$PROJECT_DIR$/assets/JS/indexJS.js" />
       </list>
     </option>
   </component>
@@ -408,7 +398,7 @@
       <workItem from="1561445974183" duration="8488000" />
       <workItem from="1561619851492" duration="37881000" />
       <workItem from="1561815047147" duration="6956000" />
-      <workItem from="1561959684048" duration="2408000" />
+      <workItem from="1561959684048" duration="2639000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -442,7 +432,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276631000" />
+    <option name="totallyTimeSpent" value="276862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -896,17 +886,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/indexJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/sections.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
           <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/indexJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -38,11 +38,15 @@ var addMonthEvents = function (events) {
             '<p>'+e.brief_summary+'</p>' +
             '<div class="row info">' +
             '<div class="col-">' +
+            '<p>Book:</p>' +
             '<p>Author/s:</p>' +
             '<p>Date:</p>' +
             '<p>Location:</p>' +
             '</div>' +
             '<div class="right col-">' +
+            '<a href="'+ip+'pages/book.html?isbn='+e.isbn+'">'+
+            '<p>'+e.title+'</p>' +
+            '</a>'+
             '<p>' + author_links.substring(1) + '</p>' +
             '<p>'+e.event_date.substring(0, 10)+'</p>' +
             '<p>'+e.location+'</p>' +
