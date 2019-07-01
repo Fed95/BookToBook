@@ -902,26 +902,25 @@ paths:
       summary: "Perform User login"
       operationId: "postUserLogin"
       consumes:
-      - "application/json"
+      - "application/x-www-form-urlencoded"
       produces:
       - "application/json"
       parameters:
-      - in: "body"
-        name: "body"
+      - name: "user_mail"
+        in: "formData"
+        description: "user mail"
+        type: "string"
         required: true
-        description: "body login"
-        schema:
-          $ref: "#/definitions/Login"
+      - name: "password"
+        in: "formData"
+        description: "user password"
+        type: "string"
+        required: true
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/User"
-          headers:
-            Set-Cookie:
-              type: string
-              description: The session cookie
-              default: demo-session-id=123456789012345678901234567890
+            type: "string"
         404:
           description: "UserID or Password are wrong"
       x-swagger-router-controller: "Users"
