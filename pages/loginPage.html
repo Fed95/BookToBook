@@ -13,7 +13,7 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+        <script src="../assets/JS/loginJS.js"></script>
         <title>BookToBook</title>
     </head>
     <body>
@@ -51,13 +51,9 @@
                 </nav>
 
                 <div id="homepage-container" class="container">
-                    <div class="container_form card-1">
-                        <form onsubmit="login()" action="#">
-                            <label for="username">Username</label>
-                            <input type="text" placeholder="Enter Username" id="username" value="">
-                    <!--<div id="logreg-forms">
-                        <h1 class="centered"> Sign in</h1>
-                        <form class="form-signin">
+                    <div id="logreg-forms">
+                        <h1 class="h3 mb-3 font-weight-normal title" style="text-align: center"> Sign in</h1>
+                        <form class="form-signin" onsubmit="login()" action="#">
                             <div class="social-login">
                                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i>with Facebook</span> </button>
                                 <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i>with Google+</span> </button>
@@ -69,6 +65,7 @@
                             <button class="btn btn-success btn-block" type="submit" id="btn-signIn"><i class="fas fa-sign-in-alt"></i> Sign in</button>
                             <a href="#" id="forgot_pswd">Forgot password?</a>
                             <hr>
+                            <!-- <p>Don't have an account!</p>  -->
                             <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Register New Account</button>
                         </form>
 
@@ -86,15 +83,18 @@
                                 <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Register with Google+</span> </button>
                             </div>
 
-                            <p style="text-align:center">OR</p>-->
+                            <p style="text-align:center">OR</p>
 
+                            <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+                            <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+                            <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+                            <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
 
-                            <label for="password">Password</label>
-                            <input type="password" placeholder="Enter Password" id="password" value="">
-
-                            <button type="submit">Login</button>
-                            <p class="text--center">Not a member? <a href="registration.html">Sign up now</a></p>
+                            <button class="btn btn-success btn-block" type="submit"><i class="fas fa-user-plus"></i> Confirm </button>
+                            <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
                         </form>
+                        <br>
+
                     </div>
                 </div>
             </div>
@@ -143,6 +143,5 @@
         <script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
         <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
         <script scr="assets/JS/indexJS/js"></script>
-        <script src="../assets/JS/loginJS.js"></script>
     </body>
 </html>
