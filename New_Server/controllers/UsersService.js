@@ -30,22 +30,18 @@ exports.postUser = function(args, res, next) {
 }
 
 
-exports.postUserLogin = function (args, req, res, next) {
+exports.postUserLogin = function (args, res, next) {
     /**
      * parameters expected in the args:
      * contentType (String)
      * body (Login)
      **/
-
-    /*var userIdReq = args.UserId;
-    var passwordReq = args.Password;
-    console.log(userIdReq)*/
-
+    console.log(args.swagger.params["user_mail"].value);
 
     return new Promise(function (resolve, reject) {
 
-        var userIdReq = args.UserId;
-        var passwordReq = args.Password;
+        var userIdReq = args.swagger.params["user_mail"].value;
+        var passwordReq = args.swagger.params["password"].value;
         console.log('userIdReq = ', userIdReq)
         console.log('passwordReq = ', passwordReq)
 
@@ -61,7 +57,7 @@ exports.postUserLogin = function (args, req, res, next) {
                 })
             .select('password')
             .then(result => {
-                //console.log(result);
+                console.log(result);
                 resolve(result);
             })
 

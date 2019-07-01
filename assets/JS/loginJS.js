@@ -1,6 +1,9 @@
-var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
+$('#form-signin').submit(function(e){
+    e.preventDefault();
+})
 function toggleResetPswd(e){
     e.preventDefault();
     $('#logreg-forms .form-signin').toggle() // display:block or none
@@ -17,48 +20,75 @@ function toggleSignUp(e){
     $('#logreg-forms #PIPPO').css("font-size","500%")
 }*/
 
-$(()=>{
-    // Login Register Form
-    $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
-    $('#logreg-forms #cancel_reset').click(toggleResetPswd);
-    //$('#logreg-forms #PIPPO').click(ciao);
-    $('#logreg-forms #btn-signup').click(toggleSignUp);
-    $('#logreg-forms #cancel_signup').click(toggleSignUp);
 
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
+function login() {
+    var username = $('#username').val();
+    var password = $('#password').val();
+    console.log("pippoooo");
+    var data = {
+        'user_mail': username,
+        'password': password
+    };
+    $.post(ip + "api/user/login", data , function (data) {
+        if (data.length > 0){
+            //setCookie("session", username, 100);
+            alert("ciao!");
+            //alert("Hey " + username + ", you are logged in!\nClick ok, you will be redirect to the Home page!");
+        }else {
+            alert("Wrong! Retry, you'll be luckier" )
+        }
+    })
+}
 
 
     $( '#btn-signIn' ).click(function() {
 
         var loginForm =
             {
-                "UserId": document.getElementById("inputEmail").value,
-                "Password": document.getElementById("inputPassword").value
+                "user_mail": document.getElementById("inputEmail").value,
+                "password": document.getElementById("inputPassword").value
             };
-        var input = JSON.stringify(loginForm);
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
+        console.log(document.getElementById("inputEmail").value);
+        console.log(document.getElementById("inputPassword").value);
+        //var input = JSON.stringify(loginForm);
+        //var xhttp = new XMLHttpRequest();
+        /*xhttp.onreadystatechange = function() {
             console.log(this.readyState)
             console.log(this.status)
 
             if (this.readyState == 4 && this.status == 200) {
+                console.log("Post numero 2")
                 var xhttp2 = new XMLHttpRequest();
                 xhttp2.open("POST", ip + "api/user/logout", true);
                 xhttp2.setRequestHeader("Content-Type", "application/json");
                 xhttp2.send();
 
             }
-        };
-        xhttp.open("POST", ip + "api/user/login", true);
+        };*/
+        /*xhttp.open("POST", ip + "api/user/login", true);
         xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.send(input);
-        /*$.post(ip + "api/user/login", JSON.parse(input), json, function(){
+        xhttp.send(input);*/
+        /*$.ajax({
+            type: 'POST',
+            url: ip + "api/user/login",
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+            dataType: 'json',
+            data: input,
+            success: function (response) {
+                console.log(response);
+                return response;
+            }
+        })*/
+
+        $.post(ip + "api/user/login", loginForm, function(){
             alert("Ciao");
-        });*/
+        });
 
     });
-});
+
 
 

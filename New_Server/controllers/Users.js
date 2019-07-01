@@ -19,12 +19,15 @@ module.exports.postUser = function postUser(req, res, next) {
 module.exports.postUserLogin = function postUserLogin(req, res, next) {
     console.log("hello from Users.js - postUserLogin");
 
-    Users.postUserLogin(req.body, req, res, next)
+    Users.postUserLogin(req, res, next)
         .then(function (response) {
-            console.log("Finito")
-            //console.log(req)
-            req.session.loggedIn = true;
-            //utils.writeJson(res, response);
+            if(!req.session || !req.session.loggedIn){
+                console.log("Finito")
+                //console.log(req)
+                req.session.loggedIn = true;
+            }
+
+            utils.writeJson(res, response);
             //res.end();
         }).catch(function (response) {
         console.log("Sbagliato")
