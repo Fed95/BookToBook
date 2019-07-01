@@ -1,0 +1,126 @@
+/*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+#homepage-container{
+    margin: 5%;
+}
+.container {
+    width: 100%;
+}
+
+.homepage-section {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.homepage-section h1 {
+    text-align: center;
+}
+.homepage-section p {
+    margin-top: 10px;
+}
+
+#welcome {
+    margin-top: 5%;
+    text-align: center;
+}
+
+#welcome h4 {
+    padding: 5%;
+    font-weight: lighter;
+}
+
+#events {
+    position: relative;
+}
+
+#events h3 {
+    margin: 0;
+}
+
+#events img {
+    max-width: 150px;
+    background: #3A6F9A;
+}
+#best-sellers img:hover {
+    opacity: 0.8;
+}
+#best-sellers p a:hover {
+    text-decoration: underline;
+}
+.bestseller-row{
+    margin-top: 5%;
+}
+#events, #favourites h1 {
+    margin-bottom: 5%;
+}
+#events .event {
+    background-color: #fafafa;
+    padding: 1%;
+}
+
+#events .event:hover {
+    box-shadow: 1px 1px 5px #cdcdcd;
+}
+
+#events .info div {
+    margin-top: 10%;
+    padding: 0;
+}
+
+#events .info .right {
+    margin-left: 10%;
+}
+
+#events .info .right a:hover {
+    text-decoration: underline;
+}
+#favourites .singleBook{
+    width: 33.3333333333%;
+}
+
+@media screen and (min-width: 1000px) {
+    #events .event {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    #events .event img {
+        width: 100%;
+    }
+
+    #events .info {
+        display: none;
+    }
+
+    #events .info h3 {
+        margin-top: 0;
+    }
+    #favourites .singleBook{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+}
+@media screen and (max-width: 400px) {
+    #events .event img {
+        width: 100%;
+    }
+
+    #events .info {
+        display: none;
+    }
+
+    #events .info h3 {
+        margin-top: 0;
+    }
+    #favourites .singleBook{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+
+}

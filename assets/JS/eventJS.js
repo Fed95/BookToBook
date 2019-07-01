@@ -74,7 +74,7 @@ var displayFoundBooks = function(book) {
 
 var generateEventDiv = function (event, authors) {
 
-    console.log(event)
+    console.log("event: ", event)
 
 
     var $div1 = $("<div class = 'col-12'/>");
@@ -84,12 +84,13 @@ var generateEventDiv = function (event, authors) {
             var $div4 = $("<div class = 'col-3 no-vert-padding center-align'/>");
                 var $h1 = $("<h3 class = 'sideheading'/>"); $h1.html('Book:');
                 var $div5 = $("<div class = 'bookCoverContainer-no-margin'/>");
-                    var $a1 = $("<a href='./event.html'>");
+                    var $a1 = $("<a >", {href:'./book.html?isbn='+event.isbn});
                         var $im1 = $("<img />", {class:'singleItemImage', src:'../assets/Images/BookCovers/' + event.title +'.jpg'});
                 var $h2 = $("<h3 class = 'sideheading'/>"); $h2.html('Author/s:');
 
             var $div7 = $("<div class = col-9 no-vert-padding'/>");
-                var $h3 = $("<h1 class = 'singleItemName'/>"); $h3.html('['+event.event_date.substr(0, 10) + '] ' + event.event_name);
+                var $h3 = $("<h2/>"); $h3.html(event.event_name);
+                var $date = $("<h3 />"); $date.html(event.event_date.substr(0, 10));
                 var $div8 = $("<div class = textcontent'/>"); $div8.html(event.summary);
                 var $hr1 = $("<hr />");
                 var $div9 = $("<div class = 'row'/>");
@@ -124,6 +125,7 @@ var generateEventDiv = function (event, authors) {
 
     $div3.append($div7);
     $div7.append($h3);
+    $div7.append($date);
     $div7.append($div8);
     $div7.append($hr1);
     $div7.append($div9);

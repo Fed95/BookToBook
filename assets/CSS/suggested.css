@@ -1,0 +1,27 @@
+.suggested-books{
+    margin: 5%;
+}
+.suggested-books img{
+    max-width: 150px;
+}
+.singleBook {
+    width: 30%;
+}
+
+.singleBook p a:hover {
+    text-decoration: underline;
+}
+.singleBook img:hover {
+    opacity: 0.8;
+}
+.description{
+    text-align: center;
+}
+#suggested-div h2{
+    margin-bottom: 20px;
+}
+@media (max-width: 400px){
+    .singleBook {
+        width: 100%;
+    }
+}

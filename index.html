@@ -1,191 +1,155 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Latest compiled and minified CSS -->
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./assets/CSS/styles.css">
-        <link rel="stylesheet" href="./assets/CSS/footer.css">
-        <link rel="stylesheet" href="./assets/CSS/navbar.css">
-        <link rel="stylesheet" href="./assets/CSS/index.css">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/CSS/styles.css">
+    <link rel="stylesheet" href="./assets/CSS/footer.css">
+    <link rel="stylesheet" href="./assets/CSS/navbar.css">
+    <link rel="stylesheet" href="./assets/CSS/index.css">
+    <link rel="stylesheet" href="./assets/CSS/sections.css">
+    <link rel="stylesheet" href="./assets/CSS/suggested.css">
 
-        <title>BookToBook</title>
-    </head>
-    <body>
-        <div id="page-container">
-            <div id="content-wrap">
-                <div class="jumbotron">
-                    <div class="title-container">
-                        <div class="title-txt"><a href="./index.html">|| BookToBook</a></div>
-                    </div>
+    <script src="https://underscorejs.org/underscore-min.js"></script>
+    <script src="assets/JS/homepage_eventsJS.js"></script>
+    <script src="assets/JS/homepage_bestsellersJS.js"></script>
+    <script src="assets/JS/homepage_favouritesJS.js"></script>
+
+
+    <title>BookToBook</title>
+</head>
+<body>
+<div id="page-container">
+    <div id="content-wrap">
+        <div class="jumbotron">
+            <div class="title-container">
+                <div class="title-txt"><a href="./index.html">|| BookToBook</a></div>
+            </div>
+        </div>
+        <nav class="navbar navbar-default mynav">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-                <nav class="navbar navbar-default mynav">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="./index.html">Home<span class="sr-only">(current)</span></a></li>
-                                <li><a href="./pages/browseBooks.html?search-text=">Books</a></li>
-                                <li><a href="./pages/browseAuthors.html?search-text=">Authors</a></li>
-                                <li><a href="./pages/browseEvents.html?search-text=">Events</a></li>
-                                <li><a href="./pages/browseGenres.html?search-text=">Genres</a></li>
-                                <li><a href="./pages/browseThemes.html?search-text=">Themes</a></li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="./pages/shoppingCart.html">Shopping Cart <img src="./assets/Images/shopping-cart-black-shape.png" class="userimg"></a></li>
-                                <li><a href="./pages/loginPage.html?#">Login/Create Account <img src="./assets/Images/user-image-with-black-background.png" class="userimg"></a></li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
-                </nav>
-                <div id="homepage-container">
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10">
-                            <div class="homepage-section latest-events">
-                                <h1>Latest Events</h1>
-                                <!--<div class="scrolling-wrapper">
-        <div class="homepage-box best-seller ">
-        <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-        <img src="./assets/Images/BookCovers/Prey.jpg">
-        <div>
-        <h2>Prey</h2>
-        <p>Michael Chricton</p>
-        </div>
-        </a>
-        </div>
-        <div class="homepage-box best-seller ">
-        <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-        <img src="./assets/Images/BookCovers/Prey.jpg">
-        <div>
-        <h2>Prey</h2>
-        <p>Michael Chricton</p>
-        </div>
-        </a>
-        </div>
-        <div class="homepage-box best-seller ">
-        <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-        <img src="./assets/Images/BookCovers/Prey.jpg">
-        <div>
-        <h2>Prey</h2>
-        <p>Michael Chricton</p>
-        </div>
-        </a>
-        </div>
-        <div class="homepage-box best-seller ">
-        <a href="http://localhost:8080/pages/book.html?isbn=9686543761408">
-        <img src="./assets/Images/BookCovers/Prey.jpg">
-        <div>
-        <h2>Prey</h2>
-        <p>Michael Chricton</p>
-        </div>
-        </a>
-        </div>
-        </div>-->
-                            </div>
-                            <div class="homepage-section best-seller"><h1>Best Sellers</h1>
-                                <div class=" row rowevents">
-                                    <div class="col-1 left-arrow" id="leftArrow"
-                                         onclick="moveLeft()"><img class="leftimage" src="./assets/Images/left.png"></div>
-                                    <div class="col-10 viewContainer" id="show">
-                                        <div class="imagebox">
-                                            <a href="http://localhost:8080/pages/book.html?isbn=9780001243136">
-                                                <img id="1" class="image" src="./assets/Images/BookCovers/The%20BFG.jpg">
-                                            </a>
-                                                <div class="bookinfo">
-                                                    <a href="http://localhost:8080/pages/book.html?isbn=9780001243136">
-                                                    <h3>The BFG</h3>
-                                                    </a>
-                                                    <p>Roald Dahl, Quentin Blake,Filippo Rezzonico</p>
-                                                </div>
-                                        </div>
-                                        <div class="imagebox">
-                                            <a href="http://localhost:8080/pages/book.html?isbn=9780001243136">
-                                                <img id="2" class="image" src="./assets/Images/BookCovers/Fake%20Book.jpg">
-                                            </a>
-                                            <div class="bookinfo">
-                                                <a href="http://localhost:8080/pages/book.html?isbn=9780001243136">
-                                                    <h3>The BFG</h3>
-                                                </a>
-                                                <p>Roald Dahl, Quentin Blake</p>
-                                            </div>
-                                        </div>
-                                        <div class="imagebox">
-                                        <img id="3" class="image" src="./assets/Images/BookCovers/13%20and%20a%20Half%20Lives%20of%20Captain%20Bluebear.jpg">
-                                        </div>
-                                        <div class="imagebox">
-                                        <img id="4" class="image" src="./assets/Images/BookCovers/The%20Fifth%20Book.jpg">
-                                        </div>
-                                    </div>
-                                    <div class="col-1 right-arrow" id="rightArrow" onclick="moveRight()"><img class="rightimage" src="./assets/Images/right.png"></div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="./index.html">Home<span class="sr-only">(current)</span></a></li>
+                        <li><a href="./pages/browseBooks.html?search-text=">Books</a></li>
+                        <li><a href="./pages/browseAuthors.html?search-text=">Authors</a></li>
+                        <li><a href="./pages/browseEvents.html?search-text=">Events</a></li>
+                        <li><a href="./pages/browseGenres.html?search-text=">Genres</a></li>
+                        <li><a href="./pages/browseThemes.html?search-text=">Themes</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="./pages/shoppingCart.html">Shopping Cart <img
+                                src="./assets/Images/shopping-cart-black-shape.png" class="userimg"></a></li>
+                        <li><a href="./pages/loginPage.html">Login/Create Account <img
+                                src="./assets/Images/user-image-with-black-background.png" class="userimg"></a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div id="homepage-container">
+            <div class="row">
+                <div class="sections">
+                    <div id="welcome" class="homepage-section">
+                        <h1>Welcome</h1>
+                        <h4>Hi, we're glad to see you here!<br/>
+                            Now please make yourself at home and feel free to gather around.<br/>
+                            We hope you'll find something you like :)</h4>
+
+
+                    </div>
+                    <hr/>
+                    <div id="events" class="homepage-section">
+                        <h1>Events Coming Up This Month</h1>
+
+                    </div>
+                    <hr/>
+                    <div id="best-sellers" class="homepage-section">
+                        <h1>Best Sellers</h1>
+                        <div class="container">
+                            <div class="row bestseller-row">
+                                <div class="col-1 left-arrow" id="leftArrow"
+                                     onclick="moveLeft()"><img class="leftimage" src="./assets/Images/left.png"></div>
+                                <div id="show" class="col-10 viewContainer">
+
                                 </div>
+                                <div class="col-1 right-arrow" id="rightArrow" onclick="moveRight()"><img
+                                        class="rightimage" src="./assets/Images/right.png"></div>
                             </div>
-                            <div class="homepage-section popular-genres">
-                                <h1>Popular Genres</h1></div>
                         </div>
-                        <div class="col-1"></div>
+                    </div>
+                    <hr/>
+                    <div id="favourites" class="homepage-section">
+                        <h1>Our Favourites</h1>
+                        <div id="suggested-div" class="row suggested-books">
+
+                        </div>
                     </div>
                 </div>
             </div>
-            <footer class="section footer-classic context-dark bg-image myfooter">
-                <div class="container">
-                    <div class="row row-30">
-                        <div class="col-4">
-
-                            <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and
-                                curiosity among all human beings.</p>
-                            <!-- Rights-->
-                            <p class="rights"> &copy; 2019 BookToBook. All Rights Reserved.</p>
-
-                        </div>
-                        <div class="col-5">
-                            <h5>Contacts</h5>
-                            <dl class="contact-list">
-                                <dt>Address:</dt>
-                                <dd>410 South Morgan Street</dd>
-                            </dl>
-                            <dl class="contact-list">
-                                <dt>email:</dt>
-                                <dd><a href="mailto:#" class="blacklink">rabbin95@gmail.com</a></dd>
-                            </dl>
-                            <dl class="contact-list">
-                                <dt>phones:</dt>
-                                <dd><a href="tel:#" class="blacklink">+1 312 599 4140</a> <span>or</span> <a href="tel:#"
-                                                                                                             class="blacklink">+39
-                                    3394233031</a>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="col-3">
-                            <h5>Links</h5>
-                            <ul class="nav-list">
-                                <li><a href="#" class="blacklink">About</a></li>
-                                <li><a href="./pages/orderingShipping.html" class="blacklink">Ordering and Shipping</a></li>
-                                <li><a href="pages/contactUs.html" class="blacklink">Contact Us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
-        <!-- Bootstrap core JavaScript
+    </div>
+    <footer class="section footer-classic context-dark bg-image myfooter">
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-4">
+
+                    <p>We are a global book selling and delivering agency, dedicated to share knowledge, culture and
+                        curiosity among all human beings.</p>
+                    <!-- Rights-->
+                    <p class="rights"> &copy; 2019 BookToBook. All Rights Reserved.</p>
+
+                </div>
+                <div class="col-5">
+                    <h5>Contacts</h5>
+                    <dl class="contact-list">
+                        <dt>Address:</dt>
+                        <dd>410 South Morgan Street</dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>email:</dt>
+                        <dd><a href="mailto:#" class="blacklink">rabbin95@gmail.com</a></dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>phones:</dt>
+                        <dd><a href="tel:#" class="blacklink">+1 312 599 4140</a> <span>or</span> <a href="tel:#"
+                                                                                                     class="blacklink">+39
+                            3394233031</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-3">
+                    <h5>Links</h5>
+                    <ul class="nav-list">
+                        <li><a href="#" class="blacklink">About</a></li>
+                        <li><a href="./pages/orderingShipping.html" class="blacklink">Ordering and Shipping</a></li>
+                        <li><a href="pages/contactUs.html" class="blacklink">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- Bootstrap core JavaScript
 ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-        <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-        <script src="assets/JS/indexJS.js"></script>
-    </body>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<script src="assets/JS/arrowScroll.js"></script>
+<script src="assets/JS/navbarJS.js"></script>
+</body>
 </html>

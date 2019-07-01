@@ -42,6 +42,10 @@
 p{
     margin: 0px;
 }
+h5{
+    font-weight: bolder;
+    color: #575d63;
+}
 .authorrow{
     margin-top: 5px;
     margin-bottom: 10px;
@@ -75,9 +79,9 @@ p{
     border: none;
 }
 #book-div{
-    padding-bottom: 90px;
-    min-height: 700px;
+    padding-bottom: 50px;
+    min-height: 500px;
 }
-#reviews-div, #interview-div{
+.book-collapsible{
     margin: 5%;
 }

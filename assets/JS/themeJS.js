@@ -69,6 +69,15 @@ var displayFoundtheme = function(theme_list) {
                 authors: [],
                 price: grouped_by_book[i][0]['price']
             };
+            var grouped_by_author = _.groupBy(grouped_by_book[i], 'name');
+
+            for (var a in grouped_by_author) {
+                var author = {
+                    name: a,
+                    id: grouped_by_author[a][0].author_id
+                }
+                book.authors.push(author)
+            }
             books.push(book);
         }
     }
@@ -121,154 +130,39 @@ var generateThemeDiv = function (name, description, books) {
     $div5.append($hr1);
 
     if(books.length > 0){
-
-        var $d1 = $("<div class = 'row' />");
-        var $d2 = $("<div class = 'col-1' />");
-        var $d3 = $("<div class = 'col-10' />");
-        var $d4 = $("<div class = 'col-1' />");
-        var $hbook = $("<h3 />"); $hbook.html('Books related to this theme:');
-
-        $("#row-margin-top").append($d1);
-        $d1.append($d2);
-        $d1.append($d3);
-        $d3.append($hbook);
-        $d1.append($d4);
-
-        for(var i in books){
-            generateBookDiv(books[i]);
-        }
+        generateBookDiv(books);
     }
 };
 
-var generateBookDiv = function (book) {
-
-    var $diva = $("<div class='row'/>");
-    var $divb = $("<div class='col-1 hidden-s'/>");
-    var $divc = $("<div class='col-10 col-10-bigger-s'/>");
-    var $div1 = $("<div class = 'list-group-item' />");
-    var $div2 = $("<div class = 'row list-group-item'/>");
-    var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
-    var $div4 = $("<div class = 'book-img'/>");
-    var $im = $("<img />", { src : "../assets/Images/BookCovers/Thumbnails/"+book.title+".jpg"});
-    var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
-    var $h = $("<h3 />", {id : 'title', class : 'book-title'});
-    var $a5 = $("<a />", {href : ip + 'pages/book.html?isbn='+book.isbn}); $a5.html(book.title);
-    var $div6 = $("<div class = 'book-info'/>");
-    /*
-        var $div7 = $("<div class = 'col-5 info'/>");
-            var $s7 = $("<span />"); $s7.html('Authors:');
-            var $p7 = $("<p />", {id: book.isbn});
+var generateBookDiv = function (books) {
 
 
-        var $div8 = $("<div class = 'col-5 info'/>");
-            var $s8 = $("<span />"); $s8.html('Price:');
-            var $p8 = $("<p />"); $p8.html(book.price + '$');
+    $('#homepage-container').append(
+        '<div id="suggested-div" class="row suggested-books">'
+        + '<h2>Books related to this genre:</h2>'
+        + '</div>')
 
-var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
-    var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
-        $b10.html('Add to Cart')
-        */
+    for (var i in books) {
 
-    $("#row-margin-top").append($diva);
-    $diva.append($divb);
-    $diva.append($divc);
-    $divc.append($div1);
-    $div1.append($div2);
-    $div2.append($div3);
-    $div3.append($div4);
-    $div4.append($im);
-    $div2.append($div5);
-    $div5.append($h);
-    $h.append($a5);
-    $div5.append($div6);
-    /*
-    $div6.append($div7);
-    $div7.append($s7);
-    $div7.append($p7);
+        var authors = books[i].authors
+
+        author_links = ""
+
+        for (var a of authors) {
+            author_links += ', <a href="' + ip + 'pages/author.html?author_id=' + authors[i].id + '">' + a.name + '</a>'
+        }
 
 
-    $div6.append($div8);
-    $div8.append($s8);
-    $div8.append($p8);
-    $div2.append($div10);
-    $div10.append($b10);
-*/
-    console.log('looking for author of ' + book.title);
-
-    //todo: need to generate a new request each time to prevent overlap of gets
-    //xhttpAuthors.open("GET", ip + "api/author/findByBook?ISBN="+book.isbn, true);
-    //xhttpAuthors.send();
-
-};
-
-
-/*<div class="row margin-top"></div>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10 singleItemContainer">
-                            <div class="col-3 singleItemContainer">
-                                <img class="singleItemImage big-screen-image" src="../assets/Images/AuthorPictures/Michael%20Crichton.jpg">
-                            </div>
-                            <div class="col-1 hid"></div>
-                            <div class=" col-8 singleItemContainer">
-                                <h1 class="singleItemName">Michael Crichton</h1>
-                                <div class="row small-screen-image">
-                                    <div class="col-2"></div>
-                                    <div class="col-8">
-                                        <img class="singleItemImage" src="../assets/Images/AuthorPictures/Michael%20Crichton.jpg">
-                                    </div>
-                                    <div class="col-2"></div>
-                                </div>
-                                <div class="row">
-                                    <p class="datestyle">23/10/1942 - 4/11/2008</p>
-                                </div>
-                                <div class="textcontent">It is a long established fact that a reader will be distracted by the readable content
-                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal
-                                    distribution of letters, as opposed to using Content.
-                                    It is a long established fact that a reader will be distracted by the readable content
-                                    of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal
-                                    distribution of letters, as opposed to using Content.
-                                </div>
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="col-1 hid"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1"></div>
-                        <div class="col-10"><h3>Books</h3></div>
-                        <div class="col-1"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-1 hidden-s"></div>
-                        <div class="col-10 col-10-bigger-s">
-                            <div class="list-group-item clearfix">
-                                <div class="row">
-                                    <div class="col-2 col-2-hidden-xs">
-                                        <div class="book-img"><img src="../assets/Images/BookCovers/Thumbnails/Prey.jpg"></div>
-                                    </div>
-                                    <div class="col-8 col-8-bigger-xs">
-                                        <h3 id="title" class="book-title">Prey</h3>
-                                        <div class="book-info">
-                                            <div class="col-5 info">
-                                                <span>Authors:</span>
-                                                <p>Filippo Rezzonico</p>
-                                                <p>Michael Crichton</p>
-                                            </div>
-                                            <div class="col-5 info">
-                                                <span>Price:</span>
-                                                <p>3000$</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-2 col-2-muchbigger-xs noleft-pad">
-                                    <button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>
-                                    </div>
-                                </div>
-                        </div>
-                        <div class="col-1 hidden-s"></div>
-                    </div>
-
-                    <div class="row margin-bottom"></div>*/
+        $('#suggested-div').append(
+            '<div class="col-sm singleBook">' +
+            '<div class="description">' +
+            '<a href="' + ip + 'pages/book.html?isbn=' + books[i].isbn + '">' +
+            '<img class="singleItemImage" src="../assets/Images/BookCovers/' + books[i].title + '.jpg">' +
+            '<h3>' + books[i].title + '</h3>' +
+            '</a>' +
+            '<p>' + author_links.substring(1) + '</p>' +
+            '</div>' +
+            '</div>'
+        );
+    }
+}

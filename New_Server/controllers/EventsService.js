@@ -52,35 +52,48 @@ exports.getEventEventID = function(event_id) {
   
 };
 
-exports.getEventFindByBook = function(args, res, next) {
+exports.getEventFindByBook = function(isbn) {
   /**
    * parameters expected in the args:
   * iSBN (Long)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    console.log("---------------executing getEventFindByBook-----------------");
+    console.log("isbn: '" + isbn + "'");
+    console.log("------------------------------------------------------------");
+
+    let myQuery = knex('new_schema.events as e')
+        .where('e.isbn', isbn)
+        .then(result => {
+          console.log(result);
+          resolve(result)
+        });
+  });
   
 }
 
-exports.getEventFindByMonth = function(args, res, next) {
+exports.getEventFindByMonth = function(month) {
   /**
    * parameters expected in the args:
   * month (Date)
   **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
+  return new Promise(function (resolve, reject) {
+
+    console.log("---------------executing getEventFindByMonth-----------------");
+    console.log("month: '" + month + "'");
+    console.log("------------------------------------------------------------");
+
+    let myQuery = knex('new_schema.events as e')
+        .whereRaw(`EXTRACT(MONTH FROM event_date::date) = ?`, [month])
+        .join('new_schema.books AS b', 'e.isbn', 'b.isbn')
+        .join('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+        .join('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+        .then(result => {
+          console.log(result);
+          resolve(result)
+        });
+  });
   
 }
 

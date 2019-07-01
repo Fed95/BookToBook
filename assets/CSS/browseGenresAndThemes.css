@@ -1,3 +1,6 @@
+h1{
+    margin: 5%;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -16,14 +19,24 @@
     vertical-align: middle;
     width: 100%;
 }
-.genre-container{
-    padding-left: 200px;
-    padding-right: 200px;
+#genre-container{
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+#genre-container img{
+    width: 100%; /* or any custom size */
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 .image-container {
     width: 100%;
     position: relative;
     opacity: 0.85;
+    padding: 104% 0 0 0;
 }
 .image-container:hover img {
     opacity: 0.3;
@@ -49,9 +62,6 @@
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 1200px) {
 
-    .genre-container{
-        padding-left: 150px;
-    }
     .centered-text {
         font-size: 20px;
     }
@@ -63,9 +73,7 @@
         flex: 50%;
         max-width: 50%;
     }
-    .genre-container{
-        padding: 100px;
-    }
+
     .centered-text {
         font-size: 20px;
     }
@@ -78,9 +86,7 @@
         flex: 100%;
         max-width: 100%;
     }
-    .genre-container{
-        padding: 30px;
-    }
+
     .centered-text {
         font-size: 30px;
     }

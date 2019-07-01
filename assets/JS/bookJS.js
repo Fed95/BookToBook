@@ -27,18 +27,37 @@ const input = getUrlParameter('isbn');
 
 
 //---------------------------------------------------------------------
-//generating the query
+//generating the queries and starting the first one
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
+var xhttpBook = new XMLHttpRequest();
+xhttpBook.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
             displayFoundBooks(this.responseText);
         });
     }
 };
-xhttp.open("GET", ip + "api/book/" + input, true);
-xhttp.send();
+var xhttpEvents = new XMLHttpRequest();
+xhttpEvents.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        $(document).ready(() => {
+            addEvents(JSON.parse(this.responseText));
+        });
+    }
+};
+var xhttpSimilar = new XMLHttpRequest();
+xhttpSimilar.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        $(document).ready(() => {
+            addSuggestedBooks(JSON.parse(this.responseText));
+        });
+    }
+};
+
+xhttpBook.open("GET", ip + "api/book/" + input, true);
+xhttpBook.send();
+
+
 
 
 //---------------------------------------------------------------------
@@ -61,6 +80,7 @@ var displayFoundBooks = function (book) {
     var reviews = [];
     var genres = [];
     var themes = [];
+    var similar = "";
 
     var interview = parsed[0].interview_text // TODO: DECIDE WHETHER THE INTERVIEW SHOULD BE AUTHOR SPECIFIC
 
@@ -70,6 +90,7 @@ var displayFoundBooks = function (book) {
             id : grouped_by_author[author_name][0].author_id
         }
         authors.push(author);
+        similar = similar + ',' + String(author.name)
     }
 
     for (var text in grouped_by_review) {
@@ -90,9 +111,10 @@ var displayFoundBooks = function (book) {
                 name: grouped_by_genre[g][0].genre_name,
                 color: grouped_by_genre[g][0].genre_color,
             };
-        }
 
-        genres.push(genre);
+            genres.push(genre);
+            similar = similar + ',' + String(genre.name)
+        }
     }
     for (var t in grouped_by_theme) {
 
@@ -101,13 +123,22 @@ var displayFoundBooks = function (book) {
                 name: grouped_by_theme[t][0].theme_name,
                 color: grouped_by_theme[t][0].theme_name,
             };
-        }
 
-        themes.push(theme);
+            themes.push(theme);
+            similar = similar + ',' + String(theme.name)
+        }
     }
 
 
+
+
     generateBookDiv(parsed[0], authors, interview, reviews, genres, themes);
+
+    xhttpEvents.open("GET", ip + "api/event/findByBook?ISBN=" + input, true);
+    xhttpEvents.send();
+
+    xhttpSimilar.open("GET", ip + "api/book/findByGenre?genre=" + similar.substring(1), true);
+    xhttpSimilar.send();
 };
 
 
@@ -327,101 +358,115 @@ var addGenresAndThemes = function (div, genres, themes) {
     }
 };
 
+var addEvents = function(events){
 
-/*            <div class="row margin-top"></div>
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10 singleItemContainer">
-                    <div class="col-3 singleItemContainer">
-                        <img class="singleItemImage big-screen-image"
-                             src="../assets/Images/BookCovers/game%20of%20thrones.jpg">
-                    </div>
-                    <div class="col-1 hid"></div>
-                    <div class="col-8 singleItemContainer">
-                        <h1 class="singleItemName">Game of Thrones</h1>
-                        <div class="row small-screen-image">
-                            <div class="col-2"></div>
-                            <div class="col-8">
-                                <img class="singleItemImage" src="../assets/Images/BookCovers/game%20of%20thrones.jpg">
-                            </div>
-                            <div class="col-2"></div>
-                        </div>
-                        <div class="row authorrow">
-                            <div class="authorcontainer">
-                                <a href="" class="authorlink">George R.R. Martin</a>
-                            </div>
-                            <div class="authorcontainer">
-                                <a href="" class="authorlink">Federico Sandrelli</a>
-                            </div>
-                            <div class="authorcontainer">
-                                <a href="" class="authorlink">Filippo Rezzonico</a>
-                            </div>
-                            <a href="" class="authorlink">Davide Santmabrogio</a>
-                        </div>
-                        <span></span>
-                        <div class="textcontent">It is a long established fact that a reader will be distracted by the
-                            readable content
-                            of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                            more-or-less
-                            normal
-                            distribution of letters, as opposed to using Content.
-                            It is a long established fact that a reader will be distracted by the readable content
-                            of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                            more-or-less
-                            normal
-                            distribution of letters, as opposed to using Content.
-                        </div>
-                        <hr>
-                        <div class="technical">
-                            <div><p>Publisher:</p></div>
-                            <div><p>Publication Date:</p></div>
-                            <div><p>Edition:</p></div>
-                            <div><p>Language:</p></div>
-                            <div><p>Number of Pages:</p></div>
-                            <div><p>ISBN:</p></div>
-                        </div>
-                        <div class="buybook">
-                            <div class="col-8">Price: 22$</div>
-                            <div class="col-4">
-                                <button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-1 hid"></div>
-            </div>
-            <hr>
-            <div class="col-1"></div>
-            <div class="col-10">
-                <h1>Reviews</h1>
-                <div class="row review-row">
-                    <div class="review-item">
-                        <div class="row">
-                            <div class="col-11 only-left-pad">
-                                <h4 class="reviewername">Adam Cadmon</h4>
-                            </div>
-                            <div class="col-1 no-pad">
-                                <img src="../assets/Images/dislike.png" width="25"
-                                     height="25" class="review">
-                            </div>
-                        </div>
-                        <hr class="review-line">
-                        <div class="col-12 review-text">
-                            <p>It is a long established fact that a reader will be distracted by the readable content
-                                of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less
-                                normal
-                                distribution of letters, as opposed to using Content.
-                                It is a long established fact that a reader will be distracted by the readable content
-                                of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                                more-or-less
-                                normal
-                                distribution of letters, as opposed to using Content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-1"></div>
-            <div class="row margin-bottom"></div>*/
+    $('#events-div').append('<div id="events" class="content" />');
+
+    if(events.length < 1) {
+        $('#events').append('<p class="col-12 review-item">There are no events related to this book.</p>')
+    }else {
+        for(var e of events){
+        $('#events').append(
+            '<div class = "row review-row">'
+            + '<div class = "col-12 review-item">'
+            + '<div class = "row">'
+            + '<div class = "col-11 only-left-pad">'
+            +'<a href="'+ip+'pages/event.html?event_id='+e.event_id+'">'
+            + '<h3 >' + e.event_name + '</h3>'
+            +'</a>'
+            + '</div>'
+            + '<div class = "col-11 only-left-pad">'
+            + '<h5 >' + e.event_date.substr(0, 10) + '</h5>'
+            + '</div>'
+            + '</div>'
+            + '<div class = "col-12 review-text" >'
+            + '<p>' + e.summary + '</p>'
+            + '</div>'
+            + '</div>'
+            + '</div>'
+        )
+    }}
+};
+
+var addSuggestedBooks = function(books_to_process){
+
+    var books = preprocessSuggestedBooks(books_to_process)
+
+    if(books.length > 0) {
+
+        $('#suggested-div').append('<h2>Suggested Readings</h2>')
+
+        console.log('grouped suggested books list:', books)
+
+        for (var i = 0; i < Math.min(6, books.length); i++) {
+
+            var grouped_by_author = _.groupBy(books[i], 'name');
+
+            var authors = []
+            for(var a in grouped_by_author){
+                var author = {
+                    name: a,
+                    id: grouped_by_author[a][0].author_id
+                }
+                authors.push(author)
+            }
+
+            var author_links = ""
+
+            for(var a of authors){
+                author_links += ', <a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+a.name+'</a>'
+            }
+
+
+            $('#suggested-div').append(
+
+                '<div class="col-sm singleBook">' +
+                '<div class="description">' +
+                '<a href="'+ip+'pages/book.html?isbn='+books[i][0].isbn+'">'+
+                '<img class="singleItemImage" src="../assets/Images/BookCovers/' + books[i][0].title + '.jpg">' +
+                '<h3>' + books[i][0].title + '</h3>' +
+                '</a>'+
+                '<p>' + author_links.substring(1) + '</p>' +
+                '</div>' +
+                '</div>'
+            );
+        }
+    }
+}
+
+var preprocessSuggestedBooks = function (books) {
+
+    var grouped_by_isbn = _.groupBy(books, 'isbn');
+    var grouped_list = generateListFronGrouped(grouped_by_isbn)
+
+    grouped_list.sort(function (a, b) {
+        if (a.length < b.length) {
+            return -1
+        } else if (a.name > b.name) {
+            return 1
+        } else {
+            return 0
+        }
+    });
+
+    console.log('before filtering', grouped_list)
+
+    var clean_list = grouped_list.filter(function (el) {
+        return el[0].isbn != input // input is the isbn of the current book displayed on the page
+    });
+
+    console.log('after filtering: ',clean_list)
+
+    return clean_list
+}
+
+var generateListFronGrouped = function(grouped){
+
+    var grouped_list = []
+
+    for (var i in grouped) {
+        grouped_list.push(grouped[i])
+    }
+    return grouped_list
+}
+

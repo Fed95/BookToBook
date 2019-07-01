@@ -69,7 +69,11 @@ $('.scroller-left').click(function() {
 
     });
 
-});*/
+});
+*/
+
+
+
 var view = $("#show");
 var current = 1;
 const mq = window.matchMedia( "(max-width: 600px)" );
