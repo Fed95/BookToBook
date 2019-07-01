@@ -17,6 +17,8 @@
     text-align: center;
     display:table;
     height: 100%;
+    border-style: solid;
+    border-width: 2px;
 }
 .event-title-container h1{
     vertical-align: middle;
