@@ -34,9 +34,7 @@ function login() {
     };
     $.post(ip + "api/user/login", data , function (data) {
         if (data.length > 0){
-            //setCookie("session", username, 100);
-            alert("ciao!");
-            //alert("Hey " + username + ", you are logged in!\nClick ok, you will be redirect to the Home page!");
+            window.location.href = ip + "index.html"
         }else {
             alert("Wrong! Retry, you'll be luckier" )
         }
@@ -44,51 +42,6 @@ function login() {
 }
 
 
-    /*$( '#btn-signIn' ).click(function() {
-
-        var loginForm =
-            {
-                "user_mail": document.getElementById("inputEmail").value,
-                "password": document.getElementById("inputPassword").value
-            };
-        console.log(document.getElementById("inputEmail").value);
-        console.log(document.getElementById("inputPassword").value);
-        //var input = JSON.stringify(loginForm);
-        //var xhttp = new XMLHttpRequest();
-        /*xhttp.onreadystatechange = function() {
-            console.log(this.readyState)
-            console.log(this.status)
-
-            if (this.readyState == 4 && this.status == 200) {
-                console.log("Post numero 2")
-                var xhttp2 = new XMLHttpRequest();
-                xhttp2.open("POST", ip + "api/user/logout", true);
-                xhttp2.setRequestHeader("Content-Type", "application/json");
-                xhttp2.send();
-
-            }
-        };*/
-        /*xhttp.open("POST", ip + "api/user/login", true);
-        xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.send(input);*/
-        /*$.ajax({
-            type: 'POST',
-            url: ip + "api/user/login",
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-            dataType: 'json',
-            data: input,
-            success: function (response) {
-                console.log(response);
-                return response;
-            }
-        })
-
-        $.post(ip + "api/user/login", loginForm, function(){
-            alert("Ciao");
-        });
-
-    });*/
 
 
 
