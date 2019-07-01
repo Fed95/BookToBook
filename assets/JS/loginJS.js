@@ -25,8 +25,8 @@ function toggleSignUp(e){
 //generating the query
 //---------------------------------------------------------------------
 function login() {
-    var username = $('#username').val();
-    var password = $('#password').val();
+    var username = $('#inputEmail').val();
+    var password = $('#inputPassword').val();
     console.log("pippoooo");
     var data = {
         'user_mail': username,
@@ -44,7 +44,7 @@ function login() {
 }
 
 
-    $( '#btn-signIn' ).click(function() {
+    /*$( '#btn-signIn' ).click(function() {
 
         var loginForm =
             {
@@ -82,13 +82,13 @@ function login() {
                 console.log(response);
                 return response;
             }
-        })*/
+        })
 
         $.post(ip + "api/user/login", loginForm, function(){
             alert("Ciao");
         });
 
-    });
+    });*/
 
 
 
