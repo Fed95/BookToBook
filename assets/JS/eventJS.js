@@ -143,7 +143,7 @@ var generateEventDiv = function (event, authors) {
     $div12.append($frame);
 
     var targetDiv = document.getElementById(event.event_id);
-    targetDiv.style.backgroundImage = 'url(../Images/EventImages/'+event.event_id+'.jpg)';
+    targetDiv.style.backgroundImage = 'url(../assets/Images/EventImages/'+event.event_id+'.jpg)';
 
 };
 
