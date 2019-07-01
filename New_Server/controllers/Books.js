@@ -10,7 +10,17 @@ module.exports.getBook = function getBook(req, res, next) {
 };
 
 module.exports.getBookBestOfTheMonth = function getBookBestOfTheMonth(req, res, next) {
-    Books.getBookBestOfTheMonth(req.swagger.params, res, next);
+
+    var month = req.swagger.params['Month']['originalValue'];
+    console.log("inside Books.js; Month = ", month);
+
+    Books.getBookBestOfTheMonth(month)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
 };
 
 module.exports.getBookByTitle = function getBookByTitle(req, res, next) {

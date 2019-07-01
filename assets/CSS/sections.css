@@ -1,6 +1,9 @@
 /*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');*/
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
+#homepage-container{
+    margin: 5%;
+}
 .container {
     width: 100%;
 }
@@ -12,6 +15,9 @@
 
 .homepage-section h1 {
     text-align: center;
+}
+.homepage-section p {
+    margin-top: 10px;
 }
 
 #welcome {
@@ -35,6 +41,15 @@
 #events img {
     max-width: 150px;
     background: #3A6F9A;
+}
+#best-sellers img:hover {
+    opacity: 0.8;
+}
+#best-sellers p a:hover {
+    text-decoration: underline;
+}
+.bestseller-row{
+    margin-top: 5%;
 }
 
 #events .event {

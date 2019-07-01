@@ -25,18 +25,28 @@ exports.getBook = function (args, res, next) {
 
 };
 
-exports.getBookBestOfTheMonth = function (args, res, next) {
+exports.getBookBestOfTheMonth = function (month) {
     /**
      * parameters expected in the args:
      * month (Date)
      **/
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-        res.setHeader('Content-Type', 'application/json');
-        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-    } else {
-        res.end();
-    }
+    return new Promise(function (resolve, reject) {
+
+        console.log("---------------executing getBookBestOfTheMonth-----------------");
+        console.log("month: '" + month + "'");
+        console.log("------------------------------------------------------------");
+
+        let myQuery = knex('new_schema.books as b')
+            .join('new_schema.bought_in AS bi', 'b.isbn', 'bi.isbn')
+            .join('new_schema.purchases AS p', 'bi.purchase_id', 'p.purchase_id')
+            .whereRaw(`EXTRACT(MONTH FROM purchase_date::date) = ?`, [month])
+            .leftJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+            .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+            .then(result => {
+                console.log(result);
+                resolve(result)
+            });
+    });
 
 }
 
