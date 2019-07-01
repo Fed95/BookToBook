@@ -120,7 +120,9 @@ a:hover, a:visited, a:link, a:active{
 #page-container {  position: relative; min-height: 100vh;}
 #content-wrap {  padding-bottom: 30rem;    /* Footer height */}
 
-
+.footer-col{
+    text-align: center;
+}
 .alert{
     border-radius: 10px;
     margin: 0;
