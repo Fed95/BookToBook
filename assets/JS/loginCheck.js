@@ -3,8 +3,9 @@ var ip = "http://localhost:8080/";
 
 $(document).ready(function () {
 
-    checkCookie().then(user => {
-        if (user === false) {
+    checkCookie().then(user_mail => {
+        
+        if (user_mail === false) {
             console.log('User Check couldn\'t find any active cookies!')
             $('#navbar-right').append(
                 '<li id="shopping-link">' +
@@ -42,11 +43,10 @@ function checkCookie() {
         $.get(ip + "api/user/check").done(
             function(response){
                 console.log("looking for cookies, found: ", response)
-                if (response.length > 0) {
-                    var name = response[0].name;
-                    res(name)
-                } else {
+                if(_.isEmpty(response)){
                     res(false)
+                }else{
+                    res(response.mail)
                 }
             }
         ).fail(
