@@ -9,26 +9,17 @@ module.exports.deletePurchasePurchaseID = function deletePurchasePurchaseID (req
 };
 
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
-    //req.session.loggedIn = true;
-    /*if (!req.session || !req.session.loggedIn){
-      utils.writeJson(res, { error: "Must be logged in"}, 404);
-    }else{*/
-        let user_mail = req.swagger.params['UserID']['value'];
+        let user_mail = req.session.user_mail;
         console.log("inside Purchase.js; user_mail = ", user_mail);
 
         Purchases.getPurchaseFindByUser(user_mail)
             .then(function (response) {
-                console.log("Trovato");
-                console.log(req)
                 req.session.loggedIn = true;
                 utils.writeJson(res, response);
             })
             .catch(function (response) {
-                console.log("Non trovato");
                 utils.writeJson(res, response);
             });
-    //}
-    console.log("No")
 };
 
 module.exports.getPurchasePurchaseID = function getPurchasePurchaseID (req, res, next) {

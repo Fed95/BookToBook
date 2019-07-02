@@ -20,29 +20,7 @@ exports.getPurchaseFindByUser = function(user_mail) {
 
     return new Promise(function (resolve, reject) {
 
-        var userIdReq = "davide@mail.com";
-        var passwordReq = "davide";
-        console.log(userIdReq)
-
-        //return new Promise(function (resolve, reject) {
-
-            //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
-
-            let myQuery = knex('new_schema.users AS u')
-                .where(
-                    {
-                        user_mail: userIdReq,
-                        password: passwordReq
-                    })
-                .select('password')
-                .then(result => {
-                    console.log(result);
-                    resolve(result);
-                })
-
-        });
-
-        /*console.log("---------------executing getPurchaseFindByUser---------------------");
+        console.log("---------------executing getPurchaseFindByUser---------------------");
         console.log("user_mail: '" + user_mail + "'");
         console.log("------------------------------------------------------------");
 
@@ -50,18 +28,14 @@ exports.getPurchaseFindByUser = function(user_mail) {
             .innerJoin('new_schema.users AS u', 'p.user_mail', 'u.user_mail')
             .leftOuterJoin('new_schema.bought_in as bought', 'p.purchase_id', 'bought.purchase_id')
             .leftOuterJoin('new_schema.books as b', 'bought.isbn', 'b.isbn')
-            .where('u.temp_id', user_mail)
+            .where('u.user_mail', user_mail)
             .select('b.isbn', 'b.title', 'b.price', 'u.username', 'bought.quantity')
             .then(result => {
               console.log(result);
               resolve(result)
             });
-        console.log("MAAAAAAAAAAAAAAAAAAAA")
-
-      });*/
-
-    //});
-}
+      });
+};
 
 exports.getPurchasePurchaseID = function(args, res, next) {
   /**
