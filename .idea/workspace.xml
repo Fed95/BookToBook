@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/JS/loginCheck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/New_Server/controllers/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/Users.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/New_Server/controllers/UsersService.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/UsersService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/loginJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,10 +21,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="57" column="70" selection-start-line="57" selection-start-column="70" selection-end-line="57" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="55" column="60" lean-forward="true" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="67" />
+            <state relative-caret-position="191">
+              <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#p#0;n#form#2;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -28,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
+            <state relative-caret-position="495">
+              <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -37,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/New_Server/controllers/Users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="436">
+              <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -55,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/New_Server/controllers/UsersService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="64" column="36" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+            <state relative-caret-position="519">
+              <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -143,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/JS/checkLogin.js" />
         <option value="$PROJECT_DIR$/assets/CSS/footer.css" />
         <option value="$PROJECT_DIR$/New_Server/controllers/AuthorsService.js" />
         <option value="$PROJECT_DIR$/assets/CSS/collapsible.css" />
@@ -165,7 +189,6 @@
         <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
         <option value="$PROJECT_DIR$/pages/shoppingCart.html" />
-        <option value="$PROJECT_DIR$/pages/loginPage.html" />
         <option value="$PROJECT_DIR$/pages/theme.html" />
         <option value="$PROJECT_DIR$/pages/browseThemes.html" />
         <option value="$PROJECT_DIR$/pages/browseGenres.html" />
@@ -187,12 +210,14 @@
         <option value="$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseEventsJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/JS/eventJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/event.css" />
         <option value="$PROJECT_DIR$/assets/CSS/sections.css" />
-        <option value="$PROJECT_DIR$/assets/JS/loginJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/UsersService.js" />
+        <option value="$PROJECT_DIR$/assets/JS/loginJS.js" />
+        <option value="$PROJECT_DIR$/pages/loginPage.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/assets/JS/loginCheck.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/Users.js" />
       </list>
     </option>
@@ -403,7 +428,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298381000" />
+    <option name="totallyTimeSpent" value="299620000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -418,13 +443,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1888654" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19802678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.29036143" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.2626506" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.20963855" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -440,19 +465,19 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18816067" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1888654" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.29036143" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" weight="0.12048193" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.2626506" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.22650602" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4989429" weight="0.5192771" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49753347" weight="0.4815864" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.4543011" side_tool="true" weight="0.22206303" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49964765" weight="0.32891566" />
@@ -524,14 +549,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/New_Server/controllers/Users.js</url>
-          <line>39</line>
+          <line>48</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/Images/ThemesImages/Anythingness1.jpg" />
     <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="662">
@@ -796,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="86" column="41" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/event.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -810,24 +827,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
+    <entry file="file://$PROJECT_DIR$/New_Server/controllers/UsersService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="41" column="50" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="55" column="60" lean-forward="true" selection-start-line="55" selection-start-column="60" selection-end-line="55" selection-end-column="67" />
+        <state relative-caret-position="519">
+          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -838,17 +841,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/UsersService.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="64" column="36" selection-start-line="64" selection-start-column="36" selection-end-line="64" selection-end-column="36" />
+        <state relative-caret-position="596">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#form#2;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="57" column="70" selection-start-line="57" selection-start-column="70" selection-end-line="57" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/New_Server/controllers/Users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="436">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
         </state>
       </provider>
     </entry>

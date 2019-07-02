@@ -58,6 +58,19 @@ function login() {
 }
 
 
+function logout(){
+    $.post(ip + "api/user/logout").done(
+        function(response){
+            console.log("Logout successful")
+            console.log(response);
+        }
+    ).fail(
+        function(jqXHR, textStatus, errorThrown) {
+            console.log('Something went wrong during logout')
+        }
+    );
+}
+
 
 
 
