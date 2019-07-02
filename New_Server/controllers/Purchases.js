@@ -27,7 +27,16 @@ module.exports.getPurchasePurchaseID = function getPurchasePurchaseID (req, res,
 };
 
 module.exports.postPurchase = function postPurchase (req, res, next) {
-  Purchases.postPurchase(req.swagger.params, res, next);
+  var ISBN = req.swagger.params["ISBN"].value;
+  var user_mail = req.session.user_mail;
+
+  Purchases.postPurchase(ISBN, user_mail)
+      .then(function (response) {
+      utils.writeJson(res, response);
+  })
+      .catch(function (response) {
+          utils.writeJson(res, response);
+      });
 };
 
 module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res, next) {
@@ -35,5 +44,13 @@ module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res,
 };
 
 module.exports.postPurchasePurchaseID = function postPurchasePurchaseID (req, res, next) {
-  Purchases.postPurchasePurchaseID(req.swagger.params, res, next);
+
+
+  Purchases.postPurchasePurchaseID(req.swagger.params, res, next)
+      .then(function (response) {
+      utils.writeJson(res, response);
+  })
+      .catch(function (response) {
+          utils.writeJson(res, response);
+      });
 };

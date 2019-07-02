@@ -2,6 +2,8 @@
 var pg = require("../index.js");
 var knex = pg.knex;
 
+var maxPurchaseId = 3;
+
 exports.deletePurchasePurchaseID = function(args, res, next) {
   /**
    * parameters expected in the args:
@@ -42,7 +44,7 @@ exports.getPurchasePurchaseID = function(args, res, next) {
    * parameters expected in the args:
   * purchaseID (String)
   **/
-   /* var examples = {};
+    var examples = {};
     if(Object.keys(examples).length > 0) {
     res.setHeader('Content-Type', 'application/json');
     res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
@@ -53,11 +55,48 @@ exports.getPurchasePurchaseID = function(args, res, next) {
   
 }
 
-exports.postPurchase = function(args, res, next) {
+exports.postPurchase = function(ISBN, user_mail) {
   /**
    * parameters expected in the args:
   * body (Purchase)
   **/
+    return new Promise(function (resolve, reject) {
+
+        console.log("---------------executing postPurchase---------------------");
+        console.log("user_mail: '" + user_mail + "'");
+        console.log("ISBN: '" + ISBN + "'");
+        console.log("------------------------------------------------------------");
+
+        var purchase_id;
+
+        let myQuery = knex('new_schema.purchases')
+            .where({
+                user_mail: user_mail,
+                completed: false
+            })
+            .then(result => {
+                if (!result || !result[0])  {  // not found!
+                    maxPurchaseId += 1;
+                    purchase_id = maxPurchaseId;
+                    return knex('new_schema.purchases')
+                        .insert({purchase_id: purchase_id, user_mail: user_mail})
+                        .then(result2 => {
+                            if(ISBN){
+                                return knex('new_schema.bought_in')
+                                    .insert({purchase_id: purchase_id, ISBN: ISBN})
+                            }
+
+                        })
+                }
+                else{
+                    purchase_id = result[0].purchase_id;
+                    return knex('new_schema.bought_in')
+                        .insert({purchase_id: purchase_id, ISBN: ISBN})
+                }
+
+            });
+    });
+
   // no response value expected for this operation
   res.end();
 }
