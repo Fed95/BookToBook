@@ -3,6 +3,7 @@
 #logreg-forms{
     width:412px;
     margin:10vh auto;
+    margin-top: 5vh;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     border-radius:0;
 }

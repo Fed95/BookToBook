@@ -126,6 +126,7 @@ a:hover, a:visited, a:link, a:active{
 .alert{
     border-radius: 10px;
     margin: 0;
+    text-align: center;
 }
 .close{top: 0px !important;}
 
