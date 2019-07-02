@@ -45,7 +45,6 @@ function login() {
     ).fail(
         function(jqXHR, textStatus, errorThrown) {
             console.log('Login failed!')
-            console.log(jqXHR)
             if(jqXHR.status == 404){
                 displayWarning("Invalid Username or Password, did you remember to register?")
             }
@@ -78,6 +77,9 @@ function register() {
     ).fail(
         function(jqXHR, textStatus, errorThrown) {
             console.log('Login failed!')
+            if(jqXHR.status == 404){
+                displayWarning("A user with this email already exists!")
+            }
         }
     );
 }

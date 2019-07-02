@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/CSS/loginStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/loginStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/loginJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/author.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseBooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseBooksTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooksTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseEvents.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseEvents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/loginPage.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="49" column="91" selection-start-line="49" selection-start-column="91" selection-end-line="49" selection-end-column="91" />
+            <state relative-caret-position="357">
+              <caret line="80" column="70" selection-start-line="80" selection-start-column="70" selection-end-line="80" selection-end-column="70" />
               <folding>
                 <element signature="e#63#70#1" expanded="true" />
               </folding>
@@ -36,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
@@ -48,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="70" column="60" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
+            <state relative-caret-position="211">
+              <caret line="102" column="60" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -79,8 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getBookFavoriteReading</find>
-      <find>\n</find>
       <find>opacity</find>
       <find>books</find>
       <find>book:</find>
@@ -109,6 +98,8 @@
       <find>.show()</find>
       <find>0.3</find>
       <find>aaa</find>
+      <find>alert</find>
+      <find>name</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -197,8 +188,8 @@
         <option value="$PROJECT_DIR$/pages/loginPage.html" />
         <option value="$PROJECT_DIR$/assets/CSS/loginStyles.css" />
         <option value="$PROJECT_DIR$/pages/book.html" />
-        <option value="$PROJECT_DIR$/assets/JS/loginJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
+        <option value="$PROJECT_DIR$/assets/JS/loginJS.js" />
       </list>
     </option>
   </component>
@@ -386,7 +377,7 @@
       <workItem from="1561619851492" duration="37881000" />
       <workItem from="1561815047147" duration="6956000" />
       <workItem from="1561959684048" duration="15257000" />
-      <workItem from="1562082625788" duration="2478000" />
+      <workItem from="1562082625788" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -420,7 +411,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="316855000" />
+    <option name="totallyTimeSpent" value="317097000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -859,27 +850,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="70" column="60" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="60" />
+        <state relative-caret-position="211">
+          <caret line="102" column="60" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="49" column="91" selection-start-line="49" selection-start-column="91" selection-end-line="49" selection-end-column="91" />
+        <state relative-caret-position="357">
+          <caret line="80" column="70" selection-start-line="80" selection-start-column="70" selection-end-line="80" selection-end-column="70" />
           <folding>
             <element signature="e#63#70#1" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
         </state>
       </provider>
     </entry>
