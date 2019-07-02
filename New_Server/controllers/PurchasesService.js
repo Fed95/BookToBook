@@ -30,7 +30,9 @@ exports.getPurchaseFindByUser = function(user_mail) {
             .leftOuterJoin('new_schema.bought_in as bought', 'p.purchase_id', 'bought.purchase_id')
             .leftOuterJoin('new_schema.books as b', 'bought.isbn', 'b.isbn')
             .where('u.user_mail', user_mail)
-            .select('b.isbn', 'b.title', 'b.price', 'u.username', 'bought.quantity')
+            .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+            .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+            .select('b.isbn', 'b.title', 'b.price', 'u.username', 'bought.quantity', 'a.name')
             .then(result => {
               console.log(result);
               resolve(result)
