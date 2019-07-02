@@ -64,3 +64,14 @@ module.exports.postUserLogout = function postUserLogout(req, res, next) {
             utils.writeJson(res, response);
     });
 };
+
+
+module.exports.getUserCheck = function getUserCheck(req, res, next) {
+
+    console.log('executing getUserCheck')
+
+    var user_mail = req.session.user_mail
+
+    utils.writeJson(res, user_mail);
+
+};
