@@ -25,7 +25,7 @@ module.exports.postUser = function postUser(req, res, next) {
             console.log('logout response: ', response)
             utils.writeJson(res, response);
         }).catch(function (response) {
-        utils.writeJson(res, response);
+        utils.writeJson(res, response, 404);
     });
 };
 
