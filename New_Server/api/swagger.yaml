@@ -1084,10 +1084,20 @@ definitions:
         type: "string"
   User:
     type: "object"
+    required:
+      - "user_mail"
+      - "password"
+      - "username"
+      - "user_shipping_address"
     properties:
+      user_mail:
+        type: "string"
+      password:
+        type: "string"
       username:
         type: "string"
-
+      user_shipping_address:
+        type: "string"
   Purchase:
     type: "object"
     required:
@@ -1142,14 +1152,4 @@ definitions:
       description:
         type: "string"
       reasonPhrase:
-        type: "string"
-  Login:
-    type: "object"
-    required:
-    - "Password"
-    - "UserId"
-    properties:
-      UserId:
-        type: "string"
-      Password:
         type: "string"

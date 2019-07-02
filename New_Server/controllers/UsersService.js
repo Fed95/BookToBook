@@ -30,11 +30,6 @@ exports.postUser = function(mail, password) {
 
     return new Promise(function (resolve, reject) {
 
-
-        //return new Promise(function (resolve, reject) {
-
-        //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
-
         let myQuery = knex('new_schema.users AS u')
             .where(
                 {
