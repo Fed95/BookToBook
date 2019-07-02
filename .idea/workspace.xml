@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/New_Server/controllers/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CSS/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/navbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/loginCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginCheck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/loginJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/navbarJS.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/utilsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/utilsJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/author.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/author.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/book.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/book.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseAuthors.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseAuthors.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseBooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseBooksTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooksTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseEvents.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseEvents.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseGenres.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseGenres.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/browseThemes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseThemes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/contactUs.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contactUs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/event.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/event.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/genre.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/genre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/loginPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/orderingShipping.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/orderingShipping.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shoppingCart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/arrowScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/arrowScroll.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,79 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="62" column="53" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/navbar.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/New_Server/controllers/Authors.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/author.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="64" column="22" lean-forward="true" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/theme.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="66" column="79" lean-forward="true" selection-start-line="66" selection-start-column="79" selection-end-line="66" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/book.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="58" column="66" selection-start-line="58" selection-start-column="66" selection-end-line="58" selection-end-column="66" />
-              <folding>
-                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="54" column="69" selection-start-line="54" selection-start-column="69" selection-end-line="54" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/browseBooks.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="59" column="59" selection-start-line="59" selection-start-column="59" selection-end-line="59" selection-end-column="59" />
+            <state relative-caret-position="663">
+              <caret line="164" column="51" selection-start-line="164" selection-start-column="51" selection-end-line="164" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -120,8 +27,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -139,9 +67,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bestseller-row</find>
-      <find>int</find>
-      <find>comin</find>
       <find>authors</find>
       <find>getBookFavoriteReading</find>
       <find>\n</find>
@@ -169,6 +94,9 @@
       <find>&gt;Log&lt;</find>
       <find>&lt;a id=&quot;login-link&quot; href=&quot;./loginPage.html?#&quot;&gt;</find>
       <find>Login or Signup</find>
+      <find>onload</find>
+      <find>.show()</find>
+      <find>0.3</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -194,6 +122,10 @@
       <replace>&gt;Logout&lt;</replace>
       <replace>&lt;a id=&quot;login-link&quot; href=&quot;&quot;&gt;</replace>
       <replace>Logout</replace>
+      <replace>+=</replace>
+      <replace>.fadeTo( &quot;slow&quot; , 1)</replace>
+      <replace>0.3</replace>
+      <replace>0.1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -219,7 +151,6 @@
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
         <option value="$PROJECT_DIR$/assets/JS/indexJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/arrowScroll.js" />
         <option value="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/navbarJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/Books.js" />
@@ -233,7 +164,6 @@
         <option value="$PROJECT_DIR$/New_Server/controllers/UsersService.js" />
         <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
         <option value="$PROJECT_DIR$/New_Server/api/swagger.yaml" />
-        <option value="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" />
         <option value="$PROJECT_DIR$/assets/JS/loginJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/Users.js" />
         <option value="$PROJECT_DIR$/assets/JS/utilsJS.js" />
@@ -252,9 +182,11 @@
         <option value="$PROJECT_DIR$/pages/browseAuthors.html" />
         <option value="$PROJECT_DIR$/pages/browseBooks.html" />
         <option value="$PROJECT_DIR$/assets/JS/loginCheck.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/pages/author.html" />
         <option value="$PROJECT_DIR$/pages/theme.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" />
+        <option value="$PROJECT_DIR$/assets/JS/arrowScroll.js" />
       </list>
     </option>
   </component>
@@ -475,7 +407,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="312492000" />
+    <option name="totallyTimeSpent" value="313958000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -651,16 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="116" column="57" selection-start-line="116" selection-start-column="57" selection-end-line="116" selection-end-column="57" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/Telegram Desktop/index (3).html" />
     <entry file="file://$PROJECT_DIR$/assets/CSS/sections.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -737,16 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="45" column="2" lean-forward="true" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
@@ -768,23 +680,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/navbarJS.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/navbarJS.js" />
     <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1320">
           <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#63#70#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -898,24 +798,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/browseThemes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="57" column="63" selection-start-line="57" selection-start-column="63" selection-end-line="57" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="62" column="53" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -930,6 +816,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="66" column="79" lean-forward="true" selection-start-line="66" selection-start-column="79" selection-end-line="66" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="164" column="51" selection-start-line="164" selection-start-column="51" selection-end-line="164" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding>
+            <element signature="e#63#70#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
