@@ -14,7 +14,6 @@ module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res,
 
         Purchases.getPurchaseFindByUser(user_mail)
             .then(function (response) {
-                req.session.loggedIn = true;
                 utils.writeJson(res, response);
             })
             .catch(function (response) {
@@ -34,6 +33,7 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
 
   Purchases.postPurchase(ISBN, user_mail)
       .then(function (response) {
+          console.log("Added Book to Cart")
       utils.writeJson(res, response);
   })
       .catch(function (response) {

@@ -2,7 +2,6 @@
 var pg = require("../index.js");
 var knex = pg.knex;
 
-var maxPurchaseId = 3;
 
 exports.deletePurchasePurchaseID = function(args, res, next) {
   /**
@@ -76,22 +75,52 @@ exports.postPurchase = function(ISBN, user_mail) {
             })
             .then(result => {
                 if (!result || !result[0])  {  // not found!
-                    maxPurchaseId += 1;
-                    purchase_id = maxPurchaseId;
-                    return knex('new_schema.purchases')
-                        .insert({purchase_id: purchase_id, user_mail: user_mail})
-                        .then(result2 => {
-                            if(ISBN){
-                                return knex('new_schema.bought_in')
-                                    .insert({purchase_id: purchase_id, ISBN: ISBN})
-                            }
+                    return knex("new_schema.purchases")
+                        .max('purchase_id')
+                        .then(result2 =>{
 
-                        })
+                            let maxPurchaseId = result2[0].max;
+                            purchase_id = maxPurchaseId + 1;
+                            return knex('new_schema.purchases')
+                                .insert({purchase_id: purchase_id, user_mail: user_mail})
+                                .then(result3 => {
+                                    if(ISBN){
+                                        return knex('new_schema.bought_in')
+                                            .insert({purchase_id: purchase_id, isbn: ISBN})
+                                    }
+
+                                })
+                    })
+
+
                 }
                 else{
                     purchase_id = result[0].purchase_id;
                     return knex('new_schema.bought_in')
-                        .insert({purchase_id: purchase_id, ISBN: ISBN})
+                        .where({
+                            purchase_id: purchase_id,
+                            isbn: ISBN
+                        })
+                        .then(result4 =>{
+                            if (!result4 || !result4[0]) {  // not found!
+                                return knex('new_schema.bought_in')
+                                    .insert({purchase_id: purchase_id, isbn: ISBN})
+                            }
+                            else {
+                                return knex('new_schema.bought_in')
+                                    .where({purchase_id: purchase_id, isbn: ISBN})
+                                    .select('quantity')
+                                    .then(result5 => {
+                                        let quantity = result5[0].quantity;
+                                        return knex('new_schema.bought_in')
+                                            .where({purchase_id: purchase_id, isbn: ISBN})
+                                            .update('quantity', quantity + 1)
+                                    })
+
+
+                            }
+                            })
+
                 }
 
             });

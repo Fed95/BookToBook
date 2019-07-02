@@ -145,6 +145,22 @@ var generateBookDiv = function (isbn, title, authors, price) {
 $(document).on('click', 'button', function () {
     var isbn = $(this).closest('.row').find('p.isbn').html()
     console.log('found isbn = ', isbn)
+
+    var data = {
+        "ISBN": isbn
+    }
+
+    $.post(ip + "api/purchase/", data).done(
+        function(response){
+            // do something when response is ok
+            window.location.href = ip + "index.html";
+            console.log(response);
+        }
+    ).fail(
+        function(jqXHR, textStatus, errorThrown) {
+            console.log('failed!')
+        }
+    );
 })
 
 
