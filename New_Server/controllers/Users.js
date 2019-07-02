@@ -70,7 +70,11 @@ module.exports.getUserCheck = function getUserCheck(req, res, next) {
 
     console.log('executing getUserCheck')
 
-    var user_mail = req.session.user_mail
+    var user_mail = req.session.user_mail;
+    var loggedIn = req.session.loggedIn;
+
+    console.log('////////////--', user_mail);
+    console.log('////////////--', loggedIn);
 
     utils.writeJson(res, user_mail);
 

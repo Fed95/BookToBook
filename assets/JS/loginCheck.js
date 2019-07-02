@@ -36,14 +36,24 @@ $(document).ready(function () {
 
 function checkCookie() {
     return new Promise((res, rej) => {
-        $.get(ip + "api/user/check", function (data) {
-            console.log("looking for cookies, found: ", data)
-            if (data.length > 0) {
-                var name = data[0].name;
-                res(name)
-            } else {
+
+        console.log('Starting cookie check');
+
+        $.get(ip + "api/user/check").done(
+            function(response){
+                console.log("looking for cookies, found: ", response)
+                if (response.length > 0) {
+                    var name = response[0].name;
+                    res(name)
+                } else {
+                    res(false)
+                }
+            }
+        ).fail(
+            function (response) {
+                console.log("Something went wrong during cookie check ", response)
                 res(false)
             }
-        })
+        );
     })
 }
