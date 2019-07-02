@@ -3,14 +3,22 @@ var current = 1;
 const mq = window.matchMedia( "(max-width: 600px)" );
 const mq2 = window.matchMedia( "(max-width: 450px)" );
 
+$(document).ready(function () {
+    $('#leftArrow').fadeTo( "slow" , 0.1)
+})
+
 function moveRight() {
     if(mq.matches && mq2.matches){
         if(current >= 4){
 
         }else{
+            if(current == 3){
+                $('#rightArrow').fadeTo( "slow" , 0.1)
+            }
+            $('#leftArrow').fadeTo( "slow" , 1)
             current= current + 1;
             var currentelem = $("#"+current.toString());
-            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+            view.animate( { scrollLeft: currentelem.offset().left - $("#1").offset().left }, 300);
         }
     }
     else if(mq.matches && !(mq2.matches)){
@@ -18,17 +26,25 @@ function moveRight() {
 
         }
         else{
+            if(current == 2){
+                $('#rightArrow').fadeTo( "slow" , 0.3)
+            }
+            $('#leftArrow').fadeTo( "slow" , 1)
             current= current + 1;
             var currentelem = $("#"+current.toString());
-            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+            view.animate( { scrollLeft: currentelem.offset().left - $("#1").offset().left }, 300);
         }
     }else{
         if(current >= 2){
 
         }else{
+            if(current == 1){
+                $('#rightArrow').fadeTo( "slow" , 0.3)
+            }
+            $('#leftArrow').fadeTo( "slow" , 1)
             current= current + 1;
             var currentelem = $("#"+current.toString());
-            view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+            view.animate( { scrollLeft: currentelem.offset().left - $("#1").offset().left }, 300);
         }
     }
 }
@@ -36,9 +52,13 @@ function moveLeft() {
     if(current <= 1){
         
     }else{
+        if(current == 2){
+            $('#leftArrow').fadeTo( "slow" , 0.3)
+        }
+        $('#rightArrow').fadeTo( "slow" , 1)
         current= current - 1;
         var currentelem = $("#"+current.toString());
-        view.scrollLeft(currentelem.offset().left - $("#1").offset().left);
+        view.animate( { scrollLeft: currentelem.offset().left - $("#1").offset().left }, 300);
     }
 }
 

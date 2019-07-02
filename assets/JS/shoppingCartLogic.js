@@ -29,6 +29,7 @@ $('#search-results-container').on('change', 'input', function (e) {
 });
 
 function updateQuantity(quantityInput) {
+
     var $input = $(quantityInput);
     var $price = $input.closest('.item').find('.product-price');
     var $total = $input.closest('.item').find('.total-price');
@@ -48,7 +49,6 @@ function updateQuantity(quantityInput) {
 
 
 $('#search-results-container').on('click', 'span.delete-btn', function () {
-
 
     var $total = $(this).closest('.item').find('.total-price');
     var $grand_total = $(this).closest('.shopping-cart').find('.grand-total-price');
