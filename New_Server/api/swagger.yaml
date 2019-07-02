@@ -612,16 +612,19 @@ paths:
     post:
       tags:
       - "Purchases"
-      summary: "Create Purchase"
+      summary: "Create Purchase if it doesn't exist
+                and add eventual book"
       operationId: "postPurchase"
       consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
       - "application/json"
       parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/Purchase"
+        - name: "ISBN"
+          in: "formData"
+          description: "ISBN of the Book"
+          type: "string"
+          required: false
       responses:
         200:
           description: "succesfull operation"
@@ -716,7 +719,7 @@ paths:
       - name: "ISBN"
         in: "query"
         description: "ISBN of the Book"
-        required: true
+        required: false
         type: "integer"
         format: "int64"
       responses:
