@@ -16,7 +16,8 @@ function moveRight() {
                 $('#rightArrow').fadeTo( "slow" , 0.1)
             }
             $('#leftArrow').fadeTo( "slow" , 1)
-            current= current + 1;
+            current = current + 1;
+            console.log(current)
             var currentelem = $("#"+current.toString());
             view.animate( { scrollLeft: currentelem.offset().left - $("#1").offset().left }, 300);
         }

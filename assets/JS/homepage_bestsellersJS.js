@@ -86,7 +86,7 @@ var getAuthorLinks = function (purchases) {
 
 var generateBestsellerDiv = function (books) {
 
-    var i = 0
+    var i = 1
     for (var b of books) {
         $('#show').append('<div class="imagebox">' +
             '<a href="http://localhost:8080/pages/book.html?isbn='+b.isbn+'">' +
