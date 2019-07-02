@@ -28,8 +28,8 @@ module.exports.postUser = function postUser(req, res, next) {
 module.exports.postUserLogin = function postUserLogin(req, res, next) {
     console.log("hello from Users.js - postUserLogin");
 
-    var user_mail = args.swagger.params["user_mail"].value;
-    var password = args.swagger.params["password"].value;
+    var user_mail = req.swagger.params["user_mail"].value;
+    var password = req.swagger.params["password"].value;
 
     Users.postUserLogin(user_mail, password)
         .then(function (response) {
@@ -49,8 +49,6 @@ module.exports.postUserLogin = function postUserLogin(req, res, next) {
 };
 
 module.exports.postUserLogout = function postUserLogout(req, res, next) {
-
-
     Users.postUserLogout()
         .then(function (response) {
             if (req.session || req.session.loggedIn) {
