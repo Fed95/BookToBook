@@ -13,12 +13,14 @@ module.exports.getUserUserID = function getUserUserID(req, res, next) {
 
 module.exports.postUser = function postUser(req, res, next) {
 
+    console.log(req.swagger.params["user_mail"])
+
     var user_mail = req.swagger.params["user_mail"].value;
     var password = req.swagger.params["password"].value;
     var username = req.swagger.params["username"].value;
     var user_shipping_address = req.swagger.params["user_shipping_address"].value;
 
-    Users.postUser(user_mail, password)
+    Users.postUser(user_mail, password, username, user_shipping_address)
         .then(function (response) {
             console.log('logout response: ', response)
             utils.writeJson(res, response);
@@ -46,7 +48,6 @@ module.exports.postUserLogin = function postUserLogin(req, res, next) {
             }
             //res.end();
         }).catch(function (response) {
-        console.log("Sbagliato");
         utils.writeJson(res, response);
     });
 };

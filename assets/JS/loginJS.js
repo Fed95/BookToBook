@@ -49,7 +49,46 @@ function login() {
     $.post(ip + "api/user/login", data).done(
         function(response){
             // do something when response is ok
-            //window.location.href = ip + "index.html";
+            console.log("Il login e' andato a buon fine")
+            console.log(response);
+            window.location.href = ip + "index.html";
+        }
+    ).fail(
+        function(jqXHR, textStatus, errorThrown) {
+            console.log('Login failed!')
+        }
+    );
+}
+
+
+
+function register() {
+    var user_mail = $('#user-email').val();
+    var password = $('#user-pass').val();
+    var username = $('#user-name').val();
+    var user_shipping_address = $('#inputAddress').val();
+
+    var data = {
+        'user_mail': user_mail,
+        'password': password,
+        'username': username,
+        'user_shipping_address': user_shipping_address
+    };
+    /*
+    $.post(ip + "api/user/login", data , function (data) {
+        if (data.length > 0){
+            window.location.href = ip + "index.html"
+        }else {
+            //TODO: HANDLE WRONG LOGIN
+            alert("Wrong! Retry, you'll be luckier." )
+        }
+    })
+
+     */
+    $.post(ip + "api/user", data).done(
+        function(response){
+            // do something when response is ok
+            window.location.href = ip + "index.html";
             console.log("Il login e' andato a buon fine")
             console.log(response);
         }

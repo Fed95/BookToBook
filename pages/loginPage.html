@@ -75,7 +75,7 @@
                             <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
                         </form>
 
-                        <form action="" class="form-signup">
+                        <form action="" onsubmit="register()"class="form-signup">
                             <div class="social-login">
                                 <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Register with Facebook</span> </button>
                             </div>
@@ -89,6 +89,7 @@
                             <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
                             <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
                             <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+                            <input type="text" id="inputAddress" class="form-control" placeholder="Shipping address" required="" autofocus="">
 
                             <button class="btn btn-success btn-block" type="submit"><i class="fas fa-user-plus"></i> Confirm </button>
                             <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>

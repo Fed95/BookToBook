@@ -879,19 +879,36 @@ paths:
       - "Users"
       summary: "Create User"
       operationId: "postUser"
+      consumes:
+      - "application/x-www-form-urlencoded"
       produces:
       - "application/json"
       parameters:
-      - in: "body"
-        name: "body"
-        required: true
-        schema:
-          $ref: "#/definitions/User"
+        - name: "user_mail"
+          in: "formData"
+          description: "user mail"
+          type: "string"
+          required: true
+        - name: "password"
+          in: "formData"
+          description: "user password"
+          type: "string"
+          required: true
+        - name: "username"
+          in: "formData"
+          description: "user name"
+          type: "string"
+          required: true
+        - name: "user_shipping_address"
+          in: "formData"
+          description: "user shipping address"
+          type: "string"
+          required: true
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/User"
+            type: "string"
         400:
           description: "Format error"
       x-swagger-router-controller: "Users"

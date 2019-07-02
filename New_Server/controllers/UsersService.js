@@ -18,25 +18,20 @@ exports.getUserUserID = function(args, res, next) {
   
 }
 
-exports.postUser = function(mail, password) {
+exports.postUser = function(user_mail, password, username, user_shipping_address) {
   /**
    * parameters expected in the args:
   * contentType (String)
   * body (User)
   **/
   console.log("---------------executing postUser-----------------------------");
-    console.log("user mail and pw: ", mail, password)
+    console.log("user mail and pw: ", user_mail, password)
     console.log("------------------------------------------------------------");
 
     return new Promise(function (resolve, reject) {
 
-        let myQuery = knex('new_schema.users AS u')
-            .where(
-                {
-                    user_mail: userIdReq,
-                    password: passwordReq
-                })
-            .select('user_mail')
+        let myQuery = knex('new_schema.users')
+            .insert({user_mail: user_mail, password: password, username: username, user_shipping_address: user_shipping_address})
             .then(result => {
                 console.log(result);
                 resolve(result);
