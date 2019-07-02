@@ -1,7 +1,6 @@
 var ip = "http://localhost:8080/";
 
-/*xhttp.open("GET", ip + "api/checkuser", true);
-xhttp.send();*/
+
 $( '#shopping-link' ).click(function(e) {
     e.preventDefault();
     if(true){

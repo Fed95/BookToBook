@@ -10,4 +10,8 @@
 }
 .mynav{
     margin-bottom: 0px;
+    border-radius: 0;
+}
+#login-link{
+    width: 8em;
 }
