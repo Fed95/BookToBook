@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <!-- Latest compiled and minified CSS -->
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -18,10 +19,11 @@
     <link rel="stylesheet" href="./assets/CSS/suggested.css">
 
     <script src="https://underscorejs.org/underscore-min.js"></script>
+    <script src="assets/JS/loginCheck.js"></script>
     <script src="assets/JS/homepage_eventsJS.js"></script>
     <script src="assets/JS/homepage_bestsellersJS.js"></script>
     <script src="assets/JS/homepage_favouritesJS.js"></script>
-    <script src="assets/JS/loginCheck.js"></script>
+
 
 
     <title>BookToBook</title>
@@ -53,6 +55,14 @@
                         <li><a href="./pages/browseThemes.html?search-text=">Themes</a></li>
                     </ul>
                     <ul id="navbar-right" class="nav navbar-nav navbar-right">
+                        <li >
+                            <a id="shopping-link">Shopping Cart<img src="../assets/Images/shopping-cart-black-shape.png" class="userimg">
+                            </a>
+                        </li>
+                        <li class="login">
+                            <a id="login-link" href="">Logout<img src="../assets/Images/user-image-with-black-background.png" class="userimg">
+                            </a>
+                        </li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -153,6 +163,5 @@
 <!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
 <script src="assets/JS/arrowScroll.js"></script>
 <script src="assets/JS/utilsJS.js"></script>
-<script src="assets/JS/navbarJS.js"></script>
 </body>
 </html>

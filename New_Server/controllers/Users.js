@@ -53,16 +53,11 @@ module.exports.postUserLogin = function postUserLogin(req, res, next) {
 };
 
 module.exports.postUserLogout = function postUserLogout(req, res, next) {
-    Users.postUserLogout()
-        .then(function (response) {
-            if (req.session || req.session.loggedIn) {
-                utils.writeJson(res, response);
-                req.session = null
-            }
-            //res.end();
-        }).catch(function (response) {
-            utils.writeJson(res, response);
-    });
+
+    console.log('cookies deleted. session = ', req.session)
+    req.session = null
+    res.end()
+    console.log('cookies deleted. session = ', req.session)
 };
 
 
@@ -70,12 +65,10 @@ module.exports.getUserCheck = function getUserCheck(req, res, next) {
 
     console.log('executing getUserCheck')
 
-    var user_mail = req.session.user_mail;
-    var loggedIn = req.session.loggedIn;
+    var user = {
+        mail: req.session.user_mail
+    };
 
-    console.log('////////////--', user_mail);
-    console.log('////////////--', loggedIn);
-
-    utils.writeJson(res, user_mail);
+    utils.writeJson(res, user);
 
 };

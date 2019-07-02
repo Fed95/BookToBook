@@ -2,34 +2,19 @@
 var ip = "http://localhost:8080/";
 
 $(document).ready(function () {
+    console.log($('#myNavbar'))
 
-    checkCookie().then(user => {
-        if (user === false) {
+    checkCookie().then(user_mail => {
+
+        if (user_mail === false) {
             console.log('User Check couldn\'t find any active cookies!')
-            $('#navbar-right').append(
-                '<li id="shopping-link">' +
-                '<a href="../pages/loginPage.html?#">' +
-                'Shopping Cart <img src="../assets/Images/shopping-cart-black-shape.png" class="userimg">' +
-                '</a>'+
-                '</li>'+
-                '<li id="login">' +
-                '<a href="../pages/loginPage.html?#">' +
-                'Login or Signup<img src="../assets/Images/user-image-with-black-background.png" class="userimg">' +
-                '</a>' +
-                '</li>')
-
+            $('#login-link').html($('#login-link').html().replace("Logout", "Login"));
+            $("#login-link").attr("href", "../pages/loginPage.html?#");
+            $("#shopping-link").attr("href", "../pages/loginPage.html?#");
         } else {
-            $('#navbar-right').append(
-                '<li id="shopping-link">' +
-                '<a href="../pages/shoppingCart.html">' +
-                'Shopping Cart <img src="../assets/Images/shopping-cart-black-shape.png" class="userimg">' +
-                '</a>' +
-                '</li>'+
-                '<li id="logout">' +
-                '<a href="../pages/loginPage.html?#">' +
-                'Log out<img src="../assets/Images/user-image-with-black-background.png" class="userimg">' +
-                '</a>' +
-                '</li>')
+            console.log('User Check found some delicious cookies!')
+            $("#login-link").attr("onclick", "logout()");
+            $("#shopping-link").attr("href", "../pages/shoppingCart.html");
         }
     })
 })
@@ -42,11 +27,10 @@ function checkCookie() {
         $.get(ip + "api/user/check").done(
             function(response){
                 console.log("looking for cookies, found: ", response)
-                if (response.length > 0) {
-                    var name = response[0].name;
-                    res(name)
-                } else {
+                if(_.isEmpty(response)){
                     res(false)
+                }else{
+                    res(response.mail)
                 }
             }
         ).fail(
@@ -56,4 +40,23 @@ function checkCookie() {
             }
         );
     })
+}
+
+
+function logout() {
+
+    console.log('//////////////////////////////////////////')
+
+    $.post(ip + "api/user/logout").done(
+        function(response){
+            location.reload();
+            console.log("Logout successful")
+            console.log(response);
+
+        }
+    ).fail(
+        function(jqXHR, textStatus, errorThrown) {
+            console.log('Something went wrong during logout')
+        }
+    );
 }

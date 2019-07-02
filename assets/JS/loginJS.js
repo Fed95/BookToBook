@@ -74,17 +74,6 @@ function register() {
         'username': username,
         'user_shipping_address': user_shipping_address
     };
-    /*
-    $.post(ip + "api/user/login", data , function (data) {
-        if (data.length > 0){
-            window.location.href = ip + "index.html"
-        }else {
-            //TODO: HANDLE WRONG LOGIN
-            alert("Wrong! Retry, you'll be luckier." )
-        }
-    })
-
-     */
     $.post(ip + "api/user", data).done(
         function(response){
             // do something when response is ok
@@ -100,18 +89,8 @@ function register() {
 }
 
 
-function logout(){
-    $.post(ip + "api/user/logout").done(
-        function(response){
-            console.log("Logout successful")
-            console.log(response);
-        }
-    ).fail(
-        function(jqXHR, textStatus, errorThrown) {
-            console.log('Something went wrong during logout')
-        }
-    );
-}
+
+
 
 
 
