@@ -12,7 +12,9 @@ function toggleResetPswd(e){
 }
 
 function toggleSignUp(e){
-    e.preventDefault();
+    if(e != undefined){
+        e.preventDefault();
+    }
     $('#logreg-forms .form-signin').toggle(); // display:block or none
     $('#logreg-forms .form-signup').toggle(); // display:block or none
 }
@@ -23,6 +25,16 @@ $(()=>{
     $('#logreg-forms #cancel_reset').click(toggleResetPswd);
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
+
+    $(document).on('click', 'a.register-dynamic-link', function () {
+        toggleSignUp()
+        console.log('aaaa')
+        console.log($(this).parent().parent())
+        $(this).parent().parent().remove()
+    })
+    $(document).on('click', 'a.login-dynamic-link', function () {
+        location.reload()
+    })
 });
 
 //---------------------------------------------------------------------
@@ -46,7 +58,7 @@ function login() {
         function(jqXHR, textStatus, errorThrown) {
             console.log('Login failed!')
             if(jqXHR.status == 404){
-                displayWarning("Invalid Username or Password, did you remember to register?")
+                displayWarning("Invalid Username or Password, did you remember to "+'<a href="#" class="register-dynamic-link">Register</a>'+ " ?")
             }
 
         }
@@ -78,7 +90,7 @@ function register() {
         function(jqXHR, textStatus, errorThrown) {
             console.log('Login failed!')
             if(jqXHR.status == 404){
-                displayWarning("A user with this email already exists!")
+                displayWarning("A user with this email already exists! Would you like to "+'<a href="#" class="login-dynamic-link">Login</a>'+ " instead?")
             }
         }
     );

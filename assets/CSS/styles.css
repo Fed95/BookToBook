@@ -128,6 +128,9 @@ a:hover, a:visited, a:link, a:active{
     margin: 0;
     text-align: center;
 }
+.alert a{
+    text-decoration: underline;
+}
 .close{top: 0px !important;}
 
 .no-top-pad{
