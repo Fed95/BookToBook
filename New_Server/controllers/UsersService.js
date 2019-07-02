@@ -36,6 +36,7 @@ exports.postUser = function(user_mail, password, username, user_shipping_address
                 console.log(result);
                 resolve(result);
             })
+            .catch(error => reject(error))
     });
 }
 
