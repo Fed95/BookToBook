@@ -138,5 +138,6 @@ exports.postPurchasePurchaseID = function(user_mail) {
                         resolve(result2)
                     })
             })
+})
 }
 
