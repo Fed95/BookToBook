@@ -21,19 +21,13 @@ module.exports.postUserLogin = function postUserLogin(req, res, next) {
 
     Users.postUserLogin(req, res, next)
         .then(function (response) {
-            if(response > 0){
-                if(!req.session || !req.session.loggedIn){
-                    console.log("Finito");
-                    //console.log(req)
-                    req.session.loggedIn = true;
-                    utils.writeJson(res, response);
-
-                }
-            }
-            else {
-                console.log("Non trovato")
-                //utils.writeJson(res, res.respondWithCode(404, "Wrong user mail or password"));
-
+            if (response.length > 0) {
+                console.log("Login andato a buon fine");
+                req.session.loggedIn = true;
+                utils.writeJson(res, response, 200);
+            } else {
+                console.log("Login fallito")
+                utils.writeJson(res, "Username or Password are incorrect.", 404);
             }
             //res.end();
         }).catch(function (response) {

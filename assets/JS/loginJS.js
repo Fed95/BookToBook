@@ -3,7 +3,8 @@ var ip = "http://localhost:8080/";
 
 $('#form-signin').submit(function(e){
     e.preventDefault();
-})
+});
+
 function toggleResetPswd(e){
     e.preventDefault();
     $('#logreg-forms .form-signin').toggle() // display:block or none
@@ -27,18 +28,33 @@ function toggleSignUp(e){
 function login() {
     var username = $('#inputEmail').val();
     var password = $('#inputPassword').val();
-    console.log("pippoooo");
     var data = {
         'user_mail': username,
         'password': password
     };
+    /*
     $.post(ip + "api/user/login", data , function (data) {
         if (data.length > 0){
             window.location.href = ip + "index.html"
         }else {
-            alert("Wrong! Retry, you'll be luckier" )
+            //TODO: HANDLE WRONG LOGIN
+            alert("Wrong! Retry, you'll be luckier." )
         }
     })
+
+     */
+    $.post(ip + "api/user/login", data).done(
+        function(response){
+            // do something when response is ok
+            //window.location.href = ip + "index.html";
+            console.log("Il login e' andato a buon fine")
+            console.log(response);
+        }
+    ).fail(
+        function(jqXHR, textStatus, errorThrown) {
+            console.log('Login failed!')
+        }
+    );
 }
 
 
