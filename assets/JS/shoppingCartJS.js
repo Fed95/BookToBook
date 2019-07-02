@@ -26,13 +26,26 @@ var displayPurchases = function(purchase_list){
     var parsed = JSON.parse(purchase_list);
     console.log("parsed: ", parsed);
 
+    var grouped_by_isbn = _.groupBy(parsed, 'isbn');
+    var grouped_by_author = _.groupBy(parsed, 'name');
+
     var tot = 0;
 
-    for(var i in parsed){
+    for(var isbn in grouped_by_isbn){
+
+        var books = grouped_by_isbn[isbn];
         var purchase = {
-            title: parsed[i].title,
-            price: parsed[i].price,
-            quantity: parsed[i].quantity
+            title: grouped_by_isbn[isbn][0].title,
+            price: grouped_by_isbn[isbn][0].price,
+            quantity: grouped_by_isbn[isbn][0].quantity,
+            authors: []
+        }
+        for(var count in books){
+            var author = {
+                name: books[count].name,
+                id: books[count].author_id
+            }
+            purchase.authors.push(author);
         }
         tot += generatePurchaseDiv(purchase);
     }
@@ -52,6 +65,8 @@ var displayPurchases = function(purchase_list){
 
 var generatePurchaseDiv = function(purchase){
 
+    console.log(purchase)
+
     var $item = $("<div class='row item' />");
         var $buttons = $("<div class='col buttons' />");
             var $delete_btn = $("<span class='delete-btn' />");
@@ -59,7 +74,7 @@ var generatePurchaseDiv = function(purchase){
             var $img = $("<img />", { src: "../assets/Images/BookCovers/Thumbnails/"+purchase.title+".jpg"});
         var $description = $("<div class='col description' />");
             var $title = $("<span />"); $title.html(purchase.title);
-            var $title2 = $("<span />"); $title2.html(purchase.title);
+            var $title2 = $("<span />"); $title2.html(getAuthorLinks(purchase));
         var $price_info = $("<div class='row price-info'/>")
             var $price = $("<div class='col-4 product-price'/>"); $price.html(purchase.price);
             var $quantity = $("<div class='col-4 product-quantity'/>");
@@ -83,6 +98,17 @@ var generatePurchaseDiv = function(purchase){
     return purchase.price*purchase.quantity;
 };
 
+var getAuthorLinks = function (purchase) {
+
+    var author_links = ""
+
+    for(var a of purchase.authors){
+        author_links += ', <a href="'+ip+'pages/author.html?author_id='+a.id+'">'+a.name+'</a>'
+    }
+
+    return author_links.substring(1)
+
+}
 
 
 
