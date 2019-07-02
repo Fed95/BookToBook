@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/JS/arrowScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/arrowScroll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,20 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="164" column="51" selection-start-line="164" selection-start-column="51" selection-end-line="164" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="31" />
+            <state relative-caret-position="217">
+              <caret line="147" column="60" selection-start-line="147" selection-start-column="60" selection-end-line="147" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -36,20 +28,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
+            <state relative-caret-position="425">
+              <caret line="46" column="2" lean-forward="true" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -67,7 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>authors</find>
       <find>getBookFavoriteReading</find>
       <find>\n</find>
       <find>opacity</find>
@@ -97,6 +79,7 @@
       <find>onload</find>
       <find>.show()</find>
       <find>0.3</find>
+      <find>aaa</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -136,7 +119,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/JS/genreJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/themeJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/ThemesService.js" />
         <option value="$PROJECT_DIR$/assets/CSS/suggested.css" />
@@ -151,7 +133,6 @@
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
         <option value="$PROJECT_DIR$/assets/JS/indexJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/navbarJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/Books.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/BooksService.js" />
@@ -187,13 +168,15 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" />
         <option value="$PROJECT_DIR$/assets/JS/arrowScroll.js" />
+        <option value="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
       </list>
     </option>
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -374,6 +357,7 @@
       <workItem from="1561619851492" duration="37881000" />
       <workItem from="1561815047147" duration="6956000" />
       <workItem from="1561959684048" duration="15257000" />
+      <workItem from="1562082625788" duration="1490000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -407,7 +391,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313958000" />
+    <option name="totallyTimeSpent" value="315867000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,13 +406,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19802678" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19802678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.28674698" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" weight="0.25060242" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28674698" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.33493975" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -530,14 +514,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/garand-sticky-73b0fbe/bower.json" />
-    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/sticky.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -819,30 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="164" column="51" selection-start-line="164" selection-start-column="51" selection-end-line="164" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -853,10 +805,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="164" column="51" selection-start-line="164" selection-start-column="51" selection-end-line="164" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="46" column="2" lean-forward="true" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="147" column="60" selection-start-line="147" selection-start-column="60" selection-end-line="147" selection-end-column="60" />
         </state>
       </provider>
     </entry>

@@ -101,7 +101,7 @@ var generateBookDiv = function (isbn, title, authors, price) {
                         var $p8 = $("<p />"); $p8.html(price + '$');
 
             var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
-                var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input", onclick: "addBook()"});
+                var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});//, onclick: "addBookToCart()"});
                 $b10.html('Add to Cart')
 
     var $hr = $('<hr />');
@@ -142,26 +142,9 @@ var generateBookDiv = function (isbn, title, authors, price) {
 
 };
 
-function addBook(){
-    $('#add-book-btn-1').on('click', 'span.delete-btn', function () {
-        var $isbn = $(this).closest('.isbn');
+$(document).on('click', 'button', function () {
+    var isbn = $(this).closest('.row').find('p.isbn').html()
+    console.log('found isbn = ', isbn)
+})
 
-        var data = {
-            'ISBN': $isbn
-        };
-        console.log("ecco");
-
-        $.post(ip + "api/purchase/", data).done(
-            function(response){
-                // do something when response is ok
-                console.log(response);
-                window.location.href = ip + "index.html";
-            }
-        ).fail(
-            function(jqXHR, textStatus, errorThrown) {
-            }
-        );
-
-    });
-}
 
