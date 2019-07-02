@@ -24,20 +24,7 @@ exports.postUser = function(args, res, next) {
   * contentType (String)
   * body (User)
   **/
-  console.log("hello from UsersService.js - postUser");
-  // no response value expected for this operation
-  res.end();
-}
-
-
-exports.postUserLogin = function (args, res, next) {
-    /**
-     * parameters expected in the args:
-     * contentType (String)
-     * body (Login)
-     **/
-
-    console.log("---------------executing postUserLogin----------------------");
+  console.log("---------------executing postUser-----------------------------");
     console.log("user mail: ", args.swagger.params["user_mail"].value)
     console.log("------------------------------------------------------------");
 
@@ -47,6 +34,41 @@ exports.postUserLogin = function (args, res, next) {
         var passwordReq = args.swagger.params["password"].value;
         console.log('userIdReq = ', userIdReq)
         console.log('passwordReq = ', passwordReq)
+
+        //return new Promise(function (resolve, reject) {
+
+        //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
+
+        let myQuery = knex('new_schema.users AS u')
+            .where(
+                {
+                    user_mail: userIdReq,
+                    password: passwordReq
+                })
+            .select('user_mail')
+            .then(result => {
+                console.log(result);
+                resolve(result);
+            })
+    });
+}
+
+
+exports.postUserLogin = function (mail, password) {
+    /**
+     * parameters expected in the args:
+     * contentType (String)
+     * body (Login)
+     **/
+
+    console.log("---------------executing postUserLogin----------------------");
+    console.log("user mail: ", mail)
+    console.log("------------------------------------------------------------");
+
+    return new Promise(function (resolve, reject) {
+
+        console.log('userIdReq = ', mail)
+        console.log('passwordReq = ', password)
 
         //return new Promise(function (resolve, reject) {
 

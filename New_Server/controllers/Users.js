@@ -19,7 +19,10 @@ module.exports.postUser = function postUser(req, res, next) {
 module.exports.postUserLogin = function postUserLogin(req, res, next) {
     console.log("hello from Users.js - postUserLogin");
 
-    Users.postUserLogin(req, res, next)
+    var mail = args.swagger.params["user_mail"].value;
+    var password = args.swagger.params["password"].value;
+
+    Users.postUserLogin(mail, password)
         .then(function (response) {
             if (response.length > 0) {
                 console.log("Login andato a buon fine");
