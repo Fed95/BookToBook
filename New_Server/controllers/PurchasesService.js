@@ -97,9 +97,8 @@ exports.postPurchase = function(ISBN, user_mail) {
             });
     });
 
-  // no response value expected for this operation
-  res.end();
-}
+
+};
 
 exports.postPurchaseCompleted = function(args, res, next) {
   /**
@@ -110,13 +109,34 @@ exports.postPurchaseCompleted = function(args, res, next) {
   res.end();
 }
 
-exports.postPurchasePurchaseID = function(args, res, next) {
+exports.postPurchasePurchaseID = function(user_mail) {
   /**
    * parameters expected in the args:
   * purchaseID (String)
   * iSBN (Long)
   **/
-  // no response value expected for this operation
-  res.end();
+
+    return new Promise(function (resolve, reject) {
+
+        console.log("---------------executing postPurchase---------------------");
+        console.log("user_mail: '" + user_mail + "'");
+        console.log("------------------------------------------------------------");
+
+
+        let myQuery = knex('new_schema.purchases')
+            .where({
+                user_mail: user_mail,
+                completed: false
+            })
+            .then(result => {
+
+                let purchase_id = result[0].purchase_id;
+                return knex('new_schema.purchases')
+                    .where('purchase_id', purchase_id)
+                    .update('quantity', 'quantity' + 1)
+                    .then(result2 => {
+                        resolve(result2)
+                    })
+            })
 }
 
