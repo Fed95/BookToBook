@@ -719,7 +719,7 @@ paths:
       - name: "ISBN"
         in: "query"
         description: "ISBN of the Book"
-        required: false
+        required: true
         type: "integer"
         format: "int64"
       responses:

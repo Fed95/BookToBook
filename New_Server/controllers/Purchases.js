@@ -47,8 +47,9 @@ module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res,
 
 module.exports.postPurchasePurchaseID = function postPurchasePurchaseID (req, res, next) {
 
+    var user_mail = req.session.user_mail;
 
-  Purchases.postPurchasePurchaseID(req.swagger.params, res, next)
+  Purchases.postPurchasePurchaseID(user_mail)
       .then(function (response) {
       utils.writeJson(res, response);
   })
