@@ -95,13 +95,13 @@ var generateBookDiv = function (isbn, title, authors, price) {
                         var $p7 = $("<p />");
                     var $div9 = $("<div class = 'col-5 info'/>");
                         var $s9 = $("<span />"); $s9.html('ISBN:');
-                        var $p9 = $("<p />"); $p9.html(isbn);
+                        var $p9 = $("<p class='isbn'/>"); $p9.html(isbn);
                     var $div8 = $("<div class = 'col-3 info'/>");
                         var $s8 = $("<span />"); $s8.html('Price:');
                         var $p8 = $("<p />"); $p8.html(price + '$');
 
             var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
-                var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});
+                var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input", onclick: "addBook()"});
                 $b10.html('Add to Cart')
 
     var $hr = $('<hr />');
@@ -141,3 +141,27 @@ var generateBookDiv = function (isbn, title, authors, price) {
     $("#search-results-container").append($hr);
 
 };
+
+function addBook(){
+    $('#add-book-btn-1').on('click', 'span.delete-btn', function () {
+        var $isbn = $(this).closest('.isbn');
+
+        var data = {
+            'ISBN': $isbn
+        };
+        console.log("ecco");
+
+        $.post(ip + "api/purchase/", data).done(
+            function(response){
+                // do something when response is ok
+                console.log(response);
+                window.location.href = ip + "index.html";
+            }
+        ).fail(
+            function(jqXHR, textStatus, errorThrown) {
+            }
+        );
+
+    });
+}
+

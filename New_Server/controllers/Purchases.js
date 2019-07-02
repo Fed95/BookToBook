@@ -30,6 +30,8 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
   var ISBN = req.swagger.params["ISBN"].value;
   var user_mail = req.session.user_mail;
 
+  console.log("ISBN");
+
   Purchases.postPurchase(ISBN, user_mail)
       .then(function (response) {
       utils.writeJson(res, response);

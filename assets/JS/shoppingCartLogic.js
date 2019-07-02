@@ -49,7 +49,7 @@ function updateQuantity(quantityInput) {
 
 $('#search-results-container').on('click', 'span.delete-btn', function () {
 
-
+    console.log("ehi")
     var $total = $(this).closest('.item').find('.total-price');
     var $grand_total = $(this).closest('.shopping-cart').find('.grand-total-price');
 
@@ -59,6 +59,8 @@ $('#search-results-container').on('click', 'span.delete-btn', function () {
     $grand_total[0].innerHTML = grand_total - total;
 
     this.parentElement.parentElement.remove();
+
+
 });
 
 
