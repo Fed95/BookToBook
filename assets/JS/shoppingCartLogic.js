@@ -1,6 +1,8 @@
 //---------------------------------------------------------------------
 //shopping cart button functions
 //---------------------------------------------------------------------
+
+
 //TODO: ADD DATABASE UPDATE
 
 
@@ -72,8 +74,10 @@ $('#search-results-container').on('click', 'span.delete-btn', function () {
 function updateDb($input){
         var quantity = $input.val()
         console.log('found quantity = ', quantity)
-        var isbn = $input.closest('.item').find('.title-link').html()
+        var isbn = $input.closest('.item').find('.isbn').html()
         console.log('found isbn = ', isbn)
+        var purchase_id = $input.closest('.item').find('.purchase_id').html()
+        console.log(purchase_id)
 
         var data = {
             "purchase_id": purchase_id,
