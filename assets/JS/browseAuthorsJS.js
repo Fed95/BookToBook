@@ -41,6 +41,10 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", ip + "api/author/findByName?Name=" + input, true);
 xhttp.send();
 
+//Adding last search in search bar
+$(document).ready(() => {
+    $('#searchbar-input').val(input)
+})
 
 
 //---------------------------------------------------------------------
@@ -52,33 +56,38 @@ var displayFoundAuthors = function(authors_list) {
     var parsed = JSON.parse(authors_list);
     console.log("parsed: ", parsed);
 
-    var grouped = _.groupBy(parsed, 'author_id');
-    console.log("grouped: ", grouped);
+    if(parsed.length > 0) {
 
-    var authors = [];
+        var grouped = _.groupBy(parsed, 'author_id');
+        console.log("grouped: ", grouped);
 
-    for(var a in grouped){
-        var author = {
-            name: grouped[a][0].name,
-            author_id: grouped[a][0].author_id
-        };
-        authors.push(author)
-    }
+        var authors = [];
 
-    authors.sort(function(a,b){
-        console.log(a.name,  b.name, a.name > b.name)
-        if(a.name < b.name){
-            return -1
-        }else if(a.name > b.name){
-            return 1
-        }else{
-            return 0
+        for (var a in grouped) {
+            var author = {
+                name: grouped[a][0].name,
+                author_id: grouped[a][0].author_id
+            };
+            authors.push(author)
         }
-    });
-    console.log("authors: ", authors)
 
-    for(var author of authors){
-        generateAuthorDiv(author.name, author.author_id)
+        authors.sort(function (a, b) {
+            console.log(a.name, b.name, a.name > b.name)
+            if (a.name < b.name) {
+                return -1
+            } else if (a.name > b.name) {
+                return 1
+            } else {
+                return 0
+            }
+        });
+        console.log("authors: ", authors)
+
+        for (var author of authors) {
+            generateAuthorDiv(author.name, author.author_id)
+        }
+    }else {
+        $("#search-results-container").append('<div class="col-12 no-result">No authors were found for "' + input + '".</div>')
     }
 };
 

@@ -24,7 +24,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 // getting user input
 //---------------------------------------------------------------------
 const input = getUrlParameter('search-text');
-
+//Adding last search in search bar
+$(document).ready(() => {
+    $('#searchbar-input').val(input)
+})
 
 //---------------------------------------------------------------------
 //generating the query
