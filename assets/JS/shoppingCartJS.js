@@ -162,7 +162,6 @@ function updateQuantity(input_form) {
 
 $('#search-results-container').on('click', 'span.delete-btn', function () {
 
-
     var $total = $(this).closest('.item').find('.total-price');
     var $input = $this.closest('.row').find('input')
     var $grand_total = $(this).closest('.shopping-cart').find('.grand-total-price');
@@ -176,8 +175,6 @@ $('#search-results-container').on('click', 'span.delete-btn', function () {
     this.parentElement.parentElement.remove();
 
     deleteInDb($(this))
-
-
 
 });
 

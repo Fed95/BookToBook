@@ -78,6 +78,15 @@ var displayFoundBooks = function (books_list) {
 };
 
 var generateBookDivTest = function (isbn, title, authors, price) {
+
+    if(top.loggedIn){
+        var button = '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>'
+    }else{
+        var button = '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">' +
+            '<a href="'+ ip +'pages/login.html?#">Add to Cart</a>' +
+            '</button>'
+    }
+
     $("#search-results-container").append(
         '<div>' +
         '    <div class="row">' +
@@ -99,7 +108,7 @@ var generateBookDivTest = function (isbn, title, authors, price) {
         '</div>' +
         '</div>' +
         '<div class="col-2">' +
-        '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>' +
+         button +
         '</div>' +
         '</div>' +
         '</div>' +

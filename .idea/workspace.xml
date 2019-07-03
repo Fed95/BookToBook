@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/loginCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginCheck.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/browseBooks.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/browseBooks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,29 +19,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="59" />
+            <state relative-caret-position="108">
+              <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/shoppingCart.css">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2312">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+            <state relative-caret-position="364">
+              <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="155" selection-end-column="13" />
+              <folding>
+                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="172" column="16" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/browseBooks.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+              <folding>
+                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1425">
+              <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -130,8 +167,6 @@
         <option value="$PROJECT_DIR$/assets/CSS/loginStyles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/shoppingCart.css" />
         <option value="$PROJECT_DIR$/assets/JS/loginJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/loginCheck.js" />
-        <option value="$PROJECT_DIR$/assets/JS/arrowScroll.js" />
         <option value="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/eventJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/sticky.js" />
@@ -153,7 +188,6 @@
         <option value="$PROJECT_DIR$/assets/CSS/footer.css" />
         <option value="$PROJECT_DIR$/pages/browseBooksTest2.html" />
         <option value="$PROJECT_DIR$/assets/JS/browseBooksTest2.js" />
-        <option value="$PROJECT_DIR$/pages/browseBooks.html" />
         <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/utilsJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" />
@@ -172,9 +206,12 @@
         <option value="$PROJECT_DIR$/New_Server/controllers/Purchases.js" />
         <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/book.css" />
-        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/browseBooks.css" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/arrowScroll.js" />
+        <option value="$PROJECT_DIR$/assets/JS/loginCheck.js" />
+        <option value="$PROJECT_DIR$/pages/browseBooks.html" />
+        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
       </list>
     </option>
   </component>
@@ -396,7 +433,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345394000" />
+    <option name="totallyTimeSpent" value="346202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,13 +448,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22832981" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22832981" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28674698" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.17951807" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" weight="0.25662652" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -591,7 +628,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/loginPage.html">
+    <entry file="file://$PROJECT_DIR$/pages/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
           <caret line="153" column="21" selection-start-line="153" selection-start-column="21" selection-end-line="153" selection-end-column="21" />
@@ -659,16 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/browseBooks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-          <folding>
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/test.html" />
     <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -677,13 +704,6 @@
           <folding>
             <element signature="e#63#70#1" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -701,20 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="34" column="109" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -830,16 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="155" selection-end-column="13" />
-          <folding>
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/browse.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -871,6 +867,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="177" column="4" selection-start-line="177" selection-start-column="4" selection-end-line="177" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/shoppingCart.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2312">
@@ -878,17 +881,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="59" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="172" column="16" selection-start-line="172" selection-start-column="16" selection-end-line="172" selection-end-column="16" />
+        <state relative-caret-position="1425">
+          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/browseBooks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <folding>
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="155" selection-end-column="13" />
+          <folding>
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="85" column="28" selection-start-line="85" selection-start-column="28" selection-end-line="85" selection-end-column="28" />
         </state>
       </provider>
     </entry>
