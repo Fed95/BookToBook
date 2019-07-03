@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
 
 //---------------------------------------------------------------------
@@ -363,9 +363,7 @@ var addEvents = function(events){
     $('#events-div').append('<div id="events" class="content" />');
 
     if(events.length < 1) {
-        $('#events').append('<div class = "row review-row">' +
-            '<p class="col-12 review-item">There are no events related to this book.</p>' +
-            '</div>')
+        $('#events').append('<p class="col-12 review-item">There are no events related to this book.</p>')
     }else {
         for(var e of events){
         $('#events').append(
