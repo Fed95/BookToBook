@@ -131,20 +131,22 @@ var getAuthorLinks = function (purchase) {
 
 $('#search-results-container').on('change', 'input', function (e) {
     e.preventDefault();
-    updateQuantity($(this));
+    updateQuantity(this);
     updateDb($(this));
 });
 
-function updateQuantity($input) {
+function updateQuantity(input_form) {
 
+    var $input = $(input_form)
     var $price = $input.closest('.item').find('.product-price');
     var $total = $input.closest('.item').find('.total-price');
     var $grand_total = $input.closest('.shopping-cart').find('.grand-total-price');
 
     var value = parseInt($input.val());
     if(value < 1){
-        value = 0
-        $input.val(0)
+        value = 0;
+        $input.val(0);
+        input_form.parentElement.parentElement.parentElement.remove();
     }
     var price = parseInt($price[0].innerHTML);
     var old_total = parseInt($total[0].innerHTML);
