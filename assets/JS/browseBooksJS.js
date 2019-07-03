@@ -153,7 +153,7 @@ $(document).on('click', 'button', function () {
     $.post(ip + "api/purchase/", data).done(
         function(response){
             // do something when response is ok
-            window.location.href = ip + "index.html";
+            console.log("Shopping Cart updated")
             console.log(response);
         }
     ).fail(

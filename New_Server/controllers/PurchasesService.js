@@ -29,7 +29,7 @@ exports.getPurchaseFindByUser = function(user_mail) {
             .innerJoin('new_schema.users AS u', 'p.user_mail', 'u.user_mail')
             .leftOuterJoin('new_schema.bought_in as bought', 'p.purchase_id', 'bought.purchase_id')
             .leftOuterJoin('new_schema.books as b', 'bought.isbn', 'b.isbn')
-            .where('u.user_mail', user_mail)
+            .where('u.user_mail', user_mail).andWhere('p.completed', false)
             .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
             .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
             .select('b.isbn', 'b.title', 'b.price', 'u.username', 'bought.quantity', 'a.name')
@@ -70,6 +70,7 @@ exports.postPurchase = function(ISBN, user_mail) {
 
         var purchase_id;
 
+        // check if a purchase not completed (cart) exists
         let myQuery = knex('new_schema.purchases')
             .where({
                 user_mail: user_mail,
@@ -77,15 +78,18 @@ exports.postPurchase = function(ISBN, user_mail) {
             })
             .then(result => {
                 if (!result || !result[0])  {  // not found!
+                    //take the max purchase id
                     return knex("new_schema.purchases")
                         .max('purchase_id')
                         .then(result2 =>{
 
                             let maxPurchaseId = result2[0].max;
                             purchase_id = maxPurchaseId + 1;
+                            //create a new purchase not completed (cart)
                             return knex('new_schema.purchases')
                                 .insert({purchase_id: purchase_id, user_mail: user_mail})
                                 .then(result3 => {
+                                    // if you have called with add to Cart, add the book in the new purchase
                                     if(ISBN){
                                         return knex('new_schema.bought_in')
                                             .insert({purchase_id: purchase_id, isbn: ISBN})
@@ -97,7 +101,9 @@ exports.postPurchase = function(ISBN, user_mail) {
 
                 }
                 else{
+                    // purchase not completed (cart) found
                     purchase_id = result[0].purchase_id;
+                    // check if the book is already associated to the purchase
                     return knex('new_schema.bought_in')
                         .where({
                             purchase_id: purchase_id,
@@ -105,14 +111,18 @@ exports.postPurchase = function(ISBN, user_mail) {
                         })
                         .then(result4 =>{
                             if (!result4 || !result4[0]) {  // not found!
+                                // insert the book in the table book - purchase
                                 return knex('new_schema.bought_in')
                                     .insert({purchase_id: purchase_id, isbn: ISBN})
                             }
                             else {
+                                // the book is already associated
+                                // get the quantity of the given book
                                 return knex('new_schema.bought_in')
                                     .where({purchase_id: purchase_id, isbn: ISBN})
                                     .select('quantity')
                                     .then(result5 => {
+                                        // update the quantity of the quantity
                                         let quantity = result5[0].quantity;
                                         return knex('new_schema.bought_in')
                                             .where({purchase_id: purchase_id, isbn: ISBN})
