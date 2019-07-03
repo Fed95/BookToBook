@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 
 //---------------------------------------------------------------------
@@ -206,13 +206,8 @@ var generateBookDiv = function (book, authors, interview, reviews, genres, theme
     var $div16 = $("<div class = 'col-8' />");
     $div16.html("Price: $ " + book.price);
     var $div17 = $("<div class = 'col-4' />");
-    if(top.loggedIn){
-        var $b1 = $('<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input"/>')
-    }else{
-        var $b1 = $('<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">' +
-            '<a href="'+ ip +'pages/login.html?#">Add to Cart</a>' +
-            '</button>');
-    }
+    var $b1 = $("<button id='add-book-btn-1' class='btn btn-outline-success btn-add-book' type='input'/>");
+    $b1.html("Add to Cart");
 
 
     $("#book-div").append($div1);
@@ -481,7 +476,7 @@ var generateListFronGrouped = function(grouped){
 // Handling AddBook request
 //----------------------------------------------------------
 
-$(document).on('click', '#homepage-container button', function () {
+$(document).on('click', '#homepage-container #add-book-btn-1', function () {
     var isbn = $(this).closest('.singleItemContainer').find('p.isbn').html()
     console.log('found isbn = ', isbn)
 
@@ -490,13 +485,13 @@ $(document).on('click', '#homepage-container button', function () {
     };
 
     $.post(ip + "api/purchase/", data).done(
-        function (response) {
-            console.log('succesful post purchase operation! response: ', response),
-                showConfirmation($this.parent())
-        }
+        console.log('succesful post purchase operation!'),
+        showConfirmation($(this).parent())
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
-            console.log('failed!')
+            if(jqXHR.status == 401){
+                window.location.href = ip + "pages/login.html?#";
+            }
         }
     );
 })
@@ -519,7 +514,7 @@ function showConfirmation($div) {
             $prev.fadeTo("slower", 0, function () {
                 $prev.remove()
                 $prev = null
-                counter = 0
+                counter = 1
             })
         }
     }, 3000);

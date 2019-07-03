@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 
 //---------------------------------------------------------------------
@@ -24,7 +24,10 @@ var getUrlParameter = function getUrlParameter(sParam) {
 // getting user input
 //---------------------------------------------------------------------
 const input = getUrlParameter('search-text');
-
+//Adding last search in search bar
+$(document).ready(() => {
+    $('#searchbar-input').val(input)
+})
 
 //---------------------------------------------------------------------
 //generating the query
@@ -79,14 +82,7 @@ var displayFoundBooks = function (books_list) {
 
 var generateBookDivTest = function (isbn, title, authors, price) {
 
-    if(top.loggedIn){
-        var button = '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>'
-    }else{
-        var button = '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">' +
-            '<a href="'+ ip +'pages/login.html?#">Add to Cart</a>' +
-            '</button>'
-    }
-
+//href="'+ ip +'pages/login.html?#"
     $("#search-results-container").append(
         '<div>' +
         '    <div class="row">' +
@@ -108,7 +104,7 @@ var generateBookDivTest = function (isbn, title, authors, price) {
         '</div>' +
         '</div>' +
         '<div class="col-2">' +
-         button +
+        '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>'+
         '</div>' +
         '</div>' +
         '</div>' +
@@ -136,7 +132,9 @@ $(document).on('click', '#search-results-container button', function () {
         }
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
-            console.log('failed!')
+            if(jqXHR.status == 401){
+                window.location.href = ip + "pages/login.html?#";
+            }
         }
     );
 })
@@ -160,7 +158,7 @@ function showConfirmation($div) {
             $prev.fadeTo("slower", 0, function () {
                 $prev.remove()
                 $prev = null
-                counter = 0
+                counter = 1
             })
         }
     }, 2500);

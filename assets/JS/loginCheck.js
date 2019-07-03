@@ -1,7 +1,6 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
-top.loggedIn = false
 
 $(document).ready(function () {
     console.log($('#myNavbar'))
@@ -13,7 +12,6 @@ $(document).ready(function () {
             $("#login-link").attr("href", "../pages/login.html?#");
             $("#shopping-link").attr("href", "../pages/login.html?#");
         } else {
-            top.loggedIn = true
             console.log('User Check found some delicious cookies!')
             $("#login-link").attr("onclick", "logout()");
             $("#shopping-link").attr("href", "../pages/shoppingCart.html");

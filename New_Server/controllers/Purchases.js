@@ -23,19 +23,22 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
     if(!req.session || !req.session.loggedIn){
         utils.writeJson(res, "Not logged in", 401)
     }
-  var ISBN = req.swagger.params["ISBN"].value;
-  var user_mail = req.session.user_mail;
+    else{
+        var ISBN = req.swagger.params["ISBN"].value;
+        var user_mail = req.session.user_mail;
 
-  console.log("ISBN");
+        console.log("ISBN");
 
-  Purchases.postPurchase(ISBN, user_mail)
-      .then(function (response) {
-          console.log("Added Book to Cart")
-      utils.writeJson(res, response);
-  })
-      .catch(function (response) {
-          utils.writeJson(res, response);
-      });
+        Purchases.postPurchase(ISBN, user_mail)
+            .then(function (response) {
+                console.log("Added Book to Cart")
+                utils.writeJson(res, response);
+            })
+            .catch(function (response) {
+                utils.writeJson(res, response);
+            });
+    }
+
 };
 
 module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res, next) {
