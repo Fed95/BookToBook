@@ -2,11 +2,14 @@
 var ip = "http://localhost:8080/";
 
 
+
 //---------------------------------------------------------------------
 //generating the item list
 //---------------------------------------------------------------------
 var input = 1; //TODO: fetch real user_id
 var purchase_id = 0
+
+
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -28,7 +31,6 @@ var displayPurchases = function(purchase_list){
     console.log("parsed: ", parsed);
 
     var grouped_by_isbn = _.groupBy(parsed, 'isbn');
-    purchase_id = parsed[0].purchase_id
 
     var tot = 0;
 
@@ -36,6 +38,7 @@ var displayPurchases = function(purchase_list){
 
         var books = grouped_by_isbn[isbn];
         var purchase = {
+            purchase_id: parsed[0].purchase_id,
             isbn: grouped_by_isbn[isbn][0].isbn,
             title: grouped_by_isbn[isbn][0].title,
             price: grouped_by_isbn[isbn][0].price,
@@ -77,8 +80,10 @@ var generatePurchaseDiv = function(purchase){
         var $description = $("<div class='col description' />");
             var $title = $("<a >", {class:'title-link', href:ip+"/pages/book.html?isbn="+purchase.isbn}); $title.html(purchase.title);
             var $title2 = $("<span />"); $title2.html(getAuthorLinks(purchase));
-            var $isbn = $("<span />"); $isbn.html(purchase.isbn);
-        var $price_info = $("<div class='row price-info'/>")
+            var $isbn = $("<span class='isbn'/>"); $isbn.html(purchase.isbn);
+            var $purchase_id = $("<span itemtype='hidden' class='purchase_id'/>"); $purchase_id.html(purchase.purchase_id);
+
+    var $price_info = $("<div class='row price-info'/>")
             var $price = $("<div class='col-4 product-price'/>"); $price.html(purchase.price);
             var $quantity = $("<div class='col-4 product-quantity'/>");
                 var $num = $("<input />", {type:"number", min:'1', value:purchase.quantity});
@@ -93,6 +98,7 @@ var generatePurchaseDiv = function(purchase){
     $description.append($title);
     $description.append($title2);
     $description.append($isbn);
+    $description.append($description);
     $item.append($price_info);
     $price_info.append($price);
     $price_info.append($quantity);
