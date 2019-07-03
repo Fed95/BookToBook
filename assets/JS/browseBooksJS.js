@@ -2,7 +2,6 @@
 var ip = "http://localhost:8080/";
 
 
-
 //---------------------------------------------------------------------
 // Function used to retrieve user input from the URL
 //---------------------------------------------------------------------
@@ -31,86 +30,90 @@ const input = getUrlParameter('search-text');
 //generating the query
 //---------------------------------------------------------------------
 var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
+xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {
             displayFoundBooks(this.responseText);
         });
     }
 };
-xhttp.open("GET", ip + "api/book/findByTitle?Title="+input+"&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
+xhttp.open("GET", ip + "api/book/findByTitle?Title=" + input + "&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
 xhttp.send();
-
 
 
 //---------------------------------------------------------------------
 // handling the result
 //---------------------------------------------------------------------
 
-var displayFoundBooks = function(books_list) {
+var displayFoundBooks = function (books_list) {
 
     var parsed = JSON.parse(books_list);
     console.log("parsed: ", parsed);
 
-    var grouped = _.groupBy(parsed, 'isbn');
+    if (parsed.length > 0) {
 
-    for(var isbn in grouped){
+        var grouped = _.groupBy(parsed, 'isbn');
 
-        var books = grouped[isbn]; // NOTE: this is a list of tuples of the same book for the different authors
+        for (var isbn in grouped) {
 
-        var title = books[0].title;
-        var price = books[0].price;
-        var authors = [];
+            var books = grouped[isbn]; // NOTE: this is a list of tuples of the same book for the different authors
 
-        for(var count in books){
-            var author = {
-                name: books[count].name,
-                id: books[count].author_id
+            var title = books[0].title;
+            var price = books[0].price;
+            var authors = [];
+
+            for (var count in books) {
+                var author = {
+                    name: books[count].name,
+                    id: books[count].author_id
+                }
+                authors.push(author);
             }
-            authors.push(author);
-        }
 
-        generateBookDivTest(isbn, title, authors, price)
+            generateBookDivTest(isbn, title, authors, price)
+        }
+    }else{
+        $("#search-results-container").append('<div class="col-12 no-result">No books were found for "'+input+'".</div>')
     }
 };
 
-var generateBookDivTest = function (isbn, title, authors, price){
+var generateBookDivTest = function (isbn, title, authors, price) {
     $("#search-results-container").append(
         '<div>' +
         '    <div class="row">' +
         '        <div class="browse-books-image col-3">' +
-        '            <div class="col-12 book-img"><a href="'+ip + 'pages/book.html?isbn='+isbn+'"><img' +
-        '                    src="../assets/Images/BookCovers/Thumbnails/'+title+'.jpg"></a></div>' +
+        '            <div class="col-12 book-img"><a href="' + ip + 'pages/book.html?isbn=' + isbn + '"><img' +
+        '                    src="../assets/Images/BookCovers/Thumbnails/' + title + '.jpg"></a></div>' +
         '        </div>' +
         '           <div class="browse-books-rest col-9">' +
         '<div >' +
         '<div class="row">' +
         '<div class="book-title-and-info col-10">' +
         '<div class="row">' +
-        '<h3><a href="'+ip + 'pages/book.html?isbn='+isbn+'">'+title+'</a></h3>' +
-        '</div>'+
+        '<h3><a href="' + ip + 'pages/book.html?isbn=' + isbn + '">' + title + '</a></h3>' +
+        '</div>' +
         '<div class="row book-info">' +
-        '<div class="col-4"><h4>Authors:</h4><p>'+getAuthorLinks(authors)+'</p></div> '+
-        '<div class="col-4 isbn"><h4>ISBN:</h4><p>'+isbn+'</p></div> '+
-        '<div class="col-4"><h4>Price:</h4><p>$ '+price+'</p></div> '+
-        '</div>'+
+        '<div class="col-4"><h4>Authors:</h4><p>' + getAuthorLinks(authors) + '</p></div> ' +
+        '<div class="col-4 isbn"><h4>ISBN:</h4><p>' + isbn + '</p></div> ' +
+        '<div class="col-4"><h4>Price:</h4><p>$ ' + price + '</p></div> ' +
+        '</div>' +
         '</div>' +
         '<div class="col-2">' +
         '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>' +
         '</div>' +
         '</div>' +
-        '</div>'+
+        '</div>' +
 
 
-        '       </div>'+
+        '       </div>' +
         '    </div>' +
-        '</div>'+
+        '</div>' +
         '<hr/>'
     )
 }
 
 // Handling AddBook request
-$(document).on('click', 'button', function () {
+$(document).on('click', '#search-results-container button', function () {
     var isbn = $(this).closest('.row').find('.isbn p').html()
     console.log('found isbn = ', isbn)
     var data = {
@@ -120,15 +123,34 @@ $(document).on('click', 'button', function () {
         console.log('succesful post purchase operation!'),
         showConfirmation($(this).parent())
     ).fail(
-        function(jqXHR, textStatus, errorThrown) {
+        function (jqXHR, textStatus, errorThrown) {
             console.log('failed!')
         }
     );
 })
-function showConfirmation($div){
+var $prev = null
+var counter = 0
+
+function showConfirmation($div) {
     console.log('Addinggg')
-    var $confirm = $('<div class="confirmation">Added!</div>')
-    $div.append($confirm)
+    if ($prev == null) {
+        $prev = $('<div class="confirmation">Added!</div>')
+    } else {
+        $prev.remove()
+        counter++;
+        $prev = $('<div class="confirmation">Added! (' + counter + ')</div>')
+    }
+
+    $div.append($prev)
+    setTimeout(function () {
+        if ($prev != null) {
+            $prev.fadeTo("slower", 0, function () {
+                $prev.remove()
+                $prev = null
+                counter = 0
+            })
+        }
+    }, 3000);
 }
 
 var getAuthorLinks = function (authors) {

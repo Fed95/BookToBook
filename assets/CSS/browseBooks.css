@@ -1,5 +1,6 @@
 #search-results-container{
     padding: 5%;
+    min-height: 40vh;
 }
 .profile-teaser-left {
     float: left; width: 20%; margin-right: 1%;
@@ -181,4 +182,9 @@ p a:hover{
     color: #575048;
     padding: 6px 12px 6px 12px;
     width: 91.3px;
+}
+.no-result{
+    text-align: center;
+    font-size: 30px;
+    color: #929292;
 }
