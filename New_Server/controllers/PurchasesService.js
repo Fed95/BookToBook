@@ -32,7 +32,7 @@ exports.getPurchaseFindByUser = function(user_mail) {
             .where('u.user_mail', user_mail).andWhere('p.completed', false)
             .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
             .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
-            .select('b.isbn', 'b.title', 'b.price', 'u.username', 'bought.quantity', 'a.name', 'p.purchase_id')
+            .select('b.isbn', 'b.title', 'b.price', 'u.username', 'bought.quantity', 'a.name')
             .then(result => {
               console.log(result);
               resolve(result)

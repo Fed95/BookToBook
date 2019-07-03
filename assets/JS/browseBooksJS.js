@@ -120,8 +120,10 @@ $(document).on('click', '#search-results-container button', function () {
         "ISBN": isbn
     };
     $.post(ip + "api/purchase/", data).done(
-        console.log('succesful post purchase operation!'),
-        showConfirmation($(this).parent())
+        function(response){
+            console.log('succesful post purchase operation!'),
+            showConfirmation($(this).parent())
+        }
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
             console.log('failed!')

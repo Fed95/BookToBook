@@ -470,3 +470,43 @@ var generateListFronGrouped = function(grouped){
     return grouped_list
 }
 
+// Handling AddBook request
+$(document).on('click', '#search-results-container button', function () {
+    var isbn = $(this).closest('.row').find('.isbn p').html()
+    console.log('found isbn = ', isbn)
+    var data = {
+        "ISBN": isbn
+    };
+    $.post(ip + "api/purchase/", data).done(
+        console.log('succesful post purchase operation!'),
+        showConfirmation($(this).parent())
+    ).fail(
+        function (jqXHR, textStatus, errorThrown) {
+            console.log('failed!')
+        }
+    );
+})
+var $prev = null
+var counter = 0
+
+function showConfirmation($div) {
+    console.log('Addinggg')
+    if ($prev == null) {
+        $prev = $('<div class="confirmation">Added!</div>')
+    } else {
+        $prev.remove()
+        counter++;
+        $prev = $('<div class="confirmation">Added! (' + counter + ')</div>')
+    }
+
+    $div.append($prev)
+    setTimeout(function () {
+        if ($prev != null) {
+            $prev.fadeTo("slower", 0, function () {
+                $prev.remove()
+                $prev = null
+                counter = 0
+            })
+        }
+    }, 3000);
+}
