@@ -194,7 +194,7 @@ var generateBookDiv = function (book, authors, interview, reviews, genres, theme
     $p4b.html(book.language);
     var $p5b = $("<p />");
     $p5b.html(book.number_of_pages);
-    var $p6b = $("<p />");
+    var $p6b = $("<p class='isbn'/>");
     $p6b.html(book.isbn);
     var $hr2 = $("<hr >");
     var $genres = $("<div class ='row genres'/>");
@@ -206,8 +206,13 @@ var generateBookDiv = function (book, authors, interview, reviews, genres, theme
     var $div16 = $("<div class = 'col-8' />");
     $div16.html("Price: $ " + book.price);
     var $div17 = $("<div class = 'col-4' />");
-    var $b1 = $("<button id='add-book-btn-1' class='btn btn-outline-success btn-add-book' type='input'/>");
-    $b1.html("Add to Cart");
+    if(top.loggedIn){
+        var $b1 = $('<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input"/>')
+    }else{
+        var $b1 = $('<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">' +
+            '<a href="'+ ip +'pages/login.html?#">Add to Cart</a>' +
+            '</button>');
+    }
 
 
     $("#book-div").append($div1);
@@ -470,16 +475,25 @@ var generateListFronGrouped = function(grouped){
     return grouped_list
 }
 
+
+
+//----------------------------------------------------------
 // Handling AddBook request
-$(document).on('click', '#search-results-container button', function () {
-    var isbn = $(this).closest('.row').find('.isbn p').html()
+//----------------------------------------------------------
+
+$(document).on('click', '#homepage-container button', function () {
+    var isbn = $(this).closest('.singleItemContainer').find('p.isbn').html()
     console.log('found isbn = ', isbn)
+
     var data = {
         "ISBN": isbn
     };
+
     $.post(ip + "api/purchase/", data).done(
-        console.log('succesful post purchase operation!'),
-        showConfirmation($(this).parent())
+        function (response) {
+            console.log('succesful post purchase operation! response: ', response),
+                showConfirmation($this.parent())
+        }
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
             console.log('failed!')
@@ -487,7 +501,7 @@ $(document).on('click', '#search-results-container button', function () {
     );
 })
 var $prev = null
-var counter = 0
+var counter = 1
 
 function showConfirmation($div) {
     console.log('Addinggg')
