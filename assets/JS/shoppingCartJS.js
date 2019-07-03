@@ -81,7 +81,7 @@ var generatePurchaseDiv = function(purchase){
         var $price_info = $("<div class='row price-info'/>")
             var $price = $("<div class='col-4 product-price'/>"); $price.html(purchase.price);
             var $quantity = $("<div class='col-4 product-quantity'/>");
-                var $num = $("<input />", {type:"number", min:'1', max:'9', value:purchase.quantity});
+                var $num = $("<input />", {type:"number", min:'1', value:purchase.quantity});
             var $total = $("<div class='col-4 total-price' />"); $total.html(purchase.price*purchase.quantity);
 
     $("#search-results-container").append($item);

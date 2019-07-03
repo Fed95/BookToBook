@@ -398,7 +398,7 @@ var addSuggestedBooks = function(books_to_process){
 
         console.log('grouped suggested books list:', books)
 
-        for (var i = 0; i < Math.min(6, books.length); i++) {
+        for (var i = 0; i < Math.min(3, books.length); i++) {
 
             var grouped_by_author = _.groupBy(books[i], 'name');
 
@@ -414,7 +414,7 @@ var addSuggestedBooks = function(books_to_process){
             var author_links = ""
 
             for(var a of authors){
-                author_links += ', <a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+a.name+'</a>'
+                author_links += ', <a href="'+ip+'pages/author.html?author_id='+a.id+'">'+a.name+'</a>'
             }
 
 
