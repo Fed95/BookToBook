@@ -123,6 +123,7 @@ p a:hover{
     }
     .col-2{
         width: 100%;
+        margin-bottom: 20px;
     }
 }
 
@@ -182,6 +183,7 @@ p a:hover{
     color: #575048;
     padding: 6px 12px 6px 12px;
     width: 91.3px;
+    position: absolute;
 }
 .no-result{
     text-align: center;

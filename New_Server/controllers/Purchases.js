@@ -39,7 +39,7 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
       .catch(function (response) {
           utils.writeJson(res, response);
       });
-};e
+};
 
 module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res, next) {
   Purchases.postPurchaseCompleted(req.swagger.params, res, next);

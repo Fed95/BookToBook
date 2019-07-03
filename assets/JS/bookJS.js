@@ -194,7 +194,7 @@ var generateBookDiv = function (book, authors, interview, reviews, genres, theme
     $p4b.html(book.language);
     var $p5b = $("<p />");
     $p5b.html(book.number_of_pages);
-    var $p6b = $("<p />");
+    var $p6b = $("<p class='isbn'/>");
     $p6b.html(book.isbn);
     var $hr2 = $("<hr >");
     var $genres = $("<div class ='row genres'/>");
@@ -470,13 +470,20 @@ var generateListFronGrouped = function(grouped){
     return grouped_list
 }
 
+
+
+//----------------------------------------------------------
 // Handling AddBook request
-$(document).on('click', '#search-results-container button', function () {
-    var isbn = $(this).closest('.row').find('.isbn p').html()
+//----------------------------------------------------------
+
+$(document).on('click', '#homepage-container button', function () {
+    var isbn = $(this).closest('.singleItemContainer').find('p.isbn').html()
     console.log('found isbn = ', isbn)
+
     var data = {
         "ISBN": isbn
     };
+
     $.post(ip + "api/purchase/", data).done(
         console.log('succesful post purchase operation!'),
         showConfirmation($(this).parent())
@@ -487,7 +494,7 @@ $(document).on('click', '#search-results-container button', function () {
     );
 })
 var $prev = null
-var counter = 0
+var counter = 1
 
 function showConfirmation($div) {
     console.log('Addinggg')

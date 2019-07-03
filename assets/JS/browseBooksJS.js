@@ -72,8 +72,8 @@ var displayFoundBooks = function (books_list) {
 
             generateBookDivTest(isbn, title, authors, price)
         }
-    }else{
-        $("#search-results-container").append('<div class="col-12 no-result">No books were found for "'+input+'".</div>')
+    } else {
+        $("#search-results-container").append('<div class="col-12 no-result">No books were found for "' + input + '".</div>')
     }
 };
 
@@ -114,15 +114,16 @@ var generateBookDivTest = function (isbn, title, authors, price) {
 
 // Handling AddBook request
 $(document).on('click', '#search-results-container button', function () {
-    var isbn = $(this).closest('.row').find('.isbn p').html()
+    var $this = $(this)
+    var isbn = $this.closest('.row').find('.isbn p').html()
     console.log('found isbn = ', isbn)
     var data = {
         "ISBN": isbn
     };
     $.post(ip + "api/purchase/", data).done(
-        function(response){
-            console.log('succesful post purchase operation!'),
-            showConfirmation($(this).parent())
+        function (response) {
+            console.log('succesful post purchase operation! response: ', response),
+                showConfirmation($this.parent())
         }
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
@@ -131,9 +132,10 @@ $(document).on('click', '#search-results-container button', function () {
     );
 })
 var $prev = null
-var counter = 0
+var counter = 1
 
 function showConfirmation($div) {
+    console.log('Adding confirmation button')
     if ($prev == null) {
         $prev = $('<div class="confirmation">Added!</div>')
     } else {
@@ -141,8 +143,9 @@ function showConfirmation($div) {
         counter++;
         $prev = $('<div class="confirmation">Added! (' + counter + ')</div>')
     }
-
+    console.log('appending to ', $div)
     $div.append($prev)
+
     setTimeout(function () {
         if ($prev != null) {
             $prev.fadeTo("slower", 0, function () {
@@ -151,7 +154,7 @@ function showConfirmation($div) {
                 counter = 0
             })
         }
-    }, 3000);
+    }, 2500);
 }
 
 var getAuthorLinks = function (authors) {
