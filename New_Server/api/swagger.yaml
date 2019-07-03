@@ -754,14 +754,20 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - name: "PurchaseID"
+        - name: "purchase_id"
           in: "formData"
-          description: "Purchase ID"
-          type: "string"
+          description: "purchase id"
+          type: "integer"
           required: true
-        - name: "ISBN"
+        - name: "isbn"
           in: "formData"
-          description: "ISBN of the Book"
+          description: "isbn of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
+        - name: "quantity"
+          in: "formData"
+          description: "book quantity in the purchase"
           required: true
           type: "integer"
           format: "int64"

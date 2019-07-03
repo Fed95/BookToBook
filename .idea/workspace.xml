@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New_Server/api/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/api/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New_Server/controllers/Purchases.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/Purchases.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/shoppingCart.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/shoppingCart.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,82 +18,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="92" column="45" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" selection-start-line="27" selection-end-line="98" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-              <folding>
-                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/browseAuthors.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/browse.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="26" selection-start-column="26" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/shoppingCart.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+            <state relative-caret-position="200">
+              <caret line="186" column="21" lean-forward="true" selection-start-line="186" selection-start-column="21" selection-end-line="186" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/New_Server/controllers/Purchases.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="65" column="48" lean-forward="true" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/shoppingCart.html">
+        <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="144" column="54" selection-start-line="144" selection-start-column="54" selection-end-line="144" selection-end-column="54" />
-              <folding>
-                <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="169">
+              <caret line="756" column="26" selection-start-line="756" selection-start-column="26" selection-end-line="756" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -111,7 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>+</find>
       <find>to access</find>
       <find>utilsjs</find>
       <find>href=&quot;./loginPage.html?#&quot;&gt;&lt;img</find>
@@ -141,6 +86,7 @@
       <find>interviews</find>
       <find>button</find>
       <find>shoppingcartlogic</find>
+      <find>///</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -180,11 +126,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/event.css" />
         <option value="$PROJECT_DIR$/assets/CSS/sections.css" />
         <option value="$PROJECT_DIR$/New_Server/controllers/UsersService.js" />
-        <option value="$PROJECT_DIR$/New_Server/api/swagger.yaml" />
         <option value="$PROJECT_DIR$/New_Server/controllers/Users.js" />
         <option value="$PROJECT_DIR$/assets/CSS/navbar.css" />
         <option value="$PROJECT_DIR$/pages/browseBooksTest.html" />
@@ -229,8 +173,10 @@
         <option value="$PROJECT_DIR$/New_Server/controllers/BooksService.js" />
         <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
         <option value="$PROJECT_DIR$/pages/shoppingCart.html" />
+        <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
+        <option value="$PROJECT_DIR$/New_Server/controllers/Purchases.js" />
+        <option value="$PROJECT_DIR$/New_Server/api/swagger.yaml" />
       </list>
     </option>
   </component>
@@ -452,7 +398,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340254000" />
+    <option name="totallyTimeSpent" value="341202000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,13 +413,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22832981" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22832981" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28674698" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.21445782" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.37228915" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -593,9 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/Purchases.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/homepage_eventsJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -618,16 +561,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/footerResize.js" />
-    <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
-          <folding>
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/browseBooksTest.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-873">
@@ -818,24 +751,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="618" column="21" selection-start-line="618" selection-start-column="21" selection-end-line="618" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/New_Server/controllers/PurchasesService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="34" column="109" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/shoppingCart.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -860,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/browse.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -888,13 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="92" column="45" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -909,6 +814,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/shoppingCart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="144" column="54" selection-start-line="144" selection-start-column="54" selection-end-line="144" selection-end-column="54" />
+          <folding>
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/CSS/shoppingCart.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/CSS/browse.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/CSS/browseAuthors.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/browseAuthors.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="64" selection-start-line="9" selection-start-column="64" selection-end-line="9" selection-end-column="64" />
+          <folding>
+            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -919,20 +865,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="129" column="23" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="23" />
+        <state relative-caret-position="257">
+          <caret line="92" column="45" selection-start-line="92" selection-start-column="45" selection-end-line="92" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/shoppingCart.html">
+    <entry file="file://$PROJECT_DIR$/New_Server/controllers/Purchases.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="144" column="54" selection-start-line="144" selection-start-column="54" selection-end-line="144" selection-end-column="54" />
-          <folding>
-            <element signature="n#footer#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="65" column="48" lean-forward="true" selection-start-line="65" selection-start-column="48" selection-end-line="65" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="186" column="21" lean-forward="true" selection-start-line="186" selection-start-column="21" selection-end-line="186" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="756" column="26" selection-start-line="756" selection-start-column="26" selection-end-line="756" selection-end-column="26" />
         </state>
       </provider>
     </entry>

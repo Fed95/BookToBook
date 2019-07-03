@@ -7,7 +7,7 @@ var ip = "http://localhost:8080/";
 //generating the item list
 //---------------------------------------------------------------------
 var input = 1; //TODO: fetch real user_id
-var purchase_id = 0
+var purchase_id = null
 
 
 
@@ -31,6 +31,7 @@ var displayPurchases = function(purchase_list){
     console.log("parsed: ", parsed);
 
     var grouped_by_isbn = _.groupBy(parsed, 'isbn');
+    purchase_id = parsed[0].purchase_id
 
     var tot = 0;
 
@@ -38,7 +39,6 @@ var displayPurchases = function(purchase_list){
 
         var books = grouped_by_isbn[isbn];
         var purchase = {
-            purchase_id: parsed[0].purchase_id,
             isbn: grouped_by_isbn[isbn][0].isbn,
             title: grouped_by_isbn[isbn][0].title,
             price: grouped_by_isbn[isbn][0].price,
@@ -81,8 +81,7 @@ var generatePurchaseDiv = function(purchase){
             var $title_link = $("<a >", {class:'title-link', href:ip+"/pages/book.html?isbn="+purchase.isbn});
             var $title = $("<h4 >"); $title.html(purchase.title);
             var $title2 = $("<span />"); $title2.html('By: '+ getAuthorLinks(purchase));
-            var $isbn = $("<span />"); $isbn.html('ISBN: ' + purchase.isbn);
-            var $purchase_id = $("<span itemtype='hidden' class='purchase_id'/>"); $purchase_id.html(purchase.purchase_id);
+            var $isbn = $("<span class='isbn'/>"); $isbn.html('ISBN: ' + purchase.isbn);
             var $price_info = $("<div class='row price-info'/>")
 
             var $price = $("<div class='col-4 product-price'/>"); $price.html(purchase.price);
@@ -100,7 +99,6 @@ var generatePurchaseDiv = function(purchase){
     $title_link.append($title);
     $description.append($title2);
     $description.append($isbn);
-    $description.append($description);
     $item.append($price_info);
     $price_info.append($price);
     $price_info.append($quantity);
@@ -180,10 +178,9 @@ $('#search-results-container').on('click', 'span.delete-btn', function () {
 function updateDb($input){
     var quantity = $input.val()
     console.log('found quantity = ', quantity)
-    var isbn = $input.closest('.item').find('.isbn').html()
-    console.log('found isbn = ', isbn)
-    var purchase_id = $input.closest('.item').find('.purchase_id').html()
-    console.log(purchase_id)
+    var isbn = $input.closest('.item').find('.isbn').html().substring(6)
+    console.log('found isbn =', isbn)
+    console.log('purchase_id =', purchase_id)
 
     var data = {
         "purchase_id": purchase_id,

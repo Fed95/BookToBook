@@ -60,6 +60,8 @@ module.exports.postPurchasePurchaseID = function postPurchasePurchaseID (req, re
 
 module.exports.postPurchaseBook = function postPurchasePurchaseID (req, res, next) {
 
+    console.log('////////',req.swagger.params)
+
     var purchase_id = req.swagger.params["purchase_id"].value;
     var isbn = req.swagger.params["isbn"].value;
     var quantity = req.swagger.params["quantity"].value;
