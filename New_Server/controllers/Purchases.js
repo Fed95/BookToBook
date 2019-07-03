@@ -26,6 +26,9 @@ module.exports.getPurchasePurchaseID = function getPurchasePurchaseID (req, res,
 };
 
 module.exports.postPurchase = function postPurchase (req, res, next) {
+    if(!req.session || !req.session.loggedIn){
+        utils.writeJson(res, "Not logged in", 401)
+    }
   var ISBN = req.swagger.params["ISBN"].value;
   var user_mail = req.session.user_mail;
 
@@ -42,7 +45,16 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
 };
 
 module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res, next) {
-  Purchases.postPurchaseCompleted(req.swagger.params, res, next);
+    var purchase_id = req.swagger.params["purchase_id"].value;
+
+    Purchases.postPurchaseCompleted(purchase_id)
+      .then(function (response) {
+          console.log("Purchase completed")
+          utils.writeJson(res, response);
+  })
+      .catch(function (response) {
+          utils.writeJson(res, response);
+      });
 };
 
 module.exports.postPurchasePurchaseID = function postPurchasePurchaseID (req, res, next) {

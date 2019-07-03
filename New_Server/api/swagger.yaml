@@ -642,6 +642,10 @@ paths:
       produces:
         - "application/json"
       parameters:
+        - name: "purchase_id"
+          in: "formData"
+          required: true
+          type: "string"
         - name: "shipping_address"
           in: "formData"
           description: "Shipping Address"
@@ -652,7 +656,7 @@ paths:
           description: "Cardholder's Name"
           required: true
           type: "string"
-        - name: "Card_number"
+        - name: "card_number"
           in: "formData"
           description: "Credit Card Number"
           required: true

@@ -154,13 +154,32 @@ exports.postPurchase = function(ISBN, user_mail) {
 
 };
 
-exports.postPurchaseCompleted = function(args, res, next) {
+exports.postPurchaseCompleted = function(purchase_id) {
   /**
    * parameters expected in the args:
   * date (Date)
   **/
-  // no response value expected for this operation
-  res.end();
+    return new Promise(function (resolve, reject) {
+
+        console.log("---------------executing postPurchaseCompleted---------------------");
+        console.log("purchase_id: '" + purchase_id + "'");
+        console.log("------------------------------------------------------------");
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = dd + '/' + mm + '/' + yyyy;
+
+        let myQuery = knex('new_schema.purchases')
+            .where({purchase_id: purchase_id})
+            .update({completed: true, purchase_date: today})
+            .then(result =>{
+                console.log(result)
+                resolve(result)
+            })
+    })
 }
 
 exports.postPurchasePurchaseID = function(user_mail) {
@@ -170,12 +189,11 @@ exports.postPurchasePurchaseID = function(user_mail) {
   * iSBN (Long)
   **/
 
-    return new Promise(function (resolve, reject) {
+    /*return new Promise(function (resolve, reject) {
 
         console.log("---------------executing postPurchase---------------------");
         console.log("user_mail: '" + user_mail + "'");
         console.log("------------------------------------------------------------");
-        //todo: change purchase_id
 
         let myQuery = knex('new_schema.purchases')
             .where({
@@ -192,7 +210,7 @@ exports.postPurchasePurchaseID = function(user_mail) {
                         resolve(result2)
                     })
             })
-})
+})*/
 }
 
 exports.postPurchaseBook = function(purchase_id, isbn, quantity) {
