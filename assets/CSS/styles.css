@@ -118,7 +118,6 @@ a:hover, a:visited, a:link, a:active{
     margin-bottom: 20px;
 }
 #page-container {  position: relative; min-height: 100vh;}
-#content-wrap {  padding-bottom: 30rem;    /* Footer height */}
 
 .footer-col{
     text-align: center;
@@ -216,9 +215,6 @@ button:focus { outline:0 !important; }
     }
     .close{font-size: 19px;}
 }
-@media (max-width: 600px){
-    #content-wrap {  padding-bottom: 40rem;    /* Footer height */}
-}
 @media(max-width: 466px){
     .empty-col{
         width: 0%;
@@ -231,4 +227,16 @@ button:focus { outline:0 !important; }
 }
 .centered{
     text-align: center;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+.sticky + #warning-row {
+    padding-top: 50px;
+}
+.sticky + #homepage-container {
+    padding-top: 50px;
 }
