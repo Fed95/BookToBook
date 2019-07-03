@@ -173,6 +173,9 @@ $('#search-results-container').on('click', 'span.delete-btn', function () {
 
     this.parentElement.parentElement.remove();
 
+    deleteInDb($(this))
+
+
 
 });
 
@@ -203,5 +206,25 @@ function updateDb($input){
 
 }
 
+function deleteInDb($input){
+    var isbn = $input.closest('.item').find('.isbn').html().substring(6)
+    console.log('found isbn = ', isbn)
+    var data = {
+        "purchase_id": purchase_id,
+        "isbn": isbn
+    };
+
+
+
+    $.ajax({
+        url: ip + "api/purchase/book",
+        type: 'DELETE',
+        success:  function(response){
+            console.log('successful delete purchase operation!');
+        },
+        data: data
+    });
+
+}
 
 
