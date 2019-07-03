@@ -216,8 +216,7 @@ function deleteInDb($input) {
         "purchase_id": purchase_id,
         "isbn": isbn
     };
-
-
+    
     $.ajax({
         url: ip + "api/purchase/book",
         type: 'DELETE',
@@ -227,6 +226,34 @@ function deleteInDb($input) {
         data: data
     });
 
+}
+
+function order() {
+    var shiping_address = $('#inputAddress').val();
+    var cardholder = $('#nameCard').val();
+    var card_number = $('#inputCard').val();
+    var data = {
+        'purchase_id': purchase_id,
+        'shipping_address': shiping_address,
+        'cardholder': cardholder,
+        'card_number': card_number
+    };
+    $.post(ip + "api/purchase/completed", data).done(
+        function(response){
+            // do something when response is ok
+            console.log("Payment completed")
+            console.log(response);
+            window.location.href = ip + "index.html";
+        }
+    ).fail(
+        function(jqXHR, textStatus, errorThrown) {
+            console.log('Payment failed!')
+            if(jqXHR.status == 404){
+                displayWarning("Invalid Username or Password, did you remember to "+'<a href="#" class="register-dynamic-link">Register</a>'+ " ?")
+            }
+
+        }
+    );
 }
 
 
