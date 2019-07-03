@@ -164,11 +164,13 @@ $('#search-results-container').on('click', 'span.delete-btn', function () {
 
 
     var $total = $(this).closest('.item').find('.total-price');
+    var $input = $this.closest('.row').find('input')
     var $grand_total = $(this).closest('.shopping-cart').find('.grand-total-price');
 
     var total = parseInt($total[0].innerHTML);
     var grand_total = parseInt($grand_total[0].innerHTML);
 
+    $input.val(0)
     $grand_total[0].innerHTML = grand_total - total;
 
     this.parentElement.parentElement.remove();
