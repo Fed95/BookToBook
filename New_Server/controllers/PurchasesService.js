@@ -162,7 +162,7 @@ exports.postPurchasePurchaseID = function(user_mail) {
         console.log("---------------executing postPurchase---------------------");
         console.log("user_mail: '" + user_mail + "'");
         console.log("------------------------------------------------------------");
-
+        //todo: change purchase_id
 
         let myQuery = knex('new_schema.purchases')
             .where({
@@ -181,4 +181,67 @@ exports.postPurchasePurchaseID = function(user_mail) {
             })
 })
 }
+
+exports.postPurchaseBook = function(purchase_id, isbn, quantity) {
+    /**
+     * parameters expected in the args:
+     * purchaseID (String)
+     * iSBN (Long)
+     **/
+
+    return new Promise(function (resolve, reject) {
+
+        return new Promise(function (resolve, reject) {
+
+            console.log("---------------executing postPurchaseBook---------------------");
+            console.log("purchase_id: '" + purchase_id + "'");
+            console.log("isbn: '" + isbn + "'");
+            console.log("quantity: '" + quantity + "'");
+            console.log("------------------------------------------------------------");
+
+            if (quantity === 0) {
+                return knex('new_schema.bought_in')
+                    .where({purchase_id: purchase_id, isbn: isbn})
+                    .del()
+                    .then(result => {
+                        resolve(result)
+                    })
+            }
+            else {
+                return knex('new_schema.bought_in')
+                    .where({purchase_id: purchase_id, isbn: isbn})
+                    .update('quantity', quantity)
+                    .then(result => {
+                        resolve(result)
+
+                    })
+            }
+
+        })
+    })
+}
+
+exports.deletePurchaseBook = function(purchase_id, isbn) {
+    /**
+     * parameters expected in the args:
+     * purchaseID (String)
+     * iSBN (Long)
+     **/
+
+    return new Promise(function (resolve, reject) {
+
+        console.log("---------------executing deletePurchaseBook---------------------");
+        console.log("purchase_id: '" + purchase_id + "'");
+        console.log("isbn: '" + isbn + "'");
+        console.log("------------------------------------------------------------");
+
+        let myQuery = knex('new_schema.bought_in')
+                        .where({purchase_id: purchase_id, isbn: isbn})
+                        .del()
+                        .then(result =>{
+                            resolve(result)
+                        })
+                })
+
+            };
 

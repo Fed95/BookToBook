@@ -25,12 +25,12 @@ function updateQuantity(quantityInput)
 */
 $('#search-results-container').on('change', 'input', function (e) {
     e.preventDefault();
-    updateQuantity(this);
+    updateQuantity($(this));
+    updateDb($(this));
 });
 
-function updateQuantity(quantityInput) {
+function updateQuantity($input) {
 
-    var $input = $(quantityInput);
     var $price = $input.closest('.item').find('.product-price');
     var $total = $input.closest('.item').find('.total-price');
     var $grand_total = $input.closest('.shopping-cart').find('.grand-total-price');
@@ -63,5 +63,31 @@ $('#search-results-container').on('click', 'span.delete-btn', function () {
 
 
 });
+
+
+function updateDb($input){
+        var quantity = $input.val()
+        console.log('found quantity = ', quantity)
+        var isbn = $input.closest('.item').find('.title-link').html()
+        console.log('found isbn = ', isbn)
+
+        var data = {
+            "purchase_id": purchase_id,
+            "isbn": isbn,
+            "quantity": quantity
+        };
+
+        $.post(ip + "api/purchase/book", data).done(
+            function(response){
+                // do something when response is ok
+                console.log('succesful post purchase operation! response: ',response);
+            }
+        ).fail(
+            function(jqXHR, textStatus, errorThrown) {
+                console.log('failed!')
+            }
+        );
+
+}
 
 

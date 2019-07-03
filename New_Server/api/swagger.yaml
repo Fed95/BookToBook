@@ -10,27 +10,27 @@ info:
 host: "booktobook.herokuapp.com"
 basePath: "/api"
 tags:
-- name: "Books"
-- name: "Themes"
-- name: "Genres"
-- name: "Authors"
-- name: "Events"
-- name: "Users"
-- name: "Purchases"
-- name: "Reviews"
-- name: "General"
+  - name: "Books"
+  - name: "Themes"
+  - name: "Genres"
+  - name: "Authors"
+  - name: "Events"
+  - name: "Users"
+  - name: "Purchases"
+  - name: "Reviews"
+  - name: "General"
 schemes:
-- "https"
-- "http"
+  - "https"
+  - "http"
 paths:
   /author/:
     get:
       tags:
-      - "Authors"
+        - "Authors"
       summary: "Get all Authors"
       operationId: "getAuthor"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -47,18 +47,18 @@ paths:
   /author/findByBook:
     get:
       tags:
-      - "Authors"
+        - "Authors"
       summary: "Get authors by book"
       operationId: "getAuthorFindByBook"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ISBN"
-        in: "query"
-        description: "ISBN of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "ISBN"
+          in: "query"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -76,17 +76,17 @@ paths:
   /author/findByName:
     get:
       tags:
-      - "Authors"
+        - "Authors"
       summary: "Get authors by name"
       operationId: "getAuthorFindByName"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "Name"
-        in: "query"
-        description: "Name of the Author"
-        required: true
-        type: "string"
+        - name: "Name"
+          in: "query"
+          description: "Name of the Author"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -104,16 +104,16 @@ paths:
   /author/{AuthorID}:
     get:
       tags:
-      - "Authors"
+        - "Authors"
       summary: "Get Author by ID"
       operationId: "getAuthorAuthorID"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "AuthorID"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "AuthorID"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -131,17 +131,17 @@ paths:
   /book/:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Books by general Info"
       operationId: "getBook"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "Info"
-        in: "query"
-        description: "Book Information"
-        required: true
-        type: "string"
+        - name: "Info"
+          in: "query"
+          description: "Book Information"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -161,19 +161,19 @@ paths:
   /book/bestOfTheMonth:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Books of the Month"
       description: "Best sellers this month"
       operationId: "getBookBestOfTheMonth"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "Month"
-        in: "query"
-        description: "This month"
-        required: true
-        type: "string"
-        format: "date-time"
+        - name: "Month"
+          in: "query"
+          description: "This month"
+          required: true
+          type: "string"
+          format: "date-time"
       responses:
         200:
           description: "successful operation"
@@ -193,11 +193,11 @@ paths:
   /book/favoriteReading:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get favorite Books"
       operationId: "getBookFavoriteReading"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -214,18 +214,18 @@ paths:
   /book/findByAuthor:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Books by author"
       operationId: "getBookFindByAuthor"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "Name"
-        in: "query"
-        description: "firstname of the author"
-        required: true
-        type: "string"
-        x-example: "Alessandro Manzoni"
+        - name: "Name"
+          in: "query"
+          description: "firstname of the author"
+          required: true
+          type: "string"
+          x-example: "Alessandro Manzoni"
       responses:
         200:
           description: "successful operation"
@@ -245,18 +245,18 @@ paths:
   /book/findByEvent:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Books by event"
       operationId: "getBookFindByEvent"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "Eventname"
-        in: "query"
-        description: "name of the event"
-        required: true
-        type: "string"
-        x-example: "Licia Troisi new book presentation"
+        - name: "Eventname"
+          in: "query"
+          description: "name of the event"
+          required: true
+          type: "string"
+          x-example: "Licia Troisi new book presentation"
       responses:
         200:
           description: "successful operation"
@@ -276,18 +276,18 @@ paths:
   /book/findByGenre:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Books by genre"
       operationId: "getBookFindByGenre"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "genre"
-        in: "query"
-        description: "genre of the book"
-        required: false
-        type: "string"
-        x-example: "fantasy"
+        - name: "genre"
+          in: "query"
+          description: "genre of the book"
+          required: false
+          type: "string"
+          x-example: "fantasy"
       responses:
         200:
           description: "successful operation"
@@ -307,18 +307,18 @@ paths:
   /book/findByTheme:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Books by theme"
       operationId: "getBookFindByTheme"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "theme"
-        in: "query"
-        description: "theme of the book"
-        required: false
-        type: "string"
-        x-example: "family"
+        - name: "theme"
+          in: "query"
+          description: "theme of the book"
+          required: false
+          type: "string"
+          x-example: "family"
       responses:
         200:
           description: "successful operation"
@@ -338,19 +338,19 @@ paths:
   /book/findByTitle:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Books by title"
       description: "Returns a list of books"
       operationId: "getBookByTitle"
       produces:
-      - "application/json"
-      - "applications/json"
+        - "application/json"
+        - "applications/json"
       parameters:
-      - name: "Title"
-        in: "query"
-        required: true
-        type: "string"
-        x-example: "Re"
+        - name: "Title"
+          in: "query"
+          required: true
+          type: "string"
+          x-example: "Re"
       responses:
         200:
           description: "successful operation"
@@ -370,19 +370,19 @@ paths:
   /book/{ISBN}:
     get:
       tags:
-      - "Books"
+        - "Books"
       summary: "Get Book by ISBN"
       operationId: "getBookISBN"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ISBN"
-        in: "path"
-        description: "ID of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 9781402894626
+        - name: "ISBN"
+          in: "path"
+          description: "ID of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 9781402894626
       responses:
         200:
           description: "successful operation"
@@ -400,11 +400,11 @@ paths:
   /event/:
     get:
       tags:
-      - "Events"
+        - "Events"
       summary: "Get all events"
       operationId: "getEvent"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -419,18 +419,18 @@ paths:
   /event/findByBook:
     get:
       tags:
-      - "Events"
+        - "Events"
       summary: "Get Event by Book"
       operationId: "getEventFindByBook"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ISBN"
-        in: "query"
-        description: "ISBN of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "ISBN"
+          in: "query"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -448,18 +448,18 @@ paths:
   /event/findByMonth:
     get:
       tags:
-      - "Events"
+        - "Events"
       summary: "Get Event by Month"
       operationId: "getEventFindByMonth"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "Month"
-        in: "query"
-        description: "Month of the Event"
-        required: true
-        type: "string"
-        format: "date-time"
+        - name: "Month"
+          in: "query"
+          description: "Month of the Event"
+          required: true
+          type: "string"
+          format: "date-time"
       responses:
         200:
           description: "successful operation"
@@ -477,17 +477,17 @@ paths:
   /event/findByName:
     get:
       tags:
-      - "Events"
+        - "Events"
       summary: "Get Event by Name"
       operationId: "getEventFindByName"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "Name"
-        in: "query"
-        description: "Name of the Event"
-        required: true
-        type: "string"
+        - name: "Name"
+          in: "query"
+          description: "Name of the Event"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -505,16 +505,16 @@ paths:
   /event/{EventID}:
     get:
       tags:
-      - "Events"
+        - "Events"
       summary: "Get Event by ID"
       operationId: "getEventEventID"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "EventID"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "EventID"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -532,11 +532,11 @@ paths:
   /genre/:
     get:
       tags:
-      - "Genres"
+        - "Genres"
       summary: "Get all Genres"
       operationId: "getGenre"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -553,18 +553,18 @@ paths:
   /genre/findByBook:
     get:
       tags:
-      - "Genres"
+        - "Genres"
       summary: "Get Genres by book"
       operationId: "getGenreFindByBook"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ISBN"
-        in: "query"
-        description: "ISBN of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "ISBN"
+          in: "query"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -584,16 +584,16 @@ paths:
   /genre/{GenreName}:
     get:
       tags:
-      - "Genres"
+        - "Genres"
       summary: "Get Genre by name"
       operationId: "getGenreGenreName"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "GenreName"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "GenreName"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -611,14 +611,14 @@ paths:
   /purchase/:
     post:
       tags:
-      - "Purchases"
+        - "Purchases"
       summary: "Create Purchase if it doesn't exist
                 and add eventual book"
       operationId: "postPurchase"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
         - name: "ISBN"
           in: "formData"
@@ -634,16 +634,16 @@ paths:
   /purchase/completed:
     post:
       tags:
-      - "Purchases"
+        - "Purchases"
       summary: "Set Purchase as completed"
       operationId: "postPurchaseCompleted"
       parameters:
-      - name: "Date"
-        in: "query"
-        description: "Date of the completion"
-        required: true
-        type: "string"
-        format: "date-time"
+        - name: "Date"
+          in: "query"
+          description: "Date of the completion"
+          required: true
+          type: "string"
+          format: "date-time"
       responses:
         200:
           description: "successful operation"
@@ -653,11 +653,11 @@ paths:
   /purchase/findByUser:
     get:
       tags:
-      - "Purchases"
+        - "Purchases"
       summary: "Get Purchases by user"
       operationId: "getPurchaseFindByUser"
       produces:
-      - "applications/json"
+        - "applications/json"
       responses:
         200:
           description: "successful operation"
@@ -675,16 +675,16 @@ paths:
   /purchase/{PurchaseID}:
     get:
       tags:
-      - "Purchases"
+        - "Purchases"
       summary: "Get Purchase by ID"
       operationId: "getPurchasePurchaseID"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "PurchaseID"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "PurchaseID"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -701,20 +701,20 @@ paths:
       x-swagger-router-controller: "Purchases"
     post:
       tags:
-      - "Purchases"
+        - "Purchases"
       summary: "Add book in Purchase"
       operationId: "postPurchasePurchaseID"
       parameters:
-      - name: "PurchaseID"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "ISBN"
-        in: "query"
-        description: "ISBN of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "PurchaseID"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "ISBN"
+          in: "query"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -723,20 +723,74 @@ paths:
       x-swagger-router-controller: "Purchases"
     delete:
       tags:
-      - "Purchases"
+        - "Purchases"
       summary: "Delete book in Purchase"
       operationId: "deletePurchasePurchaseID"
       parameters:
-      - name: "PurchaseID"
-        in: "path"
-        required: true
-        type: "string"
-      - name: "ISBN"
-        in: "query"
-        description: "ISBN of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "PurchaseID"
+          in: "path"
+          required: true
+          type: "string"
+        - name: "ISBN"
+          in: "query"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+        400:
+          description: "Format error"
+      x-swagger-router-controller: "Purchases"
+  /purchase/book:
+    post:
+      tags:
+        - "Purchases"
+      summary: "Update quantity of book in the cart"
+      operationId: "postPurchaseBook"
+      consumes:
+        - "application/x-www-form-urlencoded"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "PurchaseID"
+          in: "formData"
+          description: "Purchase ID"
+          type: "string"
+          required: true
+        - name: "ISBN"
+          in: "formData"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
+      responses:
+        200:
+          description: "succesfull operation"
+        400:
+          description: "Format error"
+      x-swagger-router-controller: "Purchases"
+    delete:
+      tags:
+        - "Purchases"
+      summary: "Delete book in Purchase"
+      operationId: "deletePurchaseBook"
+      consumes:
+        - "application/x-www-form-urlencoded"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "PurchaseID"
+          in: "formData"
+          required: true
+          type: "string"
+        - name: "ISBN"
+          in: "formData"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -746,17 +800,17 @@ paths:
   /review/:
     post:
       tags:
-      - "Reviews"
+        - "Reviews"
       summary: "Create Review"
       operationId: "postReview"
       consumes:
-      - "application/json"
+        - "application/json"
       parameters:
-      - in: "body"
-        name: "body"
-        required: false
-        schema:
-          $ref: "#/definitions/Review"
+        - in: "body"
+          name: "body"
+          required: false
+          schema:
+            $ref: "#/definitions/Review"
       responses:
         200:
           description: "successful operation"
@@ -766,16 +820,16 @@ paths:
   /review/{ReviewID}:
     get:
       tags:
-      - "Reviews"
+        - "Reviews"
       summary: "Get Review by ID"
       operationId: "getReviewReviewID"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ReviewID"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "ReviewID"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -793,11 +847,11 @@ paths:
   /theme/:
     get:
       tags:
-      - "Themes"
+        - "Themes"
       summary: "Get all Themes"
       operationId: "getTheme"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -814,18 +868,18 @@ paths:
   /theme/findByBook:
     get:
       tags:
-      - "Themes"
+        - "Themes"
       summary: "Get Themes by book"
       operationId: "getThemeFindByBook"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ISBN"
-        in: "query"
-        description: "ISBN of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "ISBN"
+          in: "query"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -845,16 +899,16 @@ paths:
   /theme/{ThemeName}:
     get:
       tags:
-      - "Themes"
+        - "Themes"
       summary: "Get Theme by name"
       operationId: "getThemeThemeName"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ThemeName"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "ThemeName"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -872,13 +926,13 @@ paths:
   /user:
     post:
       tags:
-      - "Users"
+        - "Users"
       summary: "Create User"
       operationId: "postUser"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
         - name: "user_mail"
           in: "formData"
@@ -911,24 +965,24 @@ paths:
   /user/login:
     post:
       tags:
-      - "Users"
+        - "Users"
       summary: "Perform User login"
       operationId: "postUserLogin"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "user_mail"
-        in: "formData"
-        description: "user mail"
-        type: "string"
-        required: true
-      - name: "password"
-        in: "formData"
-        description: "user password"
-        type: "string"
-        required: true
+        - name: "user_mail"
+          in: "formData"
+          description: "user mail"
+          type: "string"
+          required: true
+        - name: "password"
+          in: "formData"
+          description: "user password"
+          type: "string"
+          required: true
       responses:
         200:
           description: "successful operation"
@@ -940,7 +994,7 @@ paths:
   /user/logout:
     post:
       tags:
-      - "Users"
+        - "Users"
       summary: "Perform User logout"
       operationId: "postUserLogout"
       parameters: []
@@ -965,16 +1019,16 @@ paths:
   /user/{UserID}:
     get:
       tags:
-      - "Users"
+        - "Users"
       summary: "Get User by ID"
       operationId: "getUserUserID"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "UserID"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "UserID"
+          in: "path"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -993,15 +1047,15 @@ definitions:
   Book:
     type: "object"
     required:
-    - "Abstract"
-    - "Cover Image"
-    - "Edition"
-    - "ISBN"
-    - "Language"
-    - "Number of Pages"
-    - "Publication Date"
-    - "Publisher"
-    - "Title"
+      - "Abstract"
+      - "Cover Image"
+      - "Edition"
+      - "ISBN"
+      - "Language"
+      - "Number of Pages"
+      - "Publication Date"
+      - "Publisher"
+      - "Title"
     properties:
       ISBN:
         type: "integer"
@@ -1028,8 +1082,8 @@ definitions:
   Theme:
     type: "object"
     required:
-    - "ISBN"
-    - "Theme"
+      - "ISBN"
+      - "Theme"
     properties:
       Theme:
         type: "string"
@@ -1039,8 +1093,8 @@ definitions:
   Genre:
     type: "object"
     required:
-    - "Genre"
-    - "ISBN"
+      - "Genre"
+      - "ISBN"
     properties:
       Genre:
         type: "string"
@@ -1050,11 +1104,11 @@ definitions:
   Author:
     type: "object"
     required:
-    - "AuthorID"
-    - "Bio"
-    - "Date of Birth"
-    - "Name"
-    - "Picture"
+      - "AuthorID"
+      - "Bio"
+      - "Date of Birth"
+      - "Name"
+      - "Picture"
     properties:
       AuthorID:
         type: "integer"
@@ -1071,13 +1125,13 @@ definitions:
   Event:
     type: "object"
     required:
-    - "Details"
-    - "Event Date"
-    - "EventID"
-    - "Introduction"
-    - "Location Address"
-    - "Name"
-    - "Starting Time"
+      - "Details"
+      - "Event Date"
+      - "EventID"
+      - "Introduction"
+      - "Location Address"
+      - "Name"
+      - "Starting Time"
     properties:
       EventID:
         type: "number"
@@ -1114,9 +1168,9 @@ definitions:
   Purchase:
     type: "object"
     required:
-    - "Completed"
-    - "PurchaseID"
-    - "UserID"
+      - "Completed"
+      - "PurchaseID"
+      - "UserID"
     properties:
       PurchaseID:
         type: "integer"
@@ -1132,11 +1186,11 @@ definitions:
   Review:
     type: "object"
     required:
-    - "ISBN"
-    - "Rating"
-    - "ReviewID"
-    - "Text"
-    - "UserID"
+      - "ISBN"
+      - "Rating"
+      - "ReviewID"
+      - "Text"
+      - "UserID"
     properties:
       ReviewID:
         type: "integer"
@@ -1154,7 +1208,7 @@ definitions:
   Error:
     type: "object"
     required:
-    - "code"
+      - "code"
     properties:
       code:
         type: "integer"

@@ -57,3 +57,33 @@ module.exports.postPurchasePurchaseID = function postPurchasePurchaseID (req, re
           utils.writeJson(res, response);
       });
 };
+
+module.exports.postPurchaseBook = function postPurchasePurchaseID (req, res, next) {
+
+    var purchase_id = req.swagger.params["purchase_id"].value;
+    var isbn = req.swagger.params["isbn"].value;
+    var quantity = req.swagger.params["quantity"].value;
+
+
+    Purchases.postPurchaseBook(purchase_id, isbn, quantity)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
+};
+
+module.exports.deletePurchaseBook = function postPurchasePurchaseID (req, res, next) {
+
+    var purchase_id = req.swagger.params["purchase_id"].value;
+    var isbn = req.swagger.params["isbn"].value;
+
+    Purchases.deletePurchaseBook(purchase_id, isbn)
+        .then(function (response) {
+            utils.writeJson(res, response);
+        })
+        .catch(function (response) {
+            utils.writeJson(res, response);
+        });
+};
