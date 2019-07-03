@@ -89,11 +89,11 @@ var generateBestsellerDiv = function (books) {
     var i = 1;
     for (var b of books) {
         $('#show').append('<div class="imagebox">' +
-            '<a href="http://localhost:8080/pages/book.html?isbn='+b.isbn+'">' +
+            '<a href="'+ip+'/pages/book.html?isbn='+b.isbn+'">' +
             '<img id="'+i+'" class="image" src="./assets/Images/BookCovers/'+b.title+'.jpg">' +
             '</a>' +
             '<div class="bookinfo">' +
-            '<a href="http://localhost:8080/pages/book.html?isbn='+b.isbn+'">' +
+            '<a href="'+ip+'/pages/book.html?isbn='+b.isbn+'">' +
             '<h3>'+b.title+'</h3>' +
             '</a>' +
             '<p>'+b.authors+'</p>' +
