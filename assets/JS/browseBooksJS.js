@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 
 
@@ -115,7 +115,7 @@ $(document).on('click', 'button', function () {
 
     var data = {
         "ISBN": isbn
-    }
+    };
 
     $.post(ip + "api/purchase/", data).done(
         function(response){
