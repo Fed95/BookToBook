@@ -1,23 +1,23 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-        "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="../assets/CSS/collapsible.css">
-    <script src="../assets/JS/collapsible.js"></script>
-</head>
-<body>
-<p>A Collapsible:</p>
-<button class="collapsible">Open Collapsible</button>
-<div class="content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat.</p>
-    <div>i'm a div</div>
+<div class="list-group-item clearfix">
+    <div class="row">
+        <div class="col-2 col-2-hidden-xs">
+            <div class="book-img"><a href="http://localhost:8080/pages/book.html?isbn=9780001243136"><img
+                    src="../assets/Images/BookCovers/Thumbnails/The BFG.jpg"></a></div>
+        </div>
+        <div class="col-8 col-8-bigger-xs"><h3 id="title" class="book-title"><a
+                href="http://localhost:8080/pages/book.html?isbn=9780001243136">The BFG</a></h3>
+            <div class="book-info">
+                <div class="col-4 info"><span>Authors:</span>
+                    <p><a href="http://localhost:8080/pages/author.html?author_id=1">Roald Dahl</a>, <a
+                            href="http://localhost:8080/pages/author.html?author_id=4">Quentin Blake</a></p></div>
+                <div class="col-5 info"><span>ISBN:</span>
+                    <p class="isbn">9780001243136</p></div>
+                <div class="col-3 info"><span>Price:</span>
+                    <p>14$</p></div>
+            </div>
+        </div>
+        <div class="col-2 col-2-muchbigger-xs noleft-pad">
+            <button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>
+        </div>
+    </div>
 </div>
-
-</body>
-
-</html>

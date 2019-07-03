@@ -1,127 +1,4 @@
-/*
-.homepage-section {
-    height: 500px;
-    width: 100%;
-    margin: 0;
-}
-.homepage-section h1{
-    text-align: center;
-    margin: 0;
-    padding: 30px 0 0 30px;
-}
 
-
-#topMenu {
-    background-color:#222;
-    overflow: auto;
-}
-
-#box {
-    position:relative;
-    //margin:0 auto;
-    padding:5px;
-    width:90%;
-}
-
-.scroller {
-    color:#ffffff;
-    width:40px;
-    text-align:center;
-    cursor:pointer;
-    display:none;
-    padding:5px;
-    margin-top:5px;
-}
-
-.scroller-right{
-    float:right;
-}
-
-.scroller-left {
-    float:left;
-}
-
-.wrapper {
-    position:relative;
-    margin:0 auto;
-    overflow:hidden;
-    padding:5px;
-    height:50px;
-}
-
-.list {
-    position:absolute;
-    left:0px;
-    top:0px;
-    min-width:3000px;
-    margin-left:12px;
-    margin-top:0px;
-}
-
-
-.item{
-    padding:10px;
-    //float:left;
-    display:table-cell;
-    margin:1px;
-    position:relative;
-    text-align:center;
-    cursor:grab;
-    //cursor:-webkit-grab;
-    color:#efefef;
-    border: 1px dotted #111;
-    vertical-align:middle;
-}*/
-/*
-.best-seller {
-
-   background-color: #DF9881;
-}
-
-.latest-events {
-
-    background-color: #F2D7B4;
-
-}
-
-.popular-genres {
-    background-color: #ECE6D2;
-}
-
-.remove-all-margin {
-    margin: 0 ! important;
-    padding: 0 ! important;
-}
- */
-/*.homepage-box {
-    height: 300px;
-    width: 400px;
-    margin: 20px;
-    border-style: solid;
-    border-width: 0px;
-    display: inline-block;
-    border-color: lightgray;
-    background-color: #FFFFFF;
-}
-.homepage-box:hover{
-    box-shadow: 1px 1px 6px lightgray;
-}
-
-.homepage-box img {
-    float: left;
-    width: auto;
-    height: 100%;
-    padding: 20px;
-}
-.homepage-box div{
-    float: left;
-}
-.scrolling-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}*/
 .bookinfo h3{
     font-size: 18px;
     margin-bottom: 1px;
@@ -225,10 +102,10 @@
         width: 100%;
     }
     .bookinfo h3{
-        font-size: 14px;
+        font-size: 20px;
     }
     .bookinfo p{
-        font-size: 10px;
+        font-size: 14px;
     }
     .right-arrow{
         width: 15%;
