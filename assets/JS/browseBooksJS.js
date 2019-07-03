@@ -129,7 +129,9 @@ $(document).on('click', '#search-results-container button', function () {
         }
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
-            console.log('failed!')
+            if(jqXHR.status == 401){
+                window.location.href = ip + "pages/login.html?#";
+            }
         }
     );
 })

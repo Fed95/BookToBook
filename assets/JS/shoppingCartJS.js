@@ -216,7 +216,7 @@ function deleteInDb($input) {
         "purchase_id": purchase_id,
         "isbn": isbn
     };
-    
+
     $.ajax({
         url: ip + "api/purchase/book",
         type: 'DELETE',

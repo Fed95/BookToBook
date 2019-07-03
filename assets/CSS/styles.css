@@ -70,7 +70,6 @@ a:hover, a:visited, a:link, a:active{
 }
 .row{
     align-items: center;
-    margin-right: 0px;
     margin-left: 0px;
 }
 .form-inline {

@@ -489,7 +489,9 @@ $(document).on('click', '#homepage-container button', function () {
         showConfirmation($(this).parent())
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
-            console.log('failed!')
+            if(jqXHR.status == 401){
+                window.location.href = ip + "pages/login.html?#";
+            }
         }
     );
 })
