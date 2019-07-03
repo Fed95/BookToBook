@@ -158,7 +158,7 @@ function showConfirmation($div) {
             $prev.fadeTo("slower", 0, function () {
                 $prev.remove()
                 $prev = null
-                counter = 0
+                counter = 1
             })
         }
     }, 2500);
