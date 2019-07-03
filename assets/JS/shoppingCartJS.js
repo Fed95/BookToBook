@@ -27,7 +27,7 @@ var displayPurchases = function(purchase_list){
     console.log("parsed: ", parsed);
 
     var grouped_by_isbn = _.groupBy(parsed, 'isbn');
-    var grouped_by_author = _.groupBy(parsed, 'name');
+    var purchase_id = parsed[0].purchase_id
 
     var tot = 0;
 
