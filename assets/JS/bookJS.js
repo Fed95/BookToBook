@@ -206,13 +206,8 @@ var generateBookDiv = function (book, authors, interview, reviews, genres, theme
     var $div16 = $("<div class = 'col-8' />");
     $div16.html("Price: $ " + book.price);
     var $div17 = $("<div class = 'col-4' />");
-    if(top.loggedIn){
-        var $b1 = $('<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input"/>')
-    }else{
-        var $b1 = $('<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">' +
-            '<a href="'+ ip +'pages/login.html?#">Add to Cart</a>' +
-            '</button>');
-    }
+    var $b1 = $("<button id='add-book-btn-1' class='btn btn-outline-success btn-add-book' type='input'/>");
+    $b1.html("Add to Cart");
 
 
     $("#book-div").append($div1);
@@ -490,10 +485,8 @@ $(document).on('click', '#homepage-container button', function () {
     };
 
     $.post(ip + "api/purchase/", data).done(
-        function (response) {
-            console.log('succesful post purchase operation! response: ', response),
-                showConfirmation($this.parent())
-        }
+        console.log('succesful post purchase operation!'),
+        showConfirmation($(this).parent())
     ).fail(
         function (jqXHR, textStatus, errorThrown) {
             console.log('failed!')

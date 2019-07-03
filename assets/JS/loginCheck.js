@@ -1,7 +1,6 @@
 //var ip = "https://booktobook.herokuapp.com/";
 var ip = "http://localhost:8080/";
 
-top.loggedIn = false
 
 $(document).ready(function () {
     console.log($('#myNavbar'))

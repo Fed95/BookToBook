@@ -242,3 +242,8 @@ button:focus { outline:0 !important; }
 .sticky + #homepage-container {
     padding-top: 50px;
 }
+.no-result{
+    text-align: center;
+    font-size: 30px;
+    color: #929292;
+}
