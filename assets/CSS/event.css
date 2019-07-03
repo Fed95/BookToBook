@@ -1,3 +1,6 @@
+#homepage-container{
+    min-height: 52vh;
+}
 .image-container {
     background: url('../Images/EventImages/default.jpg') center center;
     background-size: cover;
