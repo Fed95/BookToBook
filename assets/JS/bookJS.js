@@ -363,7 +363,9 @@ var addEvents = function(events){
     $('#events-div').append('<div id="events" class="content" />');
 
     if(events.length < 1) {
-        $('#events').append('<p class="col-12 review-item">There are no events related to this book.</p>')
+        $('#events').append('<div class = "row review-row">' +
+            '<p class="col-12 review-item">There are no events related to this book.</p>' +
+            '</div>')
     }else {
         for(var e of events){
         $('#events').append(
