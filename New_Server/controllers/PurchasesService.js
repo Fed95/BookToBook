@@ -93,6 +93,11 @@ exports.postPurchase = function(ISBN, user_mail) {
                                     if(ISBN){
                                         return knex('new_schema.bought_in')
                                             .insert({purchase_id: purchase_id, isbn: ISBN})
+                                            .then(resultf =>{
+                                                resolve(result)
+                                            })
+                                    }else{
+                                        resolve(result)
                                     }
 
                                 })
@@ -114,6 +119,9 @@ exports.postPurchase = function(ISBN, user_mail) {
                                 // insert the book in the table book - purchase
                                 return knex('new_schema.bought_in')
                                     .insert({purchase_id: purchase_id, isbn: ISBN})
+                                    .then( resultf =>{
+                                        resolve(result)
+                                    })
                             }
                             else {
                                 // the book is already associated
@@ -127,6 +135,11 @@ exports.postPurchase = function(ISBN, user_mail) {
                                         return knex('new_schema.bought_in')
                                             .where({purchase_id: purchase_id, isbn: ISBN})
                                             .update('quantity', quantity + 1)
+                                            .then(resultf=>{
+                                                resolve(result)
+
+                                            })
+
                                     })
 
 

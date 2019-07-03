@@ -39,7 +39,7 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
       .catch(function (response) {
           utils.writeJson(res, response);
       });
-};
+};e
 
 module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res, next) {
   Purchases.postPurchaseCompleted(req.swagger.params, res, next);
@@ -69,6 +69,7 @@ module.exports.postPurchaseBook = function postPurchasePurchaseID (req, res, nex
 
     Purchases.postPurchaseBook(purchase_id, isbn, quantity)
         .then(function (response) {
+            console.log("/////////////////////DONE")
             utils.writeJson(res, response);
         })
         .catch(function (response) {
