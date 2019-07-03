@@ -109,25 +109,27 @@ var generateBookDivTest = function (isbn, title, authors, price){
     )
 }
 
+// Handling AddBook request
 $(document).on('click', 'button', function () {
     var isbn = $(this).closest('.row').find('.isbn p').html()
     console.log('found isbn = ', isbn)
-
     var data = {
         "ISBN": isbn
     };
-
     $.post(ip + "api/purchase/", data).done(
-        function(response){
-            // do something when response is ok
-            console.log('succesful post purchase operation! response: ',response);
-        }
+        console.log('succesful post purchase operation!'),
+        showConfirmation($(this).parent())
     ).fail(
         function(jqXHR, textStatus, errorThrown) {
             console.log('failed!')
         }
     );
 })
+function showConfirmation($div){
+    console.log('Addinggg')
+    var $confirm = $('<div class="confirmation">Added!</div>')
+    $div.append($confirm)
+}
 
 var getAuthorLinks = function (authors) {
 

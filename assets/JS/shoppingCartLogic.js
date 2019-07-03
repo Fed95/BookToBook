@@ -36,6 +36,10 @@ function updateQuantity(quantityInput) {
     var $grand_total = $input.closest('.shopping-cart').find('.grand-total-price');
 
     var value = parseInt($input.val());
+    if(value < 1){
+        value = 0
+        $input.val(0)
+    }
     var price = parseInt($price[0].innerHTML);
     var old_total = parseInt($total[0].innerHTML);
     var grand_total = parseInt($grand_total[0].innerHTML);

@@ -120,6 +120,9 @@ p a:hover{
     h3{
         margin-left: 15px;
     }
+    .col-2{
+        width: 100%;
+    }
 }
 
 .list-group-item{
@@ -167,4 +170,15 @@ p a:hover{
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+}
+.confirmation{
+    background-color: #FCF1D8;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #b5ab98;
+    border-radius: 4px;
+    margin-top: 10px;
+    color: #575048;
+    padding: 6px 12px 6px 12px;
+    width: 91.3px;
 }
