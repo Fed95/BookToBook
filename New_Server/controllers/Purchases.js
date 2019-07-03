@@ -39,7 +39,7 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
       .catch(function (response) {
           utils.writeJson(res, response);
       });
-};e
+};
 
 module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res, next) {
   Purchases.postPurchaseCompleted(req.swagger.params, res, next);
@@ -60,7 +60,6 @@ module.exports.postPurchasePurchaseID = function postPurchasePurchaseID (req, re
 
 module.exports.postPurchaseBook = function postPurchasePurchaseID (req, res, next) {
 
-    console.log('////////',req.swagger.params)
 
     var purchase_id = req.swagger.params["purchase_id"].value;
     var isbn = req.swagger.params["isbn"].value;
@@ -69,7 +68,6 @@ module.exports.postPurchaseBook = function postPurchasePurchaseID (req, res, nex
 
     Purchases.postPurchaseBook(purchase_id, isbn, quantity)
         .then(function (response) {
-            console.log("/////////////////////DONE")
             utils.writeJson(res, response);
         })
         .catch(function (response) {
@@ -84,6 +82,7 @@ module.exports.deletePurchaseBook = function postPurchasePurchaseID (req, res, n
 
     Purchases.deletePurchaseBook(purchase_id, isbn)
         .then(function (response) {
+            console.log("Delete Book")
             utils.writeJson(res, response);
         })
         .catch(function (response) {

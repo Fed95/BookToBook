@@ -637,13 +637,26 @@ paths:
         - "Purchases"
       summary: "Set Purchase as completed"
       operationId: "postPurchaseCompleted"
+      consumes:
+        - "application/x-www-form-urlencoded"
+      produces:
+        - "application/json"
       parameters:
-        - name: "Date"
-          in: "query"
-          description: "Date of the completion"
+        - name: "shipping_address"
+          in: "formData"
+          description: "Shipping Address"
           required: true
           type: "string"
-          format: "date-time"
+        - name: "cardholder"
+          in: "formData"
+          description: "Cardholder's Name"
+          required: true
+          type: "string"
+        - name: "Card_number"
+          in: "formData"
+          description: "Credit Card Number"
+          required: true
+          type: "string"
       responses:
         200:
           description: "successful operation"
@@ -787,11 +800,11 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - name: "PurchaseID"
+        - name: "purchase_id"
           in: "formData"
           required: true
           type: "string"
-        - name: "ISBN"
+        - name: "isbn"
           in: "formData"
           description: "ISBN of the Book"
           required: true
