@@ -476,7 +476,7 @@ var generateListFronGrouped = function(grouped){
 // Handling AddBook request
 //----------------------------------------------------------
 
-$(document).on('click', '#homepage-container button', function () {
+$(document).on('click', '#homepage-container #add-book-btn-1', function () {
     var isbn = $(this).closest('.singleItemContainer').find('p.isbn').html()
     console.log('found isbn = ', isbn)
 
