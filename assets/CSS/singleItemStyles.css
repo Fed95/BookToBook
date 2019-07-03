@@ -1,3 +1,6 @@
+#homepage-container{
+    min-height: 52vh;
+}
 .singleItemImage {
     width: 100%;
     display: block;
