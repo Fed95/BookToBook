@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 
 
@@ -70,77 +70,44 @@ var displayFoundBooks = function(books_list) {
             authors.push(author);
         }
 
-        generateBookDiv(isbn, title, authors, price)
+        generateBookDivTest(isbn, title, authors, price)
     }
 };
 
+var generateBookDivTest = function (isbn, title, authors, price){
+    $("#search-results-container").append(
+        '<div>' +
+        '    <div class="row">' +
+        '        <div class="browse-books-image col-3">' +
+        '            <div class="col-12 book-img"><a href="'+ip + 'pages/book.html?isbn='+isbn+'"><img' +
+        '                    src="../assets/Images/BookCovers/Thumbnails/'+title+'.jpg"></a></div>' +
+        '        </div>' +
+        '           <div class="browse-books-rest col-9">' +
+        '<div >' +
+        '<div class="row">' +
+        '<div class="book-title-and-info col-10">' +
+        '<div class="row">' +
+        '<h3><a href="'+ip + 'pages/book.html?isbn='+isbn+'">'+title+'</a></h3>' +
+        '</div>'+
+        '<div class="row book-info">' +
+        '<div class="col-4"><h4>Authors:</h4><p>'+getAuthorLinks(authors)+'</p></div> '+
+        '<div class="col-4 isbn"><h4>ISBN:</h4><p>'+isbn+'</p></div> '+
+        '<div class="col-4"><h4>Price:</h4><p>$ '+price+'</p></div> '+
+        '</div>'+
+        '</div>' +
+        '<div class="col-2">' +
+        '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>' +
+        '</div>' +
+        '</div>' +
+        '</div>'+
 
 
-
-
-var generateBookDiv = function (isbn, title, authors, price) {
-
-    var $div1 = $("<div />", {class : "list-group-item clearfix"});
-        var $div2 = $("<div class = 'row'/>");
-            var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
-                var $div4 = $("<div class = 'book-img'/>");
-                    var $aim = $("<a />", {href : ip + 'pages/book.html?isbn='+isbn});
-                    var $im = $("<img />", { src : "../assets/Images/BookCovers/Thumbnails/"+title+".jpg"});
-            var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
-                var $h = $("<h3 />", {id : 'title', class : 'book-title'});
-                var $a5 = $("<a />", {href : ip + 'pages/book.html?isbn='+isbn}); $a5.html(title);
-                var $div6 = $("<div class = 'book-info'/>");
-                    var $div7 = $("<div class = 'col-4 info'/>");
-                        var $s7 = $("<span />"); $s7.html('Authors:');
-                        var $p7 = $("<p />");
-                    var $div9 = $("<div class = 'col-5 info'/>");
-                        var $s9 = $("<span />"); $s9.html('ISBN:');
-                        var $p9 = $("<p class='isbn'/>"); $p9.html(isbn);
-                    var $div8 = $("<div class = 'col-3 info'/>");
-                        var $s8 = $("<span />"); $s8.html('Price:');
-                        var $p8 = $("<p />"); $p8.html(price + '$');
-
-            var $div10 = $("<div class = 'col-2 col-2-muchbigger-xs noleft-pad'>");
-                var $b10 = $("<button />", {id : 'add-book-btn-1', class : "btn btn-outline-success btn-add-book" , type : "input"});//, onclick: "addBookToCart()"});
-                $b10.html('Add to Cart')
-
-    var $hr = $('<hr />');
-
-
-    $("#search-results-container").append($div1);
-    $div1.append($div2);
-    $div2.append($div3);
-    $div3.append($div4);
-    $div4.append($aim);
-    $aim.append($im);
-    $div2.append($div5);
-    $div5.append($h);
-    $h.append($a5);
-    $div5.append($div6);
-    $div6.append($div7);
-    $div7.append($s7);
-    $div7.append($p7);
-
-    console.log(authors)
-    for(var i in authors){
-        if(i > 0){$p7.append(', <a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+authors[i].name+'</a>')}
-        else {
-            $p7.append('<a href="'+ip+'pages/author.html?author_id='+authors[i].id+'">'+authors[i].name+'</a>')
-        }
-
-    }
-
-    $div6.append($div9);
-    $div9.append($s9);
-    $div9.append($p9);
-    $div6.append($div8);
-    $div8.append($s8);
-    $div8.append($p8);
-    $div2.append($div10);
-    $div10.append($b10);
-    $("#search-results-container").append($hr);
-
-};
+        '       </div>'+
+        '    </div>' +
+        '</div>'+
+        '<hr/>'
+    )
+}
 
 $(document).on('click', 'button', function () {
     var isbn = $(this).closest('.row').find('p.isbn').html()
@@ -148,7 +115,7 @@ $(document).on('click', 'button', function () {
 
     var data = {
         "ISBN": isbn
-    }
+    };
 
     $.post(ip + "api/purchase/", data).done(
         function(response){
@@ -163,4 +130,15 @@ $(document).on('click', 'button', function () {
     );
 })
 
+var getAuthorLinks = function (authors) {
+
+    var author_links = ""
+
+    for (var a of authors) {
+        author_links += ', <a href="' + ip + 'pages/author.html?author_id=' + a.id + '">' + a.name + '</a>'
+    }
+
+    return author_links.substring(1)
+
+};
 

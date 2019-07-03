@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 var xhttpEvents = new XMLHttpRequest();
 xhttpEvents.onreadystatechange = function () {
@@ -34,9 +34,9 @@ var addMonthBestsellers = function (parsed) {
         }
         books.push(book)
     }
-    var truncated = books.slice(0, 4) //todo: try and make this dynamic
+   // var truncated = books.slice(0, 5) //todo: try and make this dynamic
 
-    truncated.sort(function (a, b) {
+    books.sort(function (a, b) {
         if (a.sales < b.sales) {
             return -1
         } else if (a.sales > b.sales) {
@@ -45,8 +45,8 @@ var addMonthBestsellers = function (parsed) {
             return 0
         }
     });
-    console.log('book list prepared: ', truncated)
-    generateBestsellerDiv(truncated)
+    console.log('book list prepared: ', books)
+    generateBestsellerDiv(books)
 };
 
 var getPurchaseCount = function (purchases) {
@@ -86,14 +86,14 @@ var getAuthorLinks = function (purchases) {
 
 var generateBestsellerDiv = function (books) {
 
-    var i = 1
+    var i = 1;
     for (var b of books) {
         $('#show').append('<div class="imagebox">' +
-            '<a href="http://localhost:8080/pages/book.html?isbn='+b.isbn+'">' +
+            '<a href="'+ip+'/pages/book.html?isbn='+b.isbn+'">' +
             '<img id="'+i+'" class="image" src="./assets/Images/BookCovers/'+b.title+'.jpg">' +
             '</a>' +
             '<div class="bookinfo">' +
-            '<a href="http://localhost:8080/pages/book.html?isbn='+b.isbn+'">' +
+            '<a href="'+ip+'/pages/book.html?isbn='+b.isbn+'">' +
             '<h3>'+b.title+'</h3>' +
             '</a>' +
             '<p>'+b.authors+'</p>' +

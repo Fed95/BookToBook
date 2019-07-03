@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 var xhttpEvents = new XMLHttpRequest();
 xhttpEvents.onreadystatechange = function () {
@@ -10,6 +10,7 @@ xhttpEvents.onreadystatechange = function () {
     }
 };
 
+//todo check if this is returning the correct month. sembra che torni sempre 6
 var current_month = new Date().getMonth();
 
 xhttpEvents.open("GET", ip + "api/event/findByMonth?Month=" + current_month, true);

@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 
 //---------------------------------------------------------------------
@@ -35,6 +35,7 @@ var displayPurchases = function(purchase_list){
 
         var books = grouped_by_isbn[isbn];
         var purchase = {
+            isbn: grouped_by_isbn[isbn][0].isbn,
             title: grouped_by_isbn[isbn][0].title,
             price: grouped_by_isbn[isbn][0].price,
             quantity: grouped_by_isbn[isbn][0].quantity,
@@ -73,7 +74,7 @@ var generatePurchaseDiv = function(purchase){
         var $img_div = $("<div class='col image' />");
             var $img = $("<img />", { src: "../assets/Images/BookCovers/Thumbnails/"+purchase.title+".jpg"});
         var $description = $("<div class='col description' />");
-            var $title = $("<span />"); $title.html(purchase.title);
+            var $title = $("<a >", {class:'title-link', href:ip+"/pages/book.html?isbn="+purchase.isbn}); $title.html(purchase.title);
             var $title2 = $("<span />"); $title2.html(getAuthorLinks(purchase));
         var $price_info = $("<div class='row price-info'/>")
             var $price = $("<div class='col-4 product-price'/>"); $price.html(purchase.price);

@@ -1,5 +1,5 @@
-//var ip = "https://booktobook.herokuapp.com/";
-var ip = "http://localhost:8080/";
+var ip = "https://booktobook.herokuapp.com/";
+//var ip = "http://localhost:8080/";
 
 $('#form-signin').submit(function(e){
     e.preventDefault();
@@ -26,6 +26,9 @@ $(()=>{
     $('#logreg-forms #btn-signup').click(toggleSignUp);
     $('#logreg-forms #cancel_signup').click(toggleSignUp);
 
+    $(document).on('click', 'button', function () {
+        $(document).find('.alert').remove()
+    })
     $(document).on('click', 'a.register-dynamic-link', function () {
         toggleSignUp()
         console.log('aaaa')
