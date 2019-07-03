@@ -239,10 +239,10 @@ exports.getBookISBN = function (isbn) {
             .leftJoin('new_schema.book_themes AS bt', 'b.isbn', 'bt.isbn')
             .leftJoin('new_schema.themes AS t', 'bt.book_theme_name', 't.theme_name')
 
-            .innerJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
-            .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
+            .leftJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
+            .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
 
-            .leftJoin('new_schema.interviews AS i', 'b.isbn', 'i.isbn')
+            .leftJoin('new_schema.interviews AS i', 'b.isbn', 'i.interview_isbn')
 
             .where('b.isbn', isbn)
             .then(result => {

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/JS/bookJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/New_Server/controllers/BooksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/BooksService.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,11 +38,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
               <caret line="400" column="38" selection-start-line="400" selection-start-column="38" selection-end-line="400" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/New_Server/controllers/BooksService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
             </state>
           </provider>
         </entry>
@@ -60,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logout</find>
       <find>///</find>
       <find>////</find>
       <find>+</find>
@@ -90,6 +98,7 @@
       <find>&lt;script src=&quot;../assets/JS/utilsJS.js&quot;&gt;&lt;/script&gt;</find>
       <find>purchase/</find>
       <find>max</find>
+      <find>interviews</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -129,7 +138,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/JS/browseEventsJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/singleItemStyles.css" />
         <option value="$PROJECT_DIR$/assets/CSS/event.css" />
         <option value="$PROJECT_DIR$/assets/CSS/sections.css" />
@@ -180,6 +188,7 @@
         <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/AuthorsService.js" />
         <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
+        <option value="$PROJECT_DIR$/New_Server/controllers/BooksService.js" />
       </list>
     </option>
   </component>
@@ -367,7 +376,7 @@
       <workItem from="1561619851492" duration="37881000" />
       <workItem from="1561815047147" duration="6956000" />
       <workItem from="1561959684048" duration="15257000" />
-      <workItem from="1562082625788" duration="24786000" />
+      <workItem from="1562082625788" duration="25002000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -401,7 +410,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="339163000" />
+    <option name="totallyTimeSpent" value="339379000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,13 +425,13 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19802678" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19802678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28674698" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.213253" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.213253" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -544,13 +553,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/New_Server/controllers/Purchases.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/BooksService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3445">
-          <caret line="241" column="12" lean-forward="true" selection-start-line="241" selection-start-column="12" selection-end-line="242" selection-end-column="80" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/homepage_eventsJS.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -912,6 +914,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="254">
           <caret line="400" column="38" selection-start-line="400" selection-start-column="38" selection-end-line="400" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_Server/controllers/BooksService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
         </state>
       </provider>
     </entry>
