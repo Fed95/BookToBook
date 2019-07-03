@@ -3,7 +3,9 @@
 * {
     box-sizing: border-box;
 }
-
+h1{
+    margin-bottom: 5%;
+}
 .shopping-cart {
     width: 750px;
     margin: auto auto 20px auto;

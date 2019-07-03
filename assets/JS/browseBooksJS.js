@@ -134,7 +134,6 @@ var $prev = null
 var counter = 0
 
 function showConfirmation($div) {
-    console.log('Addinggg')
     if ($prev == null) {
         $prev = $('<div class="confirmation">Added!</div>')
     } else {

@@ -75,9 +75,10 @@ var generatePurchaseDiv = function(purchase){
         var $img_div = $("<div class='col image' />");
             var $img = $("<img />", { src: "../assets/Images/BookCovers/Thumbnails/"+purchase.title+".jpg"});
         var $description = $("<div class='col description' />");
-            var $title = $("<a >", {class:'title-link', href:ip+"/pages/book.html?isbn="+purchase.isbn}); $title.html(purchase.title);
-            var $title2 = $("<span />"); $title2.html(getAuthorLinks(purchase));
-            var $isbn = $("<span />"); $isbn.html(purchase.isbn);
+            var $title_link = $("<a >", {class:'title-link', href:ip+"/pages/book.html?isbn="+purchase.isbn});
+            var $title = $("<h4 >"); $title.html(purchase.title);
+            var $title2 = $("<span />"); $title2.html('By: '+ getAuthorLinks(purchase));
+            var $isbn = $("<span />"); $isbn.html('ISBN: ' + purchase.isbn);
         var $price_info = $("<div class='row price-info'/>")
             var $price = $("<div class='col-4 product-price'/>"); $price.html(purchase.price);
             var $quantity = $("<div class='col-4 product-quantity'/>");
@@ -90,7 +91,8 @@ var generatePurchaseDiv = function(purchase){
     $item.append($img_div);
     $img_div.append($img);
     $item.append($description);
-    $description.append($title);
+    $description.append($title_link);
+    $title_link.append($title);
     $description.append($title2);
     $description.append($isbn);
     $item.append($price_info);

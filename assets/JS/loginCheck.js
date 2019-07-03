@@ -5,7 +5,6 @@ $(document).ready(function () {
     console.log($('#myNavbar'))
 
     checkCookie().then(user_mail => {
-
         if (user_mail === false) {
             console.log('User Check couldn\'t find any active cookies!')
             $('#login-link').html($('#login-link').html().replace("Logout", "Login"));

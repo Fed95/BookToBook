@@ -87,10 +87,10 @@ var generateAuthorDiv = function (name, author_id) {
 
     var $div1 = $("<div />", {class : "list-group-item clearfix"});
     var $div2 = $("<div class = 'row'/>");
-    var $div3 = $("<div class = 'col-2 col-2-hidden-xs'>");
+    var $div3 = $("<div class = 'author-picture col-4 col-2-hidden-xs'>");
     var $div4 = $("<div class = 'book-img'/>");
     var $im = $("<img />", { src : "../assets/Images/AuthorPictures/Thumbnails/"+name+".jpg"});
-    var $div5 = $("<div class = 'col-8 col-8-bigger-xs'/>");
+    var $div5 = $("<div class = 'author-name col-8 col-8-bigger-xs'/>");
     var $h = $("<h3 />", {id : 'title', class : 'book-title'});
     var $a = $("<a />", {href : ip + 'pages/author.html?author_id='+author_id}); $a.html(name);
     var $div6 = $("<div class = 'book-info'/>");
