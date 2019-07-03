@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/assets/JS/authorJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/authorJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/bookJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseBooksTestJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseBooksTestJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseEventsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseEventsJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseGenresJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseGenresJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseThemesJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseThemesJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/eventJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/eventJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/genreJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/genreJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/loginCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginCheck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/loginJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/themeJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/themeJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/utilsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/utilsJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,10 +33,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+        <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="1" selection-end-column="36" />
+            <state relative-caret-position="270">
+              <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -37,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>//</find>
       <find>/</find>
       <find>logout</find>
       <find>///</find>
@@ -67,6 +83,7 @@
       <find>\n</find>
       <find>localhost</find>
       <find>&lt;script src=&quot;../assets/JS/utilsJS.js&quot;&gt;&lt;/script&gt;</find>
+      <find>purchase/</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -204,6 +221,23 @@
             <path>
               <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
+              <item name="New_Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
+              <item name="New_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
+              <item name="New_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -327,7 +361,7 @@
       <workItem from="1561619851492" duration="37881000" />
       <workItem from="1561815047147" duration="6956000" />
       <workItem from="1561959684048" duration="15257000" />
-      <workItem from="1562082625788" duration="19646000" />
+      <workItem from="1562082625788" duration="20440000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -361,7 +395,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334023000" />
+    <option name="totallyTimeSpent" value="334817000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -382,7 +416,7 @@
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28674698" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.24216868" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.213253" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -484,13 +518,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="967" column="42" lean-forward="true" selection-start-line="954" selection-start-column="2" selection-end-line="967" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/New_Server/controllers/UsersService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -814,13 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="76" column="67" selection-start-line="76" selection-start-column="67" selection-end-line="76" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/book.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
@@ -872,10 +892,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="618" column="21" selection-start-line="618" selection-start-column="21" selection-end-line="618" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="36" />
+        <state relative-caret-position="1725">
+          <caret line="115" column="12" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>

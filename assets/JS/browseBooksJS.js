@@ -1,5 +1,5 @@
-var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
+//var ip = "https://booktobook.herokuapp.com/";
+var ip = "http://localhost:8080/";
 
 
 
@@ -110,7 +110,7 @@ var generateBookDivTest = function (isbn, title, authors, price){
 }
 
 $(document).on('click', 'button', function () {
-    var isbn = $(this).closest('.row').find('p.isbn').html()
+    var isbn = $(this).closest('.row').find('.isbn p').html()
     console.log('found isbn = ', isbn)
 
     var data = {
@@ -120,8 +120,7 @@ $(document).on('click', 'button', function () {
     $.post(ip + "api/purchase/", data).done(
         function(response){
             // do something when response is ok
-            window.location.href = ip + "index.html";
-            console.log(response);
+            console.log('succesful post purchase operation! response: ',response);
         }
     ).fail(
         function(jqXHR, textStatus, errorThrown) {
