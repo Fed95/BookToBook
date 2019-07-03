@@ -4,9 +4,6 @@ var utils = require('../utils/writer.js');
 var Purchases = require('./PurchasesService');
 
 
-module.exports.deletePurchasePurchaseID = function deletePurchasePurchaseID (req, res, next) {
-  Purchases.deletePurchasePurchaseID(req.swagger.params, res, next);
-};
 
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
         let user_mail = req.session.user_mail;
@@ -21,9 +18,6 @@ module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res,
             });
 };
 
-module.exports.getPurchasePurchaseID = function getPurchasePurchaseID (req, res, next) {
-  Purchases.getPurchasePurchaseID(req.swagger.params, res, next);
-};
 
 module.exports.postPurchase = function postPurchase (req, res, next) {
     if(!req.session || !req.session.loggedIn){
@@ -51,19 +45,6 @@ module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res,
       .then(function (response) {
           console.log("Purchase completed")
           utils.writeJson(res, response);
-  })
-      .catch(function (response) {
-          utils.writeJson(res, response);
-      });
-};
-
-module.exports.postPurchasePurchaseID = function postPurchasePurchaseID (req, res, next) {
-
-    var user_mail = req.session.user_mail;
-
-  Purchases.postPurchasePurchaseID(user_mail)
-      .then(function (response) {
-      utils.writeJson(res, response);
   })
       .catch(function (response) {
           utils.writeJson(res, response);

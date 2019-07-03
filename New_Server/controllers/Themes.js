@@ -16,9 +16,6 @@ module.exports.getTheme = function getTheme (req, res, next) {
       });
 };
 
-module.exports.getThemeFindByBook = function getThemeFindByBook (req, res, next) {
-  Themes.getThemeFindByBook(req.swagger.params, res, next);
-};
 
 module.exports.getThemeThemeName = function getThemeThemeName (req, res, next) {
 

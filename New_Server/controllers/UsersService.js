@@ -2,21 +2,7 @@
 var pg = require("../index.js");
 var knex = pg.knex;
 
-exports.getUserUserID = function(args, res, next) {
-  /**
-   * parameters expected in the args:
-  * userID (String)
-  **/
-    var examples = {};
-    if(Object.keys(examples).length > 0) {
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-  }
-  else {
-    res.end();
-  }
-  
-}
+
 
 exports.postUser = function(user_mail, password, username, user_shipping_address) {
   /**
@@ -56,10 +42,6 @@ exports.postUserLogin = function (mail, password) {
 
         console.log('userIdReq = ', mail)
         console.log('passwordReq = ', password)
-
-        //return new Promise(function (resolve, reject) {
-
-        //console.log('Starting auth procedure: req.session = ' + JSON.stringify(req.session))
 
         let myQuery = knex('new_schema.users AS u')
             .where(

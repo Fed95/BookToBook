@@ -58,7 +58,3 @@ module.exports.getEventFindByMonth = function getEventFindByMonth(req, res, next
             utils.writeJson(res, response);
         });
 };
-
-module.exports.getEventFindByName = function getEventFindByName(req, res, next) {
-    Events.getEventFindByName(req.swagger.params, res, next);
-};

@@ -2,28 +2,6 @@
 var pg = require("../index.js");
 var knex = pg.knex;
 
-exports.getBook = function (args, res, next) {
-    /**
-     * parameters expected in the args:
-     * info (String)
-     * abstract Required (Boolean)
-     * image Required (Boolean)
-     * genres Required (Boolean)
-     * themes Required (Boolean)
-     * authors Information Required (Boolean)
-     * events Information Required (Boolean)
-     **/
-
-
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-        res.setHeader('Content-Type', 'application/json');
-        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-    } else {
-        res.end();
-    }
-
-};
 
 exports.getBookBestOfTheMonth = function (month) {
     /**
@@ -104,49 +82,7 @@ exports.getBookFavoriteReading = function () {
 
 };
 
-exports.getBookFindByAuthor = function (args, res, next) {
-    /**
-     * parameters expected in the args:
-     * firstName (String)
-     * abstract Required (Boolean)
-     * image Required (Boolean)
-     * genres Required (Boolean)
-     * themes Required (Boolean)
-     * authors Information Required (Boolean)
-     * events Information Required (Boolean)
-     **/
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-        res.setHeader('Content-Type', 'application/json');
-        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-    } else {
-        res.end();
-    }
-
-};
-
-exports.getBookFindByEvent = function (args, res, next) {
-    /**
-     * parameters expected in the args:
-     * name (String)
-     * abstract Required (Boolean)
-     * image Required (Boolean)
-     * genres Required (Boolean)
-     * themes Required (Boolean)
-     * authors Information Required (Boolean)
-     * events Information Required (Boolean)
-     **/
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-        res.setHeader('Content-Type', 'application/json');
-        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-    } else {
-        res.end();
-    }
-
-}
-
-exports.getBookFindByGenre = function (parameters_string) {
+exports.getBookFindBySimilarBooks = function (parameters_string) {
     /**
      * parameters expected in the args:
      * abstract Required (Boolean)
@@ -186,27 +122,6 @@ exports.getBookFindByGenre = function (parameters_string) {
                 resolve(result)
             });
     });
-
-}
-
-exports.getBookFindByTheme = function (args, res, next) {
-    /**
-     * parameters expected in the args:
-     * abstract Required (Boolean)
-     * image Required (Boolean)
-     * genres Required (Boolean)
-     * themes Infromation (Boolean)
-     * authors&#39;Information Required (Boolean)
-     * events Information Required (Boolean)
-     * theme (String)
-     **/
-    var examples = {};
-    if (Object.keys(examples).length > 0) {
-        res.setHeader('Content-Type', 'application/json');
-        res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
-    } else {
-        res.end();
-    }
 
 }
 
