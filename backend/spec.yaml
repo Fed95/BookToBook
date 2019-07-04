@@ -1,0 +1,799 @@
+---
+swagger: "2.0"
+info:
+  description: "This is our BookToBook server"
+  version: "1.0.0"
+  title: "BookToBook"
+  contact:
+    name: "Davide Santambrogio"
+    email: "santadavide1995@gmail.com"
+host: "booktobook.herokuapp.com"
+basePath: "/api"
+tags:
+- name: "authors"
+- name: "books"
+- name: "events"
+- name: "genres"
+- name: "purchases"
+- name: "themes"
+- name: "users"
+schemes:
+- "https"
+- "http"
+paths:
+  /author/findByBook:
+    get:
+      tags:
+      - "authors"
+      summary: "Get authors by book"
+      operationId: "getAuthorFindByBook"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "ISBN"
+        in: "query"
+        description: "ISBN of the Book"
+        required: true
+        type: "integer"
+        format: "int64"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Book"
+        400:
+          description: "Invalid ISBN supplied"
+          schema:
+            $ref: "#/definitions/Error"
+        404:
+          description: "Author not found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Authors"
+  /author/findByName:
+    get:
+      tags:
+      - "authors"
+      summary: "Get authors by name"
+      operationId: "getAuthorFindByName"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "name"
+        in: "query"
+        description: "Name of the Author"
+        required: true
+        type: "string"
+        x-example: "Walter Moers"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Author"
+      x-swagger-router-controller: "Authors"
+  /author/{author_id}:
+    get:
+      tags:
+      - "authors"
+      summary: "Get Author by id"
+      description: "you can try with id = 1"
+      operationId: "getAuthorAuthorID"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "author_id"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Author"
+        404:
+          description: "Author not Found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Authors"
+  /book/bestOfTheMonth:
+    get:
+      tags:
+      - "books"
+      summary: "Get Books of the Month"
+      description: "Best sellers this month"
+      operationId: "getBookBestOfTheMonth"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "month"
+        in: "query"
+        description: "This month"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 7
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+      x-swagger-router-controller: "Books"
+  /book/favoriteReading:
+    get:
+      tags:
+      - "books"
+      summary: "Get favorite Books"
+      description: "gets books as defined by the 'favourites' table in our database"
+      operationId: "getBookFavoriteReading"
+      produces:
+      - "applications/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+      x-swagger-router-controller: "Books"
+  /book/findByTitle:
+    get:
+      tags:
+      - "books"
+      summary: "Get Books by title"
+      description: "Returns a list of books"
+      operationId: "getBookByTitle"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "title"
+        in: "query"
+        required: true
+        type: "string"
+        x-example: "Prey"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+      x-swagger-router-controller: "Books"
+  /book/findSimilarBooks:
+    get:
+      tags:
+      - "books"
+      summary: "Get Similar Books"
+      operationId: "getBookFindSimilarBooks"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "params"
+        in: "query"
+        description: "csv string of authors, genres and themes"
+        required: true
+        type: "string"
+        x-example: "Adventure,Awesomeness, Walter Moers"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+      x-swagger-router-controller: "Books"
+  /book/{isbn}:
+    get:
+      tags:
+      - "books"
+      summary: "Get book by its isbn"
+      description: "you can test this with isbn = 8972871401472"
+      operationId: "getBookISBN"
+      produces:
+      - "applications/json"
+      - "application/json"
+      parameters:
+      - name: "isbn"
+        in: "path"
+        description: "book isbn code"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 9780001243136
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Book"
+        404:
+          description: "Book not Found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Books"
+  /event/:
+    get:
+      tags:
+      - "events"
+      summary: "Get all events"
+      operationId: "getEvent"
+      produces:
+      - "applications/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
+      x-swagger-router-controller: "Events"
+  /event/findByBook:
+    get:
+      tags:
+      - "events"
+      summary: "Get Event by Book"
+      operationId: "getEventFindByBook"
+      produces:
+      - "applications/json"
+      - "application/json"
+      parameters:
+      - name: "isbn"
+        in: "query"
+        description: "book isbn"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 9780857501004
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
+        404:
+          description: "Event not Found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Events"
+  /event/findByMonth:
+    get:
+      tags:
+      - "events"
+      summary: "Get Event by Month"
+      operationId: "getEventFindByMonth"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "month"
+        in: "query"
+        description: "Month of the Event"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 7
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
+      x-swagger-router-controller: "Events"
+  /event/{event_id}:
+    get:
+      tags:
+      - "events"
+      summary: "Get event by id"
+      description: "you can test this with event_id = 1"
+      operationId: "getEventEventID"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "event_id"
+        in: "path"
+        description: "get event by its id"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 1
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Event"
+        404:
+          description: "Event not Found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Events"
+  /genre/:
+    get:
+      tags:
+      - "genres"
+      summary: "Get all Genres"
+      operationId: "getGenre"
+      produces:
+      - "applications/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Genre"
+      x-swagger-router-controller: "Genres"
+  /genre/{genre_name}:
+    get:
+      tags:
+      - "genres"
+      summary: "Get Genre by name"
+      description: "you can test this with genre_name = 'Satire'"
+      operationId: "getGenreGenreName"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "genre_name"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Genre"
+        404:
+          description: "Genre not found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Genres"
+  /purchase/:
+    post:
+      tags:
+      - "purchases"
+      summary: "Create Purchase if it doesn't exist and add eventual book"
+      description: "When clicking on \"add to cart\", the post is performed,. If successful,\
+        \ the book is added to the user's shopping cart. If the user is not logged\
+        \ in, they will be redirected to the login page. (This is the only unouthorised\
+        \ post that the user can perform on purchases)"
+      operationId: "postPurchase"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "isbn"
+        in: "formData"
+        description: "ISBN of the Book"
+        required: true
+        type: "string"
+        x-example: "9781585641472"
+      responses:
+        200:
+          description: "succesfull operation"
+        401:
+          description: "User not logged in"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Purchases"
+  /purchase/book:
+    post:
+      tags:
+      - "purchases"
+      summary: "Update quantity of book in the cart"
+      description: "When the book is already present in the shopping cart, the order\
+        \ quantity can be updated if the user wants to buy more copies of the same\
+        \ book (when set to 0 the book is removed from the purchase).\nThis post is\
+        \ only accessible to logged in users"
+      operationId: "postPurchaseBook"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      parameters:
+      - name: "purchase_id"
+        in: "formData"
+        description: "purchase id"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 15
+      - name: "isbn"
+        in: "formData"
+        description: "isbn of the Book"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 9686543761408
+      - name: "quantity"
+        in: "formData"
+        description: "book quantity in the purchase"
+        required: true
+        type: "integer"
+        maximum: 99
+        minimum: 0
+        format: "int64"
+        x-example: 4
+      responses:
+        200:
+          description: "succesfull operation"
+      x-swagger-router-controller: "Purchases"
+    delete:
+      tags:
+      - "purchases"
+      summary: "Delete book in Purchase"
+      operationId: "deletePurchaseBook"
+      parameters:
+      - name: "purchase_id"
+        in: "formData"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 15
+      - name: "isbn"
+        in: "formData"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 8239989653504
+      responses:
+        200:
+          description: "successful operation"
+      x-swagger-router-controller: "Purchases"
+  /purchase/completed:
+    post:
+      tags:
+      - "purchases"
+      summary: "Set Purchase as completed"
+      description: "This post sets the purchase to complete. All books in the shopping\
+        \ cart will disappear. This post is only accessible to logged in users."
+      operationId: "postPurchaseCompleted"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      parameters:
+      - name: "purchase_id"
+        in: "formData"
+        required: true
+        type: "string"
+      - name: "shipping_address"
+        in: "formData"
+        description: "Shipping Address"
+        required: true
+        type: "string"
+      - name: "cardholder_name"
+        in: "formData"
+        description: "Cardholder's Name"
+        required: true
+        type: "string"
+      - name: "card_number"
+        in: "formData"
+        description: "Credit Card Number"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+      x-swagger-router-controller: "Purchases"
+  /purchase/findByUser:
+    get:
+      tags:
+      - "purchases"
+      summary: "Get Purchases by user"
+      description: "no parameters, the user information is taken from the cookie\n"
+      operationId: "getPurchaseFindByUser"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Purchase"
+      x-swagger-router-controller: "Purchases"
+  /theme/:
+    get:
+      tags:
+      - "themes"
+      summary: "Get all Themes"
+      operationId: "getTheme"
+      produces:
+      - "applications/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Theme"
+      x-swagger-router-controller: "Themes"
+  /theme/{theme_name}:
+    get:
+      tags:
+      - "themes"
+      summary: "Get Theme by name"
+      description: "You can test this with theme_name = 'Future'"
+      operationId: "getThemeThemeName"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "theme_name"
+        in: "path"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Theme"
+        404:
+          description: "Theme not found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Themes"
+  /user:
+    post:
+      tags:
+      - "users"
+      summary: "Create User"
+      operationId: "postUser"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_mail"
+        in: "formData"
+        description: "user mail"
+        required: true
+        type: "string"
+        x-example: "newtest@mail.com"
+      - name: "password"
+        in: "formData"
+        description: "user password"
+        required: true
+        type: "string"
+        x-example: "newtest"
+      - name: "username"
+        in: "formData"
+        description: "user name"
+        required: true
+        type: "string"
+        x-example: "newtest"
+      - name: "user_shipping_address"
+        in: "formData"
+        description: "user shipping address"
+        required: true
+        type: "string"
+        x-example: "newtest address"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+        409:
+          description: "user_mail already registered"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Users"
+  /user/check:
+    get:
+      tags:
+      - "users"
+      summary: "Perform User Check"
+      operationId: "getUserCheck"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "string"
+        404:
+          description: "Session not found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Users"
+  /user/login:
+    post:
+      tags:
+      - "users"
+      summary: "Perform User login"
+      operationId: "postUserLogin"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_mail"
+        in: "formData"
+        description: "user mail"
+        required: true
+        type: "string"
+        x-example: "test@mail.com"
+      - name: "password"
+        in: "formData"
+        description: "user password"
+        required: true
+        type: "string"
+        x-example: "test"
+      responses:
+        200:
+          description: "successful operation"
+        401:
+          description: "user_mail or password are invalid"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Users"
+  /user/logout:
+    post:
+      tags:
+      - "users"
+      summary: "Perform User logout"
+      operationId: "postUserLogout"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+      x-swagger-router-controller: "Users"
+definitions:
+  Book:
+    type: "object"
+    required:
+    - "abstract"
+    - "edition"
+    - "isbn"
+    - "language"
+    - "number_of_pages"
+    - "price"
+    - "publisher"
+    - "title"
+    properties:
+      isbn:
+        type: "integer"
+        format: "int64"
+        description: "book isbn code"
+      title:
+        type: "string"
+      abstract:
+        type: "string"
+      publisher:
+        type: "string"
+      number_of_pages:
+        type: "integer"
+        format: "int32"
+      language:
+        type: "string"
+      edition:
+        type: "integer"
+        format: "int64"
+      price:
+        type: "integer"
+        format: "int64"
+      interview:
+        type: "string"
+  Theme:
+    type: "object"
+    required:
+    - "theme_name"
+    properties:
+      theme_name:
+        type: "string"
+      theme_description:
+        type: "string"
+  Genre:
+    type: "object"
+    required:
+    - "genre_name"
+    properties:
+      genre_name:
+        type: "string"
+      genre_description:
+        type: "string"
+  Author:
+    type: "object"
+    required:
+    - "author_id"
+    - "bio"
+    - "birth_date"
+    - "name"
+    properties:
+      author_id:
+        type: "integer"
+        format: "int64"
+      birth_date:
+        type: "string"
+        format: "date-time"
+      name:
+        type: "string"
+      bio:
+        type: "string"
+      death_date:
+        type: "string"
+        format: "date-time"
+  Event:
+    type: "object"
+    required:
+    - "brief_summary"
+    - "end_time"
+    - "event_date"
+    - "event_id"
+    - "event_name"
+    - "isbn"
+    - "location"
+    - "start_time"
+    - "summary"
+    properties:
+      event_id:
+        type: "integer"
+        format: "int64"
+      event_name:
+        type: "string"
+      summary:
+        type: "string"
+      location:
+        type: "string"
+      event_date:
+        type: "string"
+        format: "date-time"
+      start_time:
+        type: "string"
+      brief_summary:
+        type: "string"
+      end_time:
+        type: "string"
+      isbn:
+        type: "integer"
+        format: "int64"
+        description: "isbn of the book presented at the event"
+  User:
+    type: "object"
+    required:
+    - "password"
+    - "user_mail"
+    - "user_shipping_address"
+    - "username"
+    properties:
+      user_mail:
+        type: "string"
+      password:
+        type: "string"
+      username:
+        type: "string"
+      user_shipping_address:
+        type: "string"
+  Purchase:
+    type: "object"
+    required:
+    - "completed"
+    - "purchase_id"
+    - "user_mail"
+    properties:
+      purchase_id:
+        type: "integer"
+        format: "int64"
+      user_mail:
+        type: "string"
+      completed:
+        type: "boolean"
+        default: false
+      purchase_date:
+        type: "string"
+        format: "date-time"
+  Error:
+    type: "object"
+    required:
+    - "code"
+    properties:
+      code:
+        type: "integer"
+        format: "int64"
+        description: "error code"
+        minimum: 400
+        maximum: 599
+      description:
+        type: "string"
