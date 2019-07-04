@@ -1,7 +1,5 @@
 var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";
-
-var xhttpEvents = new XMLHttpRequest();
+//var ip = "http://localhost:8080/";var xhttpEvents = new XMLHttpRequest();
 xhttpEvents.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         $(document).ready(() => {

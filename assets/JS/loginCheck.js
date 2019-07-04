@@ -14,6 +14,7 @@ $(document).ready(function () {
         } else {
             console.log('User Check found some delicious cookies!')
             $("#login-link").attr("onclick", "logout()");
+            $("#login-link").attr("href", "../index.html");
             $("#shopping-link").attr("href", "../pages/shoppingCart.html");
         }
     })
@@ -45,18 +46,17 @@ function checkCookie() {
 
 function logout() {
 
-    console.log('//////////////////////////////////////////')
-
     $.post(ip + "api/user/logout").done(
         function(response){
             location.reload();
             console.log("Logout successful")
             console.log(response);
-
+            window.location.href = ip + 'index.html'
         }
     ).fail(
         function(jqXHR, textStatus, errorThrown) {
             console.log('Something went wrong during logout')
+            window.location.href = ip + 'index.html'
         }
     );
 }
