@@ -1,4 +1,6 @@
-
+.row{
+    margin-right: 0px;
+}
 .bookinfo h3{
     font-size: 18px;
     margin-bottom: 1px;
