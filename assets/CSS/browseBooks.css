@@ -105,7 +105,7 @@ p a:hover{
 }
 @media (max-width: 420px){
     .book-title-and-info{
-        width: 100%;
+        width: 80%;
     }
     .col-2-muchbigger-xs{
         width: 22.5%;

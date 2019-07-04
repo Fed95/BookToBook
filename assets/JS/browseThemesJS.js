@@ -28,31 +28,28 @@ const input = getUrlParameter('search-text');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundBooks(this.responseText);
-        });
+
+$.get(ip + "api/theme/").done(
+    function(response){
+        console.log("successful all themes query")
+        displayFoundThemes(response);
     }
-};
-console.log("getting themes!");
-xhttp.open("GET", ip + "api/theme/", true);
-xhttp.send();
+).fail(
+    function (jqXHR, textStatus, errorThrown) {
+        console.log("Something went wrong while looking for all themes: ", textStatus)
+    }
+);
 
 
 //---------------------------------------------------------------------
 // handling the result
 //---------------------------------------------------------------------
 
-var displayFoundBooks = function (theme_list) {
+var displayFoundThemes = function (theme_list) {
 
-    var parsed = JSON.parse(theme_list);
-    console.log("parsed: ", parsed);
+    var n = Math.ceil(theme_list.length / 4);
 
-    var n = Math.ceil(parsed.length / 4);
-
-    generateThemeDivs(parsed, n);
+    generateThemeDivs(theme_list, n);
 
 };
 

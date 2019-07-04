@@ -1,43 +1,35 @@
 var ip = "https://booktobook.herokuapp.com/";
 //var ip = "http://localhost:8080/";
 
-
-$(document).ready(function () {
-    console.log($('#myNavbar'))
-
-    checkCookie().then(user_mail => {
-        if (user_mail === false) {
-            console.log('User Check couldn\'t find any active cookies!')
-            $('#login-link').html($('#login-link').html().replace("Logout", "Login"));
-            $("#login-link").attr("href", "../pages/login.html?#");
-            $("#shopping-link").attr("href", "../pages/login.html?#");
-        } else {
-            console.log('User Check found some delicious cookies!')
-            $("#login-link").attr("onclick", "logout()");
-            $("#login-link").attr("href", "../index.html");
-            $("#shopping-link").attr("href", "../pages/shoppingCart.html");
-        }
-    })
+checkCookie().then(user_mail => {
+    if (user_mail) {
+        $('#login-link').html($('#login-link').html().replace("", "Logout"));
+        $("#login-link").attr("onclick", "logout()");
+        $("#login-link").attr("href", "../index.html");
+        $("#shopping-link").attr("href", "../pages/shoppingCart.html");
+        console.log('User Check found some delicious cookies!')
+    } else {
+        $('#login-link').html($('#login-link').html().replace("", "Login"));
+        $("#login-link").attr("href", "../pages/login.html?#");
+        $("#shopping-link").attr("href", "../pages/login.html?#");
+        console.log('User Check couldn\'t find any active cookies!')
+    }
 })
 
 function checkCookie() {
     return new Promise((res, rej) => {
 
-        console.log('Starting cookie check');
-
         $.get(ip + "api/user/check").done(
-            function(response){
-                console.log("looking for cookies, found: ", response)
-                if(_.isEmpty(response)){
+            function (response) {
+                if (_.isEmpty(response)) {
                     res(false)
-                }else{
+                } else {
                     res(response.mail)
                 }
             }
         ).fail(
-            function (response) {
-                console.log("Something went wrong during cookie check ", response)
-                res(false)
+            function (jqXHR, textStatus, errorThrown) {
+                console.log("Something went wrong while checking for user cookies: ", textStatus)
             }
         );
     })
@@ -47,14 +39,14 @@ function checkCookie() {
 function logout() {
 
     $.post(ip + "api/user/logout").done(
-        function(response){
+        function (response) {
             location.reload();
             console.log("Logout successful")
             console.log(response);
             window.location.href = ip + 'index.html'
         }
     ).fail(
-        function(jqXHR, textStatus, errorThrown) {
+        function (jqXHR, textStatus, errorThrown) {
             console.log('Something went wrong during logout')
             window.location.href = ip + 'index.html'
         }

@@ -5,40 +5,33 @@ var ip = "https://booktobook.herokuapp.com/";
 //---------------------------------------------------------------------
 //generating the item list
 //---------------------------------------------------------------------
-var input = 1; //TODO: fetch real user_id
 var purchase_id = null
 var user_shipping_address = null;
 
-
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayPurchases(this.responseText);
-        });
+$.get(ip + "api/purchase/findByUser").done(
+    function(response){
+        console.log("successful find purchase by user id")
+        displayPurchases(response);
     }
-};
-xhttp.open("GET", ip + "api/purchase/findByUser?UserID=" + input, true);
-xhttp.send();
+).fail(
+    function (response) {
+        console.log("Something went wrong while looking for purchase by user id: ", response)
+    }
+);
 
 
 var displayPurchases = function (purchase_list) {
 
-    //TODO: check that if book is added more than once, only quantity should change
-
-    var parsed = JSON.parse(purchase_list);
-    console.log("parsed: ", parsed);
-
-    var grouped_by_isbn = _.groupBy(parsed, 'isbn');
-    purchase_id = parsed[0].purchase_id;
-    user_shipping_address = parsed[0].user_shipping_address;
+    var grouped_by_isbn = _.groupBy(purchase_list, 'isbn');
+    purchase_id = purchase_list[0].purchase_id;
+    user_shipping_address = purchase_list[0].user_shipping_address;
     $(document).find('#inputAddress').val(user_shipping_address);
 
     var tot = 0;
 
-    if (parsed.length > 0) {
-        var grouped_by_isbn = _.groupBy(parsed, 'isbn');
-        purchase_id = parsed[0].purchase_id
+    if (purchase_list.length > 0) {
+        var grouped_by_isbn = _.groupBy(purchase_list, 'isbn');
+        purchase_id = purchase_list[0].purchase_id
 
         for (var isbn in grouped_by_isbn) {
 
@@ -206,7 +199,7 @@ function updateDb($input) {
     $.post(ip + "api/purchase/book", data).done(
         function (response) {
             // do something when response is ok
-            console.log('succesful post purchase operation! response: ', response);
+            console.log('successful post purchase operation! response: ', response);
         }
     ).fail(
         function (jqXHR, textStatus, errorThrown) {

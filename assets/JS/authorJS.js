@@ -28,16 +28,18 @@ const input = getUrlParameter('author_id');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundAuthor(this.responseText);
-        });
+
+$.get(ip + "api/author/"+input).done(
+    function(response){
+        console.log("successful find book by title query")
+        displayFoundAuthor(response);
     }
-};
-xhttp.open("GET", ip + "api/author/"+input, true);
-xhttp.send();
+).fail(
+    function (response) {
+        console.log("Something went wrong while looking for books by title: ", response)
+        displayFoundAuthor(response);
+    }
+);
 
 
 
@@ -47,17 +49,14 @@ xhttp.send();
 
 var displayFoundAuthor = function(book_list) {
 
-    var parsed = JSON.parse(book_list);
-    console.log("parsed: ", parsed);
-
-    var grouped_by_book = _.groupBy(parsed, 'isbn');
+    var grouped_by_book = _.groupBy(book_list, 'isbn');
 
     console.log('books: ', grouped_by_book);
 
-    var name = parsed[0]['name'];
-    var bio = parsed[0]['bio']
-    var birth_date = parsed[0]['birth_date'];
-    var death_date = parsed[0]['death_date'];
+    var name = book_list[0]['name'];
+    var bio = book_list[0]['bio']
+    var birth_date = book_list[0]['birth_date'];
+    var death_date = book_list[0]['death_date'];
 
     var books = [];
 

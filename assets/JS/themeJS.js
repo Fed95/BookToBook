@@ -29,16 +29,17 @@ const input = getUrlParameter('theme');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundtheme(this.responseText);
-        });
+
+$.get(ip + "api/theme/"+input).done(
+    function(response){
+        console.log("successful find theme by theme name")
+        displayFoundThemes(response);
     }
-};
-xhttp.open("GET", ip + "api/theme/"+input, true);
-xhttp.send();
+).fail(
+    function (jqXHR, textStatus, errorThrown) {
+        console.log("Something went wrong while looking for theme by theme name: ", textStatus)
+    }
+);
 
 
 
@@ -46,17 +47,14 @@ xhttp.send();
 //handling the result
 //---------------------------------------------------------------------
 
-var displayFoundtheme = function(theme_list) {
+var displayFoundThemes = function(theme_list) {
 
-    var parsed = JSON.parse(theme_list);
-    console.log("parsed: ", parsed);
-
-    var grouped_by_book = _.groupBy(parsed, 'isbn');
+    var grouped_by_book = _.groupBy(theme_list, 'isbn');
 
     console.log('books: ', grouped_by_book);
 
     var name = input;
-    var description = parsed[0]['theme_description']
+    var description = theme_list[0]['theme_description']
 
     var books = [];
 

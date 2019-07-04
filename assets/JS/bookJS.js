@@ -133,8 +133,21 @@ var displayFoundBooks = function (book) {
 
     generateBookDiv(parsed[0], authors, interview, reviews, genres, themes);
 
-    xhttpEvents.open("GET", ip + "api/event/findByBook?isbn=" + input, true);
-    xhttpEvents.send();
+    //xhttpEvents.open("GET", ip + "api/event/findByBook?isbn=" + input, true);
+    //xhttpEvents.send();
+    //todo: check this
+
+    $.get(ip + "api/event/findByBook?isbn=" + input).done(
+        function(response){
+            console.log("looking for events, found: ", response)
+            addEvents(response);
+        }
+    ).fail(
+        function (response) {
+            console.log("did not find any events", response)
+            addEvents([]);
+        }
+    );
 
     xhttpSimilar.open("GET", ip + "api/book/findSimilarBooks?params=" + similar.substring(1), true);
     xhttpSimilar.send();
@@ -484,7 +497,7 @@ $(document).on('click', '#homepage-container #add-book-btn-1', function () {
     };
 
     $.post(ip + "api/purchase/", data).done(
-        console.log('succesful post purchase operation!'),
+        console.log('successful post purchase operation!'),
         showConfirmation($(this).parent())
     ).fail(
         function (jqXHR, textStatus, errorThrown) {

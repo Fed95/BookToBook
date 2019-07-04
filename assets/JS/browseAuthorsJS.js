@@ -28,16 +28,17 @@ const input = getUrlParameter('search-text');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundAuthors(this.responseText);
-        });
+
+$.get(ip + "api/author/findByName?name=" + input).done(
+    function(response){
+        displayFoundAuthors(response);
     }
-};
-xhttp.open("GET", ip + "api/author/findByName?name=" + input, true);
-xhttp.send();
+).fail(
+    function (response) {
+        console.log('Something went wrong when fetching author by name: ', response)
+        displayFoundAuthors(response);
+    }
+);
 
 //Adding last search in search bar
 $(document).ready(() => {
@@ -51,12 +52,10 @@ $(document).ready(() => {
 
 var displayFoundAuthors = function(authors_list) {
 
-    var parsed = JSON.parse(authors_list);
-    console.log("parsed: ", parsed);
 
-    if(parsed.length > 0) {
+    if(authors_list.length > 0) {
 
-        var grouped = _.groupBy(parsed, 'author_id');
+        var grouped = _.groupBy(authors_list, 'author_id');
         console.log("grouped: ", grouped);
 
         var authors = [];
@@ -96,7 +95,9 @@ var generateAuthorDiv = function (name, author_id) {
     var $div2 = $("<div class = 'row'/>");
     var $div3 = $("<div class = 'author-picture col-4 col-2-hidden-xs'>");
     var $div4 = $("<div class = 'book-img'/>");
-    var $im = $("<img />", { src : "../assets/Images/AuthorPictures/Thumbnails/"+name+".jpg"});
+    var $im = $("<a href='"+ip+"pages/author.html?author_id="+author_id+"'>" +
+        "<img src = '../assets/Images/AuthorPictures/Thumbnails/"+name+".jpg'/>" +
+        "</a>");
     var $div5 = $("<div class = 'author-name col-8 col-8-bigger-xs'/>");
     var $h = $("<h3 />", {id : 'title', class : 'book-title'});
     var $a = $("<a />", {href : ip + 'pages/author.html?author_id='+author_id}); $a.html(name);
