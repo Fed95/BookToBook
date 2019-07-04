@@ -7,6 +7,7 @@ var ip = "https://booktobook.herokuapp.com/";
 //---------------------------------------------------------------------
 var input = 1; //TODO: fetch real user_id
 var purchase_id = null
+var user_shipping_address = null;
 
 
 var xhttp = new XMLHttpRequest();
@@ -27,6 +28,12 @@ var displayPurchases = function (purchase_list) {
 
     var parsed = JSON.parse(purchase_list);
     console.log("parsed: ", parsed);
+
+    var grouped_by_isbn = _.groupBy(parsed, 'isbn');
+    purchase_id = parsed[0].purchase_id;
+    user_shipping_address = parsed[0].user_shipping_address;
+    $(document).find('#inputAddress').val(user_shipping_address);
+
     var tot = 0;
 
     if (parsed.length > 0) {
@@ -229,12 +236,12 @@ function deleteInDb($input) {
 }
 
 function order() {
-    var shiping_address = $('#inputAddress').val();
+    var shipping_address = $('#inputAddress').val();
     var cardholder = $('#nameCard').val();
     var card_number = $('#inputCard').val();
     var data = {
         'purchase_id': purchase_id,
-        'shipping_address': shiping_address,
+        'shipping_address': shipping_address,
         'cardholder': cardholder,
         'card_number': card_number
     };
@@ -255,5 +262,9 @@ function order() {
         }
     );
 }
+
+
+
+
 
 

@@ -17,33 +17,10 @@ tags:
   - name: "Events"
   - name: "Users"
   - name: "Purchases"
-  - name: "Reviews"
-  - name: "General"
 schemes:
   - "https"
   - "http"
 paths:
-  /author/:
-    get:
-      tags:
-        - "Authors"
-      summary: "Get all Authors"
-      operationId: "getAuthor"
-      produces:
-        - "applications/json"
-      parameters: []
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Author"
-        404:
-          description: "Author not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Authors"
   /author/findByBook:
     get:
       tags:
@@ -128,36 +105,6 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Authors"
-  /book/:
-    get:
-      tags:
-        - "Books"
-      summary: "Get Books by general Info"
-      operationId: "getBook"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "Info"
-          in: "query"
-          description: "Book Information"
-          required: true
-          type: "string"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Book"
-        400:
-          description: "Info format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Book not Found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
   /book/bestOfTheMonth:
     get:
       tags:
@@ -211,74 +158,12 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Books"
-  /book/findByAuthor:
+  /book/findBySimilarBooks:
     get:
       tags:
         - "Books"
-      summary: "Get Books by author"
-      operationId: "getBookFindByAuthor"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "Name"
-          in: "query"
-          description: "firstname of the author"
-          required: true
-          type: "string"
-          x-example: "Alessandro Manzoni"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Book"
-        400:
-          description: "Invalid name or surname supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Book not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
-  /book/findByEvent:
-    get:
-      tags:
-        - "Books"
-      summary: "Get Books by event"
-      operationId: "getBookFindByEvent"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "Eventname"
-          in: "query"
-          description: "name of the event"
-          required: true
-          type: "string"
-          x-example: "Licia Troisi new book presentation"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Book"
-        400:
-          description: "Invalid name supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Book not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
-  /book/findByGenre:
-    get:
-      tags:
-        - "Books"
-      summary: "Get Books by genre"
-      operationId: "getBookFindByGenre"
+      summary: "Get Similar Books"
+      operationId: "getBookFindBySimilarBooks"
       produces:
         - "applications/json"
       parameters:
@@ -297,37 +182,6 @@ paths:
               $ref: "#/definitions/Book"
         400:
           description: "Invalid genre supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Book not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
-  /book/findByTheme:
-    get:
-      tags:
-        - "Books"
-      summary: "Get Books by theme"
-      operationId: "getBookFindByTheme"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "theme"
-          in: "query"
-          description: "theme of the book"
-          required: false
-          type: "string"
-          x-example: "family"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Book"
-        400:
-          description: "Invalid theme supplied"
           schema:
             $ref: "#/definitions/Error"
         404:
@@ -474,34 +328,6 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Events"
-  /event/findByName:
-    get:
-      tags:
-        - "Events"
-      summary: "Get Event by Name"
-      operationId: "getEventFindByName"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "Name"
-          in: "query"
-          description: "Name of the Event"
-          required: true
-          type: "string"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "Name format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Event not Found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Events"
   /event/{EventID}:
     get:
       tags:
@@ -545,37 +371,6 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Genre"
-        404:
-          description: "Genre not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Genres"
-  /genre/findByBook:
-    get:
-      tags:
-        - "Genres"
-      summary: "Get Genres by book"
-      operationId: "getGenreFindByBook"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "ISBN"
-          in: "query"
-          description: "ISBN of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Genre"
-        400:
-          description: "Invalid ISBN supplied"
-          schema:
-            $ref: "#/definitions/Error"
         404:
           description: "Genre not found"
           schema:
@@ -689,77 +484,6 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Purchases"
-  /purchase/{PurchaseID}:
-    get:
-      tags:
-        - "Purchases"
-      summary: "Get Purchase by ID"
-      operationId: "getPurchasePurchaseID"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "PurchaseID"
-          in: "path"
-          required: true
-          type: "string"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "PurchaseID format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Purchase not Found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Purchases"
-    post:
-      tags:
-        - "Purchases"
-      summary: "Add book in Purchase"
-      operationId: "postPurchasePurchaseID"
-      parameters:
-        - name: "PurchaseID"
-          in: "path"
-          required: true
-          type: "string"
-        - name: "ISBN"
-          in: "query"
-          description: "ISBN of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
-      responses:
-        200:
-          description: "successful operation"
-        400:
-          description: "Format error"
-      x-swagger-router-controller: "Purchases"
-    delete:
-      tags:
-        - "Purchases"
-      summary: "Delete book in Purchase"
-      operationId: "deletePurchasePurchaseID"
-      parameters:
-        - name: "PurchaseID"
-          in: "path"
-          required: true
-          type: "string"
-        - name: "ISBN"
-          in: "query"
-          description: "ISBN of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
-      responses:
-        200:
-          description: "successful operation"
-        400:
-          description: "Format error"
-      x-swagger-router-controller: "Purchases"
   /purchase/book:
     post:
       tags:
@@ -820,53 +544,6 @@ paths:
         400:
           description: "Format error"
       x-swagger-router-controller: "Purchases"
-  /review/:
-    post:
-      tags:
-        - "Reviews"
-      summary: "Create Review"
-      operationId: "postReview"
-      consumes:
-        - "application/json"
-      parameters:
-        - in: "body"
-          name: "body"
-          required: false
-          schema:
-            $ref: "#/definitions/Review"
-      responses:
-        200:
-          description: "successful operation"
-        400:
-          description: "Format error"
-      x-swagger-router-controller: "Reviews"
-  /review/{ReviewID}:
-    get:
-      tags:
-        - "Reviews"
-      summary: "Get Review by ID"
-      operationId: "getReviewReviewID"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "ReviewID"
-          in: "path"
-          required: true
-          type: "string"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "ReviewID format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Review not Found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Reviews"
   /theme/:
     get:
       tags:
@@ -883,37 +560,6 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Theme"
-        404:
-          description: "Theme not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Themes"
-  /theme/findByBook:
-    get:
-      tags:
-        - "Themes"
-      summary: "Get Themes by book"
-      operationId: "getThemeFindByBook"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "ISBN"
-          in: "query"
-          description: "ISBN of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Theme"
-        400:
-          description: "Invalid ISBN supplied"
-          schema:
-            $ref: "#/definitions/Error"
         404:
           description: "Theme not found"
           schema:
@@ -1038,33 +684,6 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/User"
-      x-swagger-router-controller: "Users"
-  /user/{UserID}:
-    get:
-      tags:
-        - "Users"
-      summary: "Get User by ID"
-      operationId: "getUserUserID"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "UserID"
-          in: "path"
-          required: true
-          type: "string"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "UserID format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "User not Found"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Users"
 definitions:
   Book:
@@ -1206,28 +825,6 @@ definitions:
       Purchase Date:
         type: "string"
         format: "date-time"
-  Review:
-    type: "object"
-    required:
-      - "ISBN"
-      - "Rating"
-      - "ReviewID"
-      - "Text"
-      - "UserID"
-    properties:
-      ReviewID:
-        type: "integer"
-        format: "int64"
-      UserID:
-        type: "string"
-      ISBN:
-        type: "integer"
-        format: "int64"
-      Text:
-        type: "string"
-      Rating:
-        type: "integer"
-        format: "int64"
   Error:
     type: "object"
     required:

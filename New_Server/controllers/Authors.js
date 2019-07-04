@@ -4,10 +4,6 @@ var utils = require('../utils/writer.js');
 var Authors = require('./AuthorsService');
 
 
-module.exports.getAuthor = function getAuthor(req, res, next) {
-    Authors.getAuthor(req.swagger.params, res, next);
-};
-
 module.exports.getAuthorAuthorID = function getAuthorAuthorID(req, res, next) {
 
     var author_id = req.swagger.params['AuthorID']['value'];

@@ -5,10 +5,6 @@ var utils = require('../utils/writer.js');
 var Books = require('./BooksService');
 
 
-module.exports.getBook = function getBook(req, res, next) {
-    Books.getBook(req.swagger.params, res, next);
-};
-
 module.exports.getBookBestOfTheMonth = function getBookBestOfTheMonth(req, res, next) {
 
     var month = req.swagger.params['Month']['originalValue'];
@@ -49,20 +45,13 @@ module.exports.getBookFavoriteReading = function getBookFavoriteReading(req, res
         });
 };
 
-module.exports.getBookFindByAuthor = function getBookFindByAuthor(req, res, next) {
-    Books.getBookFindByAuthor(req.swagger.params, res, next);
-};
 
-module.exports.getBookFindByEvent = function getBookFindByEvent(req, res, next) {
-    Books.getBookFindByEvent(req.swagger.params, res, next);
-};
-
-module.exports.getBookFindByGenre = function getBookFindByGenre(req, res, next) {
+module.exports.getBookFindBySimilarBooks = function getBookFindBySimilarBooks(req, res, next) {
 
     var genres = req.swagger.params['genre']['value'];
     console.log("inside getBookFindByGenre; p = ", genres);
 
-    Books.getBookFindByGenre(genres)
+    Books.getBookFindBySimilarBooks(genres)
         .then(function (response) {
             utils.writeJson(res, response);
         })
@@ -71,9 +60,6 @@ module.exports.getBookFindByGenre = function getBookFindByGenre(req, res, next) 
         });
 };
 
-module.exports.getBookFindByTheme = function getBookFindByTheme(req, res, next) {
-    Books.getBookFindByTheme(req.swagger.params, res, next);
-};
 
 module.exports.getBookISBN = function getBookISBN(req, res, next) {
 

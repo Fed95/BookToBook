@@ -7,10 +7,6 @@ var utils = require('../utils/writer.js');
 var Users = require('./UsersService');
 
 
-module.exports.getUserUserID = function getUserUserID(req, res, next) {
-    Users.getUserUserID(req.swagger.params, res, next);
-};
-
 module.exports.postUser = function postUser(req, res, next) {
 
     console.log(req.swagger.params["user_mail"])
