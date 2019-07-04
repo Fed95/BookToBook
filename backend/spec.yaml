@@ -10,32 +10,33 @@ info:
 host: "booktobook.herokuapp.com"
 basePath: "/api"
 tags:
-- name: "authors"
-- name: "books"
-- name: "events"
-- name: "genres"
-- name: "purchases"
-- name: "themes"
-- name: "users"
+  - name: "authors"
+  - name: "books"
+  - name: "events"
+  - name: "genres"
+  - name: "purchases"
+  - name: "themes"
+  - name: "users"
 schemes:
-- "https"
-- "http"
+  - "https"
+  - "http"
 paths:
   /author/findByBook:
     get:
       tags:
-      - "authors"
+        - "authors"
       summary: "Get authors by book"
       operationId: "getAuthorFindByBook"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "ISBN"
-        in: "query"
-        description: "ISBN of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
+        - name: "isbn"
+          in: "query"
+          description: "ISBN of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: "9780001243136"
       responses:
         200:
           description: "successful operation"
@@ -53,18 +54,18 @@ paths:
   /author/findByName:
     get:
       tags:
-      - "authors"
+        - "authors"
       summary: "Get authors by name"
       operationId: "getAuthorFindByName"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "name"
-        in: "query"
-        description: "Name of the Author"
-        required: true
-        type: "string"
-        x-example: "Walter Moers"
+        - name: "name"
+          in: "query"
+          description: "Name of the Author"
+          required: true
+          type: "string"
+          x-example: "Walter Moers"
       responses:
         200:
           description: "successful operation"
@@ -76,17 +77,18 @@ paths:
   /author/{author_id}:
     get:
       tags:
-      - "authors"
+        - "authors"
       summary: "Get Author by id"
       description: "you can try with id = 1"
       operationId: "getAuthorAuthorID"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "author_id"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "author_id"
+          in: "path"
+          required: true
+          type: "string"
+          x-example: "1"
       responses:
         200:
           description: "successful operation"
@@ -100,20 +102,20 @@ paths:
   /book/bestOfTheMonth:
     get:
       tags:
-      - "books"
+        - "books"
       summary: "Get Books of the Month"
       description: "Best sellers this month"
       operationId: "getBookBestOfTheMonth"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "month"
-        in: "query"
-        description: "This month"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 7
+        - name: "month"
+          in: "query"
+          description: "This month"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 7
       responses:
         200:
           description: "successful operation"
@@ -125,12 +127,12 @@ paths:
   /book/favoriteReading:
     get:
       tags:
-      - "books"
+        - "books"
       summary: "Get favorite Books"
       description: "gets books as defined by the 'favourites' table in our database"
       operationId: "getBookFavoriteReading"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -143,18 +145,18 @@ paths:
   /book/findByTitle:
     get:
       tags:
-      - "books"
+        - "books"
       summary: "Get Books by title"
       description: "Returns a list of books"
       operationId: "getBookByTitle"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "title"
-        in: "query"
-        required: true
-        type: "string"
-        x-example: "Prey"
+        - name: "title"
+          in: "query"
+          required: true
+          type: "string"
+          x-example: "Prey"
       responses:
         200:
           description: "successful operation"
@@ -166,18 +168,18 @@ paths:
   /book/findSimilarBooks:
     get:
       tags:
-      - "books"
+        - "books"
       summary: "Get Similar Books"
       operationId: "getBookFindSimilarBooks"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "params"
-        in: "query"
-        description: "csv string of authors, genres and themes"
-        required: true
-        type: "string"
-        x-example: "Adventure,Awesomeness, Walter Moers"
+        - name: "params"
+          in: "query"
+          description: "csv string of authors, genres and themes"
+          required: true
+          type: "string"
+          x-example: "Adventure,Awesomeness, Walter Moers"
       responses:
         200:
           description: "successful operation"
@@ -189,21 +191,21 @@ paths:
   /book/{isbn}:
     get:
       tags:
-      - "books"
+        - "books"
       summary: "Get book by its isbn"
       description: "you can test this with isbn = 8972871401472"
       operationId: "getBookISBN"
       produces:
-      - "applications/json"
-      - "application/json"
+        - "applications/json"
+        - "application/json"
       parameters:
-      - name: "isbn"
-        in: "path"
-        description: "book isbn code"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 9780001243136
+        - name: "isbn"
+          in: "path"
+          description: "book isbn code"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 8972871401472
       responses:
         200:
           description: "successful operation"
@@ -217,11 +219,11 @@ paths:
   /event/:
     get:
       tags:
-      - "events"
+        - "events"
       summary: "Get all events"
       operationId: "getEvent"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -234,20 +236,20 @@ paths:
   /event/findByBook:
     get:
       tags:
-      - "events"
+        - "events"
       summary: "Get Event by Book"
       operationId: "getEventFindByBook"
       produces:
-      - "applications/json"
-      - "application/json"
+        - "applications/json"
+        - "application/json"
       parameters:
-      - name: "isbn"
-        in: "query"
-        description: "book isbn"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 9780857501004
+        - name: "isbn"
+          in: "query"
+          description: "book isbn"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 9780857501004
       responses:
         200:
           description: "successful operation"
@@ -263,19 +265,19 @@ paths:
   /event/findByMonth:
     get:
       tags:
-      - "events"
+        - "events"
       summary: "Get Event by Month"
       operationId: "getEventFindByMonth"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters:
-      - name: "month"
-        in: "query"
-        description: "Month of the Event"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 7
+        - name: "month"
+          in: "query"
+          description: "Month of the Event"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 7
       responses:
         200:
           description: "successful operation"
@@ -287,20 +289,20 @@ paths:
   /event/{event_id}:
     get:
       tags:
-      - "events"
+        - "events"
       summary: "Get event by id"
       description: "you can test this with event_id = 1"
       operationId: "getEventEventID"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "event_id"
-        in: "path"
-        description: "get event by its id"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 1
+        - name: "event_id"
+          in: "path"
+          description: "get event by its id"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 1
       responses:
         200:
           description: "successful operation"
@@ -314,11 +316,11 @@ paths:
   /genre/:
     get:
       tags:
-      - "genres"
+        - "genres"
       summary: "Get all Genres"
       operationId: "getGenre"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -331,17 +333,18 @@ paths:
   /genre/{genre_name}:
     get:
       tags:
-      - "genres"
+        - "genres"
       summary: "Get Genre by name"
       description: "you can test this with genre_name = 'Satire'"
       operationId: "getGenreGenreName"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "genre_name"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "genre_name"
+          in: "path"
+          required: true
+          type: "string"
+          x-example: "Science"
       responses:
         200:
           description: "successful operation"
@@ -355,7 +358,7 @@ paths:
   /purchase/:
     post:
       tags:
-      - "purchases"
+        - "purchases"
       summary: "Create Purchase if it doesn't exist and add eventual book"
       description: "When clicking on \"add to cart\", the post is performed,. If successful,\
         \ the book is added to the user's shopping cart. If the user is not logged\
@@ -363,16 +366,16 @@ paths:
         \ post that the user can perform on purchases)"
       operationId: "postPurchase"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "isbn"
-        in: "formData"
-        description: "ISBN of the Book"
-        required: true
-        type: "string"
-        x-example: "9781585641472"
+        - name: "isbn"
+          in: "formData"
+          description: "ISBN of the Book"
+          required: true
+          type: "string"
+          x-example: "9781585641472"
       responses:
         200:
           description: "succesfull operation"
@@ -384,7 +387,7 @@ paths:
   /purchase/book:
     post:
       tags:
-      - "purchases"
+        - "purchases"
       summary: "Update quantity of book in the cart"
       description: "When the book is already present in the shopping cart, the order\
         \ quantity can be updated if the user wants to buy more copies of the same\
@@ -392,53 +395,53 @@ paths:
         \ only accessible to logged in users"
       operationId: "postPurchaseBook"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
       parameters:
-      - name: "purchase_id"
-        in: "formData"
-        description: "purchase id"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 15
-      - name: "isbn"
-        in: "formData"
-        description: "isbn of the Book"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 9686543761408
-      - name: "quantity"
-        in: "formData"
-        description: "book quantity in the purchase"
-        required: true
-        type: "integer"
-        maximum: 99
-        minimum: 0
-        format: "int64"
-        x-example: 4
+        - name: "purchase_id"
+          in: "formData"
+          description: "purchase id"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 15
+        - name: "isbn"
+          in: "formData"
+          description: "isbn of the Book"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 9686543761408
+        - name: "quantity"
+          in: "formData"
+          description: "book quantity in the purchase"
+          required: true
+          type: "integer"
+          maximum: 99
+          minimum: 0
+          format: "int64"
+          x-example: 4
       responses:
         200:
           description: "succesfull operation"
       x-swagger-router-controller: "Purchases"
     delete:
       tags:
-      - "purchases"
+        - "purchases"
       summary: "Delete book in Purchase"
       operationId: "deletePurchaseBook"
       parameters:
-      - name: "purchase_id"
-        in: "formData"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 15
-      - name: "isbn"
-        in: "formData"
-        required: true
-        type: "integer"
-        format: "int64"
-        x-example: 8239989653504
+        - name: "purchase_id"
+          in: "query"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 15
+        - name: "isbn"
+          in: "query"
+          required: true
+          type: "integer"
+          format: "int64"
+          x-example: 8239989653504
       responses:
         200:
           description: "successful operation"
@@ -446,33 +449,39 @@ paths:
   /purchase/completed:
     post:
       tags:
-      - "purchases"
+        - "purchases"
       summary: "Set Purchase as completed"
       description: "This post sets the purchase to complete. All books in the shopping\
         \ cart will disappear. This post is only accessible to logged in users."
       operationId: "postPurchaseCompleted"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
+      produces:
+        - "application/json"
       parameters:
-      - name: "purchase_id"
-        in: "formData"
-        required: true
-        type: "string"
-      - name: "shipping_address"
-        in: "formData"
-        description: "Shipping Address"
-        required: true
-        type: "string"
-      - name: "cardholder_name"
-        in: "formData"
-        description: "Cardholder's Name"
-        required: true
-        type: "string"
-      - name: "card_number"
-        in: "formData"
-        description: "Credit Card Number"
-        required: true
-        type: "string"
+        - name: "purchase_id"
+          in: "formData"
+          required: true
+          type: "string"
+          x-example: 15
+        - name: "shipping_address"
+          in: "formData"
+          description: "Shipping Address"
+          required: true
+          type: "string"
+          x-example: 'Some address 23'
+        - name: "cardholder_name"
+          in: "formData"
+          description: "Cardholder's Name"
+          required: true
+          type: "string"
+          x-example: 'Some Name'
+        - name: "card_number"
+          in: "formData"
+          description: "Credit Card Number"
+          required: true
+          type: "string"
+          x-example: 1234567890
       responses:
         200:
           description: "successful operation"
@@ -480,12 +489,12 @@ paths:
   /purchase/findByUser:
     get:
       tags:
-      - "purchases"
+        - "purchases"
       summary: "Get Purchases by user"
       description: "no parameters, the user information is taken from the cookie\n"
       operationId: "getPurchaseFindByUser"
       produces:
-      - "application/json"
+        - "application/json"
       parameters: []
       responses:
         200:
@@ -496,11 +505,11 @@ paths:
   /theme/:
     get:
       tags:
-      - "themes"
+        - "themes"
       summary: "Get all Themes"
       operationId: "getTheme"
       produces:
-      - "applications/json"
+        - "applications/json"
       parameters: []
       responses:
         200:
@@ -513,17 +522,18 @@ paths:
   /theme/{theme_name}:
     get:
       tags:
-      - "themes"
+        - "themes"
       summary: "Get Theme by name"
       description: "You can test this with theme_name = 'Future'"
       operationId: "getThemeThemeName"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "theme_name"
-        in: "path"
-        required: true
-        type: "string"
+        - name: "theme_name"
+          in: "path"
+          required: true
+          type: "string"
+          x-example: "Future"
       responses:
         200:
           description: "successful operation"
@@ -537,38 +547,38 @@ paths:
   /user:
     post:
       tags:
-      - "users"
+        - "users"
       summary: "Create User"
       operationId: "postUser"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "user_mail"
-        in: "formData"
-        description: "user mail"
-        required: true
-        type: "string"
-        x-example: "newtest@mail.com"
-      - name: "password"
-        in: "formData"
-        description: "user password"
-        required: true
-        type: "string"
-        x-example: "newtest"
-      - name: "username"
-        in: "formData"
-        description: "user name"
-        required: true
-        type: "string"
-        x-example: "newtest"
-      - name: "user_shipping_address"
-        in: "formData"
-        description: "user shipping address"
-        required: true
-        type: "string"
-        x-example: "newtest address"
+        - name: "user_mail"
+          in: "formData"
+          description: "user mail"
+          required: true
+          type: "string"
+          x-example: "newtest@mail.com"
+        - name: "password"
+          in: "formData"
+          description: "user password"
+          required: true
+          type: "string"
+          x-example: "newtest"
+        - name: "username"
+          in: "formData"
+          description: "user name"
+          required: true
+          type: "string"
+          x-example: "newtest"
+        - name: "user_shipping_address"
+          in: "formData"
+          description: "user shipping address"
+          required: true
+          type: "string"
+          x-example: "newtest address"
       responses:
         200:
           description: "successful operation"
@@ -582,11 +592,11 @@ paths:
   /user/check:
     get:
       tags:
-      - "users"
+        - "users"
       summary: "Perform User Check"
       operationId: "getUserCheck"
       produces:
-      - "application/json"
+        - "application/json"
       parameters: []
       responses:
         200:
@@ -601,26 +611,26 @@ paths:
   /user/login:
     post:
       tags:
-      - "users"
+        - "users"
       summary: "Perform User login"
       operationId: "postUserLogin"
       consumes:
-      - "application/x-www-form-urlencoded"
+        - "application/x-www-form-urlencoded"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "user_mail"
-        in: "formData"
-        description: "user mail"
-        required: true
-        type: "string"
-        x-example: "test@mail.com"
-      - name: "password"
-        in: "formData"
-        description: "user password"
-        required: true
-        type: "string"
-        x-example: "test"
+        - name: "user_mail"
+          in: "formData"
+          description: "user mail"
+          required: true
+          type: "string"
+          x-example: "test@mail.com"
+        - name: "password"
+          in: "formData"
+          description: "user password"
+          required: true
+          type: "string"
+          x-example: "test"
       responses:
         200:
           description: "successful operation"
@@ -632,7 +642,7 @@ paths:
   /user/logout:
     post:
       tags:
-      - "users"
+        - "users"
       summary: "Perform User logout"
       operationId: "postUserLogout"
       parameters: []
@@ -644,14 +654,14 @@ definitions:
   Book:
     type: "object"
     required:
-    - "abstract"
-    - "edition"
-    - "isbn"
-    - "language"
-    - "number_of_pages"
-    - "price"
-    - "publisher"
-    - "title"
+      - "abstract"
+      - "edition"
+      - "isbn"
+      - "language"
+      - "number_of_pages"
+      - "price"
+      - "publisher"
+      - "title"
     properties:
       isbn:
         type: "integer"
@@ -679,7 +689,7 @@ definitions:
   Theme:
     type: "object"
     required:
-    - "theme_name"
+      - "theme_name"
     properties:
       theme_name:
         type: "string"
@@ -688,7 +698,7 @@ definitions:
   Genre:
     type: "object"
     required:
-    - "genre_name"
+      - "genre_name"
     properties:
       genre_name:
         type: "string"
@@ -697,10 +707,10 @@ definitions:
   Author:
     type: "object"
     required:
-    - "author_id"
-    - "bio"
-    - "birth_date"
-    - "name"
+      - "author_id"
+      - "bio"
+      - "birth_date"
+      - "name"
     properties:
       author_id:
         type: "integer"
@@ -718,15 +728,15 @@ definitions:
   Event:
     type: "object"
     required:
-    - "brief_summary"
-    - "end_time"
-    - "event_date"
-    - "event_id"
-    - "event_name"
-    - "isbn"
-    - "location"
-    - "start_time"
-    - "summary"
+      - "brief_summary"
+      - "end_time"
+      - "event_date"
+      - "event_id"
+      - "event_name"
+      - "isbn"
+      - "location"
+      - "start_time"
+      - "summary"
     properties:
       event_id:
         type: "integer"
@@ -753,10 +763,10 @@ definitions:
   User:
     type: "object"
     required:
-    - "password"
-    - "user_mail"
-    - "user_shipping_address"
-    - "username"
+      - "password"
+      - "user_mail"
+      - "user_shipping_address"
+      - "username"
     properties:
       user_mail:
         type: "string"
@@ -769,9 +779,9 @@ definitions:
   Purchase:
     type: "object"
     required:
-    - "completed"
-    - "purchase_id"
-    - "user_mail"
+      - "completed"
+      - "purchase_id"
+      - "user_mail"
     properties:
       purchase_id:
         type: "integer"
@@ -787,7 +797,7 @@ definitions:
   Error:
     type: "object"
     required:
-    - "code"
+      - "code"
     properties:
       code:
         type: "integer"
