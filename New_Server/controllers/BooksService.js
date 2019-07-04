@@ -154,8 +154,6 @@ exports.getBookISBN = function (isbn) {
             .leftJoin('new_schema.written_by AS wb', 'b.isbn', 'wb.isbn')
             .leftJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
 
-            .leftJoin('new_schema.interviews AS i', 'b.isbn', 'i.interview_isbn')
-
             .where('b.isbn', isbn)
             .then(result => {
                 resolve(result)

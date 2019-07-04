@@ -136,7 +136,7 @@ var displayFoundBooks = function (book) {
     xhttpEvents.open("GET", ip + "api/event/findByBook?ISBN=" + input, true);
     xhttpEvents.send();
 
-    xhttpSimilar.open("GET", ip + "api/book/findByGenre?genre=" + similar.substring(1), true);
+    xhttpSimilar.open("GET", ip + "api/book/findSimilarBooks?genre=" + similar.substring(1), true);
     xhttpSimilar.send();
 };
 

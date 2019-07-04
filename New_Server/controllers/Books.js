@@ -48,6 +48,7 @@ module.exports.getBookFavoriteReading = function getBookFavoriteReading(req, res
 
 module.exports.getBookFindSimilarBooks = function getBookFindSimilarBooks(req, res, next) {
 
+    //todo: set this to params
     var genres = req.swagger.params['genre']['value'];
     console.log("inside getBookFindByGenre; p = ", genres);
 
