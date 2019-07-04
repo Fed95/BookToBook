@@ -31,7 +31,6 @@ exports.getEventEventID = function(event_id) {
   * eventID (String)
   **/
 
-  //todo: extend query to get reviews and events
 
   return new Promise(function (resolve, reject) {
 

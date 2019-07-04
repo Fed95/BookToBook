@@ -81,7 +81,7 @@ var displayFoundBooks = function (book) {
     var themes = [];
     var similar = "";
 
-    var interview = parsed[0].interview_text // TODO: DECIDE WHETHER THE INTERVIEW SHOULD BE AUTHOR SPECIFIC
+    var interview = parsed[0].interview_text
 
     for(var author_name in grouped_by_author){
         var author = {

@@ -68,7 +68,6 @@ exports.getBookFavoriteReading = function () {
         console.log("no params expected")
         console.log("------------------------------------------------------------");
 
-        //todo: extend query to get reviews and events
 
         let myQuery = knex('new_schema.books AS b')
             .join('new_schema.favourites AS f', 'b.isbn', 'f.isbn')
@@ -103,7 +102,6 @@ exports.getBookFindBySimilarBooks = function (parameters_string) {
         console.log("parameters: '" + parameters + "'");
         console.log("------------------------------------------------------------");
 
-        //todo: extend query to get reviews and events
 
         let myQuery = knex('new_schema.books AS b')
             .leftJoin('new_schema.book_genres AS bg', 'b.isbn', 'bg.isbn')
@@ -142,7 +140,6 @@ exports.getBookISBN = function (isbn) {
         console.log("isbn: '" + isbn + "'");
         console.log("------------------------------------------------------------");
 
-        //todo: extend query to get reviews and events
 
         let myQuery = knex('new_schema.books AS b')
             .leftOuterJoin('new_schema.reviews AS r', 'b.isbn', 'r.isbn')

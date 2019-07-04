@@ -27,7 +27,6 @@ exports.getEventEventID = function(event_id) {
   console.log("event_id: '" + event_id + "'");
   console.log("------------------------------------------------------------");
 
-  //todo: extend query to get reviews and events
 
   let myQuery = knex('new_schema.events AS e')
 
