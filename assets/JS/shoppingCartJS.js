@@ -222,12 +222,14 @@ function deleteInDb($input) {
     };
 
     $.ajax({
-        url: ip + "api/purchase/book",
+        url: ip + "api/purchase/book?" + $.param(data),
         type: 'DELETE',
         success: function (response) {
             console.log('successful delete purchase operation!');
         },
-        data: data
+        error: function (response) {
+            console.log("Delete failed!")
+        }
     });
 
 }

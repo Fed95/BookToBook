@@ -431,13 +431,13 @@ paths:
       operationId: "deletePurchaseBook"
       parameters:
       - name: "purchase_id"
-        in: "formData"
+        in: "query"
         required: true
         type: "integer"
         format: "int64"
         x-example: 15
       - name: "isbn"
-        in: "formData"
+        in: "query"
         required: true
         type: "integer"
         format: "int64"
