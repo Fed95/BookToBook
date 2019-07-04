@@ -92,7 +92,7 @@ var generateBookDivTest = function (isbn, title, authors, price) {
         '           <div class="browse-books-rest col-9">' +
         '<div >' +
         '<div class="row">' +
-        '<div class="book-title-and-info col-10">' +
+        '<div class="book-title-and-info col-9">' +
         '<div class="row">' +
         '<h3><a href="' + ip + 'pages/book.html?isbn=' + isbn + '">' + title + '</a></h3>' +
         '</div>' +
@@ -102,7 +102,7 @@ var generateBookDivTest = function (isbn, title, authors, price) {
         '<div class="col-4"><h4>Price:</h4><p>$ ' + price + '</p></div> ' +
         '</div>' +
         '</div>' +
-        '<div class="col-2">' +
+        '<div class="col-3">' +
         '<button id="add-book-btn-1" class="btn btn-outline-success btn-add-book" type="input">Add to Cart</button>'+
         '</div>' +
         '</div>' +

@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84d84c05-3a34-4df8-aa99-66ed3596d3a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/New_Server/controllers/BooksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/BooksService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/New_Server/controllers/EventsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/New_Server/controllers/EventsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/BooksService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/BooksService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/controllers/EventsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/Server/controllers/EventsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/arrowScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/arrowScroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/bookJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/bookJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/CSS/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/CSS/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/browseBooksJS.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,36 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-              <folding>
-                <element signature="e#63#70#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Server/controllers/BooksService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="193" column="4" selection-start-line="193" selection-start-column="4" selection-end-line="193" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,17 +47,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/New_Server/controllers/BooksService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
+            <state relative-caret-position="908">
               <caret line="142" selection-start-line="142" selection-end-line="142" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+            <state relative-caret-position="105">
+              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="730" column="22" lean-forward="true" selection-start-line="730" selection-start-column="22" selection-end-line="730" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -109,8 +83,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/New_Server/controllers/EventsService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="495">
               <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="71" lean-forward="true" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -128,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>4</find>
       <find>date()</find>
       <find>arrow</find>
       <find>@media</find>
@@ -156,8 +147,9 @@
       <find>counter</find>
       <find>getting</find>
       <find>window</find>
-      <find>events</find>
       <find>todo</find>
+      <find>50vh</find>
+      <find>events</find>
     </findStrings>
     <replaceStrings>
       <replace>class</replace>
@@ -223,11 +215,9 @@
         <option value="$PROJECT_DIR$/assets/CSS/author.css" />
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
         <option value="$PROJECT_DIR$/assets/CSS/event.css" />
-        <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
         <option value="$PROJECT_DIR$/assets/JS/loginCheck.js" />
         <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseBooksTestJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseEventsJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/browseGenresJS.js" />
@@ -248,6 +238,8 @@
         <option value="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/BooksService.js" />
         <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
+        <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
+        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
       </list>
     </option>
   </component>
@@ -255,8 +247,10 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="-240" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -278,18 +272,6 @@
               <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="CSS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BookToBook" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="Images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BookToBook" type="b2602c69:ProjectViewProjectNode" />
@@ -442,7 +424,7 @@
       <workItem from="1561815047147" duration="6956000" />
       <workItem from="1561959684048" duration="15257000" />
       <workItem from="1562082625788" duration="25683000" />
-      <workItem from="1562193860525" duration="4693000" />
+      <workItem from="1562193860525" duration="6736000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -476,7 +458,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356209000" />
+    <option name="totallyTimeSpent" value="358252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -488,16 +470,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-240" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22832981" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17061612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28674698" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.22409639" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.54569894" visible="true" weight="0.18415841" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3101983" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -599,13 +581,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11340">
-          <caret line="756" column="16" lean-forward="true" selection-start-line="756" selection-start-column="16" selection-end-line="756" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/author.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-49">
@@ -766,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="260" column="19" selection-start-line="260" selection-start-column="19" selection-end-line="260" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -781,13 +749,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
@@ -931,13 +892,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/EventsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -945,17 +899,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/New_Server/api/swagger.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="730" column="22" lean-forward="true" selection-start-line="730" selection-start-column="22" selection-end-line="730" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/New_Server/controllers/BooksService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
+        <state relative-caret-position="908">
           <caret line="142" selection-start-line="142" selection-end-line="142" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+    <entry file="file://$PROJECT_DIR$/New_Server/controllers/EventsService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="33" lean-forward="true" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
+        <state relative-caret-position="495">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="71" lean-forward="true" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
         </state>
       </provider>
     </entry>

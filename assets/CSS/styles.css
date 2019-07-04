@@ -2,7 +2,10 @@
 /*@import url('https://fonts.googleapis.com/css?family=Playfair+Display');*/
 /*@import url('https://fonts.googleapis.com/css?family=Source+Sans');*/
 #search-results-container{
-    min-height: 50vh;
+    min-height: 70vh;
+}
+#homepage-container{
+    min-height: 70vh;
 }
 body{
     font-family: 'Source Sans Pro', serif;
