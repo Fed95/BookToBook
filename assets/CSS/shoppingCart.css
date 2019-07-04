@@ -197,6 +197,9 @@ input:focus {
     #shipping-form {
         width: 300px;
     }
+    .col-10{
+        width: 95%;
+    }
 }
 
 /* Responsive */
