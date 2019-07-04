@@ -15,9 +15,9 @@
       <change beforePath="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/JS/loginCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginCheck.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/loginJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/loginJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/themeJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/themeJS.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/JS/utilsJS.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/JS/utilsJS.js" afterDir="false" />
     </list>
@@ -33,54 +33,96 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/eventJS.js">
+        <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/homepage_eventsJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
               <folding>
-                <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+                <element signature="e#63#70#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/event.css">
+        <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="99" column="19" lean-forward="true" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/CSS/styles.css">
+        <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="260" column="19" selection-start-line="260" selection-start-column="19" selection-end-line="260" selection-end-column="19" />
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/JS/genreJS.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="150" column="83" selection-start-line="150" selection-start-column="83" selection-end-line="150" selection-end-column="83" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/assets/JS/sticky.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/JS/themeJS.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
+        <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <element signature="e#63#70#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,11 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/JS/footerResize.js" />
-        <option value="$PROJECT_DIR$/assets/CSS/footerTest.css" />
-        <option value="$PROJECT_DIR$/pages/browseAuthors.html" />
-        <option value="$PROJECT_DIR$/pages/browseEvents.html" />
-        <option value="$PROJECT_DIR$/pages/browseGenres.html" />
         <option value="$PROJECT_DIR$/pages/browseThemes.html" />
         <option value="$PROJECT_DIR$/pages/contactUs.html" />
         <option value="$PROJECT_DIR$/pages/event.html" />
@@ -184,11 +221,8 @@
         <option value="$PROJECT_DIR$/assets/CSS/footer.css" />
         <option value="$PROJECT_DIR$/pages/browseBooksTest2.html" />
         <option value="$PROJECT_DIR$/assets/JS/browseBooksTest2.js" />
-        <option value="$PROJECT_DIR$/assets/JS/utilsJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" />
         <option value="$PROJECT_DIR$/pages/book.html" />
         <option value="$PROJECT_DIR$/New_Server/controllers/PurchasesService.js" />
-        <option value="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/AuthorsService.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/BooksService.js" />
         <option value="$PROJECT_DIR$/pages/shoppingCart.html" />
@@ -197,27 +231,35 @@
         <option value="$PROJECT_DIR$/pages/author.html" />
         <option value="$PROJECT_DIR$/assets/JS/arrowScroll.js" />
         <option value="$PROJECT_DIR$/pages/browseBooks.html" />
-        <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
         <option value="$PROJECT_DIR$/New_Server/controllers/Purchases.js" />
-        <option value="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/sections.css" />
-        <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/browseEventsJS.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/navbar.css" />
-        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/browseBooks.css" />
         <option value="$PROJECT_DIR$/assets/CSS/book.css" />
         <option value="$PROJECT_DIR$/assets/CSS/author.css" />
         <option value="$PROJECT_DIR$/assets/CSS/browse.css" />
-        <option value="$PROJECT_DIR$/assets/JS/eventJS.js" />
         <option value="$PROJECT_DIR$/assets/CSS/event.css" />
         <option value="$PROJECT_DIR$/assets/CSS/styles.css" />
-        <option value="$PROJECT_DIR$/assets/JS/genreJS.js" />
-        <option value="$PROJECT_DIR$/assets/JS/themeJS.js" />
         <option value="$PROJECT_DIR$/assets/JS/loginCheck.js" />
+        <option value="$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/authorJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/bookJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseAuthorsJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseBooksJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseBooksTestJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseEventsJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseGenresJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/browseThemesJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/eventJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/genreJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/homepage_eventsJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/loginJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/shoppingCartJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/shoppingCartLogic.js" />
+        <option value="$PROJECT_DIR$/assets/JS/themeJS.js" />
+        <option value="$PROJECT_DIR$/assets/JS/utilsJS.js" />
       </list>
     </option>
   </component>
@@ -412,7 +454,7 @@
       <workItem from="1561815047147" duration="6956000" />
       <workItem from="1561959684048" duration="15257000" />
       <workItem from="1562082625788" duration="25683000" />
-      <workItem from="1562193860525" duration="4059000" />
+      <workItem from="1562193860525" duration="4328000" />
     </task>
     <task id="LOCAL-00001" summary="Modified GetBookById query so that is actually used the id">
       <created>1559145546565</created>
@@ -446,7 +488,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355575000" />
+    <option name="totallyTimeSpent" value="355844000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -569,66 +611,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksTest2.js" />
-    <entry file="file://$PROJECT_DIR$/pages/test.html" />
-    <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding>
-            <element signature="e#63#70#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#63#70#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/PurchasesService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="34" column="109" selection-start-line="34" selection-start-column="109" selection-end-line="34" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/BooksService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/New_Server/controllers/AuthorsService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="25" column="76" selection-start-line="25" selection-start-column="76" selection-end-line="25" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" selection-start-line="27" selection-end-line="98" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/CSS/singleItemStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/suggested.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -636,27 +618,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2312">
           <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="218" column="4" selection-start-line="218" selection-start-column="4" selection-end-line="218" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="95" column="28" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -678,13 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11340">
           <caret line="756" column="16" lean-forward="true" selection-start-line="756" selection-start-column="16" selection-end-line="756" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="43" selection-start-line="43" selection-end-line="46" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -775,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="44" lean-forward="true" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/browseEvents.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -805,20 +752,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/browseEvents.css">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="514" selection-start-line="514" selection-end-line="514" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseEventsJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="85" column="31" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -855,34 +788,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_eventsJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/CSS/navbar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/eventJS.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,20 +809,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/genreJS.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/arrowScroll.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="150" column="83" selection-start-line="150" selection-start-column="83" selection-end-line="150" selection-end-column="83" />
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/JS/themeJS.js">
+    <entry file="file://$PROJECT_DIR$/assets/JS/authorJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/bookJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseAuthorsJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseBooksTestJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseEventsJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseGenresJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/browseThemesJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/collapsible.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/eventJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/genreJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_bestsellersJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_eventsJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/homepage_favouritesJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/JS/loginCheck.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/loginJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#63#70#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/shoppingCartLogic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/sticky.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/themeJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/JS/utilsJS.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#63#70#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

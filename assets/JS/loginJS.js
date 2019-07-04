@@ -1,5 +1,8 @@
 var ip = "https://booktobook.herokuapp.com/";
-//var ip = "http://localhost:8080/";$('#form-signin').submit(function(e){
+//var ip = "http://localhost:8080/";
+
+
+$('#form-signin').submit(function(e){
     e.preventDefault();
 });
 
