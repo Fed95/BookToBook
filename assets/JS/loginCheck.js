@@ -2,7 +2,8 @@
 var ip = "http://localhost:8080/";
 
 checkCookie().then(user_mail => {
-    if (user_mail) {
+    $(document).ready(()=>{
+        if (user_mail) {
         $('#login-link').html($('#login-link').html().replace("", "Logout"));
         $("#login-link").attr("onclick", "logout()");
         $("#login-link").attr("href", "../index.html");
@@ -13,7 +14,8 @@ checkCookie().then(user_mail => {
         $("#login-link").attr("href", "../pages/login.html?#");
         $("#shopping-link").attr("href", "../pages/login.html?#");
         console.log('User Check couldn\'t find any active cookies!')
-    }
+    }})
+
 })
 
 function checkCookie() {
