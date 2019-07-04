@@ -36,7 +36,7 @@ xhttp.onreadystatechange = function() {
         });
     }
 };
-xhttp.open("GET", ip + "api/author/findByName?Name=" + input, true);
+xhttp.open("GET", ip + "api/author/findByName?name=" + input, true);
 xhttp.send();
 
 //Adding last search in search bar

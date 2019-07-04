@@ -13,7 +13,7 @@ xhttpEvents.onreadystatechange = function () {
 var current_month = new Date().getMonth() + 1;
 console.log('getting books of month: ', current_month)
 
-xhttpEvents.open("GET", ip + "api/event/findByMonth?Month=" + current_month, true);
+xhttpEvents.open("GET", ip + "api/event/findByMonth?month=" + current_month, true);
 xhttpEvents.send();
 
 

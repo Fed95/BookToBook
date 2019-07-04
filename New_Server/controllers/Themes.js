@@ -19,12 +19,16 @@ module.exports.getTheme = function getTheme (req, res, next) {
 
 module.exports.getThemeThemeName = function getThemeThemeName (req, res, next) {
 
-    var theme_name = req.swagger.params['ThemeName']['value'];
+    var theme_name = req.swagger.params['theme_name']['value'];
     console.log("inside theme.js; theme_name = ", theme_name);
 
     Themes.getThemeThemeName(theme_name)
         .then(function (response) {
-            utils.writeJson(res, response);
+            if (response.length > 0) {
+                utils.writeJson(res, response, 200);
+            } else {
+                utils.writeJson(res, "Theme not found.", 404);
+            }
         })
         .catch(function (response) {
             utils.writeJson(res, response);

@@ -93,7 +93,7 @@ function register() {
     ).fail(
         function(jqXHR, textStatus, errorThrown) {
             console.log('Login failed!')
-            if(jqXHR.status == 404){
+            if(jqXHR.status == 409){
                 displayWarning("A user with this email already exists! Would you like to "+'<a href="#" class="login-dynamic-link">Login</a>'+ " instead?")
             }
         }

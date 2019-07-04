@@ -10,32 +10,32 @@ info:
 host: "booktobook.herokuapp.com"
 basePath: "/api"
 tags:
-  - name: "Books"
-  - name: "Themes"
-  - name: "Genres"
-  - name: "Authors"
-  - name: "Events"
-  - name: "Users"
-  - name: "Purchases"
+- name: "authors"
+- name: "books"
+- name: "events"
+- name: "genres"
+- name: "purchases"
+- name: "themes"
+- name: "users"
 schemes:
-  - "https"
-  - "http"
+- "https"
+- "http"
 paths:
   /author/findByBook:
     get:
       tags:
-        - "Authors"
+      - "authors"
       summary: "Get authors by book"
       operationId: "getAuthorFindByBook"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters:
-        - name: "ISBN"
-          in: "query"
-          description: "ISBN of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
+      - name: "ISBN"
+        in: "query"
+        description: "ISBN of the Book"
+        required: true
+        type: "integer"
+        format: "int64"
       responses:
         200:
           description: "successful operation"
@@ -53,53 +53,45 @@ paths:
   /author/findByName:
     get:
       tags:
-        - "Authors"
+      - "authors"
       summary: "Get authors by name"
       operationId: "getAuthorFindByName"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters:
-        - name: "Name"
-          in: "query"
-          description: "Name of the Author"
-          required: true
-          type: "string"
+      - name: "name"
+        in: "query"
+        description: "Name of the Author"
+        required: true
+        type: "string"
+        x-example: "Walter Moers"
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "Invalid Name supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Author not found"
-          schema:
-            $ref: "#/definitions/Error"
+            type: "array"
+            items:
+              $ref: "#/definitions/Author"
       x-swagger-router-controller: "Authors"
-  /author/{AuthorID}:
+  /author/{author_id}:
     get:
       tags:
-        - "Authors"
-      summary: "Get Author by ID"
+      - "authors"
+      summary: "Get Author by id"
+      description: "you can try with id = 1"
       operationId: "getAuthorAuthorID"
       produces:
-        - "applications/json"
+      - "application/json"
       parameters:
-        - name: "AuthorID"
-          in: "path"
-          required: true
-          type: "string"
+      - name: "author_id"
+        in: "path"
+        required: true
+        type: "string"
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "AuthorID format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
+            $ref: "#/definitions/Author"
         404:
           description: "Author not Found"
           schema:
@@ -108,19 +100,20 @@ paths:
   /book/bestOfTheMonth:
     get:
       tags:
-        - "Books"
+      - "books"
       summary: "Get Books of the Month"
       description: "Best sellers this month"
       operationId: "getBookBestOfTheMonth"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters:
-        - name: "Month"
-          in: "query"
-          description: "This month"
-          required: true
-          type: "string"
-          format: "date-time"
+      - name: "month"
+        in: "query"
+        description: "This month"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 7
       responses:
         200:
           description: "successful operation"
@@ -128,23 +121,16 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Book"
-        400:
-          description: "Invalid month supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Book not found"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Books"
   /book/favoriteReading:
     get:
       tags:
-        - "Books"
+      - "books"
       summary: "Get favorite Books"
+      description: "gets books as defined by the 'favourites' table in our database"
       operationId: "getBookFavoriteReading"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters: []
       responses:
         200:
@@ -153,58 +139,22 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Book"
-        404:
-          description: "Book not found"
-          schema:
-            $ref: "#/definitions/Error"
-      x-swagger-router-controller: "Books"
-  /book/findSimilarBooks:
-    get:
-      tags:
-        - "Books"
-      summary: "Get Similar Books"
-      operationId: "getBookFindSimilarBooks"
-      produces:
-        - "applications/json"
-      parameters:
-        - name: "genre"
-          in: "query"
-          description: "genre of the book"
-          required: false
-          type: "string"
-          x-example: "fantasy"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/Book"
-        400:
-          description: "Invalid genre supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Book not found"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Books"
   /book/findByTitle:
     get:
       tags:
-        - "Books"
+      - "books"
       summary: "Get Books by title"
       description: "Returns a list of books"
       operationId: "getBookByTitle"
       produces:
-        - "application/json"
-        - "applications/json"
+      - "applications/json"
       parameters:
-        - name: "Title"
-          in: "query"
-          required: true
-          type: "string"
-          x-example: "Re"
+      - name: "title"
+        in: "query"
+        required: true
+        type: "string"
+        x-example: "Prey"
       responses:
         200:
           description: "successful operation"
@@ -212,40 +162,53 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Book"
-        400:
-          description: "Invalid title supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Book not found"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Books"
-  /book/{ISBN}:
+  /book/findSimilarBooks:
     get:
       tags:
-        - "Books"
-      summary: "Get Book by ISBN"
+      - "books"
+      summary: "Get Similar Books"
+      operationId: "getBookFindSimilarBooks"
+      produces:
+      - "applications/json"
+      parameters:
+      - name: "params"
+        in: "query"
+        description: "csv string of authors, genres and themes"
+        required: true
+        type: "string"
+        x-example: "Adventure,Awesomeness, Walter Moers"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Book"
+      x-swagger-router-controller: "Books"
+  /book/{isbn}:
+    get:
+      tags:
+      - "books"
+      summary: "Get book by its isbn"
+      description: "you can test this with isbn = 8972871401472"
       operationId: "getBookISBN"
       produces:
-        - "applications/json"
+      - "applications/json"
+      - "application/json"
       parameters:
-        - name: "ISBN"
-          in: "path"
-          description: "ID of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
-          x-example: 9781402894626
+      - name: "isbn"
+        in: "path"
+        description: "book isbn code"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 9780001243136
       responses:
         200:
           description: "successful operation"
           schema:
             $ref: "#/definitions/Book"
-        400:
-          description: "ISBN format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
         404:
           description: "Book not Found"
           schema:
@@ -254,46 +217,44 @@ paths:
   /event/:
     get:
       tags:
-        - "Events"
+      - "events"
       summary: "Get all events"
       operationId: "getEvent"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters: []
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Event"
-        404:
-          description: "Event not found"
-          schema:
-            $ref: "#/definitions/Error"
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
       x-swagger-router-controller: "Events"
   /event/findByBook:
     get:
       tags:
-        - "Events"
+      - "events"
       summary: "Get Event by Book"
       operationId: "getEventFindByBook"
       produces:
-        - "applications/json"
+      - "applications/json"
+      - "application/json"
       parameters:
-        - name: "ISBN"
-          in: "query"
-          description: "ISBN of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
+      - name: "isbn"
+        in: "query"
+        description: "book isbn"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 9780857501004
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "ISBN format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
         404:
           description: "Event not Found"
           schema:
@@ -302,54 +263,49 @@ paths:
   /event/findByMonth:
     get:
       tags:
-        - "Events"
+      - "events"
       summary: "Get Event by Month"
       operationId: "getEventFindByMonth"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters:
-        - name: "Month"
-          in: "query"
-          description: "Month of the Event"
-          required: true
-          type: "string"
-          format: "date-time"
+      - name: "month"
+        in: "query"
+        description: "Month of the Event"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 7
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "Month format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "Event not Found"
-          schema:
-            $ref: "#/definitions/Error"
+            type: "array"
+            items:
+              $ref: "#/definitions/Event"
       x-swagger-router-controller: "Events"
-  /event/{EventID}:
+  /event/{event_id}:
     get:
       tags:
-        - "Events"
-      summary: "Get Event by ID"
+      - "events"
+      summary: "Get event by id"
+      description: "you can test this with event_id = 1"
       operationId: "getEventEventID"
       produces:
-        - "applications/json"
+      - "application/json"
       parameters:
-        - name: "EventID"
-          in: "path"
-          required: true
-          type: "string"
+      - name: "event_id"
+        in: "path"
+        description: "get event by its id"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 1
       responses:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "EventID format incorrect"
-          schema:
-            $ref: "#/definitions/Error"
+            $ref: "#/definitions/Event"
         404:
           description: "Event not Found"
           schema:
@@ -358,11 +314,11 @@ paths:
   /genre/:
     get:
       tags:
-        - "Genres"
+      - "genres"
       summary: "Get all Genres"
       operationId: "getGenre"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters: []
       responses:
         200:
@@ -371,33 +327,26 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Genre"
-        404:
-          description: "Genre not found"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Genres"
-  /genre/{GenreName}:
+  /genre/{genre_name}:
     get:
       tags:
-        - "Genres"
+      - "genres"
       summary: "Get Genre by name"
+      description: "you can test this with genre_name = 'Satire'"
       operationId: "getGenreGenreName"
       produces:
-        - "applications/json"
+      - "application/json"
       parameters:
-        - name: "GenreName"
-          in: "path"
-          required: true
-          type: "string"
+      - name: "genre_name"
+        in: "path"
+        required: true
+        type: "string"
       responses:
         200:
           description: "successful operation"
           schema:
             $ref: "#/definitions/Genre"
-        400:
-          description: "Invalid genre supplied"
-          schema:
-            $ref: "#/definitions/Error"
         404:
           description: "Genre not found"
           schema:
@@ -406,152 +355,152 @@ paths:
   /purchase/:
     post:
       tags:
-        - "Purchases"
-      summary: "Create Purchase if it doesn't exist
-                and add eventual book"
+      - "purchases"
+      summary: "Create Purchase if it doesn't exist and add eventual book"
+      description: "When clicking on \"add to cart\", the post is performed,. If successful,\
+        \ the book is added to the user's shopping cart. If the user is not logged\
+        \ in, they will be redirected to the login page. (This is the only unouthorised\
+        \ post that the user can perform on purchases)"
       operationId: "postPurchase"
       consumes:
-        - "application/x-www-form-urlencoded"
+      - "application/x-www-form-urlencoded"
       produces:
-        - "application/json"
+      - "application/json"
       parameters:
-        - name: "ISBN"
-          in: "formData"
-          description: "ISBN of the Book"
-          type: "string"
-          required: false
+      - name: "isbn"
+        in: "formData"
+        description: "ISBN of the Book"
+        required: true
+        type: "string"
+        x-example: "9781585641472"
       responses:
         200:
           description: "succesfull operation"
-        400:
-          description: "Format error"
-      x-swagger-router-controller: "Purchases"
-  /purchase/completed:
-    post:
-      tags:
-        - "Purchases"
-      summary: "Set Purchase as completed"
-      operationId: "postPurchaseCompleted"
-      consumes:
-        - "application/x-www-form-urlencoded"
-      produces:
-        - "application/json"
-      parameters:
-        - name: "purchase_id"
-          in: "formData"
-          required: true
-          type: "string"
-        - name: "shipping_address"
-          in: "formData"
-          description: "Shipping Address"
-          required: true
-          type: "string"
-        - name: "cardholder"
-          in: "formData"
-          description: "Cardholder's Name"
-          required: true
-          type: "string"
-        - name: "card_number"
-          in: "formData"
-          description: "Credit Card Number"
-          required: true
-          type: "string"
-      responses:
-        200:
-          description: "successful operation"
-        400:
-          description: "format error"
-      x-swagger-router-controller: "Purchases"
-  /purchase/findByUser:
-    get:
-      tags:
-        - "Purchases"
-      summary: "Get Purchases by user"
-      operationId: "getPurchaseFindByUser"
-      produces:
-        - "applications/json"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Book"
-        400:
-          description: "Invalid UserID supplied"
-          schema:
-            $ref: "#/definitions/Error"
-        404:
-          description: "User not found"
+        401:
+          description: "User not logged in"
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Purchases"
   /purchase/book:
     post:
       tags:
-        - "Purchases"
+      - "purchases"
       summary: "Update quantity of book in the cart"
+      description: "When the book is already present in the shopping cart, the order\
+        \ quantity can be updated if the user wants to buy more copies of the same\
+        \ book (when set to 0 the book is removed from the purchase).\nThis post is\
+        \ only accessible to logged in users"
       operationId: "postPurchaseBook"
       consumes:
-        - "application/x-www-form-urlencoded"
-      produces:
-        - "application/json"
+      - "application/x-www-form-urlencoded"
       parameters:
-        - name: "purchase_id"
-          in: "formData"
-          description: "purchase id"
-          type: "integer"
-          required: true
-        - name: "isbn"
-          in: "formData"
-          description: "isbn of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
-        - name: "quantity"
-          in: "formData"
-          description: "book quantity in the purchase"
-          required: true
-          type: "integer"
-          format: "int64"
+      - name: "purchase_id"
+        in: "formData"
+        description: "purchase id"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 15
+      - name: "isbn"
+        in: "formData"
+        description: "isbn of the Book"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 9686543761408
+      - name: "quantity"
+        in: "formData"
+        description: "book quantity in the purchase"
+        required: true
+        type: "integer"
+        maximum: 99
+        minimum: 0
+        format: "int64"
+        x-example: 4
       responses:
         200:
           description: "succesfull operation"
-        400:
-          description: "Format error"
       x-swagger-router-controller: "Purchases"
     delete:
       tags:
-        - "Purchases"
+      - "purchases"
       summary: "Delete book in Purchase"
       operationId: "deletePurchaseBook"
-      consumes:
-        - "application/x-www-form-urlencoded"
-      produces:
-        - "application/json"
       parameters:
-        - name: "purchase_id"
-          in: "formData"
-          required: true
-          type: "string"
-        - name: "isbn"
-          in: "formData"
-          description: "ISBN of the Book"
-          required: true
-          type: "integer"
-          format: "int64"
+      - name: "purchase_id"
+        in: "formData"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 15
+      - name: "isbn"
+        in: "formData"
+        required: true
+        type: "integer"
+        format: "int64"
+        x-example: 8239989653504
       responses:
         200:
           description: "successful operation"
-        400:
-          description: "Format error"
+      x-swagger-router-controller: "Purchases"
+  /purchase/completed:
+    post:
+      tags:
+      - "purchases"
+      summary: "Set Purchase as completed"
+      description: "This post sets the purchase to complete. All books in the shopping\
+        \ cart will disappear. This post is only accessible to logged in users."
+      operationId: "postPurchaseCompleted"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      parameters:
+      - name: "purchase_id"
+        in: "formData"
+        required: true
+        type: "string"
+      - name: "shipping_address"
+        in: "formData"
+        description: "Shipping Address"
+        required: true
+        type: "string"
+      - name: "cardholder_name"
+        in: "formData"
+        description: "Cardholder's Name"
+        required: true
+        type: "string"
+      - name: "card_number"
+        in: "formData"
+        description: "Credit Card Number"
+        required: true
+        type: "string"
+      responses:
+        200:
+          description: "successful operation"
+      x-swagger-router-controller: "Purchases"
+  /purchase/findByUser:
+    get:
+      tags:
+      - "purchases"
+      summary: "Get Purchases by user"
+      description: "no parameters, the user information is taken from the cookie\n"
+      operationId: "getPurchaseFindByUser"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/Purchase"
       x-swagger-router-controller: "Purchases"
   /theme/:
     get:
       tags:
-        - "Themes"
+      - "themes"
       summary: "Get all Themes"
       operationId: "getTheme"
       produces:
-        - "applications/json"
+      - "applications/json"
       parameters: []
       responses:
         200:
@@ -560,33 +509,26 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Theme"
-        404:
-          description: "Theme not found"
-          schema:
-            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Themes"
-  /theme/{ThemeName}:
+  /theme/{theme_name}:
     get:
       tags:
-        - "Themes"
+      - "themes"
       summary: "Get Theme by name"
+      description: "You can test this with theme_name = 'Future'"
       operationId: "getThemeThemeName"
       produces:
-        - "applications/json"
+      - "application/json"
       parameters:
-        - name: "ThemeName"
-          in: "path"
-          required: true
-          type: "string"
+      - name: "theme_name"
+        in: "path"
+        required: true
+        type: "string"
       responses:
         200:
           description: "successful operation"
           schema:
             $ref: "#/definitions/Theme"
-        400:
-          description: "Invalid theme supplied"
-          schema:
-            $ref: "#/definitions/Error"
         404:
           description: "Theme not found"
           schema:
@@ -595,75 +537,102 @@ paths:
   /user:
     post:
       tags:
-        - "Users"
+      - "users"
       summary: "Create User"
       operationId: "postUser"
       consumes:
-        - "application/x-www-form-urlencoded"
+      - "application/x-www-form-urlencoded"
       produces:
-        - "application/json"
+      - "application/json"
       parameters:
-        - name: "user_mail"
-          in: "formData"
-          description: "user mail"
-          type: "string"
-          required: true
-        - name: "password"
-          in: "formData"
-          description: "user password"
-          type: "string"
-          required: true
-        - name: "username"
-          in: "formData"
-          description: "user name"
-          type: "string"
-          required: true
-        - name: "user_shipping_address"
-          in: "formData"
-          description: "user shipping address"
-          type: "string"
-          required: true
+      - name: "user_mail"
+        in: "formData"
+        description: "user mail"
+        required: true
+        type: "string"
+        x-example: "newtest@mail.com"
+      - name: "password"
+        in: "formData"
+        description: "user password"
+        required: true
+        type: "string"
+        x-example: "newtest"
+      - name: "username"
+        in: "formData"
+        description: "user name"
+        required: true
+        type: "string"
+        x-example: "newtest"
+      - name: "user_shipping_address"
+        in: "formData"
+        description: "user shipping address"
+        required: true
+        type: "string"
+        x-example: "newtest address"
       responses:
         200:
           description: "successful operation"
           schema:
             type: "string"
-        400:
-          description: "Format error"
+        409:
+          description: "user_mail already registered"
+          schema:
+            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Users"
-  /user/login:
-    post:
+  /user/check:
+    get:
       tags:
-        - "Users"
-      summary: "Perform User login"
-      operationId: "postUserLogin"
-      consumes:
-        - "application/x-www-form-urlencoded"
+      - "users"
+      summary: "Perform User Check"
+      operationId: "getUserCheck"
       produces:
-        - "application/json"
-      parameters:
-        - name: "user_mail"
-          in: "formData"
-          description: "user mail"
-          type: "string"
-          required: true
-        - name: "password"
-          in: "formData"
-          description: "user password"
-          type: "string"
-          required: true
+      - "application/json"
+      parameters: []
       responses:
         200:
           description: "successful operation"
           schema:
             type: "string"
         404:
-          description: "UserID or Password are wrong"
+          description: "Session not found"
+          schema:
+            $ref: "#/definitions/Error"
+      x-swagger-router-controller: "Users"
+  /user/login:
+    post:
+      tags:
+      - "users"
+      summary: "Perform User login"
+      operationId: "postUserLogin"
+      consumes:
+      - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "user_mail"
+        in: "formData"
+        description: "user mail"
+        required: true
+        type: "string"
+        x-example: "test@mail.com"
+      - name: "password"
+        in: "formData"
+        description: "user password"
+        required: true
+        type: "string"
+        x-example: "test"
+      responses:
+        200:
+          description: "successful operation"
+        401:
+          description: "user_mail or password are invalid"
+          schema:
+            $ref: "#/definitions/Error"
       x-swagger-router-controller: "Users"
   /user/logout:
     post:
       tags:
-        - "Users"
+      - "users"
       summary: "Perform User logout"
       operationId: "postUserLogout"
       parameters: []
@@ -671,133 +640,123 @@ paths:
         200:
           description: "successful operation"
       x-swagger-router-controller: "Users"
-  /user/check:
-    get:
-      tags:
-        - "Users"
-      summary: "Perform User Check"
-      operationId: "getUserCheck"
-      produces:
-        - "application/json"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/User"
-      x-swagger-router-controller: "Users"
 definitions:
   Book:
     type: "object"
     required:
-      - "Abstract"
-      - "Cover Image"
-      - "Edition"
-      - "ISBN"
-      - "Language"
-      - "Number of Pages"
-      - "Publication Date"
-      - "Publisher"
-      - "Title"
+    - "abstract"
+    - "edition"
+    - "isbn"
+    - "language"
+    - "number_of_pages"
+    - "price"
+    - "publisher"
+    - "title"
     properties:
-      ISBN:
+      isbn:
         type: "integer"
         format: "int64"
-      Title:
+        description: "book isbn code"
+      title:
         type: "string"
-      Abstract:
+      abstract:
         type: "string"
-      Publication Date:
+      publisher:
         type: "string"
-        format: "date-time"
-      Edition:
+      number_of_pages:
+        type: "integer"
+        format: "int32"
+      language:
+        type: "string"
+      edition:
         type: "integer"
         format: "int64"
-      Cover Image:
-        type: "string"
-      Publisher:
-        type: "string"
-      Number of Pages:
+      price:
         type: "integer"
         format: "int64"
-      Language:
+      interview:
         type: "string"
   Theme:
     type: "object"
     required:
-      - "ISBN"
-      - "Theme"
+    - "theme_name"
     properties:
-      Theme:
+      theme_name:
         type: "string"
-      ISBN:
-        type: "integer"
-        format: "int64"
+      theme_description:
+        type: "string"
   Genre:
     type: "object"
     required:
-      - "Genre"
-      - "ISBN"
+    - "genre_name"
     properties:
-      Genre:
+      genre_name:
         type: "string"
-      ISBN:
-        type: "integer"
-        format: "int64"
+      genre_description:
+        type: "string"
   Author:
     type: "object"
     required:
-      - "AuthorID"
-      - "Bio"
-      - "Date of Birth"
-      - "Name"
-      - "Picture"
+    - "author_id"
+    - "bio"
+    - "birth_date"
+    - "name"
     properties:
-      AuthorID:
+      author_id:
         type: "integer"
         format: "int64"
-      Date of Birth:
+      birth_date:
         type: "string"
         format: "date-time"
-      Name:
+      name:
         type: "string"
-      Picture:
+      bio:
         type: "string"
-      Bio:
+      death_date:
         type: "string"
+        format: "date-time"
   Event:
     type: "object"
     required:
-      - "Details"
-      - "Event Date"
-      - "EventID"
-      - "Introduction"
-      - "Location Address"
-      - "Name"
-      - "Starting Time"
+    - "brief_summary"
+    - "end_time"
+    - "event_date"
+    - "event_id"
+    - "event_name"
+    - "isbn"
+    - "location"
+    - "start_time"
+    - "summary"
     properties:
-      EventID:
-        type: "number"
-        format: "double"
-      Name:
+      event_id:
+        type: "integer"
+        format: "int64"
+      event_name:
         type: "string"
-      Introduction:
+      summary:
         type: "string"
-      Location Address:
+      location:
         type: "string"
-      Event Date:
+      event_date:
         type: "string"
         format: "date-time"
-      Starting Time:
+      start_time:
         type: "string"
-      Details:
+      brief_summary:
         type: "string"
+      end_time:
+        type: "string"
+      isbn:
+        type: "integer"
+        format: "int64"
+        description: "isbn of the book presented at the event"
   User:
     type: "object"
     required:
-      - "user_mail"
-      - "password"
-      - "username"
-      - "user_shipping_address"
+    - "password"
+    - "user_mail"
+    - "user_shipping_address"
+    - "username"
     properties:
       user_mail:
         type: "string"
@@ -810,25 +769,25 @@ definitions:
   Purchase:
     type: "object"
     required:
-      - "Completed"
-      - "PurchaseID"
-      - "UserID"
+    - "completed"
+    - "purchase_id"
+    - "user_mail"
     properties:
-      PurchaseID:
+      purchase_id:
         type: "integer"
         format: "int64"
-      UserID:
+      user_mail:
         type: "string"
-      Completed:
+      completed:
         type: "boolean"
         default: false
-      Purchase Date:
+      purchase_date:
         type: "string"
         format: "date-time"
   Error:
     type: "object"
     required:
-      - "code"
+    - "code"
     properties:
       code:
         type: "integer"
@@ -837,6 +796,4 @@ definitions:
         minimum: 400
         maximum: 599
       description:
-        type: "string"
-      reasonPhrase:
         type: "string"

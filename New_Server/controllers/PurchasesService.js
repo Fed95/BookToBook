@@ -3,8 +3,7 @@ var pg = require("../index.js");
 var knex = pg.knex;
 
 
-
-exports.getPurchaseFindByUser = function(user_mail) {
+exports.getPurchaseFindByUser = function (user_mail) {
     /**
      * parameters expected in the args:
      * userID (Long)
@@ -25,23 +24,23 @@ exports.getPurchaseFindByUser = function(user_mail) {
             .innerJoin('new_schema.authors AS a', 'wb.author_id', 'a.author_id')
             .select('b.isbn', 'b.title', 'b.price', 'u.username', 'bought.quantity', 'a.name', 'p.purchase_id', 'u.user_shipping_address')
             .then(result => {
-              console.log(result);
-              resolve(result)
+                console.log(result);
+                resolve(result)
             });
-      });
+    });
 };
 
 
-exports.postPurchase = function(ISBN, user_mail) {
-  /**
-   * parameters expected in the args:
-  * body (Purchase)
-  **/
+exports.postPurchase = function (isbn, user_mail) {
+    /**
+     * parameters expected in the args:
+     * body (Purchase)
+     **/
     return new Promise(function (resolve, reject) {
 
         console.log("---------------executing postPurchase---------------------");
         console.log("user_mail: '" + user_mail + "'");
-        console.log("ISBN: '" + ISBN + "'");
+        console.log("isbn: '" + isbn + "'");
         console.log("------------------------------------------------------------");
 
         var purchase_id;
@@ -53,11 +52,11 @@ exports.postPurchase = function(ISBN, user_mail) {
                 completed: false
             })
             .then(result => {
-                if (!result || !result[0])  {  // not found!
+                if (!result || !result[0]) {  // not found!
                     //take the max purchase id
                     return knex("new_schema.purchases")
                         .max('purchase_id')
-                        .then(result2 =>{
+                        .then(result2 => {
 
                             let maxPurchaseId = result2[0].max;
                             purchase_id = maxPurchaseId + 1;
@@ -65,53 +64,45 @@ exports.postPurchase = function(ISBN, user_mail) {
                             return knex('new_schema.purchases')
                                 .insert({purchase_id: purchase_id, user_mail: user_mail})
                                 .then(result3 => {
-                                    // if you have called with add to Cart, add the book in the new purchase
-                                    if(ISBN){
-                                        return knex('new_schema.bought_in')
-                                            .insert({purchase_id: purchase_id, isbn: ISBN})
-                                            .then(resultf =>{
-                                                resolve(result)
-                                            })
-                                    }else{
-                                        resolve(result)
-                                    }
-
+                                    return knex('new_schema.bought_in')
+                                        .insert({purchase_id: purchase_id, isbn: isbn})
+                                        .then(resultf => {
+                                            resolve(result)
+                                        })
                                 })
-                    })
+                        })
 
 
-                }
-                else{
+                } else {
                     // purchase not completed (cart) found
                     purchase_id = result[0].purchase_id;
                     // check if the book is already associated to the purchase
                     return knex('new_schema.bought_in')
                         .where({
                             purchase_id: purchase_id,
-                            isbn: ISBN
+                            isbn: isbn
                         })
-                        .then(result4 =>{
+                        .then(result4 => {
                             if (!result4 || !result4[0]) {  // not found!
                                 // insert the book in the table book - purchase
                                 return knex('new_schema.bought_in')
-                                    .insert({purchase_id: purchase_id, isbn: ISBN})
-                                    .then( resultf =>{
+                                    .insert({purchase_id: purchase_id, isbn: isbn})
+                                    .then(resultf => {
                                         resolve(result)
                                     })
-                            }
-                            else {
+                            } else {
                                 // the book is already associated
                                 // get the quantity of the given book
                                 return knex('new_schema.bought_in')
-                                    .where({purchase_id: purchase_id, isbn: ISBN})
+                                    .where({purchase_id: purchase_id, isbn: isbn})
                                     .select('quantity')
                                     .then(result5 => {
                                         // update the quantity of the quantity
                                         let quantity = result5[0].quantity;
                                         return knex('new_schema.bought_in')
-                                            .where({purchase_id: purchase_id, isbn: ISBN})
+                                            .where({purchase_id: purchase_id, isbn: isbn})
                                             .update('quantity', quantity + 1)
-                                            .then(resultf=>{
+                                            .then(resultf => {
                                                 resolve(result)
 
                                             })
@@ -120,7 +111,7 @@ exports.postPurchase = function(ISBN, user_mail) {
 
 
                             }
-                            })
+                        })
 
                 }
 
@@ -130,11 +121,11 @@ exports.postPurchase = function(ISBN, user_mail) {
 
 };
 
-exports.postPurchaseCompleted = function(purchase_id) {
-  /**
-   * parameters expected in the args:
-  * date (Date)
-  **/
+exports.postPurchaseCompleted = function (purchase_id) {
+    /**
+     * parameters expected in the args:
+     * date (Date)
+     **/
     return new Promise(function (resolve, reject) {
 
         console.log("---------------executing postPurchaseCompleted---------------------");
@@ -151,7 +142,7 @@ exports.postPurchaseCompleted = function(purchase_id) {
         let myQuery = knex('new_schema.purchases')
             .where({purchase_id: purchase_id})
             .update({completed: true, purchase_date: today})
-            .then(result =>{
+            .then(result => {
                 console.log(result)
                 resolve(result)
             })
@@ -159,7 +150,7 @@ exports.postPurchaseCompleted = function(purchase_id) {
 }
 
 
-exports.postPurchaseBook = function(purchase_id, isbn, quantity) {
+exports.postPurchaseBook = function (purchase_id, isbn, quantity) {
     /**
      * parameters expected in the args:
      * purchaseID (String)
@@ -183,8 +174,7 @@ exports.postPurchaseBook = function(purchase_id, isbn, quantity) {
                     .then(result => {
                         resolve(result)
                     })
-            }
-            else {
+            } else {
                 return knex('new_schema.bought_in')
                     .where({purchase_id: purchase_id, isbn: isbn})
                     .update('quantity', quantity)
@@ -198,7 +188,7 @@ exports.postPurchaseBook = function(purchase_id, isbn, quantity) {
     })
 }
 
-exports.deletePurchaseBook = function(purchase_id, isbn) {
+exports.deletePurchaseBook = function (purchase_id, isbn) {
     /**
      * parameters expected in the args:
      * purchaseID (String)
@@ -213,12 +203,12 @@ exports.deletePurchaseBook = function(purchase_id, isbn) {
         console.log("------------------------------------------------------------");
 
         let myQuery = knex('new_schema.bought_in')
-                        .where({purchase_id: purchase_id, isbn: isbn})
-                        .del()
-                        .then(result =>{
-                            resolve(result)
-                        })
-                })
+            .where({purchase_id: purchase_id, isbn: isbn})
+            .del()
+            .then(result => {
+                resolve(result)
+            })
+    })
 
-            };
+};
 

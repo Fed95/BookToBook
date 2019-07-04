@@ -12,7 +12,7 @@ xhttpEvents.onreadystatechange = function () {
 
 var current_month = new Date().getMonth();
 
-xhttpEvents.open("GET", ip + "api/book/bestOfTheMonth?Month=" + current_month, true);
+xhttpEvents.open("GET", ip + "api/book/bestOfTheMonth?month=" + current_month, true);
 xhttpEvents.send();
 
 var addMonthBestsellers = function (parsed) {

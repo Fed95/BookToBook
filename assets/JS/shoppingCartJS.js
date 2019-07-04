@@ -242,7 +242,7 @@ function order() {
     var data = {
         'purchase_id': purchase_id,
         'shipping_address': shipping_address,
-        'cardholder': cardholder,
+        'cardholder_name': cardholder,
         'card_number': card_number
     };
     $.post(ip + "api/purchase/completed", data).done(

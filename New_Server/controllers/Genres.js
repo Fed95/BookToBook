@@ -18,10 +18,14 @@ module.exports.getGenre = function getGenre (req, res, next) {
 
 module.exports.getGenreGenreName = function getGenreGenreName (req, res, next) {
 
-    var genre_name = req.swagger.params['GenreName']['value'];
+    var genre_name = req.swagger.params['genre_name']['value'];
     Genres.getGenreGenreName(genre_name)
         .then(function (response) {
-            utils.writeJson(res, response);
+            if (response.length > 0) {
+                utils.writeJson(res, response, 200);
+            } else {
+                utils.writeJson(res, "Genre not found.", 404);
+            }
         })
         .catch(function (response) {
             utils.writeJson(res, response);

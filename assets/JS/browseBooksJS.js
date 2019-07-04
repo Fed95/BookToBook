@@ -39,7 +39,7 @@ xhttp.onreadystatechange = function () {
         });
     }
 };
-xhttp.open("GET", ip + "api/book/findByTitle?Title=" + input + "&Abstract%20Required=false&Image%20Required=false&Genres%20Required=false&Themes%20Required=false&Authors%20information%20Required=false&Events%20Information%20Required=false", true);
+xhttp.open("GET", ip + "api/book/findByTitle?title=" + input, true);
 xhttp.send();
 
 
@@ -122,7 +122,7 @@ $(document).on('click', '#search-results-container button', function () {
     var isbn = $this.closest('.row').find('.isbn p').html()
     console.log('found isbn = ', isbn)
     var data = {
-        "ISBN": isbn
+        "isbn": isbn
     };
     $.post(ip + "api/purchase/", data).done(
         function (response) {

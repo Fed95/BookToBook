@@ -19,9 +19,12 @@ module.exports.postUser = function postUser(req, res, next) {
     Users.postUser(user_mail, password, username, user_shipping_address)
         .then(function (response) {
             console.log('logout response: ', response)
+            console.log("Login andato a buon fine");
+            req.session.loggedIn = true;
+            req.session.user_mail = user_mail;
             utils.writeJson(res, response);
         }).catch(function (response) {
-        utils.writeJson(res, response, 404);
+        utils.writeJson(res, response, 409);
     });
 };
 
@@ -50,6 +53,8 @@ module.exports.postUserLogin = function postUserLogin(req, res, next) {
 
 module.exports.postUserLogout = function postUserLogout(req, res, next) {
 
+    //todo: handle in service
+
     console.log('cookies deleted. session = ', req.session)
     req.session = null
     res.end()
@@ -59,12 +64,19 @@ module.exports.postUserLogout = function postUserLogout(req, res, next) {
 
 module.exports.getUserCheck = function getUserCheck(req, res, next) {
 
+    //todo: check this
+
     console.log('executing getUserCheck')
 
     var user = {
         mail: req.session.user_mail
     };
+    if(user){
+        utils.writeJson(res, user);
+    }else{
+        tils.writeJson(res, "Session not found", 404);
+    }
 
-    utils.writeJson(res, user);
+
 
 };

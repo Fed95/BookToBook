@@ -133,10 +133,10 @@ var displayFoundBooks = function (book) {
 
     generateBookDiv(parsed[0], authors, interview, reviews, genres, themes);
 
-    xhttpEvents.open("GET", ip + "api/event/findByBook?ISBN=" + input, true);
+    xhttpEvents.open("GET", ip + "api/event/findByBook?isbn=" + input, true);
     xhttpEvents.send();
 
-    xhttpSimilar.open("GET", ip + "api/book/findSimilarBooks?genre=" + similar.substring(1), true);
+    xhttpSimilar.open("GET", ip + "api/book/findSimilarBooks?params=" + similar.substring(1), true);
     xhttpSimilar.send();
 };
 
@@ -480,7 +480,7 @@ $(document).on('click', '#homepage-container #add-book-btn-1', function () {
     console.log('found isbn = ', isbn)
 
     var data = {
-        "ISBN": isbn
+        "isbn": isbn
     };
 
     $.post(ip + "api/purchase/", data).done(

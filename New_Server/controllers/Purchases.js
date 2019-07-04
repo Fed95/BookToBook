@@ -6,6 +6,7 @@ var Purchases = require('./PurchasesService');
 
 
 module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res, next) {
+
         let user_mail = req.session.user_mail;
         console.log("inside Purchase.js; user_mail = ", user_mail);
 
@@ -20,14 +21,13 @@ module.exports.getPurchaseFindByUser = function getPurchaseFindByUser (req, res,
 
 
 module.exports.postPurchase = function postPurchase (req, res, next) {
+
     if(!req.session || !req.session.loggedIn){
         utils.writeJson(res, "Not logged in", 401)
     }
     else{
-        var ISBN = req.swagger.params["ISBN"].value;
+        var ISBN = req.swagger.params["isbn"].value;
         var user_mail = req.session.user_mail;
-
-        console.log("ISBN");
 
         Purchases.postPurchase(ISBN, user_mail)
             .then(function (response) {
@@ -42,6 +42,7 @@ module.exports.postPurchase = function postPurchase (req, res, next) {
 };
 
 module.exports.postPurchaseCompleted = function postPurchaseCompleted (req, res, next) {
+
     var purchase_id = req.swagger.params["purchase_id"].value;
 
     Purchases.postPurchaseCompleted(purchase_id)
