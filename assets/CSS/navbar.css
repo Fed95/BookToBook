@@ -12,6 +12,9 @@
     margin-bottom: 0px;
     border-radius: 0;
 }
-#login-link{
-    width: 8em;
+@media(min-width: 830px){
+
+    #login-link{
+        width: 8em;
+    }
 }

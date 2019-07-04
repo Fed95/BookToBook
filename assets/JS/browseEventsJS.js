@@ -1,8 +1,6 @@
 var ip = "https://booktobook.herokuapp.com/";
 //var ip = "http://localhost:8080/";
 
-
-
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
@@ -81,12 +79,9 @@ var generateEventDivs = function(grouped) {
                                     + grouped[index][0].event_name
                                  +'</a>'
                             +'</h4>'
-                            +'<p>' +
-                                '<small class="text-muted">' +
-                                    '<i class="glyphicon glyphicon-time"></i>'+
-                                     +' ' + grouped[index][0].event_date.substr(0, 10)
-                                +'</small>' +
-                            '</p>'
+                +'<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>'
+                +' ' + grouped[index][0].event_date.substr(0 , 10)
+                +'</small></p>'
                         +'</div>'
                         +'<div class="timeline-body">'
                             +'<p>'
@@ -111,7 +106,7 @@ var generateEventDivs = function(grouped) {
                 +'</a>'
                 +'</h4>'
                 +'<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>'
-                +' ' + grouped[index][0].event_date.substr(0, 10)
+                +' ' + grouped[index][0].event_date.substr(0 , 10)
                 +'</small></p>'
                 +'</div>'
                 +'<div class="timeline-body">'

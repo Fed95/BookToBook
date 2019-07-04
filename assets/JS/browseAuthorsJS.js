@@ -1,8 +1,6 @@
 var ip = "https://booktobook.herokuapp.com/";
 //var ip = "http://localhost:8080/";
 
-
-
 //---------------------------------------------------------------------
 //Function used to retrieve user input from the URL
 //---------------------------------------------------------------------

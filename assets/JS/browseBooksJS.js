@@ -1,8 +1,7 @@
 var ip = "https://booktobook.herokuapp.com/";
 //var ip = "http://localhost:8080/";
 
-
-//---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 // Function used to retrieve user input from the URL
 //---------------------------------------------------------------------
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -139,7 +138,6 @@ $(document).on('click', '#search-results-container button', function () {
     );
 })
 var $prev = null
-var counter = 1
 
 function showConfirmation($div) {
     console.log('Adding confirmation button')
@@ -147,8 +145,7 @@ function showConfirmation($div) {
         $prev = $('<div class="confirmation">Added!</div>')
     } else {
         $prev.remove()
-        counter++;
-        $prev = $('<div class="confirmation">Added! (' + counter + ')</div>')
+        $prev = $('<div class="confirmation">Added!</div>')
     }
     console.log('appending to ', $div)
     $div.append($prev)
@@ -158,7 +155,6 @@ function showConfirmation($div) {
             $prev.fadeTo("slower", 0, function () {
                 $prev.remove()
                 $prev = null
-                counter = 1
             })
         }
     }, 2500);

@@ -1,8 +1,7 @@
 var ip = "https://booktobook.herokuapp.com/";
 //var ip = "http://localhost:8080/";
 
-
-//---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 //Function used to retrieve user input from the URL
 //---------------------------------------------------------------------
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -82,7 +81,7 @@ var displayFoundBooks = function (book) {
     var themes = [];
     var similar = "";
 
-    var interview = parsed[0].interview_text // TODO: DECIDE WHETHER THE INTERVIEW SHOULD BE AUTHOR SPECIFIC
+    var interview = parsed[0].interview_text
 
     for(var author_name in grouped_by_author){
         var author = {
@@ -496,7 +495,6 @@ $(document).on('click', '#homepage-container #add-book-btn-1', function () {
     );
 })
 var $prev = null
-var counter = 1
 
 function showConfirmation($div) {
     console.log('Addinggg')
@@ -504,8 +502,7 @@ function showConfirmation($div) {
         $prev = $('<div class="confirmation">Added!</div>')
     } else {
         $prev.remove()
-        counter++;
-        $prev = $('<div class="confirmation">Added! (' + counter + ')</div>')
+        $prev = $('<div class="confirmation">Added!</div>')
     }
 
     $div.append($prev)
@@ -514,7 +511,6 @@ function showConfirmation($div) {
             $prev.fadeTo("slower", 0, function () {
                 $prev.remove()
                 $prev = null
-                counter = 1
             })
         }
     }, 3000);

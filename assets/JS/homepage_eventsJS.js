@@ -10,8 +10,8 @@ xhttpEvents.onreadystatechange = function () {
     }
 };
 
-//todo check if this is returning the correct month. sembra che torni sempre 6
-var current_month = new Date().getMonth();
+var current_month = new Date().getMonth() + 1;
+console.log('getting books of month: ', current_month)
 
 xhttpEvents.open("GET", ip + "api/event/findByMonth?Month=" + current_month, true);
 xhttpEvents.send();

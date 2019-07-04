@@ -97,3 +97,11 @@ h5{
     padding: 6px 12px 6px 12px;
     width: 91.3px;
 }
+@media(max-width: 450px){
+    .col-1{
+        display: none;
+    }
+    .singleItemContainer{
+        margin: 2%;
+    }
+}

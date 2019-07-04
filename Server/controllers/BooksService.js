@@ -191,9 +191,7 @@ exports.getBookISBN = function(isbn) {
     console.log("---------------executing getBookISBN------------------------");
     console.log("isbn: '" + isbn + "'");
     console.log("------------------------------------------------------------");
-
-    //todo: extend query to get reviews and events
-
+    
     let myQuery = knex('new_schema.books AS b')
         .leftOuterJoin('new_schema.reviews AS r', 'b.isbn', 'r.isbn')
         .leftOuterJoin('new_schema.users AS u', 'r.user_mail', 'u.user_mail')

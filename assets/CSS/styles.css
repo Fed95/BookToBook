@@ -257,3 +257,6 @@ html,body
 ul {
     list-style-type: none;
 }
+.footer-classic .row{
+    margin-right: 0;
+}

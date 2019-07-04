@@ -1,8 +1,6 @@
 var view = $("#show");
 var current = 1;
 
-//todo make this flexible for more books
-
 const mq = window.matchMedia( "(max-width: 600px)" );
 const mq2 = window.matchMedia( "(max-width: 450px)" );
 

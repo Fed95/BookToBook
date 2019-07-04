@@ -1,8 +1,7 @@
 var ip = "https://booktobook.herokuapp.com/";
 //var ip = "http://localhost:8080/";
 
-
-//---------------------------------------------------------------------
+// ---------------------------------------------------------------------
 //Function used to retrieve user input from the URL
 //---------------------------------------------------------------------
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -102,7 +101,7 @@ var generateGenreDiv = function (name, bio, books, genres, themes) {
     var $div6 = $("<div class = 'row small-screen-image' />");
     var $div7 = $("<div class = 'col-2' />");
     var $div8 = $("<div class = 'col-8' />");
-    var $im2 = $("<img />", {class: "singleItemImage", src: "../assets/Images/AuthorPictures/" + name + ".jpg"});
+    var $im2 = $("<img />", {class: "singleItemImage", src: "../assets/Images/GenresImages/" + name + ".jpg"});
     var $div9 = $("<div class = 'col-2' />");
 
     var $span1 = $("<span />");
@@ -151,7 +150,7 @@ var generateBookDiv = function (books) {
         author_links = ""
 
         for (var a of authors) {
-            author_links += ', <a href="' + ip + 'pages/author.html?author_id=' + authors[i].id + '">' + a.name + '</a>'
+            author_links += ', <a href="' + ip + 'pages/author.html?author_id=' + a.id + '">' + a.name + '</a>'
         }
 
 

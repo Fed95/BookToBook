@@ -34,7 +34,6 @@ var addMonthBestsellers = function (parsed) {
         }
         books.push(book)
     }
-   // var truncated = books.slice(0, 5) //todo: try and make this dynamic
 
     books.sort(function (a, b) {
         if (a.sales < b.sales) {
