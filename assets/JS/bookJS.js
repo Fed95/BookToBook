@@ -496,7 +496,6 @@ $(document).on('click', '#homepage-container #add-book-btn-1', function () {
     );
 })
 var $prev = null
-var counter = 1
 
 function showConfirmation($div) {
     console.log('Addinggg')
@@ -504,8 +503,7 @@ function showConfirmation($div) {
         $prev = $('<div class="confirmation">Added!</div>')
     } else {
         $prev.remove()
-        counter++;
-        $prev = $('<div class="confirmation">Added! (' + counter + ')</div>')
+        $prev = $('<div class="confirmation">Added!</div>')
     }
 
     $div.append($prev)
@@ -514,7 +512,6 @@ function showConfirmation($div) {
             $prev.fadeTo("slower", 0, function () {
                 $prev.remove()
                 $prev = null
-                counter = 1
             })
         }
     }, 3000);
