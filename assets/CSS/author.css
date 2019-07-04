@@ -2,4 +2,11 @@
     margin-left: 5px;
     font-size: 12px;
 }
-
+@media(max-width: 450px){
+    .col-1{
+        display: none;
+    }
+    .singleItemContainer{
+        margin: 2%;
+    }
+}

@@ -83,13 +83,13 @@ var generateEventDiv = function (event, authors) {
             var $title = $("<div class = 'event-title-container'/>");
                 var $h3 = $("<h1/>"); $h3.html(event.event_name);
         var $div3 = $("<div class = 'row'/>");
-            var $div4 = $("<div class = 'col-3 no-vert-padding center-align'/>");
+            var $div4 = $("<div class = 'image-and-authors col-3 no-vert-padding center-align'/>");
                 var $div5 = $("<div class = 'bookCoverContainer-no-margin'/>");
                     var $a1 = $("<a >", {href:'./book.html?isbn='+event.isbn});
                         var $im1 = $("<img />", {class:'singleItemImage', src:'../assets/Images/BookCovers/' + event.title +'.jpg'});
                 var $h2 = $("<h3 class = 'sideheading'/>"); $h2.html('Author/s:');
 
-            var $div7 = $("<div class = col-9 no-vert-padding'/>");
+            var $div7 = $("<div class = 'event-description col-9 no-vert-padding'/>");
                 var $div8 = $("<div class = textcontent'/>"); $div8.html(event.summary);
                 var $hr1 = $("<hr />");
                 var $div9 = $("<div class = 'row'/>");

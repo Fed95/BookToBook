@@ -15,9 +15,6 @@ p a:hover{
     .hidden-s{
         display: none;
     }
-    .col-10-bigger-s{
-        width: 100%
-    }
     .col-2-hidden-xs{
         width:20%;
     }
@@ -39,9 +36,7 @@ p a:hover{
     .book-title{
         font-size: 15px;
     }
-    .btn-add-book{
-        font-size: 12px;
-    }
+
 }
 @media (max-width: 560px){
     .col-2-muchbigger-xs{
@@ -59,9 +54,6 @@ p a:hover{
     }
     .book-title{
         font-size: 12px;
-    }
-    .btn-add-book{
-        font-size: 10px;
     }
     .smallers{
         width: 10%;

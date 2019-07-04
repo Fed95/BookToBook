@@ -4,6 +4,7 @@ ul {
 }
 #homepage-container{
     min-height: 52vh;
+    text-align: justify;
 }
 .image-container {
     background: url('../Images/EventImages/default.jpg') center center;
@@ -93,104 +94,17 @@ p {
     opacity: 0.8;
 }
 
-@media screen and (max-width: 991px) {
-    .image-container {
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: 710px) {
-    .image-container {
-        padding: 0;
-    }
-}
-
-@media screen and (max-width: 630px) {
-    .singleItemName {
-        font-size: 25px;
-    }
-
-    .datestyle {
-        font-size: 14px;
-    }
-    
-    .authorlink{
-        font-size: 14px;
-    }
-
-    .sideheading {
-        font-size: 20px;
-    }
-
-    .eventinfo {
-        font-size: 14px;
-    }
-}
-
 @media screen and (max-width: 550px) {
+
     .image-container {
-        padding: 45px;
+        width: 96%;
+    }
+    .image-and-authors{
+        width: 70%;
+        margin-left: 15%;
+    }
+    .event-description{
+        width: 95%;
     }
 
-    .singleItemName {
-        font-size: 18px;
-    }
-
-    .datestyle {
-        font-size: 12px;
-    }
-    
-    .authorlink{
-        font-size: 12px;
-    }
-
-    .sideheading {
-        font-size: 15px;
-    }
-
-    .centered-link {
-        font-size: 12px;
-    }
-
-    .eventinfo {
-        font-size: 12px;
-    }
-
-    .textcontent {
-        font-size: 12px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .image-container {
-        padding: 35px;
-    }
-
-    .singleItemName {
-        font-size: 15px;
-    }
-
-    .datestyle {
-        font-size: 10px;
-    }
-
-    .sideheading {
-        font-size: 13px;
-    }
-    
-    .authorlink{
-        font-size: 10px;
-    }
-    
-    .centered-link {
-        font-size: 10px;
-    }
-
-    .eventinfo {
-        font-size: 10px;
-    }
-
-    .textcontent {
-        font-size: 10px;
-    }
 }

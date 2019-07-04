@@ -149,7 +149,7 @@ var generateBookDiv = function (books) {
         author_links = ""
 
         for (var a of authors) {
-            author_links += ', <a href="' + ip + 'pages/author.html?author_id=' + authors[i].id + '">' + a.name + '</a>'
+            author_links += ', <a href="' + ip + 'pages/author.html?author_id=' + a.id + '">' + a.name + '</a>'
         }
 
 

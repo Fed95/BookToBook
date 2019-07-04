@@ -67,7 +67,7 @@ p a:hover{
         width: 10%;
     }
     .biggers{
-        width: 80%;
+        margin-left: 6%;
     }
     .book-title-and-info, .browse-books-image, .browse-books-rest{
         padding: 0;
@@ -83,6 +83,7 @@ p a:hover{
     }
 }
 @media (max-width: 500px){
+
     .col-2-muchbigger-xs{
         width: 22.5%;
     }
@@ -100,9 +101,6 @@ p a:hover{
     .smallers{
         width: 0%;
         padding: 0px;
-    }
-    .biggers{
-        width: 100%;
     }
 }
 @media (max-width: 420px){
