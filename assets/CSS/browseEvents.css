@@ -4,3 +4,6 @@ h1{
 .container{
     width: 100%;
 }
+#search-results-container{
+    min-height: 63vh;
+}

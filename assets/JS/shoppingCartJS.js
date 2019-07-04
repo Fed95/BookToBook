@@ -9,7 +9,7 @@ var purchase_id = null
 var user_shipping_address = null;
 
 $.get(ip + "api/purchase/findByUser").done(
-    function(response){
+    function (response) {
         console.log("successful find purchase by user id")
         displayPurchases(response);
     }
@@ -22,14 +22,18 @@ $.get(ip + "api/purchase/findByUser").done(
 
 var displayPurchases = function (purchase_list) {
 
+    console.log('purchase_list :', purchase_list)
+
     var grouped_by_isbn = _.groupBy(purchase_list, 'isbn');
-    purchase_id = purchase_list[0].purchase_id;
-    user_shipping_address = purchase_list[0].user_shipping_address;
-    $(document).find('#inputAddress').val(user_shipping_address);
 
     var tot = 0;
 
     if (purchase_list.length > 0) {
+
+        purchase_id = purchase_list[0].purchase_id;
+        user_shipping_address = purchase_list[0].user_shipping_address;
+        $(document).find('#inputAddress').val(user_shipping_address);
+
         var grouped_by_isbn = _.groupBy(purchase_list, 'isbn');
         purchase_id = purchase_list[0].purchase_id
 
@@ -52,21 +56,21 @@ var displayPurchases = function (purchase_list) {
             }
             tot += generatePurchaseDiv(purchase);
         }
-    }else{
+    } else {
         $("#search-results-container").append('<h1 class="no-result">Your shopping cart is empty.</h1>')
     }
-        var $totalprice = $('<div class="row grand-total"/>');
-        var $price_text = $('<span class="col grand-total-price-text"  />');
-        $price_text.html("Grand Total: ");
-        var $price = $('<span class="col grand-total-price"  />');
-        $price.html(tot);
-        var $total = $('<div class="grand-total"/>');
+    var $totalprice = $('<div class="row grand-total"/>');
+    var $price_text = $('<span class="col grand-total-price-text"  />');
+    $price_text.html("Grand Total: ");
+    var $price = $('<span class="col grand-total-price"  />');
+    $price.html(tot);
+    var $total = $('<div class="grand-total"/>');
 
 
-        $("#search-results-container").append($totalprice);
-        $("#search-results-container").append($total);
-        $($totalprice).append($price_text);
-        $($totalprice).append($price);
+    $("#search-results-container").append($totalprice);
+    $("#search-results-container").append($total);
+    $($totalprice).append($price_text);
+    $($totalprice).append($price);
 
 
 }
@@ -238,25 +242,11 @@ function order() {
         'cardholder_name': cardholder,
         'card_number': card_number
     };
-    $.post(ip + "api/purchase/completed", data).done(
-        function(response){
-            // do something when response is ok
-            console.log("Payment completed")
-            console.log(response);
-            window.location.href = ip + "index.html";
-        }
-    ).fail(
-        function(jqXHR, textStatus, errorThrown) {
-            console.log('Payment failed!')
-            if(jqXHR.status == 404){
-                displayWarning("Invalid Username or Password, did you remember to "+'<a href="#" class="register-dynamic-link">Register</a>'+ " ?")
-            }
-
-        }
-    );
+    $.post(ip + "api/purchase/completed", data, function () {
+            console.log("Payment completed"),
+                displayWarning("Your purchase was completed successfully!")
+        })
 }
-
-
 
 
 

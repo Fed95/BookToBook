@@ -30,12 +30,13 @@ paths:
       produces:
       - "applications/json"
       parameters:
-      - name: "ISBN"
+      - name: "isbn"
         in: "query"
         description: "ISBN of the Book"
         required: true
         type: "integer"
         format: "int64"
+        x-example: "9780001243136"
       responses:
         200:
           description: "successful operation"
@@ -87,6 +88,7 @@ paths:
         in: "path"
         required: true
         type: "string"
+        x-example: "1"
       responses:
         200:
           description: "successful operation"
@@ -203,7 +205,7 @@ paths:
         required: true
         type: "integer"
         format: "int64"
-        x-example: 9780001243136
+        x-example: 8972871401472
       responses:
         200:
           description: "successful operation"
@@ -342,6 +344,7 @@ paths:
         in: "path"
         required: true
         type: "string"
+        x-example: "Science"
       responses:
         200:
           description: "successful operation"
@@ -453,26 +456,32 @@ paths:
       operationId: "postPurchaseCompleted"
       consumes:
       - "application/x-www-form-urlencoded"
+      produces:
+      - "application/json"
       parameters:
       - name: "purchase_id"
         in: "formData"
         required: true
         type: "string"
+        x-example: 15
       - name: "shipping_address"
         in: "formData"
         description: "Shipping Address"
         required: true
         type: "string"
+        x-example: 'Some address 23'
       - name: "cardholder_name"
         in: "formData"
         description: "Cardholder's Name"
         required: true
         type: "string"
+        x-example: 'Some Name'
       - name: "card_number"
         in: "formData"
         description: "Credit Card Number"
         required: true
         type: "string"
+        x-example: 1234567890
       responses:
         200:
           description: "successful operation"
@@ -524,6 +533,7 @@ paths:
         in: "path"
         required: true
         type: "string"
+        x-example: "Future"
       responses:
         200:
           description: "successful operation"
