@@ -158,12 +158,12 @@ paths:
           schema:
             $ref: "#/definitions/Error"
       x-swagger-router-controller: "Books"
-  /book/findBySimilarBooks:
+  /book/findSimilarBooks:
     get:
       tags:
         - "Books"
       summary: "Get Similar Books"
-      operationId: "getBookFindBySimilarBooks"
+      operationId: "getBookFindSimilarBooks"
       produces:
         - "applications/json"
       parameters:

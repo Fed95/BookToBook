@@ -46,12 +46,12 @@ module.exports.getBookFavoriteReading = function getBookFavoriteReading(req, res
 };
 
 
-module.exports.getBookFindBySimilarBooks = function getBookFindBySimilarBooks(req, res, next) {
+module.exports.getBookFindSimilarBooks = function getBookFindSimilarBooks(req, res, next) {
 
     var genres = req.swagger.params['genre']['value'];
     console.log("inside getBookFindByGenre; p = ", genres);
 
-    Books.getBookFindBySimilarBooks(genres)
+    Books.getBookFindSimilarBooks(genres)
         .then(function (response) {
             utils.writeJson(res, response);
         })

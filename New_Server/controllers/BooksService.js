@@ -82,7 +82,7 @@ exports.getBookFavoriteReading = function () {
 
 };
 
-exports.getBookFindBySimilarBooks = function (parameters_string) {
+exports.getBookFindSimilarBooks = function (parameters_string) {
     /**
      * parameters expected in the args:
      * abstract Required (Boolean)
