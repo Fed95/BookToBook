@@ -12,6 +12,7 @@ var swaggerTools = require('swagger-tools');
 var jsyaml = require('js-yaml');
 var serverPort = 8080;
 
+const swaggerUi = require('swagger-ui-express');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -92,9 +93,10 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
   app.use(middleware.swaggerRouter(options));
 
   // Serve the Swagger documents and Swagger UI
+  //app.use(middleware.swaggerUi());
   app.use(middleware.swaggerUi());
 
-
+  app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 
   // Start the server
