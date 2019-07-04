@@ -94,7 +94,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
 
   // Serve the Swagger documents and Swagger UI
   //app.use(middleware.swaggerUi());
-  app.use(middleware.swaggerUi);
+  app.use(middleware.swaggerUi());
 
   app.use('/backend/swaggerui', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
