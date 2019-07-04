@@ -31,16 +31,17 @@ $(document).ready(() => {
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundBooks(this.responseText);
-        });
+
+$.get(ip + "api/book/findByTitle?title=" + input).done(
+    function(response){
+        console.log("successful find book by title query")
+        displayFoundBooks(response);
     }
-};
-xhttp.open("GET", ip + "api/book/findByTitle?title=" + input, true);
-xhttp.send();
+).fail(
+    function (jqXHR, textStatus, errorThrown) {
+        console.log("Something went wrong while looking for theme by theme name: ", textStatus)
+    }
+);
 
 
 //---------------------------------------------------------------------
@@ -49,12 +50,9 @@ xhttp.send();
 
 var displayFoundBooks = function (books_list) {
 
-    var parsed = JSON.parse(books_list);
-    console.log("parsed: ", parsed);
+    if (books_list.length > 0) {
 
-    if (parsed.length > 0) {
-
-        var grouped = _.groupBy(parsed, 'isbn');
+        var grouped = _.groupBy(books_list, 'isbn');
 
         for (var isbn in grouped) {
 
@@ -126,7 +124,7 @@ $(document).on('click', '#search-results-container button', function () {
     };
     $.post(ip + "api/purchase/", data).done(
         function (response) {
-            console.log('succesful post purchase operation! response: ', response),
+            console.log('successful post purchase operation! response: ', response),
                 showConfirmation($this.parent())
         }
     ).fail(

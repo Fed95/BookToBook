@@ -28,16 +28,17 @@ const input = getUrlParameter('genre');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundGenre(this.responseText);
-        });
+
+$.get(ip + "api/genre/" + input).done(
+    function(response){
+        console.log("successful find genre by genre name")
+        displayFoundGenre(response);
     }
-};
-xhttp.open("GET", ip + "api/genre/" + input, true);
-xhttp.send();
+).fail(
+    function (response) {
+        console.log("Something went wrong while looking for genre by genre name: ", response)
+    }
+);
 
 
 //---------------------------------------------------------------------
@@ -46,13 +47,10 @@ xhttp.send();
 
 var displayFoundGenre = function (genre_list) {
 
-    var parsed = JSON.parse(genre_list);
-    console.log("parsed: ", parsed);
-
-    var grouped_by_book = _.groupBy(parsed, 'isbn');
+    var grouped_by_book = _.groupBy(genre_list, 'isbn');
 
     var name = input;
-    var description = parsed[0]['genre_description']
+    var description = genre_list[0]['genre_description']
 
     var books = [];
 

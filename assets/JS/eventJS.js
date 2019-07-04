@@ -28,17 +28,17 @@ const input = getUrlParameter('event_id');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundBooks(this.responseText);
-        });
+
+$.get(ip + "api/event/"+input).done(
+    function(response){
+        console.log("successful find event by id")
+        displayFoundEvents(response);
     }
-};
-console.log('preparing get fun')
-xhttp.open("GET", ip + "api/event/"+input, true);
-xhttp.send();
+).fail(
+    function (response) {
+        console.log("Something went wrong while looking for event by id: ", response)
+    }
+);
 
 
 
@@ -46,12 +46,9 @@ xhttp.send();
 //handling the result
 //---------------------------------------------------------------------
 
-var displayFoundBooks = function(book) {
+var displayFoundEvents = function(event) {
 
-    var parsed = JSON.parse(book);
-    console.log("parsed: ", parsed);
-
-    var grouped_by_author = _.groupBy(parsed, 'name');
+    var grouped_by_author = _.groupBy(event, 'name');
 
     var authors = [];
 
@@ -64,7 +61,7 @@ var displayFoundBooks = function(book) {
         authors.push(author);
     }
 
-    generateEventDiv(parsed[0], authors);
+    generateEventDiv(event[0], authors);
 };
 
 

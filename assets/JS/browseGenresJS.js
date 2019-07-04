@@ -28,17 +28,17 @@ const input = getUrlParameter('search-text');
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundGenres(this.responseText);
-        });
+
+$.get(ip + "api/genre/").done(
+    function(response){
+        console.log("Successful finding all genres")
+        displayFoundGenres(response);
     }
-};
-console.log("getting genres!");
-xhttp.open("GET", ip + "api/genre/", true);
-xhttp.send();
+).fail(
+    function (jqXHR, textStatus, errorThrown) {
+        console.log("Something went wrong while looking for all genres: ", textStatus)
+    }
+);
 
 
 //---------------------------------------------------------------------
@@ -48,12 +48,9 @@ xhttp.send();
 var displayFoundGenres = function (genre_list) {
 
 
-    var parsed = JSON.parse(genre_list);
-    console.log("parsed: ", parsed);
+    var n = Math.ceil(genre_list.length / 4);
 
-    var n = Math.ceil(parsed.length / 4);
-
-    generategenreDivs(parsed, n);
+    generategenreDivs(genre_list, n);
 
 };
 

@@ -4,17 +4,17 @@ var ip = "https://booktobook.herokuapp.com/";
 //---------------------------------------------------------------------
 //generating the query
 //---------------------------------------------------------------------
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        $(document).ready(() => {
-            displayFoundEvents(this.responseText);
-        });
+
+$.get(ip + "api/event/").done(
+    function(response){
+        console.log("successful all events query!")
+        displayFoundEvents(response);
     }
-};
-console.log("getting events!");
-xhttp.open("GET", ip + "api/event/", true);
-xhttp.send();
+).fail(
+    function (jqXHR, textStatus, errorThrown) {
+        console.log("Something went wrong while looking for events: ", textStatus)
+    }
+);
 
 
 //---------------------------------------------------------------------
@@ -25,10 +25,9 @@ var currentTime = new Date();
 
 var displayFoundEvents = function (event_list) {
 
-    var parsed = JSON.parse(event_list);
-    console.log("parsed: ", parsed);
+    console.log('events: ', event_list)
 
-    var grouped = _.groupBy(parsed, 'event_id');
+    var grouped = _.groupBy(event_list, 'event_id');
     console.log("grouped: ", grouped);
 
     var grouped_list = [];
