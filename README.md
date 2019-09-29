@@ -1,2 +1,2 @@
 # BookToBook
-Hypermedia Project
+An e- commerce platform for buying books.
