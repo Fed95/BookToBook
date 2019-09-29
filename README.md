@@ -1,2 +1,2 @@
 # BookToBook
-An e- commerce platform for buying books.
+An e-commerce platform for buying books.
